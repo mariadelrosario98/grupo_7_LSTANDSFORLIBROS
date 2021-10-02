@@ -8,22 +8,24 @@ LSFL es una tienda virtual de libros. Aquí podrás encontrar libros de todos lo
 
 ## Referencias
 - <strong>Books & Books</strong> <br />
-
 <p align="center">
   <img src="https://user-images.githubusercontent.com/71073724/135702070-f760e651-0e8d-4270-9a8f-d320e83d633f.png">
 </p>
 
 - <strong>Libreria Nacional</strong> <br />
-
-![Captura de Pantalla 2021-10-01 a la(s) 10 27 23 p  m](https://user-images.githubusercontent.com/71073724/135702189-d2523a41-12f9-497e-af3a-d8da5db079a5.png)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/71073724/135702189-d2523a41-12f9-497e-af3a-d8da5db079a5.png">
+</p>
 
 - <strong>Panamericana</strong> <br />
-
-![Captura de Pantalla 2021-10-01 a la(s) 10 28 32 p  m](https://user-images.githubusercontent.com/71073724/135702220-e6c1ecd9-2d7d-4951-8a72-4c1027525bd0.png)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/71073724/135702220-e6c1ecd9-2d7d-4951-8a72-4c1027525bd0.png">
+</p>
 
 - <strong>Busca Libre</strong> <br />
-
-![Captura de Pantalla 2021-10-01 a la(s) 10 29 50 p  m](https://user-images.githubusercontent.com/71073724/135702241-9212a2a2-1b2e-4473-ac00-5ae6fcbb94e1.png)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/71073724/135702241-9212a2a2-1b2e-4473-ac00-5ae6fcbb94e1.png">
+</p>
 
 
 
