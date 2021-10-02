@@ -6,6 +6,11 @@ LSFL es una tienda virtual de libros. Aquí podrás encontrar libros de todos lo
   <img src="https://user-images.githubusercontent.com/71073724/135700941-f38bb62e-2f9d-4109-9061-de8a134a89b5.png" width="200" height="200">
 </p>
 
+## References
+- Books & Books
+![Captura de Pantalla 2021-10-01 a la(s) 10 21 10 p  m](https://user-images.githubusercontent.com/71073724/135702054-22530490-4871-4d6b-b415-dc1307b589f6.pn
+
+
 ## Integrantes
 - Kevin Simaca [@KevinAndSH](https://github.com/KevinAndSH) <br />
 Kevin estudia Ingeniería Eléctrica y le gustan los perritos
