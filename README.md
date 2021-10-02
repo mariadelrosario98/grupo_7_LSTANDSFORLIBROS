@@ -12,6 +12,6 @@ Kevin estudia Ingeniería Eléctrica y le gustan los perritos
 Elisaul es un apasionado...
 - Zabdiel Blanco [@etaBlancoA](https://github.com/ZetaBlancoA)
 XXXXX
-- Maria del Rosario Castro [@mariadelrosario98](https://github.com/mariadelrosario98)
+- Maria del Rosario Castro [@mariadelrosario98](https://github.com/mariadelrosario98) <br />
 Maria del Rosario es economista, le gustan todos los animales y los problemas sociales. Trabaja en proyectos de café 
 
