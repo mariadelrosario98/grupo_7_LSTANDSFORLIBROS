@@ -6,12 +6,12 @@ LSFL es una tienda virtual de libros. Aquí podrás encontrar libros de todos lo
 
 
 ## Integrantes
-- Kevin Simaca [@KevinAndSH](https://github.com/KevinAndSH)
+- Kevin Simaca [@KevinAndSH](https://github.com/KevinAndSH) <br />
 Kevin estudia Ingeniería Eléctrica y le gustan los perritos
-- Elisaul García [@elisaulgarcia](https://github.com/elisaulgarcia)
+- Elisaul García [@elisaulgarcia](https://github.com/elisaulgarcia) <br />
 Elisaul es un apasionado...
-- Zabdiel Blanco [@etaBlancoA](https://github.com/ZetaBlancoA)
+- Zabdiel Blanco [@etaBlancoA](https://github.com/ZetaBlancoA) <br />
 XXXXX
 - Maria del Rosario Castro [@mariadelrosario98](https://github.com/mariadelrosario98) <br />
-Maria del Rosario es economista, le gustan todos los animales y los problemas sociales. Trabaja en proyectos de café 
+Maria del Rosario es economista, le gustan todos los animales, los problemas sociales y el café.
 
