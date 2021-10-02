@@ -27,6 +27,10 @@ LSFL es una tienda virtual de libros. Aquí podrás encontrar libros de todos lo
   <img src="https://user-images.githubusercontent.com/71073724/135702241-9212a2a2-1b2e-4473-ac00-5ae6fcbb94e1.png">
 </p>
 
+- <strong>Libreria Lerner</strong> <br />
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/71073724/135702364-a962095f-04f6-494e-8de3-2b856fc2dfd8.png">
+</p>
 
 
 ## Integrantes
