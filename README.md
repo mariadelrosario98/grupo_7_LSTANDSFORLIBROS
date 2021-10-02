@@ -13,5 +13,5 @@ Elisaul es un apasionado...
 - Zabdiel Blanco [@etaBlancoA](https://github.com/ZetaBlancoA) <br />
 XXXXX
 - Maria del Rosario Castro [@mariadelrosario98](https://github.com/mariadelrosario98) <br />
-Maria del Rosario es economista, le gustan todos los animales 🐤🐮🐷, los problemas sociales y el café ☕️
+Maria del Rosario es economista, le gustan todos los animales 🐤 🐮 🐷 , los problemas sociales y el café ☕️
 
