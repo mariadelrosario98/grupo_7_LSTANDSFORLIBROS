@@ -6,5 +6,8 @@ LSFL es una tienda virtual de libros. Aquí podrás encontrar libros de todos lo
 
 
 ## Integrantes
-- [@mariadelrosario98](https://github.com/mariadelrosario98)
+- Kevin Simaca [@KevinAndSH](https://github.com/KevinAndSH)
+- Elisaul García [@elisaulgarcia](https://github.com/elisaulgarcia)
+- Zabdiel Blanco [@etaBlancoA](https://github.com/ZetaBlancoA)
+- Maria del Rosario Castro[@mariadelrosario98](https://github.com/mariadelrosario98)
 
