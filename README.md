@@ -14,12 +14,13 @@ Books & Books es una de las librerias especializadas en libros en inglés de Col
 </p>
 
 - <strong>Libreria Nacional</strong> <br />
-La libreria Nacional es 
+La Libreria Nacional tiene una oferta variada, para varios públicos. Es una de las librerias más grandes de Colombia.
 <p align="center">
   <img src="https://user-images.githubusercontent.com/71073724/135702189-d2523a41-12f9-497e-af3a-d8da5db079a5.png">
 </p>
 
 - <strong>Panamericana</strong> <br />
+Panamericana es 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/71073724/135702220-e6c1ecd9-2d7d-4951-8a72-4c1027525bd0.png">
 </p>
