@@ -3,10 +3,8 @@
 LSFL es una tienda virtual de libros. Aquí podrás encontrar libros de todos los géneros, pero sobretodo de naturaleza y animales. En nuestra tienda física podrás ir con tu perrito o gatito a leer y tomarte un café <br />
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/71073724/135700941-f38bb62e-2f9d-4109-9061-de8a134a89b5.png" width="100" height="100">
+  <img src="https://user-images.githubusercontent.com/71073724/135700941-f38bb62e-2f9d-4109-9061-de8a134a89b5.png" width="200" height="200">
 </p>
-
-
 
 ## Integrantes
 - Kevin Simaca [@KevinAndSH](https://github.com/KevinAndSH) <br />
