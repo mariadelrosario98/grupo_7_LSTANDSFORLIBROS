@@ -2,8 +2,7 @@
 # L Stands For Libros 📕
 LSFL es una tienda virtual de libros. Aquí podrás encontrar libros de todos los géneros, pero sobretodo de naturaleza y animales. En nuestra tienda física podrás ir con tu perrito o gatito a leer y tomarte un café 
 
-![cutedog](https://user-images.githubusercontent.com/71073724/135700424-6362828c-8684-4701-8442-4aabc119c065.png)
-
+![3126060](https://user-images.githubusercontent.com/71073724/135700860-b86aac05-f496-4024-ad4f-cc12815f4105.png)
 
 ## Integrantes
 - Kevin Simaca [@KevinAndSH](https://github.com/KevinAndSH) <br />
