@@ -8,7 +8,8 @@ LSFL es una tienda virtual de libros. Aquí podrás encontrar libros de todos lo
 
 ## References
 - Books & Books
-![Captura de Pantalla 2021-10-01 a la(s) 10 21 10 p  m](https://user-images.githubusercontent.com/71073724/135702054-22530490-4871-4d6b-b415-dc1307b589f6.pn
+![Captura de Pantalla 2021-10-01 a la(s) 10 22 10 p  m](https://user-images.githubusercontent.com/71073724/135702070-f760e651-0e8d-4270-9a8f-d320e83d633f.png)
+
 
 
 ## Integrantes
