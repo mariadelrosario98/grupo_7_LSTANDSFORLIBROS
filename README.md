@@ -8,12 +8,13 @@ LSFL es una tienda virtual de libros. Aquí podrás encontrar libros de todos lo
 
 ## Referencias
 - <strong>Books & Books</strong> <br />
-
+Books & Books es una de las librerias especializadas en libros en inglés de Colombia, por lo que es un referente si de libros especializados se trata.
 <p align="center">
   <img src="https://user-images.githubusercontent.com/71073724/135702070-f760e651-0e8d-4270-9a8f-d320e83d633f.png">
 </p>
 
 - <strong>Libreria Nacional</strong> <br />
+La libreria Nacional es 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/71073724/135702189-d2523a41-12f9-497e-af3a-d8da5db079a5.png">
 </p>
