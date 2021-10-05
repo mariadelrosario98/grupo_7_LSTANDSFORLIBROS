@@ -32,7 +32,7 @@ En el header cuenta con un menú hamburguesa en la parte izquierda, una barra de
 </p>
 
 - <strong>Busca Libre</strong> <br />
-Busca Libre es una librería digital cuya oferta engloba autores de todas las nacionalidades y que permite comprar libros que no están disponibles en Colombia. Estos se piden y llegan por encargo en 15 días. De igual forma, tienen una bodega en Colombia con cerca de 6.000 títulos que pueden llegar a su casa de un día para otro.
+Busca Libre es una librería digital cuya oferta engloba autores de todas las nacionalidades y que permite comprar libros que no están disponibles en Colombia. Estos se piden y llegan por encargo en 15 días. De igual forma, tienen una bodega en Colombia con cerca de 6.000 títulos que pueden llegar a su casa de un día para otro.<br />
 <strong>Estética</strong><br />
 En el header cuenta con un menú hamburguesa en la parte izquierda, una barra de búsqueda y un carrito. Durante el body se sugieren varios elementos del website y en el footer se muestran los diferentes métodos de pago y redes sociales.  
 <p align="center">
@@ -40,7 +40,7 @@ En el header cuenta con un menú hamburguesa en la parte izquierda, una barra de
 </p>
 
 - <strong>Libreria Lerner</strong> <br />
-La Lerner es en la actualidad una de las librerías más antiguas y tradicionales de Bogotá. Fue en sus orígenes la Librería Jurídica. Desde entonces se ha consolidado como un referente cultural con énfasis en el libro académico y universitario, y se ha fortalecido a través de los años con una vasta oferta bibliográfica en el campo de las ciencias sociales y humanas y los libros colombianos.
+La Lerner es en la actualidad una de las librerías más antiguas y tradicionales de Bogotá. Fue en sus orígenes la Librería Jurídica. Desde entonces se ha consolidado como un referente cultural con énfasis en el libro académico y universitario, y se ha fortalecido a través de los años con una vasta oferta bibliográfica en el campo de las ciencias sociales y humanas y los libros colombianos.<br />
 <strong>Estética</strong><br />
 Similar a las demás referencias, en el header podremos encontrar el logo, una barra de búsqueda, el login de usuario y el carrito. Durante el body se sugieren varios elementos del website y en el footer se muestran los diferentes puntos de venta y contactos. 
 <p align="center">
