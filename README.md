@@ -8,9 +8,9 @@ LSFL es una tienda virtual de libros. Aquí podrás encontrar libros de todos lo
 
 ## Referencias
 - <strong>Books & Books</strong> <br />
-Books & Books es una de las librerias especializadas en libros en inglés de Colombia, por lo que es un referente si de libros especializados se trata.
+Books & Books es una de las librerias especializadas en libros en inglés de Colombia, por lo que es un referente si de libros especializados se trata.<br />
 <strong>Estética</strong><br />
-En el header se encuentra un menú hamburguesa que despliega una lista de categorias, una barra de búsqueda del título del libro, el registro de usuario y el carrito. En el footer, se encuentran los datos generales de los puntos de ventas y dirección. En el body de la página se sugieren algunos títulos
+En el header se encuentra un menú hamburguesa que despliega una lista de categorias, una barra de búsqueda del título del libro, el registro de usuario y el carrito. En el footer, se encuentran los datos generales de los puntos de ventas y dirección. En el body de la página se sugieren algunos títulos. <br />
 <p align="center">
   <img src="https://user-images.githubusercontent.com/71073724/135702070-f760e651-0e8d-4270-9a8f-d320e83d633f.png">
 </p>
@@ -24,7 +24,7 @@ Similar a la página anterior, en el header se encuentra un menú hamburguesa en
 </p>
 
 - <strong>Panamericana</strong> <br />
-Panamericana es una libreria donde se comercializan libros de colegio y de temas variados. Su público está enfocado en padres de familia y niños en época escolar.
+Panamericana es una libreria donde se comercializan libros de colegio y de temas variados. Su público está enfocado en padres de familia y niños en época escolar.<br />
 <strong>Estética</strong><br />
 En el header cuenta con un menú hamburguesa en la parte izquierda, una barra de búsqueda y un carrito. Durante el body se sugieren varios elementos del website y en el footer se muestran los diferentes métodos de pago y redes sociales.  
 <p align="center">
