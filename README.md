@@ -54,7 +54,7 @@ Kevin estudia Ingeniería Eléctrica y le gustan los perritos
 - Elisaul García [@elisaulgarcia](https://github.com/elisaulgarcia) <br />
 Elisaul es un apasionado...
 - Zabdiel Blanco [@etaBlancoA](https://github.com/ZetaBlancoA) <br />
-XXXXX
+Zabdiel estudia ingeniería electrónica y analista y desarrollador de sistemas de información. 
 - Maria del Rosario Castro [@mariadelrosario98](https://github.com/mariadelrosario98) <br />
 Maria del Rosario es economista, le gustan todos los animales 🐤 🐮 🐷 , los problemas sociales y el café ☕️
 
