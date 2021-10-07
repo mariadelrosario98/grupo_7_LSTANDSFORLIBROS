@@ -52,7 +52,6 @@ Similar a las demás referencias, en el header podremos encontrar el logo, una b
 - Kevin Simaca [@KevinAndSH](https://github.com/KevinAndSH) <br />
 Kevin estudia Ingeniería Eléctrica y le gustan los perritos
 - Elisaul García [@elisaulgarcia](https://github.com/elisaulgarcia) <br />
-Elisaul es un apasionado...
 - Zabdiel Blanco [@etaBlancoA](https://github.com/ZetaBlancoA) <br />
 Zabdiel estudia ingeniería electrónica y analista y desarrollador de sistemas de información. 
 - Maria del Rosario Castro [@mariadelrosario98](https://github.com/mariadelrosario98) <br />
