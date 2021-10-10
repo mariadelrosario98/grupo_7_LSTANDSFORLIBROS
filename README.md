@@ -49,7 +49,7 @@ Similar a las demás referencias, en el header podremos encontrar el logo, una b
 
 
 ## Integrantes
-- Kevin Simaca [@KevinAndSH](https://github.com/KevinAndSH) <br />
+- Kevin Simanca [@KevinAndSH](https://github.com/KevinAndSH) <br />
 Kevin estudia Ingeniería Eléctrica y le gustan los perritos
 - Elisaul García [@elisaulgarcia](https://github.com/elisaulgarcia) <br />
 - Zabdiel Blanco [@etaBlancoA](https://github.com/ZetaBlancoA) <br />
