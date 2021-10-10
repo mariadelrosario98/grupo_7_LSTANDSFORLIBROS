@@ -8,17 +8,17 @@ app.use(express.static(path.join(__dirname, "./public")))
 
 //Página principal
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "./views/home.html"))
+  res.sendFile(path.join(__dirname, "./views/index.html"))
 })
 
 //Detalles de producto (éste supongo que habrá que cambiarlo en el futuro)
-app.get("/detail", (req, res) => {
-  res.sendFile(path.join(__dirname, "./views/detail.html"))
+app.get("/productDetail", (req, res) => {
+  res.sendFile(path.join(__dirname, "./views/productDetail.html"))
 })
 
 //Carrito de compra
-app.get("/checkout", (req, res) => {
-  res.sendFile(path.join(__dirname, "./views/checkout.html"))
+app.get("/productCart", (req, res) => {
+  res.sendFile(path.join(__dirname, "./views/productCart.html"))
 })
 
 //Inicio de sesión
@@ -27,8 +27,8 @@ app.get("/login", (req, res) => {
 })
 
 //Registro
-app.get("/signup", (req, res) => {
-  res.sendFile(path.join(__dirname, "./views/signup.html"))
+app.get("/register", (req, res) => {
+  res.sendFile(path.join(__dirname, "./views/register.html"))
 })
 
 
