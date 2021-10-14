@@ -49,7 +49,7 @@ Similar a las demás referencias, en el header podremos encontrar el logo, una b
 
 ## Tablero de trabajo
 Escogimos hacer nuestro tablero en Trello, el link es el siguiente:
-[Click me](https://trello.com/b/4z6ax05W/sprint-2){: .btn}
+https://trello.com/b/4z6ax05W/sprint-2
 
 
 ## Integrantes
