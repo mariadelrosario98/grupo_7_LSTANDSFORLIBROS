@@ -47,6 +47,10 @@ Similar a las demás referencias, en el header podremos encontrar el logo, una b
   <img src="https://user-images.githubusercontent.com/71073724/135702364-a962095f-04f6-494e-8de3-2b856fc2dfd8.png">
 </p>
 
+## Tablero de trabajo
+Escogimos hacer nuestro tablero en Trello, el link es el siguiente:
+[Click me](https://trello.com/b/4z6ax05W/sprint-2){: .btn}
+
 
 ## Integrantes
 - Kevin Simanca [@KevinAndSH](https://github.com/KevinAndSH) <br />
