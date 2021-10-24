@@ -13,10 +13,45 @@
 
 <body>
   <header>
-    <div class="burger-menu">
-      <i class="fas fa-bars"></i>
-    </div>
+    <div class="top">
+      <div class="top-left">
+        <div class="burger-menu">
+          <i class="fas fa-bars"></i>
+        </div>
+        
+        <a href="/">
+          <img src="./img/logo.png" alt="">
+        </a>
+      </div>
 
+      <div class="top-right">
+        <a href="#">
+          <i class="fas fa-shopping-cart"></i>
+        </a>
+
+        <a href="#" class="button">Ingresa</a>
+
+        <a href="#" class="button">Regístrate</a>
+      </div>
+    </div>
+    
+    <form action="search" method="post">
+      <input type="text" name="search" id="search" placeholder="Busca tus libros">
+
+      <button type="submit">
+        <i class="fas fa-search"></i>
+      </button>
+    </form>
+
+    <nav>
+      <ul>
+        <li><a href="#">Categorias</a></li>
+        &nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp
+        <li><a href="#">Ofertas</a></li>
+        &nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp
+        <li><a href="#">Historial</a></li>
+      </ul>
+    </nav>
 
   </header>
 

@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  color: #ebebeb;
+}
+
+header{
+  display: flex;
+  flex-flow: wrap column;
+  background-color: #14279B;
+}
+
+header .top{
+  display: flex;
+  justify-content: space-between;
+
+  border-bottom: 1px solid #eee;
+}
+
+header .top .top-left{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header .top .top-left i{
+  display: inline-flex;
+  justify-content: center;
+  align-content: center;
+
+  padding: 5px;
+  margin: 10px;
+  border: 1px solid #ebebeb;
+  border-radius: 20%;
+
+  font-size: 1.5em;
+}
+
+header .top .top-left img{
+  height: 60px;
+}
+
+header .top .top-right{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header .top .top-right i{
+  font-size: 2em;
+  margin-right: 15px;
+
+}
+
+header .top .top-right .button{
+  background-color: #5C7AEA;
+  padding: 10px;
+  margin-right: 10px;
+  border-radius: 10px;
+}
+
+header form{
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
+
+  display: flex;
+  justify-content: center;
+}
+
+header form input{
+  width: 80%;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 10px;
+
+  position: relative;
+  left: 10px;
+}
+
+header form button{
+  padding: 5px 10px;
+  border: none;
+  border-radius: 10px;
+
+  background-color: white;
+
+  position: relative;
+  right: 10px;
+}
+
+header nav ul{
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+ul{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
+}
