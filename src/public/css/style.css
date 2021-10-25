@@ -15,7 +15,7 @@ body{
 header{
   display: flex;
   flex-flow: wrap column;
-  background-color: #14279B;
+  background-color: #3D56B2;
 }
 
 header .top{
@@ -64,6 +64,7 @@ header .top .top-right .button{
   background-color: #5C7AEA;
   padding: 10px;
   margin-right: 10px;
+  border: 1px solid #14279B;
   border-radius: 10px;
 }
 
@@ -110,4 +111,26 @@ ul{
 a{
   text-decoration: none;
   color: inherit;
+}
+
+nav{
+  display: none;
+}
+
+
+/* Vista tablet */
+@media (min-width: 481px) {
+  
+}
+
+
+/* Vista laptop */
+@media (min-width: 769px) {
+  
+}
+
+
+/* Vista escritorio */
+@media (min-width: 1280px) {
+  
 }
