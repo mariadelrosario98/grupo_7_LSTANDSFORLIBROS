@@ -8,7 +8,7 @@
 
 body{
   font-family: 'Open Sans', sans-serif;
-  font-size: 16px;
+  font-size: 12px;
   color: #ebebeb;
 }
 
@@ -46,6 +46,15 @@ header .top .top-left i{
 
 header .top .top-left img{
   height: 60px;
+}
+
+header .top .top-left a{
+  display: flex;
+  justify-content: center;
+}
+
+header .top .top-left .logo-text{
+  display: none;
 }
 
 header .top .top-right{
@@ -118,7 +127,13 @@ nav{
 
 /* Vista tablet */
 @media (min-width: 481px) {
-  
+  header .top .top-left .logo-text{
+    width: 100%;
+    display: flex;
+    flex-flow: wrap column;
+    justify-content: center;
+    font-weight: bold;
+  }
 }
 
 
