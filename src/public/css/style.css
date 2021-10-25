@@ -68,6 +68,10 @@ header .top .top-right .button{
   border-radius: 10px;
 }
 
+header .top .top-center{
+  display: none;
+}
+
 header form{
   width: 100%;
   text-align: center;
@@ -98,12 +102,6 @@ header form button{
   right: 10px;
 }
 
-header nav ul{
-  display: flex;
-  justify-content: center;
-  padding: 10px;
-}
-
 ul{
   list-style: none;
 }
@@ -126,7 +124,30 @@ nav{
 
 /* Vista laptop */
 @media (min-width: 769px) {
-  
+  header .top .top-left i{
+    display: none;
+  }
+
+  header .search{
+    display: none;
+  }
+
+  header .top .top-center{
+    display: flex;
+    align-content: center;
+    flex-grow: 4;
+  }
+
+  nav{
+    display: flex;
+    align-self: center;
+  }
+
+  header nav ul{
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+  }
 }
 
 
