@@ -13,9 +13,12 @@ body{
 }
 
 header{
+  width: 100%;
   display: flex;
   flex-flow: wrap column;
   background-color: #3D56B2;
+
+  position: fixed;
 }
 
 header .top{
@@ -41,7 +44,7 @@ header .top .top-left i{
   border: 1px solid #ebebeb;
   border-radius: 20%;
 
-  font-size: 1.5em;
+  font-size: 24px;
 }
 
 header .top .top-left img{
@@ -127,6 +130,10 @@ nav{
 
 /* Vista tablet */
 @media (min-width: 481px) {
+  body{
+    font-size: 16px;
+  }
+
   header .top .top-left .logo-text{
     width: 100%;
     display: flex;
