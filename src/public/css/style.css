@@ -206,9 +206,11 @@ main{
 }
 
 footer{
-  background-color: #3D56B2;
+  background-color: #3d56b2;
   color: #E6E6E6;
 }
+
+
 
 .footer-art{
   display:flex;
@@ -257,6 +259,22 @@ footer{
   padding-top: 10px;
 }
 
+.contenedor1, .contenedor2{
+  display: flex;
+  justify-content: center;
+}
+
+.truckie{
+  background-color: white;
+  color: #39b54a;
+  text-align: left;
+  position: relative;
+  max-width:2px;
+  left: 85%;
+  bottom: 30px;
+  width: 100%;
+}
+
 /* Vista tablet */
 @media (min-width: 481px) {
   body{
@@ -264,8 +282,10 @@ footer{
   }
 
   article{
-    max-width: 50%;
+    max-width: 90%;
     padding: 10px;
+    text-align: center;
+    border-radius: 5px;
   }
 
   header .top .top-left .logo-text{
