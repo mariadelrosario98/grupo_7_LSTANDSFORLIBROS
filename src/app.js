@@ -1,7 +1,7 @@
 const express = require("express")
 const app = express()
 const path = require("path")
-const rutas = require("./routes/home.routes")
+const rutas = require("./routes/home.routes.js")
 
 let port = process.env.PORT || 3000
 
