@@ -1,1 +1,85 @@
-Esto es registro
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Formulario Registro L STAND FOR LIBROS</title>
+</head>
+
+<body>
+    <header>
+        <div class="top">
+          <div class="top-left">
+            <div class="burger-menu">
+              <i class="fas fa-bars"></i>
+            </div>
+            
+            <a href="/" class="logo">
+              <img src="./img/logo.png" alt="">
+    
+              <div class="logo-text">
+                <p>L STANDS</p>
+                <p>FOR LIBROS</p>
+              </div>
+            </a>
+          </div>
+    
+          <div class="top-center">
+            <form action="search" method="post">
+              <input type="text" name="search" id="search" placeholder="Busca tus libros">
+        
+              <button type="submit">
+                <i class="fas fa-search"></i>
+              </button>
+            </form>
+          </div>
+    
+          <div class="top-right">
+            <a href="#">
+              <i class="fas fa-shopping-cart"></i>
+            </a>
+    
+            <a href="#" class="button">Ingresa</a>
+    
+            <a href="#" class="button">Regístrate</a>
+          </div>
+        </div>
+        
+        <form action="search" method="post" class="search">
+          <input type="text" name="search" id="search" placeholder="Busca tus libros">
+    
+          <button type="submit">
+            <i class="fas fa-search"></i>
+          </button>
+        </form>
+    
+        <nav>
+          <ul>
+            <li><a href="#">Categorias</a></li>
+            &nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp
+            <li><a href="#">Ofertas</a></li>
+            &nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp
+            <li><a href="#">Historial</a></li>
+          </ul>
+        </nav>
+    
+      </header>
+      
+    <main>
+        <section class="form-register">
+            <h4>Formulario Registro</h4>
+            <input class="controls"  type="text" name="Nombres" id="Nombres" placeholder="Ingrese su nombre">
+            <input class="controls"  type="text" name="Apellidos" id="Apellidos" placeholder="Ingrese sus apellidos ">
+            <input class="controls"  type="email" name="Correo" id="Correo" placeholder="Ingrese su Correo">
+            <input class="controls"  type="password" name="Contraseña" id="Contraseña" placeholder="Ingrese su Contraseña">
+            <p>Estoy de acuerdo <a href="#">TERMINOS Y CONDICIONES</a></p>
+            <input class="botons" type="submit" value="Registrar">
+            <p><a href="#">¿Ya tengo cuenta?</a></p>
+        </section> 
+    </main>
+      
+
+</body>
+</html>
