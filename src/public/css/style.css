@@ -189,6 +189,36 @@ main{
   margin-top: 110px;
 }
 
+footer{
+  background-color: #3D56B2;
+  color: E6E6E6;
+}
+.footer-art{
+  display:flex;
+}
+.social{
+  max-width: 40vw;
+  display:flex;
+}
+
+.social img{
+  width:20px;
+}
+
+.derecha{
+  padding-left: 30px;
+  padding-top: 10px;
+}
+
+.izquierda{
+  padding-left: 20px;
+  padding-top: 10px; 
+}
+
+.logo-footer{
+  padding-left: 30px;
+  padding-top: 10px;
+}
 
 /* Vista tablet */
 @media (min-width: 481px) {
@@ -204,6 +234,8 @@ main{
     font-weight: bold;
   }
 }
+
+
 
 
 /* Vista laptop */
