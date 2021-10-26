@@ -1,24 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-{
-  font-family:'Open Sans', sans-serif;
-
+body {
+  font-family: 'Open Sans', sans-serif;
 }
 
 
-.form-register{
+.form-register {
   width: 400px;
   background: #3D56B2;
   padding: 30px;
   margin: 50px auto;
   border-radius: 4px;
-  font-family:'Open Sans', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   color: #E6E6E6;
   box-shadow: 7px 13px 37px #000;
 }
@@ -40,9 +39,9 @@
 }
 
 .form-register p {
-   height: 40px;
-   text-align:center;
-   font-size: 18px;
+  height: 40px;
+  text-align: center;
+  font-size: 18px;
 }
 
 /* .form-register a {
@@ -62,27 +61,27 @@ text-decoration: none;
   padding: 12px;
   color: #14279B;
   font-weight: bold;
-  margin:16px 0;
-  font-size:16px
+  margin: 16px 0;
+  font-size: 16px
 }
 
-.product{
+.product {
   border: 1px solid #ebebeb;
   width: 90%;
   border-radius: 5px;
 }
 
-.descrip{
+.descrip {
   text-align: justify;
   text-justify: inter-word;
 }
 
-img{
+img {
   width: 100%;
   height: auto;
 }
 
-body{
+body {
   font-family: 'Open Sans', sans-serif;
   font-size: 12px;
 
@@ -90,7 +89,7 @@ body{
   flex-flow: wrap column;
 }
 
-header{
+header {
   width: 100%;
   display: flex;
   flex-flow: wrap column;
@@ -101,20 +100,20 @@ header{
   position: fixed;
 }
 
-header .top{
+header .top {
   display: flex;
   justify-content: space-between;
 
   border-bottom: 1px solid #eee;
 }
 
-header .top .top-left{
+header .top .top-left {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-header .top .top-left i{
+header .top .top-left i {
   display: inline-flex;
   justify-content: center;
   align-content: center;
@@ -127,32 +126,32 @@ header .top .top-left i{
   font-size: 24px;
 }
 
-header .top .top-left img{
+header .top .top-left img {
   height: 60px;
 }
 
-header .top .top-left a{
+header .top .top-left a {
   display: flex;
   justify-content: center;
 }
 
-header .top .top-left .logo-text{
+header .top .top-left .logo-text {
   display: none;
 }
 
-header .top .top-right{
+header .top .top-right {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-header .top .top-right i{
+header .top .top-right i {
   font-size: 2em;
   margin-right: 15px;
 
 }
 
-header .top .top-right .button{
+header .top .top-right .button {
   background-color: #5C7AEA;
   padding: 10px;
   margin-right: 10px;
@@ -160,11 +159,11 @@ header .top .top-right .button{
   border-radius: 10px;
 }
 
-header .top .top-center{
+header .top .top-center {
   display: none;
 }
 
-header form{
+header form {
   width: 100%;
   text-align: center;
   padding: 10px 0;
@@ -173,7 +172,7 @@ header form{
   justify-content: center;
 }
 
-header form input{
+header form input {
   width: 80%;
   padding: 5px 10px;
   border: none;
@@ -183,7 +182,7 @@ header form input{
   left: 10px;
 }
 
-header form button{
+header form button {
   padding: 5px 10px;
   border: none;
   border-radius: 10px;
@@ -194,61 +193,61 @@ header form button{
   right: 10px;
 }
 
-ul{
+ul {
   list-style: none;
 }
 
-a{
+a {
   text-decoration: none;
   color: inherit;
 }
 
-nav{
+nav {
   display: none;
 }
 
-main{
-  margin-top: 110px;
+main {
+  margin-top: 140px;
 }
 
-footer{
+footer {
   background-color: #3d56b2;
   color: #E6E6E6;
 }
 
 
 
-.footer-art{
-  display:flex;
+.footer-art {
+  display: flex;
   justify-content: space-around;
 }
 
-.social{
+.social {
   max-width: 40vw;
-  display:flex;
+  display: flex;
   justify-content: center;
 }
 
-.social img{
-  width:20px;
+.social img {
+  width: 20px;
 }
 
-.derecha{
+.derecha {
   padding-left: 30px;
   padding-top: 10px;
 }
 
-.izquierda{
+.izquierda {
   padding-left: 20px;
-  padding-top: 10px; 
+  padding-top: 10px;
 }
 
-.logo-footer{
+.logo-footer {
   padding-left: 30px;
   padding-top: 10px;
 }
 
-.dot{
+.dot {
   height: 25px;
   width: 25px;
   background-color: #bbb;
@@ -257,25 +256,27 @@ footer{
   border: 10px;
 }
 
-.hecho{
+.hecho {
   padding-top: 10px;
 }
 
-.cuadrito{
+.cuadrito {
   padding-top: 10px;
 }
 
-.contenedor1, .contenedor2{
+.contenedor1,
+.contenedor2 {
   display: flex;
   justify-content: center;
+  width: 100%;
 }
 
-.truckie{
+.truckie {
   background-color: white;
   color: #39b54a;
   text-align: left;
   position: relative;
-  max-width:2px;
+  max-width: 2px;
   left: 85%;
   bottom: 30px;
   width: 100%;
@@ -283,18 +284,18 @@ footer{
 
 /* Vista tablet */
 @media (min-width: 481px) {
-  body{
+  body {
     font-size: 16px;
   }
 
-  article{
-    max-width: 90%;
+  article {
+    max-width: 40%;
     padding: 10px;
     text-align: center;
     border-radius: 5px;
   }
 
-  header .top .top-left .logo-text{
+  header .top .top-left .logo-text {
     width: 100%;
     display: flex;
     flex-flow: wrap column;
@@ -302,11 +303,12 @@ footer{
     font-weight: bold;
   }
 
-  .product{
+  /* .product{
     box-shadow: 0px 0px 10px rgb (100,100,100);
-  }
+  } */
 
-  .contenedor1, .contenedor2{
+  .contenedor1,
+  .contenedor2 {
     display: flex;
     flex-wrap: wrap;
   }
@@ -317,32 +319,32 @@ footer{
 
 /* Vista laptop */
 @media (min-width: 769px) {
-  header .top .top-left i{
+  header .top .top-left i {
     display: none;
   }
 
-  header .search{
+  header .search {
     display: none;
   }
 
-  header .top .top-center{
+  header .top .top-center {
     display: flex;
     align-content: center;
     flex-grow: 4;
   }
 
-  nav{
+  nav {
     display: flex;
     align-self: center;
   }
 
-  header nav ul{
+  header nav ul {
     display: flex;
     justify-content: space-around;
     padding: 10px;
   }
 
-  article{
+  article {
     max-width: 25%;
     padding: 10px;
   }
@@ -351,92 +353,93 @@ footer{
 
 /* Vista escritorio */
 @media (min-width: 1280px) {
-  
-}
 
-body {
-  margin: 0;
-  padding: 0;
-  background: url(../img/bg.jpeg) no-repeat center top;
-  background-size: cover;
-  font-family:'Open Sans', sans-serif;
-  height: 100vh;
-}
+  body {
+    margin: 0;
+    padding: 0;
+    background: url(../img/bg.jpeg) no-repeat center top;
+    background-size: cover;
+    font-family: 'Open Sans', sans-serif;
+    height: 100vh;
+  }
 
-.login-box {
-  width: 320px;
-  height: 420px;
-  background:#14279B;
-  color: #E6E6E6;
-  top: 50%;
-  left: 50%;
-  position: absolute;
-  transform: translate(-50%, -50%);
-  box-sizing: border-box;
-  padding: 70px 30px;
-}
+  .login-box {
+    width: 320px;
+    height: 420px;
+    background: #14279B;
+    color: #E6E6E6;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+  }
 
-.login-box .avatar {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  position: absolute;
-  top: -50px;
-  left: calc(50% - 50px);
-}
+  .login-box .avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    top: -50px;
+    left: calc(50% - 50px);
+  }
 
-.login-box h1 {
-  margin: 0;
-  padding: 0 0 20px;
-  text-align: center;
-  font-size: 22px;
-}
+  .login-box h1 {
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 22px;
+  }
 
-.login-box label {
-  margin: 0;
-  padding: 0;
-  font-weight:'Open Sans', sans-serif;
-  display: block;
-}
+  .login-box label {
+    margin: 0;
+    padding: 0;
+    font-weight: 'Open Sans', sans-serif;
+    display: block;
+  }
 
-.login-box input {
-  width: 100%;
-  margin-bottom: 20px;
-}
+  .login-box input {
+    width: 100%;
+    margin-bottom: 20px;
+  }
 
-.login-box input[type="text"], .login-box input[type="password"] {
-  border: none;
-  border-bottom: 1px solid #fff;
-  background: transparent;
-  outline: none;
-  height: 40px;
-  color: #fff;
-  font-size: 16px;
-}
+  .login-box input[type="text"],
+  .login-box input[type="password"] {
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+  }
 
-.login-box input[type="submit"] {
-  border: none;
-  outline: none;
-  height: 40px;
-  background: #b80f22;
-  color: #fff;
-  font-size: 18px;
-  border-radius: 20px;
-}
+  .login-box input[type="submit"] {
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #b80f22;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+  }
 
-.login-box input[type="submit"]:hover {
-  cursor: pointer;
-  background: #ffc107;
-  color: #000;
-}
+  .login-box input[type="submit"]:hover {
+    cursor: pointer;
+    background: #ffc107;
+    color: #000;
+  }
 
-.login-box a {
-  text-decoration: none;
-  font-size: 12px;
-  line-height: 20px;
-  color: rgb(241, 203, 203);
-}
+  .login-box a {
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 20px;
+    color: rgb(241, 203, 203);
+  }
 
-.login-box a:hover {
-  color: rgb(131, 29, 29);
+  .login-box a:hover {
+    color: rgb(131, 29, 29);
+  }
+
 }

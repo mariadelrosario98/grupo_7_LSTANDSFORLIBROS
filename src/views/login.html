@@ -1,10 +1,17 @@
 <!DOCTYPE html>
 <html>
+
   <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Form L STAND FOR LIBROS</title>
-    <link rel="stylesheet" href="/css/style.css">
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css">
   </head>
+
   <body>
 
     <header>
@@ -13,46 +20,46 @@
           <div class="burger-menu">
             <i class="fas fa-bars"></i>
           </div>
-          
+
           <a href="/" class="logo">
             <img src="./img/logo.png" alt="">
-  
+
             <div class="logo-text">
-              <p>L STANDS</p>
-              <p>FOR LIBROS</p>
+              <p>L&nbspSTANDS</p>
+              <p>FOR&nbspLIBROS</p>
             </div>
           </a>
         </div>
-  
+
         <div class="top-center">
           <form action="search" method="post">
             <input type="text" name="search" id="search" placeholder="Busca tus libros">
-      
+
             <button type="submit">
               <i class="fas fa-search"></i>
             </button>
           </form>
         </div>
-  
+
         <div class="top-right">
           <a href="#">
             <i class="fas fa-shopping-cart"></i>
           </a>
-  
-          <a href="#" class="button">Ingresa</a>
-  
-          <a href="#" class="button">Regístrate</a>
+
+          <a href="/login" class="button">Ingresa</a>
+
+          <a href="/register" class="button">Regístrate</a>
         </div>
       </div>
-      
+
       <form action="search" method="post" class="search">
         <input type="text" name="search" id="search" placeholder="Busca tus libros">
-  
+
         <button type="submit">
           <i class="fas fa-search"></i>
         </button>
       </form>
-  
+
       <nav>
         <ul>
           <li><a href="#">Categorias</a></li>
@@ -62,7 +69,7 @@
           <li><a href="#">Historial</a></li>
         </ul>
       </nav>
-  
+
     </header>
 
     <div class="login-box">
@@ -81,4 +88,5 @@
       </form>
     </div>
   </body>
+
 </html>
