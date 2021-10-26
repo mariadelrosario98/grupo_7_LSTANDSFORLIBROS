@@ -6,13 +6,72 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Detalle del producto</title>
-    
+
         <link rel="stylesheet" href="css/normalize.css">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
         <link rel="stylesheet" href="css/style.css">
     </head>
 
     <body>
+
+        <header>
+            <div class="top">
+                <div class="top-left">
+                    <div class="burger-menu">
+                        <i class="fas fa-bars"></i>
+                    </div>
+
+                    <a href="/" class="logo">
+                        <img src="./img/logo.png" alt="">
+
+                        <div class="logo-text">
+                            <p>L STANDS</p>
+                            <p>FOR LIBROS</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="top-center">
+                    <form action="search" method="post">
+                        <input type="text" name="search" id="search" placeholder="Busca tus libros">
+
+                        <button type="submit">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </form>
+                </div>
+
+                <div class="top-right">
+                    <a href="#">
+                        <i class="fas fa-shopping-cart"></i>
+                    </a>
+
+                    <a href="/login" class="button">Ingresa</a>
+
+                    <a href="/register" class="button">Regístrate</a>
+                </div>
+            </div>
+
+            <form action="search" method="post" class="search">
+                <input type="text" name="search" id="search" placeholder="Busca tus libros">
+
+                <button type="submit">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
+
+            <nav>
+                <ul>
+                    <li><a href="#">Categorias</a></li>
+                    &nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp
+                    <li><a href="#">Ofertas</a></li>
+                    &nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp
+                    <li><a href="#">Historial</a></li>
+                </ul>
+            </nav>
+
+        </header>
+
         <div class="small-container single-product">
         </div class="row">
         </div class="col-2">
@@ -49,6 +108,19 @@
         </div>
         </div>
         </div>
+        </div class="col-2">
+        <p>home / Book </p>
+        <h1>Books</h1>
+        <h4> $50.000 40% OFF </h4>
+        <select>
+            <option>selecciona cantidad</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+        </select>
+        <input type="number" value="1">
+        <a href="" class="btn">agregar al carrito</a>
+        <h3> Detalle del producto<i class="fa  fa-indent"></i></h3>
         </div>
         </div>
     </body>
