@@ -8,13 +8,12 @@
 
 .form-register{
   width: 400px;
-  background: #E6E6E6;
+  background: #3D56B2;
   padding: 30px;
-  margin: auto;
-  margin-top: 100px;
+  margin: 50px auto;
   border-radius: 4px;
   font-family:'Open Sans', sans-serif;
-  color: white;
+  color: #E6E6E6;
   box-shadow: 7px 13px 37px #000;
 }
 
@@ -25,40 +24,41 @@
 
 .controls {
   width: 100%;
-  background: #3D56B2;
+  background-color: #E6E6E6;
   padding: 10px;
   border-radius: 4px;
   margin-bottom: 16px;
   border: 1px solid #14279B;
   font-family: 'Open Sans', sans-serif;
   font-size: 18px;
+}
 
 .form-register p {
    height: 40px;
    text-align:center;
    font-size: 18px;
-  }
+}
 
-.form-register a {
+/* .form-register a {
 color: white;
 text-decoration: none;
-}
+} */
 
 .form-register a:hover {
   color: white;
   text-decoration: underline;
+}
 
-  .form-register .botons; {
-    width: 100%;
-    background:#E6E6E6;
-    boder: none;
-    padding: 12px;
-    color:white;
-    margin:16px 0;
-    font-size:16px
-    }
-  
-  }
+.form-register .botons {
+  width: 100%;
+  background: #E6E6E6;
+  border: none;
+  padding: 12px;
+  color: #14279B;
+  font-weight: bold;
+  margin:16px 0;
+  font-size:16px
+}
 
 body{
   font-family: 'Open Sans', sans-serif;
@@ -191,7 +191,7 @@ main{
 
 footer{
   background-color: #3D56B2;
-  color: E6E6E6;
+  color: #E6E6E6;
 }
 .footer-art{
   display:flex;
