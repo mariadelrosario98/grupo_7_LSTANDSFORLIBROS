@@ -195,6 +195,7 @@ footer{
 }
 .footer-art{
   display:flex;
+  justify-content: space-around;
 }
 .social{
   max-width: 40vw;
