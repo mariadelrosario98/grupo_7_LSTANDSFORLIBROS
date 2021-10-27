@@ -8,6 +8,7 @@
 
 body {
   font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
 }
 
 .small-container {
@@ -98,11 +99,14 @@ img {
   height: auto;
 }
 
+<<<<<<< HEAD
 body {
   font-family: 'Open Sans', sans-serif;
   font-size: 12px;
 }
 
+=======
+>>>>>>> b11a182073d9b477e80d24dabede45b0630796ad
 header {
   width: 100%;
   display: flex;
@@ -119,7 +123,7 @@ header .top {
   display: flex;
   justify-content: space-between;
 
-  
+
   border-bottom: 1px solid #eee;
 }
 
@@ -363,21 +367,14 @@ footer {
 
 
 /* Vista escritorio */
-@media (min-width: 1280px) {}
-
-body {
-  margin: 0;
-  padding: 0;
-  background: url(../img/bg.jpeg) no-repeat center top;
-  background-size: cover;
-  font-family: 'Open Sans', sans-serif;
-  height: 100vh;
+@media (min-width: 1280px) {
+  
 }
 
 .login-box {
   width: 320px;
   height: 420px;
-  background: #14279B;
+  background: #3D56B2;
   color: #E6E6E6;
   box-sizing: border-box;
   margin: auto;
