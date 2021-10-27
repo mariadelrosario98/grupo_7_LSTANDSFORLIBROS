@@ -234,13 +234,6 @@ footer {
   color: #E6E6E6;
 }
 
-
-
-.footer-art {
-  display: flex;
-  justify-content: space-around;
-}
-
 .social {
   max-width: 40vw;
   display: flex;
