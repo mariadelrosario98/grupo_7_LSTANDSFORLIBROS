@@ -11,102 +11,11 @@ body {
   font-size: 12px;
 }
 
-.small-container {
-  max-width: 1000px;
-  margin: auto;
-  padding-left: 25px;
-  padding-right: 20px;
-}
-
-.row {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-
-.single-product {
-  margin-top: 80px;
-}
-
-.form-register {
-  width: 400px;
-  background: #3D56B2;
-  padding: 30px;
-  margin: 50px auto;
-  border-radius: 4px;
-  font-family: 'Open Sans', sans-serif;
-  color: #E6E6E6;
-  box-shadow: 7px 13px 37px #000;
-}
-
-.form-register h4 {
-  font-size: 22 px;
-  margin-bottom: 20px;
-}
-
-.controls {
-  width: 100%;
-  background-color: #E6E6E6;
-  padding: 10px;
-  border-radius: 4px;
-  margin-bottom: 16px;
-  border: 1px solid #14279B;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 18px;
-}
-
-.form-register p {
-  height: 40px;
-  text-align: center;
-  font-size: 18px;
-}
-
-/* .form-register a {
-color: white;
-text-decoration: none;
-} */
-
-.form-register a:hover {
-  color: white;
-  text-decoration: underline;
-}
-
-.form-register .botons {
-  width: 100%;
-  background: #E6E6E6;
-  border: none;
-  padding: 12px;
-  color: #14279B;
-  font-weight: bold;
-  margin: 16px 0;
-  font-size: 16px
-}
-
-.product {
-  border: 1px solid #ebebeb;
-  width: 90%;
-  border-radius: 5px;
-}
-
-.descrip {
-  text-align: justify;
-  text-justify: inter-word;
-}
-
 img {
   width: 100%;
   height: auto;
 }
 
-<<<<<<< HEAD
-body {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 12px;
-}
-
-=======
->>>>>>> b11a182073d9b477e80d24dabede45b0630796ad
 header {
   width: 100%;
   display: flex;
@@ -186,23 +95,25 @@ header .top .top-center {
 header form {
   width: 100%;
   text-align: center;
-  padding: 10px 0;
+  padding: 10px 20px;
 
   display: flex;
   justify-content: center;
 }
 
 header form input {
-  width: 80%;
+  width: 100%;
   padding: 5px 10px;
   border: none;
   border-radius: 10px;
+  outline: none;
 
   position: relative;
   left: 10px;
 }
 
 header form button {
+  width: 10%;
   padding: 5px 10px;
   border: none;
   border-radius: 10px;
@@ -210,7 +121,7 @@ header form button {
   background-color: white;
 
   position: relative;
-  right: 10px;
+  right: 5%;
 }
 
 ul {
@@ -295,6 +206,89 @@ footer {
   left: 85%;
   bottom: 30px;
   width: 100%;
+}
+
+.small-container {
+  max-width: 1000px;
+  margin: auto;
+  padding-left: 25px;
+  padding-right: 20px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.single-product {
+  margin-top: 80px;
+}
+
+.form-register {
+  width: 400px;
+  background: #3D56B2;
+  padding: 30px;
+  margin: 50px auto;
+  border-radius: 4px;
+  font-family: 'Open Sans', sans-serif;
+  color: #E6E6E6;
+  box-shadow: 7px 13px 37px #000;
+}
+
+.form-register h4 {
+  font-size: 22 px;
+  margin-bottom: 20px;
+}
+
+.controls {
+  width: 100%;
+  background-color: #E6E6E6;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  border: 1px solid #14279B;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+}
+
+.form-register p {
+  height: 40px;
+  text-align: center;
+  font-size: 18px;
+}
+
+/* .form-register a {
+color: white;
+text-decoration: none;
+} */
+
+.form-register a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+.form-register .botons {
+  width: 100%;
+  background: #E6E6E6;
+  border: none;
+  padding: 12px;
+  color: #14279B;
+  font-weight: bold;
+  margin: 16px 0;
+  font-size: 16px
+}
+
+.product {
+  border: 1px solid #ebebeb;
+  width: 90%;
+  border-radius: 5px;
+}
+
+.descrip {
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 /* Vista tablet */
@@ -409,15 +403,19 @@ footer {
   margin-bottom: 20px;
 }
 
-.login-box input[type="text"],
-.login-box input[type="password"] {
+.login-box__input{
   border: none;
-  border-bottom: 1px solid #fff;
   background: transparent;
   outline: none;
+  border-bottom: 1px solid #aaa;
   height: 40px;
   color: #fff;
   font-size: 16px;
+  transition: all 0.2s;
+}
+
+.login-box__input:focus {
+  border-bottom: 1px solid #fff;
 }
 
 .login-box input[type="submit"] {
@@ -432,8 +430,8 @@ footer {
 
 .login-box input[type="submit"]:hover {
   cursor: pointer;
-  background: #ffc107;
-  color: #000;
+  background: #ebebeb;
+  color: #14279B;
 }
 
 .login-box a {
