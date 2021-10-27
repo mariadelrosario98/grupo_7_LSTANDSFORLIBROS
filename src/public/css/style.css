@@ -28,8 +28,6 @@ body {
   margin-top: 80px;
 }
 
-
-
 .form-register {
   width: 400px;
   background: #3D56B2;
@@ -124,6 +122,7 @@ header .top {
   display: flex;
   justify-content: space-between;
 
+  
   border-bottom: 1px solid #eee;
 }
 
@@ -235,13 +234,6 @@ main {
 footer {
   background-color: #3d56b2;
   color: #E6E6E6;
-}
-
-
-
-.footer-art {
-  display: flex;
-  justify-content: space-around;
 }
 
 .social {
