@@ -101,9 +101,6 @@ img {
 body {
   font-family: 'Open Sans', sans-serif;
   font-size: 12px;
-
-  display: flex;
-  flex-flow: wrap column;
 }
 
 header {
