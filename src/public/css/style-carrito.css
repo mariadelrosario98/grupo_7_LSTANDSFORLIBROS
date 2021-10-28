@@ -7,7 +7,7 @@
   flex-flow: wrap column;
 
   font-size: 12px;
-  width: 80%;
+  width: 90%;
   margin: auto;
   margin-bottom: 25px;
   padding: 20px;
@@ -24,7 +24,7 @@
 }
 
 .articulo--top--img{
-  width: 30%;
+  width: auto;
 }
 
 .articulo--top--info{

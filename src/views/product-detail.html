@@ -1,130 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Detalle del producto</title>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle del producto</title>
 
-        <link rel="stylesheet" href="css/normalize.css">
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
-        <link rel="stylesheet" href="css/style.css">
-    </head>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style-carrito.css">
+  </head>
 
-    <body>
+  <body>
 
-        <header>
-            <div class="top">
-                <div class="top-left">
-                    <div class="burger-menu">
-                        <i class="fas fa-bars"></i>
-                    </div>
+    <header>
+      <div class="top">
+        <div class="top-left">
+          <div class="burger-menu">
+            <i class="fas fa-bars"></i>
+          </div>
 
-                    <a href="/" class="logo">
-                        <img src="./img/logo.png" alt="">
+          <a href="/" class="logo">
+            <img src="./img/logo.png" alt="">
 
-                        <div class="logo-text">
-                            <p>L&nbspSTANDS</p>
-                            <p>FOR&nbspLIBROS</p>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="top-center">
-                    <form action="search" method="post">
-                        <input type="text" name="search" id="search" placeholder="Busca tus libros">
-
-                        <button type="submit">
-                            <i class="fas fa-search"></i>
-                        </button>
-                    </form>
-                </div>
-
-                <div class="top-right">
-                    <a href="#">
-                        <i class="fas fa-shopping-cart"></i>
-                    </a>
-
-                    <a href="/login" class="button">Ingresa</a>
-
-                    <a href="/register" class="button">Regístrate</a>
-                </div>
+            <div class="logo-text">
+              <p>L&nbspSTANDS</p>
+              <p>FOR&nbspLIBROS</p>
             </div>
+          </a>
+        </div>
 
-            <form action="search" method="post" class="search">
-                <input type="text" name="search" id="search" placeholder="Busca tus libros">
+        <div class="top-center">
+          <form action="search" method="post">
+            <input type="text" name="search" id="search" placeholder="Busca tus libros">
 
-                <button type="submit">
-                    <i class="fas fa-search"></i>
-                </button>
-            </form>
+            <button type="submit">
+              <i class="fas fa-search"></i>
+            </button>
+          </form>
+        </div>
 
-            <nav>
-                <ul>
-                    <li><a href="#">Categorias</a></li>
-                    &nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp
-                    <li><a href="#">Ofertas</a></li>
-                    &nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp
-                    <li><a href="#">Historial</a></li>
-                </ul>
-            </nav>
+        <div class="top-right">
+          <a href="/product-cart">
+            <i class="fas fa-shopping-cart"></i>
+          </a>
 
-        </header>
+          <a href="/login" class="button">Ingresa</a>
 
+          <a href="/register" class="button">Regístrate</a>
+        </div>
+      </div>
+
+      <form action="search" method="post" class="search">
+        <input type="text" name="search" id="search" placeholder="Busca tus libros">
+
+        <button type="submit">
+          <i class="fas fa-search"></i>
+        </button>
+      </form>
+
+      <nav>
+        <ul>
+          <li><a href="#">Categorias</a></li>
+          &nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp
+          <li><a href="#">Ofertas</a></li>
+          &nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp
+          <li><a href="#">Historial</a></li>
+        </ul>
+      </nav>
+
+    </header>
+
+    <main>
+      <h1>
+        Detalle del producto
+      </h1>
+
+      <section>
         <article class="articulo">
-            <div class="articulo--top">
-              <img src="./img/american_marxism.png" alt="" class="articulo--top--img">
-              <div class="articulo--top--info">
-                <p><b>American Marxism</b></p>
-                <p><b>Autor:</b> Mark R. Levin</p>
-                <p><b>ISBN:</b> 9781501135972</p>
-                <p><b>Tipo:</b> Libro</p>
-                <p class="articulo--desc laptop">
-                    The seven-time #1 New York Times bestselling author, Fox News star, and radio host Mark
-                    R. Levin explains how the dangers he warned against in the “timely yet timeless” (David Limbaugh, author
-                    of Jesus Is Risen) bestseller Liberty and Tyranny have come to pass.
-                </p>
-              </div>
-            </div>
+          <div class="articulo--top">
+            <img src="./img/american_marxism.png" alt="" class="articulo--top--img">
+            <div class="articulo--top--info">
+              <p><b>American Marxism</b></p>
+              <p><b>Autor:</b> Mark R. Levin</p>
+              <p><b>ISBN:</b> 9781501135972</p>
+              <p><b>Tipo:</b> Libro</p>
 
-            <div class="articulo--bottom">
-              <p class="articulo--bottom--cost">
-                <b>Costo unitario:</b> $ 35.000
-              </p>
-              <p class="articulo--bottom--remove">
-                <i class="fas fa-times"></i>
+              <p class="articulo--desc laptop">
+            The seven-time #1 New York Times bestselling author, Fox News star, and radio host Mark
+              R. Levin explains how the dangers he warned against in the “timely yet timeless” (David Limbaugh, author
+              of Jesus Is Risen) bestseller Liberty and Tyranny have come to pass.
               </p>
             </div>
-          </article>
 
-          <footer>
-            <section class="footer-art">
-              <div><img src="./img/logo.png" alt="" class="logo-footer"></div>
-              <div class="derecha">
-                <div class="icon"><i class="fas fa-store-alt"></i></div>
-                <p><strong>Tienda física</strong></p>
-                <p>Calle 65 No 58c-79 Local 204</p>
-                <div class="hecho">
-                  Hecho con ❤️ por Proyecto 7
-                </div>
-              </div>
-      
-              <div class="izquierda">
-                <div class="icon"><i class="fas fa-phone-alt"></i></div>
-                <p><strong>Teléfono</strong></p>
-                <p>601-7658531</p>
-                <div class="cuadrito">
-                  <p><strong>Redes Sociales</strong></p>
-                </div>
-                <div class="social">
-                  <a href="https://twitter.com/" class="social-link-twitter"><span class="dot"></span></a>
-                  <a href="https://facebook.com/" class="social-link-facebook"><span class="dot"></span></a>
-                  <a href="https://instagram.com/" class="social-link-instagram"><span class="dot"></span></a>
-                </div>
-              </div>
-            </section>
-          </footer>
-    </body>
+            
+    </main>
+
+    <footer>
+      <section class="footer-art">
+        <div class="izquierda">
+          <div class="icon"><i class="fas fa-phone-alt"></i></div>
+          <p><strong>Teléfono</strong></p>
+          <p>601-7658531</p>
+          <div class="cuadrito">
+            <p><strong>Redes Sociales</strong></p>
+          </div>
+          <div class="social">
+            <a href="https://twitter.com/" class="social-link-twitter"><span class="dot"></span></a>
+            <a href="https://facebook.com/" class="social-link-facebook"><span class="dot"></span></a>
+            <a href="https://instagram.com/" class="social-link-instagram"><span class="dot"></span></a>
+          </div>
+        </div>
+
+        <div><img src="./img/logo.png" alt="" class="logo-footer"></div>
+
+        <div class="derecha">
+          <div class="icon"><i class="fas fa-store-alt"></i></div>
+          <p><strong>Tienda física</strong></p>
+          <p>Calle 65 No 58c-79 Local 204</p>
+          <div class="hecho">
+            Hecho con ❤️ por Proyecto 7
+          </div>
+        </div>
+      </section>
+    </footer>
+  </body>
 
 </html>
