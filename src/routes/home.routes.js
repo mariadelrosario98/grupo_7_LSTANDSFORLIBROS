@@ -1,4 +1,3 @@
-const { Router } = require("express")
 const express = require("express")
 const router = express.Router()
 
@@ -10,13 +9,13 @@ router.get("/", (req, res) => {
 })
 
 //Detalles de producto (éste supongo que habrá que cambiarlo en el futuro)
-router.get("/productDetail", (req, res) => {
-  res.sendFile(path.join(__dirname, "../views/productDetail.html"))
+router.get("/product-detail", (req, res) => {
+  res.sendFile(path.join(__dirname, "../views/product-detail.html"))
 })
 
 //Carrito de compra
-router.get("/productCart", (req, res) => {
-  res.sendFile(path.join(__dirname, "../views/productCart.html"))
+router.get("/product-cart", (req, res) => {
+  res.sendFile(path.join(__dirname, "../views/product-cart.html"))
 })
 
 //Inicio de sesión
