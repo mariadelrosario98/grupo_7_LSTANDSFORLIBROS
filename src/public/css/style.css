@@ -295,6 +295,21 @@ text-decoration: none;
 .descrip {
   text-align: justify;
   text-justify: inter-word;
+  padding: 30px;
+}
+
+.details{
+  background-color: #5C7AEA;
+  border-radius: 5px;
+  color: white;
+  max-width: 50%;
+  margin:auto;
+  padding: 10px;
+}
+
+.footer-art{
+  display:flex;
+  justify-content: space-around;
 }
 
 /* Vista tablet */
