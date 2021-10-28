@@ -334,6 +334,20 @@ text-decoration: none;
   justify-content:space-evenly;
 }
 
+.articulo--top--img{
+  max-width: 50%;
+
+}
+
+.articulo{
+ border-radius: 5px;
+ border: solid 1px black;
+ max-width: 30%;
+ margin: auto;
+ display: flex;
+}
+
+
 /* Vista tablet */
 @media (min-width: 481px) {
   header .top .top-right .button {
