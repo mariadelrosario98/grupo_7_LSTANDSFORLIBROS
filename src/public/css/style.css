@@ -301,6 +301,11 @@ text-decoration: none;
   padding: 10px;
 }
 
+.footer-art{
+  display:flex;
+  justify-content: space-around;
+}
+
 /* Vista tablet */
 @media (min-width: 481px) {
   body {
