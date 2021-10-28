@@ -179,13 +179,13 @@ footer {
 }
 
 .derecha {
-  padding-left: 30px;
-  padding-top: 10px;
+  padding: 20px;
+  text-align: center;
 }
 
 .izquierda {
-  padding-left: 20px;
-  padding-top: 10px;
+  padding: 20px;
+  text-align: center;
 }
 
 .logo-footer {
@@ -321,7 +321,7 @@ text-decoration: none;
   border-radius: 5px;
   color: white;
   max-width: 50%;
-  margin:auto;
+  margin: 15px auto;
   padding: 10px;
 }
 
@@ -412,7 +412,7 @@ text-decoration: none;
   background: #3D56B2;
   color: #E6E6E6;
   box-sizing: border-box;
-  margin: auto;
+  margin: 10px auto 30px;
   padding: 70px 30px;
 }
 
