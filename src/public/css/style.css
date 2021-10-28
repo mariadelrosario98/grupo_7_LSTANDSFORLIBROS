@@ -291,6 +291,13 @@ text-decoration: none;
   text-justify: inter-word;
 }
 
+.details{
+  background-color: #5C7AEA;
+  border-radius: 5px;
+  color: white;
+  max-width: 50%;
+}
+
 /* Vista tablet */
 @media (min-width: 481px) {
   body {
