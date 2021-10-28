@@ -1,1 +1,204 @@
-Esto es el carrito
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de compras</title>
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style-carrito.css">
+  </head>
+
+  <body>
+
+    <header>
+      <div class="top">
+        <div class="top-left">
+          <div class="burger-menu">
+            <i class="fas fa-bars"></i>
+          </div>
+
+          <a href="/" class="logo">
+            <img src="./img/logo.png" alt="">
+
+            <div class="logo-text">
+              <p>L&nbspSTANDS</p>
+              <p>FOR&nbspLIBROS</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="top-center">
+          <form action="search" method="post">
+            <input type="text" name="search" id="search" placeholder="Busca tus libros">
+
+            <button type="submit">
+              <i class="fas fa-search"></i>
+            </button>
+          </form>
+        </div>
+
+        <div class="top-right">
+          <a href="/product-cart">
+            <i class="fas fa-shopping-cart"></i>
+          </a>
+
+          <a href="/login" class="button">Ingresa</a>
+
+          <a href="/register" class="button">Regístrate</a>
+        </div>
+      </div>
+
+      <form action="search" method="post" class="search">
+        <input type="text" name="search" id="search" placeholder="Busca tus libros">
+
+        <button type="submit">
+          <i class="fas fa-search"></i>
+        </button>
+      </form>
+
+      <nav>
+        <ul>
+          <li><a href="#">Categorias</a></li>
+          &nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp
+          <li><a href="#">Ofertas</a></li>
+          &nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp
+          <li><a href="#">Historial</a></li>
+        </ul>
+      </nav>
+
+    </header>
+
+    <main>
+      <h1>
+        Tu carrito de compras
+      </h1>
+
+      <section>
+        <article class="articulo">
+          <div class="articulo--top">
+            <img src="./img/american_marxism.png" alt="" class="articulo--top--img">
+            <div class="articulo--top--info">
+              <p><b>American Marxism</b></p>
+              <p><b>Autor:</b> Mark R. Levin</p>
+              <p><b>ISBN:</b> 9781501135972</p>
+              <p><b>Tipo:</b> Libro</p>
+              <p class="articulo--desc laptop">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et eros iaculis sapien ultrices feugiat et ut
+                neque. Donec convallis.
+              </p>
+            </div>
+          </div>
+          <p class="articulo--desc mobile">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et eros iaculis sapien ultrices feugiat et ut
+            neque. Donec convallis.
+          </p>
+          <div class="articulo--bottom">
+            <select name="cant" class="articulo--bottom--cant" id="cant">
+              <option value="1" selected>1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+              <option value="13">13</option>
+              <option value="14">14</option>
+              <option value="15">15</option>
+              <option value="16">16</option>
+              <option value="17">17</option>
+              <option value="18">18</option>
+              <option value="19">19</option>
+              <option value="20">20</option>
+            </select>
+            <p class="articulo--bottom--cost">
+              <b>Costo unitario:</b> $ 35.000
+            </p>
+            <p class="articulo--bottom--remove">
+              <i class="fas fa-times"></i>
+            </p>
+          </div>
+        </article>
+        <article class="articulo">
+          <div class="articulo--top">
+            <img src="./img/cryinginhmart.jpeg" alt="" class="articulo--top--img">
+            <div class="articulo--top--info">
+              <p><b>Crying in H Mart</b></p>
+              <p><b>Autor:</b> Michelle Zauner</p>
+              <p><b>ISBN:</b> 9780525657743 </p>
+              <p><b>Tipo:</b> Libro</p>
+              <p class="articulo--desc laptop">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et eros iaculis sapien ultrices feugiat et ut
+                neque. Donec convallis.
+              </p>
+            </div>
+          </div>
+          <p class="articulo--desc mobile">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et eros iaculis sapien ultrices feugiat et ut
+            neque. Donec convallis.
+          </p>
+          <div class="articulo--bottom">
+            <select name="cant" class="articulo--bottom--cant" id="cant">
+              <option value="1" selected>1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+              <option value="13">13</option>
+              <option value="14">14</option>
+              <option value="15">15</option>
+              <option value="16">16</option>
+              <option value="17">17</option>
+              <option value="18">18</option>
+              <option value="19">19</option>
+              <option value="20">20</option>
+            </select>
+            <p class="articulo--bottom--cost">
+              <b>Costo unitario:</b> $ 80.000
+            </p>
+            <p class="articulo--bottom--remove">
+              <i class="fas fa-times"></i>
+            </p>
+          </div>
+        </article>
+      </section>
+
+      <section class="costos">
+        <div class="rotulos">
+          <p>Subtotal:</p>
+          <p>Descuento:</p>
+          <p>Total a pagar:</p>
+        </div>
+
+        <div class="valores">
+          <p> $ 115.000</p>
+          <p class="descuento"> - $ 10.000</p>
+          <p> $ 60.000</p>
+        </div>
+      </section>
+
+      <section class="botones">
+        <div class="boton">Buscar mas <br> productos</div>
+        <div class="boton">Finalizar compra</div>
+      </section>
+    </main>
+
+  </body>
+
+</html>

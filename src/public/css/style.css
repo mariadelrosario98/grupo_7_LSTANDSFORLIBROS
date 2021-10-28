@@ -107,21 +107,23 @@ header form input {
   border: none;
   border-radius: 10px;
   outline: none;
+  
+  background-color: #ebebeb;
 
   position: relative;
   left: 10px;
 }
 
 header form button {
-  width: 10%;
+  width: 40px;
   padding: 5px 10px;
   border: none;
   border-radius: 10px;
 
-  background-color: white;
+  background-color: #ebebeb;
 
   position: relative;
-  right: 5%;
+  right: 30px;
 }
 
 ul {
@@ -133,12 +135,16 @@ a {
   color: inherit;
 }
 
+h1 {
+  text-align: center;
+}
+
 nav {
   display: none;
 }
 
 main {
-  padding-top: 140px;
+  padding-top: 120px;
   width: 100%;
   background-color: #E6E6E6;
 }
@@ -297,7 +303,7 @@ text-decoration: none;
     font-size: 16px;
   }
 
-  article {
+  .product {
     max-width: 40%;
     padding: 10px;
     text-align: center;
@@ -353,7 +359,7 @@ text-decoration: none;
     padding: 10px;
   }
 
-  article {
+  .product {
     max-width: 25%;
     padding: 10px;
   }
@@ -361,9 +367,7 @@ text-decoration: none;
 
 
 /* Vista escritorio */
-@media (min-width: 1280px) {
-  
-}
+@media (min-width: 1280px) {}
 
 .login-box {
   width: 320px;
@@ -403,7 +407,7 @@ text-decoration: none;
   margin-bottom: 20px;
 }
 
-.login-box__input{
+.login-box__input {
   border: none;
   background: transparent;
   outline: none;
