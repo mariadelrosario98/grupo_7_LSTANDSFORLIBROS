@@ -1,3 +1,7 @@
+.laptop{
+  display: none;
+}
+
 .libros{
   display: flex;
   flex-wrap: wrap;
@@ -9,8 +13,7 @@
 
   font-size: 12px;
   width: 90%;
-  margin: auto;
-  margin-bottom: 25px;
+  margin: 0 auto 25px;
   padding: 20px;
 
   border: 2px solid #14279B;
@@ -78,6 +81,7 @@
   color: #ebebeb;
   font-weight: bold;
   background-color: red;
+  cursor: pointer;
 }
 
 .costos{
@@ -128,6 +132,7 @@
   color: #ebebeb;
   font-weight: bold;
   background-color: #14279B;
+  cursor: pointer;
 }
 
 @media (min-width: 481px) {
@@ -150,7 +155,19 @@
 }
 
 @media (min-width: 769px) {
+  .laptop{
+    display: flex;
+  }
+
+  .mobile{
+    display: none;
+  }
+}
+
+@media (min-width: 1280px) {
   .libro{
     width: 40%;
   }
 }
+
+
