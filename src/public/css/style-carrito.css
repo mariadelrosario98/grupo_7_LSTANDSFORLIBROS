@@ -6,6 +6,7 @@
   display: flex;
   flex-flow: wrap column;
 
+  font-size: 12px;
   width: 80%;
   margin: auto;
   margin-bottom: 25px;
@@ -78,7 +79,7 @@
 
   width: 80%;
 
-  font-size: 2em;
+  font-size: 5vw;
   font-weight: bold;
   line-height: 2em;
 }
@@ -93,6 +94,8 @@
 }
 
 .botones{
+  font-size: 3vw;
+
   width: 80%;
   display: flex;
 
@@ -100,8 +103,8 @@
 }
 
 .boton{
-  width: 150px;
-  height: 60px;
+  width: 30vw;
+  height: 12vw;
 
   border: 1px solid #14279B;
   border-radius: 10px;
@@ -121,7 +124,9 @@
 }
 
 @media (min-width: 481px) {
-  
+  .articulo{
+    font-size: 16px;
+  }
 }
 
 @media (min-width: 769px) {
