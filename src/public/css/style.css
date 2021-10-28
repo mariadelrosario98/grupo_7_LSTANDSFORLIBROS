@@ -107,7 +107,7 @@ header form input {
   border: none;
   border-radius: 10px;
   outline: none;
-  
+
   background-color: #ebebeb;
 
   position: relative;
@@ -199,6 +199,7 @@ footer {
 .contenedor1,
 .contenedor2 {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   width: 100%;
 }
@@ -288,8 +289,10 @@ text-decoration: none;
 
 .product {
   border: 1px solid #ebebeb;
-  width: 90%;
+  width: 85%;
+  padding: 10px;
   border-radius: 5px;
+  text-align: center;
 }
 
 .descrip {
