@@ -328,7 +328,7 @@ text-decoration: none;
 
 .footer-art{
   display:flex;
-  justify-content:space-evenly;
+  justify-content:space-around;
 }
 
 .articulo--top--img{

@@ -1,5 +1,6 @@
-.laptop{
-  display: none;
+.libros{
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .libro{
@@ -66,7 +67,7 @@
   align-items: center;
   text-align: center;
 
-  width: 40px;
+  min-width: 40px;
   height: 40px;
 
   border: 1px solid red;
@@ -149,11 +150,7 @@
 }
 
 @media (min-width: 769px) {
-  .laptop{
-    display: block;
-  }
-  
-  .mobile{
-    display: none;
+  .libro{
+    width: 40%;
   }
 }
