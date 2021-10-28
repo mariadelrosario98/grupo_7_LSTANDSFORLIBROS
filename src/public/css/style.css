@@ -289,6 +289,7 @@ text-decoration: none;
 .descrip {
   text-align: justify;
   text-justify: inter-word;
+  padding: 30px;
 }
 
 .details{
@@ -296,6 +297,8 @@ text-decoration: none;
   border-radius: 5px;
   color: white;
   max-width: 50%;
+  margin:auto;
+  padding: 10px;
 }
 
 /* Vista tablet */
