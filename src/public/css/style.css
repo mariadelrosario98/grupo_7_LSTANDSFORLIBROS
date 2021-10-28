@@ -156,6 +156,18 @@ footer {
   color: #E6E6E6;
 }
 
+.reference{
+  height: 15rem;
+  width: 100%;
+}
+
+.initial{
+  display: flex;
+  justify-content: center;
+  background-color: #5C7AEA;
+  color: white
+}
+
 .social {
   max-width: 40vw;
   display: flex;
@@ -313,9 +325,13 @@ text-decoration: none;
   padding: 10px;
 }
 
+.logo-footer{
+  flex-grow: 2;
+}
+
 .footer-art{
   display:flex;
-  justify-content: space-around;
+  justify-content:space-evenly;
 }
 
 /* Vista tablet */
