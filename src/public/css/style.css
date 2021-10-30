@@ -78,7 +78,11 @@ header .top .top-right {
 header .top .top-right i {
   font-size: 2em;
   margin-right: 15px;
+  transition: all 0.1s;
+}
 
+header .top .top-right i:hover {
+  transform: rotate(-15deg);
 }
 
 header .top .top-right .button {
@@ -88,6 +92,11 @@ header .top .top-right .button {
   margin-right: 10px;
   border: 1px solid #14279B;
   border-radius: 10px;
+}
+
+header .top .top-right .button:hover {
+  color: #14279B;
+  background-color: #ebebeb;
 }
 
 header .top .top-center {
