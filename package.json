@@ -2,7 +2,7 @@
   "name": "grupo_7_lstandsforlibros",
   "version": "1.0.0",
   "description": "LSFL es una tienda virtual de libros. Aquí podrás encontrar libros de todos los géneros, pero sobretodo de naturaleza y animales. En nuestra tienda física podrás ir con tu perrito o gatito a leer y tomarte un café. El público que asiste a nuestro sitio web es variado, aunque se enfoca en fotografos, caminantes y académicos que buscan referencias especializadas. <br />",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node src/app"
@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/mariadelrosario98/grupo_7_LSTANDSFORLIBROS#readme",
   "dependencies": {
+    "ejs": "^3.1.6",
     "express": "^4.17.1"
   }
 }

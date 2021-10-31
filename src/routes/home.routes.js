@@ -1,31 +1,20 @@
 const express = require("express")
 const router = express.Router()
-
-const path = require("path")
+const homeController = require("../controller/home.controller")
 
 //Página principal
-router.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "../views/index.html"))
-})
+router.get("/", homeController.index)
 
 //Detalles de producto (éste supongo que habrá que cambiarlo en el futuro)
-router.get("/product-detail", (req, res) => {
-  res.sendFile(path.join(__dirname, "../views/product-detail.html"))
-})
+router.get("/product-detail", homeController.productDetail)
 
 //Carrito de compra
-router.get("/product-cart", (req, res) => {
-  res.sendFile(path.join(__dirname, "../views/product-cart.html"))
-})
+router.get("/product-cart", homeController.productCart)
 
 //Inicio de sesión
-router.get("/login", (req, res) => {
-  res.sendFile(path.join(__dirname, "../views/login.html"))
-})
+router.get("/login", homeController.login)
 
 //Registro
-router.get("/register", (req, res) => {
-  res.sendFile(path.join(__dirname, "../views/register.html"))
-})
+router.get("/register", homeController.register)
 
 module.exports = router
