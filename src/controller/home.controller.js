@@ -6,19 +6,19 @@ const controller = {
   },
 
   login: (req, res) => {
-    res.render("login")
+    res.render("./users/login")
   },
   
   register: (req, res) => {
-    res.render("register")
+    res.render("./users/register")
   },
 
   productCart: (req, res) => {
-    res.render("product-cart", {libros: libros})
+    res.render("./products/product-cart", {libros: libros})
   },
 
   productDetail: (req, res) => {
-    res.render("product-detail")
+    res.render("./products/product-detail")
   },
 }
 
