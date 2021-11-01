@@ -353,6 +353,35 @@ text-decoration: none;
  display: flex;
 }
 
+.whatsapp{
+  position: fixed; 
+  bottom: 15px;
+  right: 15px;
+  z-index: 10;
+
+  display: flex;
+  align-items: center;
+
+  padding: 15px;
+  border: 1px solid #112;
+  border-radius: 28px;
+
+  font-size: 0.9em;
+  letter-spacing: 0.07em;
+  font-weight: bold;
+  color: white;
+  background-color: #075E54;
+}
+
+.whatsapp:hover{
+  cursor: pointer;
+  background-color: #128C7E;
+}
+
+.laptop{
+  display: none;
+}
+
 
 /* Vista tablet */
 @media (min-width: 481px) {
@@ -391,6 +420,14 @@ text-decoration: none;
 
 /* Vista laptop */
 @media (min-width: 769px) {
+  .laptop{
+    display: flex;
+  }
+
+  .mobile{
+    display: none;
+  }
+
   header .top .top-left i {
     display: none;
   }
