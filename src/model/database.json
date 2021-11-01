@@ -1,0 +1,81 @@
+[
+  {
+    "img": "american_marxism.png",
+    "name": "American Marxism",
+    "autor": "Mark R. Levin",
+    "isbn": "9781501135972",
+    "type": "Libro",
+    "desc": "The seven-time #1 New York Times bestselling author, Fox News star, and radio host Mark R. Levin explains how the dangers he warned against in the “timely yet timeless” (David Limbaugh, author of Jesus Is Risen) bestseller Liberty and Tyranny have come to pass.",
+    "price": 50000
+  },
+
+  {
+    "img": "cryinginhmart.jpeg",
+    "name": "Crying in H Mart",
+    "autor": "Michelle Zauner",
+    "isbn": "9780525657743",
+    "type": "Libro",
+    "desc": "An unflinching, powerful memoir about growing up Korean American, losing her mother, and forging her own identity. In this exquisite story of family, food, grief, and endurance, Michelle Zauner proves herself far more than a dazzling singer, songwriter, and guitarist.",
+    "price": 70500
+  },
+
+  {
+    "img": "educated.jpeg",
+    "name": "Educated: A Memoir",
+    "autor": "Tara Westover",
+    "isbn": "9780099511021",
+    "type": "Libro",
+    "desc": "Tara Westover was 17 the first time she set foot in a classroom. Born to survivalists in the mountains of Idaho, she prepared for the end of the world by stockpiling home-canned peaches and sleeping with her \"head-for-the-hills bag\". In the summer.",
+    "price": 30000
+  },
+
+  {
+    "img": "harlem_shuffle..jpeg",
+    "name": "Harlem Shuffle",
+    "autor": "Colson Whitehead",
+    "isbn": "0385545134",
+    "type": "Libro",
+    "desc": "\"Ray Carney was only slightly bent when it came to being crooked...\" To his customers and neighbors on 125th street, Carney is an upstanding salesman of reasonably priced furniture, making a decent life for himself and his family. He and his wife Elizabeth are expecting their second child...",
+    "price": 90000
+  },
+
+  {
+    "img": "Hillary_clinton.png",
+    "name": "State of Terror",
+    "autor": "Louise Penny & Hillary Rodham Clinton",
+    "isbn": "9783749903276",
+    "type": "Libro",
+    "desc": "After a tumultuous period in American politics, a new administration has just been sworn in, and to everyone’s surprise the president chooses a political enemy for the vital position of secretary of state.",
+    "price": 20000
+  },
+
+  {
+    "img": "people_we_meet.png",
+    "name": "People We Meet on Vacation",
+    "autor": "Emily Henry",
+    "isbn": "9781984806758",
+    "type": "Libro",
+    "desc": "Poppy and Alex. Alex and Poppy. They have nothing in common. She’s a wild child; he wears khakis. She has insatiable wanderlust; he prefers to stay home with a book. And somehow, ever since a fateful car share home from college many years ago.",
+    "price": 30000
+  },
+
+  {
+    "img": "peril.jpg",
+    "name": "Peril",
+    "autor": "Bob Woodward & Robert Costa",
+    "isbn": "9781982182915",
+    "type": "Libro",
+    "desc": "The transition from President Donald J. Trump to President Joseph R. Biden Jr. stands as one of the most dangerous periods in American history. But as # 1 internationally bestselling author Bob Woodward and acclaimed reporter Robert Costa reveal for the first time.",
+    "price": 70500
+  },
+
+  {
+    "img": "theartofnot.jpg",
+    "name": "The Subtle Art of Not Giving a F*ck",
+    "autor": "Mark Manson",
+    "isbn": "9780062641540",
+    "type": "Libro",
+    "desc": "n this generation-defining self-help guide, a superstar blogger cuts through the crap to show us how to stop trying to be \"positive\" all the time so that we can truly become better, happier people. For decades, we’ve been told that positive thinking",
+    "price": 23200
+  }
+]

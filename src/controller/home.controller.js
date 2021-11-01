@@ -1,3 +1,5 @@
+const libros = require("../model/database.json")
+
 const controller = {
   index: (req, res) => {
     res.render("index")
@@ -12,7 +14,7 @@ const controller = {
   },
 
   productCart: (req, res) => {
-    res.render("product-cart")
+    res.render("product-cart", {libros: libros})
   },
 
   productDetail: (req, res) => {
