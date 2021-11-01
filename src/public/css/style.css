@@ -78,7 +78,7 @@ header .top .top-right {
 header .top .top-right i {
   font-size: 2em;
   margin-right: 15px;
-  transition: all 0.1s;
+  transition: all 0.2s;
 }
 
 header .top .top-right i:hover {
@@ -92,6 +92,7 @@ header .top .top-right .button {
   margin-right: 10px;
   border: 1px solid #14279B;
   border-radius: 10px;
+  transition: all 0.2s;
 }
 
 header .top .top-right .button:hover {
@@ -286,10 +287,9 @@ footer {
   font-size: 18px;
 }
 
-/* .form-register a {
-color: white;
-text-decoration: none;
-} */
+.form-register a {
+  transition: all 0.1s;
+}
 
 .form-register a:hover {
   color: white;
@@ -371,6 +371,8 @@ text-decoration: none;
   font-weight: bold;
   color: white;
   background-color: #075E54;
+
+  transition: all 0.2s;
 }
 
 .whatsapp:hover{
@@ -524,6 +526,7 @@ text-decoration: none;
   color: #fff;
   font-size: 18px;
   border-radius: 20px;
+  transition: all 0.2s;
 }
 
 .login-box input[type="submit"]:hover {
@@ -537,6 +540,7 @@ text-decoration: none;
   font-size: 12px;
   line-height: 20px;
   color: rgb(241, 203, 203);
+  transition: all 0.1s;
 }
 
 .login-box a:hover {
