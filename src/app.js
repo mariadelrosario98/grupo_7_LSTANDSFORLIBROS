@@ -23,6 +23,11 @@ app.use(express.json())
 //* Configurar la librería requerida para usar los métodos PUT y DELETE
 app.use(methodOverride("_method"))
 
+//* Renderizar la vista correspondiente al Error 404
+app.use((req, res, next) => {
+  res.status(404).render("not-found")
+})
+
 
 //! FAVOR NO AGREGAR CÓDIGO DEBAJO DE ESTA LINEA
 app.listen(port, () => console.log("Servidor corriendo en el puerto", port))

@@ -274,7 +274,6 @@ footer {
   width: 100%;
   background-color: #E6E6E6;
   padding: 10px;
-  border-radius: 4px;
   margin-bottom: 16px;
   border: 1px solid #14279B;
   font-family: 'Open Sans', sans-serif;
@@ -516,6 +515,10 @@ footer {
 
 .login-box__input:focus {
   border-bottom: 1px solid #fff;
+}
+
+.login-box__input::placeholder {
+  color: #999;
 }
 
 .login-box input[type="submit"] {
