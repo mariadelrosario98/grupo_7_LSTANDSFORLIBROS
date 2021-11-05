@@ -9,10 +9,10 @@ let port = process.env.PORT || 3000
 
 //* Definir el motor de templates y la carpeta views
 app.set("view engine", "ejs")
-app.set("views", __dirname + "/views")
+app.set("views", path.join(__dirname, "views"))
 
 //* Definir la carpeta pública
-app.use(express.static(path.join(__dirname, "./public")))
+app.use(express.static(path.join(__dirname, "..", "public")))
 
 //* Requerir las rutas
 app.use("/", rutas)
