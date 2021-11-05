@@ -4,6 +4,7 @@ const path = require("path")
 const rutas = require("./routes/home.routes.js")
 const methodOverride = require("method-override")
 
+//* Declarar el puerto para uso con Heroku
 let port = process.env.PORT || 3000
 
 //* Definir el motor de templates y la carpeta views
@@ -16,7 +17,7 @@ app.use(express.static(path.join(__dirname, "./public")))
 //* Requerir las rutas
 app.use("/", rutas)
 
-//* Configurando el entorno para que éste pueda recibir datos por POST
+//* Configurar el entorno para que éste pueda recibir datos por POST
 app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
 

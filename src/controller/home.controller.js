@@ -1,3 +1,4 @@
+const fs = require("fs")
 const libros = require("../model/database.json")
 
 const controller = {
@@ -21,5 +22,6 @@ const controller = {
     res.render("product-detail")
   },
 }
+
 
 module.exports = controller

@@ -17,4 +17,5 @@ router.get("/login", homeController.login)
 //Registro
 router.get("/register", homeController.register)
 
+
 module.exports = router
