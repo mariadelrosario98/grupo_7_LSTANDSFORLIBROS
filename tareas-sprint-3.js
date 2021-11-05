@@ -12,7 +12,11 @@ listado = {
       prioridad: 3
     },
     {
-      tarea: "aplicar EJS para la página priuncipal",
+      tarea: "aplicar EJS para la página principal",
+      prioridad: 5
+    },
+    {
+      tarea: "aplicar EJS al detalle",
       prioridad: 5
     },
   ]
