@@ -19,7 +19,9 @@ const controller = {
   },
 
   productDetail: (req, res) => {
-    res.render("product-detail")
+    let id = req.params.id
+    let libro = libros[id]
+    res.render("product-detail", {libro: libro})
   },
 }
 

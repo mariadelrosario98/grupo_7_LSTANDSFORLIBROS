@@ -6,7 +6,7 @@ const homeController = require("../controller/home.controller")
 router.get("/", homeController.index)
 
 //Detalles de producto (éste supongo que habrá que cambiarlo en el futuro)
-router.get("/product-detail", homeController.productDetail)
+router.get("/product-detail/:id", homeController.productDetail)
 
 //Carrito de compra
 router.get("/product-cart", homeController.productCart)
