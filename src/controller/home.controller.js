@@ -3,7 +3,7 @@ const libros = require("../model/database.json")
 
 const controller = {
   index: (req, res) => {
-    res.render("index")
+    res.render("index", {libros: libros})
   },
 
   login: (req, res) => {

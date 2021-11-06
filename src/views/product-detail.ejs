@@ -4,10 +4,10 @@
   <%- include("./partials/head.ejs") %>
 
   <body>
-    <%- include("./partials/header.ejs") %> 
+    <%- include("./partials/header.ejs") %>
 
     <%- include("./partials/whatsapp.ejs") %>
-    
+
     <main>
       <h1>
         Detalle del producto
@@ -16,21 +16,20 @@
       <section>
         <article class="articulo">
           <div class="articulo--top">
-            <img src="./img/american_marxism.png" alt="" class="articulo--top--img">
+            <img src=<%= "./img/" + libro.img %> alt="" class="articulo--top--img">
             <div class="articulo--top--info">
-              <p><b>American Marxism</b></p>
-              <p><b>Autor:</b> Mark R. Levin</p>
-              <p><b>ISBN:</b> 9781501135972</p>
-              <p><b>Tipo:</b> Libro</p>
+              <p><b> <%= libro.name %> </b></p>
+              <p><b>Autor:</b> <%= libro.autor %></p>
+              <p><b>ISBN:</b> <%= libro.isbn %></p>
+              <p><b>Tipo:</b> <%= libro.type %></p>
 
               <p class="articulo--desc laptop">
-            The seven-time #1 New York Times bestselling author, Fox News star, and radio host Mark
-              R. Levin explains how the dangers he warned against in the “timely yet timeless” (David Limbaugh, author
-              of Jesus Is Risen) bestseller Liberty and Tyranny have come to pass.
+                <%= libro.desc %>
               </p>
             </div>
-
-            
+          </div>
+        </article>
+      </section>
     </main>
 
     <footer>
