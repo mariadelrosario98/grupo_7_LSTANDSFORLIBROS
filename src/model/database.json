@@ -77,5 +77,25 @@
     "type": "Libro",
     "desc": "In this generation-defining self-help guide, a superstar blogger cuts through the crap to show us how to stop trying to be \"positive\" all the time so that we can truly become better, happier people. For decades, we’ve been told that positive thinking",
     "price": 23200
+  },
+
+  {
+    "img": "theworldtravel.jpg",
+    "name": "World Travel: An Irreverent Guide",
+    "autor": "Anthony Bourdain & Laurie Woolever",
+    "isbn": "9781526630216",
+    "type": "Libro",
+    "desc": "A guide to some of the world’s most fascinating places, as seen and experienced by writer, television host, and relentlessly curious traveler Anthony Bourdain.",
+    "price": 90000
+  },
+
+  {
+    "img": "think_again.jpeg",
+    "name": "Think Again: The Power of Knowing What You Don't Know",
+    "autor": "Adam H. Grant",
+    "isbn": "9780593298749",
+    "type": "Libro",
+    "desc": "Think Again is a book about the benefit of doubt, and about how we can get better at embracing the unknown and the joy of being wrong. Evidence has shown that creative geniuses are not attached to one identity, but constantly willing to rethink their stances and that leaders who admit they don't know something and seek critical feedback lead more productive and innovative teams.",
+    "price": 65000
   }
 ]

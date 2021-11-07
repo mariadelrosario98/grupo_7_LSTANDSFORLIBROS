@@ -23,6 +23,10 @@ const controller = {
     let libro = libros[id]
     res.render("product-detail", {libro: libro})
   },
+
+  productEdit: (req, res) => {
+    res.render("product-edit", {libros: libros})
+  },
 }
 
 
