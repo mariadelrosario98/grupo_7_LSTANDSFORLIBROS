@@ -1,76 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>L STANDS FOR LIBROS</title>
-    
-    <link rel="icon" href="./img/logo.png" type="image/png" />
-    <link rel="stylesheet" href="../css/normalize.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/style-carrito.css">
-  </head>
+  <%- include("./partials/head.ejs") %>
 
   <body>
-    <header>
-      <div class="top">
-        <div class="top-left">
-          <div class="burger-menu">
-            <i class="fas fa-bars"></i>
-          </div>
-    
-          <a href="/" class="logo">
-            <img src="../img/logo.png" alt="">
-    
-            <div class="logo-text">
-              <p>L&nbspSTANDS</p>
-              <p>FOR&nbspLIBROS</p>
-            </div>
-          </a>
-        </div>
-    
-        <div class="top-center">
-          <form action="search" method="get">
-            <input type="text" name="search" id="search" placeholder="Busca tus libros">
-    
-            <button type="submit">
-              <i class="fas fa-search"></i>
-            </button>
-          </form>
-        </div>
-    
-        <div class="top-right">
-          <a href="/product-cart">
-            <i class="fas fa-shopping-cart"></i>
-          </a>
-    
-          <a href="/login" class="button">Ingresa</a>
-    
-          <a href="/register" class="button">Regístrate</a>
-        </div>
-      </div>
-    
-      <form action="search" method="get" class="search">
-        <input type="text" name="search" id="search" placeholder="Busca tus libros">
-    
-        <button type="submit">
-          <i class="fas fa-search"></i>
-        </button>
-      </form>
-    
-      <nav>
-        <ul>
-          <li><a href="#">Categorias</a></li>
-          &nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp
-          <li><a href="#">Ofertas</a></li>
-          &nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp
-          <li><a href="#">Historial</a></li>
-        </ul>
-      </nav>
-    
-    </header>
+    <%- include("./partials/header.ejs") %>
 
     <%- include("./partials/whatsapp.ejs") %>
 
