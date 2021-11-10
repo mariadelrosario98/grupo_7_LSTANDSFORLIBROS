@@ -1,9 +1,9 @@
 const fs = require("fs")
-const libros = require("../model/database.json")
+const libros = require("../model/products.json")
 
 const controller = {
   index: (req, res) => {
-    res.render("index", {libros: libros})
+    res.render("index", {libros})
   },
 
   login: (req, res) => {
@@ -15,17 +15,17 @@ const controller = {
   },
 
   productCart: (req, res) => {
-    res.render("product-cart", {libros: libros})
+    res.render("product-cart", {libros})
   },
 
   productDetail: (req, res) => {
     let id = req.params.id
     let libro = libros[id]
-    res.render("product-detail", {libro: libro})
+    res.render("product-detail", {libro})
   },
 
   productEdit: (req, res) => {
-    res.render("product-edit", {libros: libros})
+    res.render("product-edit", {libros})
   },
 }
 

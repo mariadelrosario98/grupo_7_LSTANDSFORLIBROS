@@ -14,15 +14,15 @@ app.set("views", path.join(__dirname, "views"))
 //* Definir la carpeta pública
 app.use(express.static(path.join(__dirname, "..", "public")))
 
-//* Requerir las rutas
-app.use("/", rutas)
-
 //* Configurar el entorno para que éste pueda recibir datos por POST
 app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
 
 //* Configurar la librería requerida para usar los métodos PUT y DELETE
 app.use(methodOverride("_method"))
+
+//* Requerir las rutas
+app.use("/", rutas)
 
 //* Renderizar la vista correspondiente al Error 404
 app.use((req, res, next) => {
