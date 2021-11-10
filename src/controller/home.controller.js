@@ -20,7 +20,8 @@ const controller = {
 
   productDetail: (req, res) => {
     let id = req.params.id
-    let libro = libros.id
+    let libro = libro.filter(libro => libro.id === id)
+
     res.render("product-detail", {libro})
   },
 

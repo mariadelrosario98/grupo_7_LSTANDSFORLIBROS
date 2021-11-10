@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("./partials/head.ejs") %>
+
+  <body>
+    <%- include("./partials/header.ejs") %>
+
+    <%- include("./partials/whatsapp.ejs") %>
+
+    <main>
+      <h1>
+        ADMINISTRACIÓN ARTICULOS
+      </h1>
+
+      <section>
+        <article class="articulo-edit">
+          <p>ADMINISTRACIÓN ARTICULOS</p>
+          <p><b> <%= libro.id %> </b></p>
+          <p><b> <%= libro.name %> </b></p>
+        </article>
+      </section>
+    </main>
+
+    <%- include("./partials/footer.ejs") %>
+  </body>
+
+</html>
