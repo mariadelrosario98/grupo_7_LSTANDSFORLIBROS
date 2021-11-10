@@ -166,6 +166,11 @@ footer {
   color: #E6E6E6;
 }
 
+.titulo-edit{
+  display: flex;
+  margin: auto;
+}
+
 .reference{
   height: 15rem;
   width: 100%;
