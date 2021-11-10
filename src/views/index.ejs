@@ -14,147 +14,26 @@
         <h1 class="initial">Algunos títulos que te recomendamos</h1>
       </div>
       <section class="contenedor1">
-        <article class="product">
-          <img class="product-image" src="/img/american_marxism.png" alt="american_marxism book">
-          <div class="total">
-            <div class="truckie"><i class="fas fa-truck"></i></div>
-            <class class="price-discount">
-              <p class="precio">$50.000</p>
-              <p class="discount">40% OFF</p>
-          </div>
-          <p class="descrip">
-            The seven-time #1 New York Times bestselling author, Fox News star, and radio host Mark
-            R. Levin explains how the dangers he warned against in the “timely yet timeless” (David Limbaugh, author
-            of Jesus Is Risen) bestseller Liberty and Tyranny have come to pass.
-          </p>
-          </div>
-          <a class="details" href="/product-detail">Quiero saber más</a>
+        <% libros.forEach(libro => { %>
 
-        </article>
-
-        <article class="product">
-          <img class="product-image" src="./img/cryinginhmart.jpeg" alt="cryinginhmart book">
-          <div class="total">
-            <div class="truckie"><i class="fas fa-truck"></i></div>
-            <div class="price-discount">
-              <p class="precio">$70.500</p>
-              <p class="discount">10% OFF</p>
+          <article class="product">
+            <img class="product-image" src=<%= "/img/products/" + libro.img %> alt="american_marxism book">
+            <div class="total">
+              <div class="truckie"><i class="fas fa-truck"></i></div>
+                <p class="precio">$ <%= libro.price %></p>
             </div>
-            <p class="descrip">An unflinching, powerful memoir about growing up Korean American, losing her mother, and
-              forging her own identity. In this exquisite story of family, food, grief, and endurance, Michelle Zauner
-              proves herself far more than a dazzling singer, songwriter, and guitarist.
+            <p class="descrip">
+              <%= libro.desc %>
             </p>
-          </div>
-          <div class="details">
-            <p>Quiero ver más</p>
-          </div>
-        </article>
+            </div>
+            <a class="details" href=<%= "/product-detail/" + libro.id %>>Quiero saber más</a>
+          </article>
+        <% }) %>
 
-        <article class="product">
-          <img class="product-image" src="./img/educated.jpeg" alt="Educated book">
-          <div class="total">
-            <div class="truckie"><i class="fas fa-truck"></i></div>
-            <div class="price-discount">
-              <p class="precio">$30.000</p>
-              <p class="discount">5% OFF</p>
-            </div>
-            <p class="descrip">Tara Westover was 17 the first time she set foot in a classroom. Born to survivalists in
-              the mountains of Idaho, she prepared for the end of the world by stockpiling home-canned peaches and
-              sleeping with her "head-for-the-hills bag". In the summer .</p>
-          </div>
-          <div class="details">
-            <p>Quiero ver más</p>
-          </div>
-        </article>
-        <article class="product">
-          <img class="product-image" src="./img/harlem_shuffle..jpeg" alt="harlem_shuffle">
-          <div class="total">
-            <div class="truckie"><i class="fas fa-truck"></i></div>
-            <div class="price-discount">
-              <p class="precio">$90.000</p>
-              <p class="discount">20% OFF</p>
-            </div>
-            <p class="descrip">"Ray Carney was only slightly bent when it came to being crooked..." To his customers and
-              neighbors on 125th street, Carney is an upstanding salesman of reasonably priced furniture, making a
-              decent life for himself and his family. He and his wife Elizabeth are expecting their second child, </p>
-          </div>
-          <div class="details">
-            <p>Quiero ver más</p>
-          </div>
-        </article>
       </section>
 
-      <h1> Basados en tu historial </h1>
-      <section class="contenedor2">
-        <article class="product">
-          <img class="product-image" src="./img/Hillary_clinton.png" alt="Hillary_clinton">
-          <div class="total">
-            <div class="truckie"><i class="fas fa-truck"></i></div>
-            <div class="price-discount">
-              <p class="precio">$20.000</p>
-            </div>
-            <p class="descrip">After a tumultuous period in American politics, a new administration has just been sworn
-              in, and to everyone’s surprise the president chooses a political enemy for the vital position of secretary
-              of state. </p>
-          </div>
-          <div class="details">
-            <p>Quiero ver más</p>
-          </div>
-        </article>
-
-        <article class="product">
-          <img class="product-image" src="./img/people_we_meet.png" alt="People we meet">
-          <div class="total">
-            <div class="truckie"><i class="fas fa-truck"></i></div>
-            <div class="price-discount">
-              <p class="precio">$30.000</p>
-            </div>
-            <p class="descrip">Poppy and Alex. Alex and Poppy. They have nothing in common. She’s a wild child; he wears
-              khakis. She has insatiable wanderlust; he prefers to stay home with a book. And somehow, ever since a
-              fateful car share home from college many years ago.</p>
-          </div>
-          <div class="details">
-            <p>Quiero ver más</p>
-          </div>
-        </article>
-
-        <article class="product">
-          <img class="product-image" src="./img/peril.jpg" alt="Peril">
-          <div class="total">
-            <div class="truckie"><i class="fas fa-truck"></i></div>
-            <div class="price-discount">
-              <p class="precio">$70.500</p>
-            </div>
-            <p class="descrip">The transition from President Donald J. Trump to President Joseph R. Biden Jr. stands as
-              one of the most dangerous periods in American history. But as # 1 internationally bestselling author Bob
-              Woodward and acclaimed reporter Robert Costa reveal for the first time.</p>
-          </div>
-          <div class="details">
-            <p>Quiero ver más</p>
-          </div>
-        </article>
-
-        <article class="product">
-          <img class="product-image" src="./img/theartofnot.jpg" alt="theartofnot">
-          <div class="total">
-            <div class="truckie"><i class="fas fa-truck"></i></div>
-            <div class="price-discount">
-              <p class="precio">$23.200</p>
-            </div>
-            <p class="descrip">In this generation-defining self-help guide, a superstar blogger cuts through the crap to
-              show us how to stop trying to be "positive" all the time so that we can truly become better, happier
-              people. For decades, we’ve been told that positive thinking</p>
-          </div>
-          <div class="details">
-            <p>Quiero ver más</p>
-          </div>
-        </article>
-      </section>
     </main>
-
-    <footer>
-      <%- include("./partials/footer.ejs") %>
-    </footer>
+    <%- include("./partials/footer.ejs") %>
   </body>
 
 </html>
