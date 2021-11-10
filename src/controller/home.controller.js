@@ -19,8 +19,10 @@ const controller = {
   },
 
   productDetail: (req, res) => {
-    let id = req.params.id
-    let libro = libros.filter(libro => libro.id === id)
+    let id = parseInt(req.params.id)
+    let libro = {}
+
+    libros.forEach(l => l.id === id ? libro = l : "")
 
     res.render("product-detail", {libro})
   },
