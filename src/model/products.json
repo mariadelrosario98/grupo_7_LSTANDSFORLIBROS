@@ -1,5 +1,6 @@
 [
   {
+    "id": 0,
     "img": "american_marxism.png",
     "name": "American Marxism",
     "autor": "Mark R. Levin",
@@ -10,6 +11,7 @@
   },
 
   {
+    "id": 1,
     "img": "cryinginhmart.jpeg",
     "name": "Crying in H Mart",
     "autor": "Michelle Zauner",
@@ -20,6 +22,7 @@
   },
 
   {
+    "id": 2,
     "img": "educated.jpeg",
     "name": "Educated: A Memoir",
     "autor": "Tara Westover",
@@ -30,6 +33,7 @@
   },
 
   {
+    "id": 3,
     "img": "harlem_shuffle..jpeg",
     "name": "Harlem Shuffle",
     "autor": "Colson Whitehead",
@@ -40,6 +44,7 @@
   },
 
   {
+    "id": 4,
     "img": "Hillary_clinton.png",
     "name": "State of Terror",
     "autor": "Louise Penny & Hillary Rodham Clinton",
@@ -50,6 +55,7 @@
   },
 
   {
+    "id": 5,
     "img": "people_we_meet.png",
     "name": "People We Meet on Vacation",
     "autor": "Emily Henry",
@@ -60,6 +66,7 @@
   },
 
   {
+    "id": 6,
     "img": "peril.jpg",
     "name": "Peril",
     "autor": "Bob Woodward & Robert Costa",
@@ -70,6 +77,7 @@
   },
 
   {
+    "id": 7,
     "img": "theartofnot.jpg",
     "name": "The Subtle Art of Not Giving a F*ck",
     "autor": "Mark Manson",
@@ -80,6 +88,7 @@
   },
 
   {
+    "id": 8,
     "img": "theworldtravel.jpg",
     "name": "World Travel: An Irreverent Guide",
     "autor": "Anthony Bourdain & Laurie Woolever",
@@ -90,6 +99,7 @@
   },
 
   {
+    "id": 9,
     "img": "think_again.jpeg",
     "name": "Think Again: The Power of Knowing What You Don't Know",
     "autor": "Adam H. Grant",
