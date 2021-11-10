@@ -20,7 +20,7 @@ const controller = {
 
   productDetail: (req, res) => {
     let id = req.params.id
-    let libro = libros[id]
+    let libro = libros.id
     res.render("product-detail", {libro})
   },
 
