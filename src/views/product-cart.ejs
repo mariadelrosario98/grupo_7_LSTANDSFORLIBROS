@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
   <%- include("./partials/head.ejs") %>
 
@@ -63,7 +63,7 @@
                 </select>
 
                 <p class="libro--bottom--cost">
-                  <b>Costo unitario:</b> $ <%= libro.price %>
+                  <b>Costo unitario:</b> $ <%= toThousand(libro.price) %>
                 </p>
               </div>
             </div>
@@ -94,7 +94,7 @@
               <option value="20">20</option>
             </select>
             <p class="libro--bottom--cost">
-              <b>Costo unitario:</b> $ <%= libro.price %>
+              <b>Costo unitario:</b> $ <%= toThousand(libro.price) %>
             </p>
           </div>
         </article>
@@ -110,9 +110,9 @@
         </div>
 
         <div class="valores">
-          <p> $ <%= libros.reduce((total, libro) => total + libro.price, 0) %> </p>
-          <p class="descuento"> - $ <%= 0.1 * libros.reduce((total, libro) => total + libro.price, 0) %></p>
-          <p> $ <%= 0.9 * libros.reduce((total, libro) => total + libro.price, 0) %></p>
+          <p> $ <%= toThousand(libros.reduce((total, libro) => total + libro.price, 0)) %> </p>
+          <p class="descuento"> - $ <%= toThousand(0.1 * libros.reduce((total, libro) => total + libro.price, 0)) %></p>
+          <p> $ <%= toThousand(0.9 * libros.reduce((total, libro) => total + libro.price, 0)) %></p>
         </div>
       </section>
 

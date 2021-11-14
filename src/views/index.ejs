@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
   <%- include("./partials/head.ejs") %>
 
@@ -20,7 +20,7 @@
             <img class="product-image" src=<%= "/img/products/" + libro.img %> alt="american_marxism book">
             <div class="total">
               <div class="truckie"><i class="fas fa-truck"></i></div>
-                <p class="precio">$ <%= libro.price %></p>
+                <p class="precio">$ <%= toThousand(libro.price) %></p>
             </div>
             <p class="descrip">
               <%= libro.desc %>
