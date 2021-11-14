@@ -34,7 +34,7 @@ router.get("/login", homeController.login)
 router.get("/register", homeController.register)
 
 //Página de creación y edición de productos
-router.get("/product-edit", homeController.productEdit)
+router.get("/product-list", homeController.productEdit)
 
 
 module.exports = router

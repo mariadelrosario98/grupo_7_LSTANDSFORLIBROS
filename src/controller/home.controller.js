@@ -29,8 +29,8 @@ const controller = {
     res.render("product-detail", {libro, toThousand})
   },
 
-  productEdit: (req, res) => {
-    res.render("product-edit", {libros, toThousand})
+  productList: (req, res) => {
+    res.render("product-list", {libros, toThousand})
   },
 }
 
