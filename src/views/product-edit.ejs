@@ -13,14 +13,16 @@
       </h1>
 
       <section>
-        <article class="articulo-edit">
-          <p class = "titulo-edit">ADMINISTRACIÓN ARTICULOS</p>
-          <div class="contenedor-libro-id"><b> <%= libro.id %> </b></div>
-          <div class="contenedor-libro-name"><b> <%= libro.name %> </b></div>
-          <div><a href="#" class="cajita-edicion">Para editar</a></div>
-          <div><a href="#" class="cajita-borrar">Para borrar</a></div>
-          <div><a href="#" class="cajita-ver">Para ver</a></div>
-        </article>
+        <table>
+          <tr>ID</tr>
+          <tr>Nombre</tr>  
+          <tr>View</tr>   
+          <tr>Edit</tr> 
+          <tr>Borrar</tr>      
+        
+          <div><a href="#" class="cajita-borrar"> <%= Para borrar %> </a></div>
+          <div><a href="# " class="cajita-ver"> <%= Para ver %> </a></div>
+        </table>
       </section>
     </main>
 
