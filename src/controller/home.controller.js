@@ -1,5 +1,5 @@
 const fs = require("fs")
-const libros = require("../model/products.json")
+const libros = require("../data/products.json")
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
