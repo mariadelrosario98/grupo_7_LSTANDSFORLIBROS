@@ -19,16 +19,17 @@
                 <th>Nombre</th>
                 <th>View</th>
                 <th>Edit</th>
-                <th>Borrar</th>
+                <th>Eliminar</th>
               </tr>
 
               <% libros.forEach(libro => { %>
                 <tr>
                   <td> <%= libro.id %>  </td>
                   <td> <%= libro.name %> </td>
-                  <td><a href="/product-detail/" + <%= libro.id  %>></a></td>
-                  <td><a href="/product-/" + <%= libro.id  %>></td>
-                  <td>No</td>
+                  <td><a href="/product-detail/" + <%= libro.id  %>>detalle</a></td>
+                  <td><a href="/product-edit/" + <%= libro.id  %>>Editar</a></td>
+                  //Cambiar la ruta
+                  <td><a href="/product-/" + <%= libro.id  %>>Eliminar</a></td>
                 </tr>
                 <% }) %>
 
