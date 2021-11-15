@@ -40,6 +40,10 @@ const controller = {
   productEdit: (req, res) => {
     res.render("product-edit", {libros, toThousand})
   },
+
+  productDelete: (req, res) => {
+    res.render("product-edit", {libros, toThousand})
+  },
 }
 
 

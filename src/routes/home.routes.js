@@ -42,5 +42,8 @@ router.get("/product-create", homeController.productCreate)
 //Página de edición de productos
 router.get("/product-edit", homeController.productEdit)
 
+//Página de product-deletion
+router.get("/product-edit", homeController.productEdit)
+
 
 module.exports = router
