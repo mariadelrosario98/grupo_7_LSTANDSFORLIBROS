@@ -33,7 +33,13 @@ router.get("/login", homeController.login)
 //Formulario de registro
 router.get("/register", homeController.register)
 
-//Página de creación y edición de productos
+//Página de resumen
+router.get("/product-list", homeController.productList)
+
+//Página de creación de productos
+router.get("/product-list", homeController.productList)
+
+//Página de edición de productos
 router.get("/product-list", homeController.productList)
 
 

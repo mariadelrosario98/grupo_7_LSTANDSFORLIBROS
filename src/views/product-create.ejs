@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+
+  <%- include("./partials/head.ejs") %>
+
+  <body>
+    <%- include("./partials/header.ejs") %> 
+
+    <main>
+      <form class="form-register" action="/register" method="post" enctype="multipart/form-data">
+        <h4>Formulario creación productos</h4>
+        <input class="controls login-box__input" type="text" name="nombre-libro" id="nombre-libro" placeholder="Ingrese el nombre del libro que quiere vender">
+        <input class="controls login-box__input" type="text" name="autor" id="autor" placeholder="Ingrese del autor">
+        <input class="controls login-box__input" type="text" name="ISBN" id="ISBN" placeholder="Ingrese el ISBN del texto">
+        <input class="controls login-box__input" type="text" name="type" id="type" placeholder="Ingrese el tipo de su libro">
+        <p>Estoy de acuerdo con los <a href="#">TERMINOS Y CONDICIONES</a></p>
+        <input class="botons" type="submit" value="Registrar">
+        <p><a href="#">¿Ya tengo cuenta?</a></p>
+      </form>
+    </main>
+
+    <%- include("./partials/footer.ejs") %>
+  </body>
+
+</html>

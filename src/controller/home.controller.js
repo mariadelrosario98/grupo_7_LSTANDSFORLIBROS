@@ -32,6 +32,10 @@ const controller = {
   productList: (req, res) => {
     res.render("product-list", {libros, toThousand})
   },
+
+  productCreate: (req, res) => {
+    res.render("product-create", {libros, toThousand})
+  },
 }
 
 
