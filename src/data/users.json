@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "Maria",
+    "surname": "Castro",
+    "email": "maria.castrico@gmail.com",
+    "password":"Encriptadita",
+    "Categoria":"Vendor",
+    "Image":"user-image1.jpeg"
+  },
+  {
+    "id": 2,
+    "name": "Kevin",
+    "surname": "Simanca",
+    "email": "kevin.simanca@gmail.com",
+    "password":"encript",
+    "Categoria":"Buyer",
+    "Image":"user-image2.jpeg"
+  },
+  {
+    "id": 3,
+    "name": "Elisaul",
+    "surname": "García",
+    "email": "elisaul.garcia@gmail.com",
+    "password":"yuo",
+    "Categoria":"Vendor",
+    "Image":"user-image3.jpeg"
+  },
+  {
+    "id": 4,
+    "name": "Zabdiel",
+    "surname": "Blanco",
+    "email": "zabdiel.blanco@gmail.com",
+    "password":"loijas",
+    "Categoria":"Seller",
+    "Image":"user-image4.jpeg"
+  }
+]
