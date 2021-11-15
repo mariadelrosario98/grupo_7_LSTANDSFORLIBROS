@@ -37,10 +37,10 @@ router.get("/register", homeController.register)
 router.get("/product-list", homeController.productList)
 
 //Página de creación de productos
-router.get("/product-list", homeController.productList)
+router.get("/product-create", homeController.productCreate)
 
 //Página de edición de productos
-router.get("/product-list", homeController.productList)
+router.get("/product-edit", homeController.productEdit)
 
 
 module.exports = router
