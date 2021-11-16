@@ -12,45 +12,27 @@
         ADMINISTRACIÓN ARTICULOS
       </h1>
 
-      <section class="table">
-        <div class="tr">
-          <div class="th">ID</div>
-          <div class="th">Nombre</div>
-          <div class="th">View</div>
-          <div class="th">Edit</div>
-          <div class="th">Eliminar</div>
-        </div>
+      <section>
+        <table class="table">
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>View</th>
+            <th>Edit</th>
+            <th>Eliminar</th>
+          </tr>
 
-        <% libros.forEach(libro => { %>
-        <div class="tr">
-          <div class="td">
-            <%= libro.id %>
-          </div>
+          <% libros.forEach(libro => { %>
+          <tr>
+            <td> <%= libro.id %> </td>
+            <td> <%= libro.name %> </td>
+            <td><a href="/product-detail/" + <%= libro.id  %>><i class="fa-solid fa-eye"></i></a></td>
+            <td><a href="/product-edit/" + <%= libro.id  %>><i class="fa-solid fa-pen-to-square"></i></a></td>
+            <td><a href="/product-/" + <%= libro.id  %>><i class="fa-solid fa-trash-can"></i></a></td>
+          </tr>
+          <% }) %> 
 
-          <div class="td">
-            <%= libro.name %>
-          </div>
-
-          <div class="td">
-            <a href=<%= "/products/" + libro.id %>>
-              <i class="fa-solid fa-eye"></i>
-            </a>
-          </div>
-
-          <div class="td">
-            <a href=<%= "/products/" +libro.id + "/edit" %>>
-              <i class="fa-solid fa-pen-to-square"></i>
-              </i></a>
-          </div>
-
-          <div class="td">
-            <a href=<%= "/products/:id" + libro.id  %>>
-              <i class="fa-solid fa-div class=" tr"ash-can"></i>
-            </a>
-          </div>
-        </div>
-        <% }) %>
-
+        </table>
       </section>
     </main>
 
