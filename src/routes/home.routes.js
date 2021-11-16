@@ -22,7 +22,7 @@ let upload = multer({storage: storage})
 router.get("/", homeController.index)
 
 //Página de detalles de un producto
-router.get("/product-detail/:id", homeController.productDetail)
+router.get("/products/:id", homeController.productDetail)
 
 //Carrito de compra
 router.get("/product-cart", homeController.productCart)
@@ -34,16 +34,16 @@ router.get("/login", homeController.login)
 router.get("/register", homeController.register)
 
 //Página de resumen
-router.get("/product-list", homeController.productList)
+router.get("/products", homeController.productList)
 
 //Página de creación de productos
-router.get("/product-create", homeController.productCreate)
+router.get("/products/create", homeController.productCreate)
 
 //Página de edición de productos
-router.get("/product-edit", homeController.productEdit)
+router.get("/products/:id/edit", homeController.productEdit)
 
 //Página de product-deletion
-router.get("/product-edit", homeController.productEdit)
+router.delete("/product/:id", homeController.productDelete)
 
 
 module.exports = router
