@@ -3,6 +3,7 @@ const app = express()
 const path = require("path")
 const rutas = require("./routes/home.routes.js")
 const methodOverride = require("method-override")
+const session = require("express-session")
 
 //* Declarar el puerto para uso con Heroku
 let port = process.env.PORT || 3000
@@ -20,6 +21,9 @@ app.use(express.json())
 
 //* Configurar la librería requerida para usar los métodos PUT y DELETE
 app.use(methodOverride("_method"))
+
+//* Definiendo texto para identificar nuestro sitio web
+app.use(session({secret: "Bienvenidos a nuestra libreria de libros ;)"}))
 
 //* Requerir las rutas
 app.use("/", rutas)
