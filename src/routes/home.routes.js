@@ -38,6 +38,8 @@ router.get("/products", homeController.productList)
 
 //Página de creación de productos
 router.get("/products/create", homeController.productCreate)
+router.post("/products", homeController.productStore)
+
 
 //Página de edición de productos
 router.get("/products/:id/edit", homeController.productEdit)

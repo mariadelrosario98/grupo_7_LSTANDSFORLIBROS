@@ -1,7 +1,11 @@
 const fs = require("fs")
 const libros = require("../data/products.json")
-
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+const newID = () => {
+	let id = 0
+	libros.forEach(p => p.id > id ? id = p.id : "")
+	return id + 1
+}
 
 const controller = {
   index: (req, res) => {
@@ -31,6 +35,13 @@ const controller = {
 
   productList: (req, res) => {
     res.render("product-list", {libros, toThousand})
+  },
+
+  productStore: (req, res) => {
+    let newProduct = {
+      id: newID(),
+      ...req.body
+    }
   },
 
   productCreate: (req, res) => {
