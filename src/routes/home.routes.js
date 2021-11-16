@@ -40,9 +40,10 @@ router.get("/products", homeController.productList)
 router.get("/products/create", homeController.productCreate)
 router.post("/products", homeController.productStore)
 
-
 //Página de edición de productos
 router.get("/products/:id/edit", homeController.productEdit)
+router.put("/products/:id", homeController.productUpdate)
+
 
 //Página de product-deletion
 router.delete("/product/:id", homeController.productDelete)

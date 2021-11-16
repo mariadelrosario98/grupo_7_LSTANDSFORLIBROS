@@ -1,5 +1,6 @@
-const fs = require("fs")
-const libros = require("../data/products.json")
+const fs = require("fs");
+const path = require("path");
+const libros = require("../data/products.json");
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const newID = () => {
 	let id = 0
@@ -37,21 +38,31 @@ const controller = {
     res.render("product-list", {libros, toThousand})
   },
 
+  productCreate: (req, res) => {
+    res.render("product-create", {libros, toThousand})
+  },
+
   productStore: (req, res) => {
     let newProduct = {
       id: newID(),
       ...req.body
     }
+    libros.push(newProduct);
+    let librosJSON =JSON.stringify(libros);
+    let filePath = path.resolve("../data/products.json")
+    fs.writeFileSync(filePath, librosJSON, null, 4);
   },
-
-  productCreate: (req, res) => {
-    res.render("product-create", {libros, toThousand})
-  },
-
+  
   productEdit: (req, res) => {
     res.render("product-edit", {libros, toThousand})
   },
+  
+  productUpdate: (req, res) => {
 
+    let librosJSON =JSON.stringify(libros);
+    let filePath = path.resolve("../data/products.json")
+    fs.writeFileSync(filePath, librosJSON, null, 4);
+  },
   productDelete: (req, res) => {
     res.render("product-edit", {libros, toThousand})
   },
