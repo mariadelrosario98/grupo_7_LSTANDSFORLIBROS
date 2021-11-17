@@ -1,9 +1,6 @@
 const express = require("express")
 const app = express()
 const path = require("path")
-const rutas = require("./routes/home.routes.js")
-const methodOverride = require("method-override")
-const session = require("express-session")
 
 //* Declarar el puerto para uso con Heroku
 let port = process.env.PORT || 3000
@@ -20,13 +17,17 @@ app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
 
 //* Configurar la librería requerida para usar los métodos PUT y DELETE
+const methodOverride = require("method-override")
 app.use(methodOverride("_method"))
 
 //* Definiendo texto para identificar nuestro sitio web
+const session = require("express-session")
 app.use(session({secret: "Bienvenidos a nuestra libreria de libros ;)"}))
 
-//* Requerir las rutas
-app.use("/", rutas)
+//* Requerir y definir las rutas
+const { homeRoutes, productsRoutes } = require("./routes")
+app.use("/", homeRoutes)
+app.use("/products", productsRoutes)
 
 //* Renderizar la vista correspondiente al Error 404
 app.use((req, res, next) => {

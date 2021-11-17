@@ -18,17 +18,22 @@ let storage = multer.diskStorage({
 
 let upload = multer({storage: storage})
 
-//Página principal
-router.get("/", homeController.index)
+//Página de resumen
+router.get("/", homeController.productList)
 
-//Carrito de compra
-router.get("/product-cart", homeController.productCart)
+//Página de creación de productos
+router.get("/create", homeController.productCreate)
+router.post("/", homeController.productStore)
 
-//Inicio de sesión
-router.get("/login", homeController.login)
+//Página de edición de productos
+router.get("/:id/edit", homeController.productEdit)
+router.put("/:id", homeController.productUpdate)
 
-//Formulario de registro
-router.get("/register", homeController.register)
+//Página de product-deletion
+router.delete("/:id", homeController.productDelete)
+
+//Página de detalles de un producto
+router.get("/:id", homeController.productDetail)
 
 
 module.exports = router

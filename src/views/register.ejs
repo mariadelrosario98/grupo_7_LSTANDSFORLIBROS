@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
 
-  <%- include("./partials/head.ejs") %>
+  <%- include("./partials/head", {title: "Registro"}) %>
 
   <body>
-    <%- include("./partials/header.ejs") %> 
+    <%- include("./partials/header") %> 
 
     <main>
       <form class="form-register" action="/register" method="post" enctype="multipart/form-data">
@@ -19,7 +19,7 @@
       </form>
     </main>
 
-    <%- include("./partials/footer.ejs") %>
+    <%- include("./partials/footer") %>
   </body>
 
 </html>

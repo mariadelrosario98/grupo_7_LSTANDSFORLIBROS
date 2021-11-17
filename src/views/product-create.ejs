@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
 
-  <%- include("./partials/head.ejs") %>
+  <%- include("./partials/head", {title: "Creación de productos"}) %>
 
   <body>
-    <%- include("./partials/header.ejs") %> 
+    <%- include("./partials/header") %> 
 
     <main>
       <form class="form-register" action="/products" method="post" enctype="multipart/form-data">
@@ -21,7 +21,7 @@
         <p><a href="product-edit">Quiero modificar un producto ya creado</a></p>
       </form>
     </main>
-    <%- include("./partials/footer.ejs") %>
+    <%- include("./partials/footer") %>
   </body>
 
 </html>
