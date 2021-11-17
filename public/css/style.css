@@ -172,18 +172,13 @@ footer {
   padding-bottom: 10px;
 }
 
-.table .tr{
-  display: flex;
-}
-
-.table .td{
+.table td{
   border: 1px solid #e3e3e3;
   padding: 4px 8px;
   text-align: center;
 }
 
-.table .th{
-  display: block;
+.table th{
   text-align: center;
   background-color: #3D56B2;
   color: #FFF;

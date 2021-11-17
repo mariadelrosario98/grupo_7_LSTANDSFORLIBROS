@@ -48,9 +48,9 @@ const controller = {
       ...req.body
     }
     libros.push(newProduct);
-    let librosJSON =JSON.stringify(libros);
+    let librosJSON =JSON.stringify(libros, null, 4);
     let filePath = path.resolve("../data/products.json")
-    fs.writeFileSync(filePath, librosJSON, null, 4);
+    fs.writeFileSync(filePath, librosJSON);
   },
   
   productEdit: (req, res) => {
@@ -58,11 +58,11 @@ const controller = {
   },
   
   productUpdate: (req, res) => {
-
-    let librosJSON =JSON.stringify(libros);
+    let librosJSON =JSON.stringify(libros, null, 4);
     let filePath = path.resolve("../data/products.json")
-    fs.writeFileSync(filePath, librosJSON, null, 4);
+    fs.writeFileSync(filePath, librosJSON);
   },
+  
   productDelete: (req, res) => {
     res.render("product-edit", {libros, toThousand})
   },
