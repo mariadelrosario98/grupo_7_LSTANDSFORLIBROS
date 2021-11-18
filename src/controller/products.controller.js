@@ -20,12 +20,9 @@ const controller = {
   },
 
   store: (req, res) => {
-    let newProduct = {
-      id: newID(),
-      ...req.body
-    }
-    
-    productsModel.addProduct(newProduct)
+    productsModel.addProduct(req.body)
+
+    res.redirect("/products")
   },
   
   edit: (req, res) => {
