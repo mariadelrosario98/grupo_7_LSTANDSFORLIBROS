@@ -7,20 +7,29 @@
     <%- include("./partials/header") %> 
 
     <main>
-      <form class="form-register" action="/products" method="post" enctype="multipart/form-data">
+      <form class="form-register" action="/products" method="post">
         <h4 class="título form product-create">Formulario creación productos</h4>
-        <input class="controls login-box__input" type="text" name="name" id="nombre-libro" placeholder="Ingrese el nombre del libro">
+
+        <input class="controls login-box__input" type="text" name="name" id="nombre-libro" placeholder="Ingrese el nombre del libro" autofocus>
+
         <input class="controls login-box__input" type="text" name="autor" id="autor" placeholder="Ingrese del autor">
-        <input class="controls login-box__input" type="text" name="isbn" id="ISBN" placeholder="Ingrese el ISBN del texto">
+        
+        <input class="controls login-box__input" type="text" name="isbn" id="isbn" placeholder="Ingrese el ISBN del texto">
+        
         <input class="controls login-box__input" type="text" name="type" id="type" placeholder="Ingrese el género de su libro">
+        
         <textarea class="controls login-box__input" name="desc" id="desc" placeholder="Ingrese una descripción"></textarea>
+        
         <input class="controls login-box__input" type="file" name="image" id="image" placeholder="Ingrese una imágen de su libro">
 
-        <p>Estoy de acuerdo con los <a href="#">TERMINOS Y CONDICIONES</a></p>
+        <p>Estoy de acuerdo con los <a href="#"><b>Términos y Condiciones</b></a></p>
+        
         <input class="botons" type="submit" value="Registrar">
+        
         <p><a href="/products">Quiero modificar un producto ya creado</a></p>
       </form>
     </main>
+
     <%- include("./partials/footer") %>
   </body>
 

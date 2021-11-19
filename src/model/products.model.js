@@ -20,8 +20,12 @@ const model = {
   },
 
   addProduct: function (product) {
-    product.id = newID()
-    productsDB.push(product)
+    let newProduct = {
+      id: newID(),
+      ...product
+    }
+    
+    productsDB.push(newProduct)
 
     writeProducts()
   },

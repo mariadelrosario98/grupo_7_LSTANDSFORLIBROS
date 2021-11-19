@@ -106,7 +106,9 @@ header .top .top-center {
 
 header form {
   width: 100%;
+  max-width: 800px;
   text-align: center;
+  margin: 2px auto;
   padding: 10px 20px;
 
   display: flex;
@@ -164,6 +166,11 @@ main {
 footer {
   background-color: #3d56b2;
   color: #E6E6E6;
+}
+
+textarea.login-box__input {
+  resize: none;
+  height: 5em;
 }
 
 .table{

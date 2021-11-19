@@ -20,8 +20,9 @@ const controller = {
   },
 
   store: (req, res) => {
+    //res.send(req.body)
     productsModel.addProduct(req.body)
-
+    
     res.redirect("/products")
   },
   
