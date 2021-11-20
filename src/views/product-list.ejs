@@ -46,7 +46,9 @@
 
             <td>
               <a href="#">
-                <i class="fas fa-trash-alt"></i>
+                <form action= <%= "/products/" + libro.id + "?_method=DELETE" %> method="post">
+                  <input type="submit" value="DELETE">
+                </form>
               </a>
             </td>
           </tr>

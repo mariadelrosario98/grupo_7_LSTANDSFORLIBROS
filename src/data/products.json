@@ -1,15 +1,5 @@
 [
     {
-        "id": 1,
-        "img": "american_marxism.png",
-        "name": "American Marxism",
-        "autor": "Mark R. Levin",
-        "isbn": "9781501135972",
-        "type": "Libro",
-        "desc": "The seven-time #1 New York Times bestselling author, Fox News star, and radio host Mark R. Levin explains how the dangers he warned against in the “timely yet timeless” (David Limbaugh, author of Jesus Is Risen) bestseller Liberty and Tyranny have come to pass.",
-        "price": 50000
-    },
-    {
         "id": 2,
         "img": "cryinginhmart.jpeg",
         "name": "Crying in H Mart",
@@ -108,5 +98,15 @@
         "price": "15000",
         "desc": "gasdg",
         "img": "producto1.png"
+    },
+    {
+        "id": 1,
+        "img": "american_marxism.png",
+        "name": "rq",
+        "autor": "ew",
+        "isbn": "1",
+        "type": "Libro",
+        "desc": "The seven-time #1 New York Times bestselling author, Fox News star, and radio host Mark R. Levin explains how the dangers he warned against in the “timely yet timeless” (David Limbaugh, author of Jesus Is Risen) bestseller Liberty and Tyranny have come to pass.",
+        "price": 50000
     }
 ]

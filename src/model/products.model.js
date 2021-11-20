@@ -1,6 +1,6 @@
 const fs = require("fs")
 const path = require("path")
-const { productsDB } = require("../data")
+let { productsDB } = require("../data")
 
 const newID = () => {
   let id = 0
@@ -31,17 +31,17 @@ const model = {
   },
 
   deleteProduct: function (id) {
-    productsDB.filter(item => item.id !== id)
+    productsDB = productsDB.filter(item => item.id !== id)
 
     writeProducts()
   },
 
   editProduct: function (id, product) {
-    if (!this.exist(id))
-      return console.error("Este producto no existe!!")
+    if (!this.getProduct(id))
+      return console.error("Este producto no existe!!", id)
 
-    currentItem = this.getProduct(id)
-    editedItem = {
+    let currentItem = this.getProduct(id)
+    let editedItem = {
       ...currentItem,
       ...product
     }

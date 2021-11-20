@@ -35,10 +35,12 @@ const controller = {
   },
   
   update: (req, res) => {
-    let id = req.params.id
+    let id = parseInt(req.params.id)
     let product = req.body
     
     productsModel.editProduct(id, product)
+
+    res.redirect("/products")
   },
   
   delete: (req, res) => {
