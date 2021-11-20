@@ -1,6 +1,7 @@
 const express = require("express")
 const router = express.Router()
 const multer = require("multer")
+const path = require("path")
 const { productsController } = require("../controller")
 
 // Definiendo la carpeta en la que se guardarán los archivos subidos por el usuario
@@ -11,19 +12,20 @@ let storage = multer.diskStorage({
   },
 
   filename: (req, file, cb) => {
-    let imageName = Date.now() + path.extname(file.originalname)
+    let imageName = file.fieldname + "_" + Date.now() + path.extname(file.originalname) 
     cb(null, imageName)
   }
 })
 
 let upload = multer({storage: storage})
 
+
 //* Página de resumen
 router.get("/", productsController.list)
 
 //* Página de creación de productos
 router.get("/create", productsController.create)
-router.post("/", productsController.store)
+router.post("/", upload.single("product_image"),productsController.store)
 
 //* Página de edición de productos
 router.get("/:id/edit", productsController.edit)

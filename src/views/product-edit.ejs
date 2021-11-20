@@ -9,10 +9,9 @@
     <main>
       <form class="form-register" action="/products/:id?_method=PUT" method="post" enctype="multipart/form-data">
         <h4 class="título form product-create">Formulario edición productos</h4>
-        <input class="controls login-box__input" type="text" name="include" id="nombre-libro" placeholder="Ingrese el nombre del libro">
-        <input class="controls login-box__input" type="text" name="nombre" id="autor" placeholder="Ingrese del autor">
-        <input class="controls login-box__input" type="text" name="ISBN" id="ISBN" placeholder="Ingrese el ISBN del texto">
-        <p>Estoy de acuerdo con los <a href="#">TERMINOS Y CONDICIONES</a></p>
+        <input class="controls login-box__input" type="text" name="name" id="name" placeholder=<%= libro.name %>>
+        <input class="controls login-box__input" type="text" name="autor" id="autor" placeholder=<%= libro.autor %>>
+        <input class="controls login-box__input" type="number" name="isbn" id="isbn" placeholder=<%= libro.isbn %>>
         <input class="botons" type="submit" value="Editar">
         <p><a href="product-create">Quiero crear un producto</a></p>
       </form>

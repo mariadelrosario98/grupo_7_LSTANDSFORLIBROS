@@ -24,10 +24,14 @@ const controller = {
     productsModel.addProduct(req.body)
     
     res.redirect("/products")
+
   },
   
   edit: (req, res) => {
-    res.render("product-edit", {libros: productsDB, toThousand})
+    let id = parseInt(req.params.id)
+    let libro = productsModel.getProduct(id)
+
+    res.render("product-edit", {libro, toThousand}) 
   },
   
   update: (req, res) => {

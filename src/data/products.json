@@ -98,5 +98,15 @@
         "type": "Libro",
         "desc": "Think Again is a book about the benefit of doubt, and about how we can get better at embracing the unknown and the joy of being wrong. Evidence has shown that creative geniuses are not attached to one identity, but constantly willing to rethink their stances and that leaders who admit they don't know something and seek critical feedback lead more productive and innovative teams.",
         "price": 65000
+    },
+    {
+        "id": 11,
+        "name": "hdgjaj",
+        "autor": "jsdagaj",
+        "isbn": "hasdjgb",
+        "type": "gjgqb",
+        "price": "15000",
+        "desc": "gasdg",
+        "img": "producto1.png"
     }
 ]

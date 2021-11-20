@@ -17,7 +17,7 @@
         <% libros.forEach(libro => { %>
 
           <article class="product">
-            <img class="product-image" src=<%= "/img/products/" + libro.img %> alt="american_marxism book">
+            <img class="product-image" src=<%= "/img/products/" + libro.img %> >
             <div class="total">
               <div class="truckie"><i class="fas fa-truck"></i></div>
                 <p class="precio">$ <%= toThousand(libro.price) %></p>
