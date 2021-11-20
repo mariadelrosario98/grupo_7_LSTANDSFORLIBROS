@@ -47,6 +47,8 @@ const controller = {
     let id = req.params.id
 
     productsModel.deleteProduct(id)
+    
+    res.redirect("/products")
   },
 }
 
