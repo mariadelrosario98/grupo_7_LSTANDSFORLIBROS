@@ -1,10 +1,10 @@
 const express = require("express")
 const router = express.Router()
-const multer = require("multer")
 const path = require("path")
 const { productsController } = require("../controller")
 
-// Definiendo la carpeta en la que se guardarán los archivos subidos por el usuario
+//* Definiendo la carpeta en la que se guardarán los archivos subidos por el usuario
+const multer = require("multer")
 let storage = multer.diskStorage({
   destination: (req, file, cb) => {
     let folder = "public/img/products"
@@ -29,7 +29,7 @@ router.post("/", upload.single("product_image"),productsController.store)
 
 //* Página de edición de productos
 router.get("/:id/edit", productsController.edit)
-router.put("/:id", productsController.update)
+router.put("/:id", upload.single("product_image"), productsController.update)
 
 //* Página de product-deletion
 router.delete("/:id", productsController.delete)

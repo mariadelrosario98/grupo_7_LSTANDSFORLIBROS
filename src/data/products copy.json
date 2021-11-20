@@ -6,8 +6,8 @@
         "autor": "Mark R. Levin",
         "isbn": "9781501135972",
         "type": "Libro",
-        "desc": "The seven-time #1 New York Times bestselling author, Fox News star, and radio host Mark R. Levin explains how the dangers he warned against in the “timely yet timeless” (David Limbaugh, author of Jesus Is Risen) bestseller Liberty and Tyranny have come to pass.",
-        "price": 50000
+        "price": 50000,
+        "desc": "The seven-time #1 New York Times bestselling author, Fox News star, and radio host Mark R. Levin explains how the dangers he warned against in the “timely yet timeless” (David Limbaugh, author of Jesus Is Risen) bestseller Liberty and Tyranny have come to pass."
     },
     {
         "id": 2,
@@ -16,8 +16,8 @@
         "autor": "Michelle Zauner",
         "isbn": "9780525657743",
         "type": "Libro",
-        "desc": "An unflinching, powerful memoir about growing up Korean American, losing her mother, and forging her own identity. In this exquisite story of family, food, grief, and endurance, Michelle Zauner proves herself far more than a dazzling singer, songwriter, and guitarist.",
-        "price": 70500
+        "price": 70500,
+        "desc": "An unflinching, powerful memoir about growing up Korean American, losing her mother, and forging her own identity. In this exquisite story of family, food, grief, and endurance, Michelle Zauner proves herself far more than a dazzling singer, songwriter, and guitarist."
     },
     {
         "id": 3,
@@ -26,8 +26,8 @@
         "autor": "Tara Westover",
         "isbn": "9780099511021",
         "type": "Libro",
-        "desc": "Tara Westover was 17 the first time she set foot in a classroom. Born to survivalists in the mountains of Idaho, she prepared for the end of the world by stockpiling home-canned peaches and sleeping with her \"head-for-the-hills bag\". In the summer.",
-        "price": 30000
+        "price": 30000,
+        "desc": "Tara Westover was 17 the first time she set foot in a classroom. Born to survivalists in the mountains of Idaho, she prepared for the end of the world by stockpiling home-canned peaches and sleeping with her \"head-for-the-hills bag\". In the summer."
     },
     {
         "id": 4,
@@ -35,9 +35,9 @@
         "name": "Harlem Shuffle",
         "autor": "Colson Whitehead",
         "isbn": "0385545134",
+        "desc": "\"Ray Carney was only slightly bent when it came to being crooked...\" To his customers and neighbors on 125th street, Carney is an upstanding salesman of reasonably priced furnit,ure, making a decent life for himself and his family. He and his wife Elizabeth are expecting their second child...",
         "type": "Libro",
-        "desc": "\"Ray Carney was only slightly bent when it came to being crooked...\" To his customers and neighbors on 125th street, Carney is an upstanding salesman of reasonably priced furniture, making a decent life for himself and his family. He and his wife Elizabeth are expecting their second child...",
-        "price": 90000
+        "price": 9000
     },
     {
         "id": 5,
@@ -46,8 +46,8 @@
         "autor": "Louise Penny & Hillary Rodham Clinton",
         "isbn": "9783749903276",
         "type": "Libro",
-        "desc": "After a tumultuous period in American politics, a new administration has just been sworn in, and to everyone’s surprise the president chooses a political enemy for the vital position of secretary of state.",
-        "price": 20000
+        "price": 20000,
+        "desc": "After a tumultuous period in American politics, a new administration has just been sworn in, and to everyone’s surprise the president chooses a political enemy for the vital position of secretary of state."
     },
     {
         "id": 6,
@@ -56,8 +56,8 @@
         "autor": "Emily Henry",
         "isbn": "9781984806758",
         "type": "Libro",
-        "desc": "Poppy and Alex. Alex and Poppy. They have nothing in common. She’s a wild child; he wears khakis. She has insatiable wanderlust; he prefers to stay home with a book. And somehow, ever since a fateful car share home from college many years ago.",
-        "price": 30000
+        "price": 30000,
+        "desc": "Poppy and Alex. Alex and Poppy. They have nothing in common. She’s a wild child; he wears khakis. She has insatiable wanderlust; he prefers to stay home with a book. And somehow, ever since a fateful car share home from college many years ago."
     },
     {
         "id": 7,
@@ -66,8 +66,8 @@
         "autor": "Bob Woodward & Robert Costa",
         "isbn": "9781982182915",
         "type": "Libro",
-        "desc": "The transition from President Donald J. Trump to President Joseph R. Biden Jr. stands as one of the most dangerous periods in American history. But as # 1 internationally bestselling author Bob Woodward and acclaimed reporter Robert Costa reveal for the first time.",
-        "price": 70500
+        "price": 70500,
+        "desc": "The transition from President Donald J. Trump to President Joseph R. Biden Jr. stands as one of the most dangerous periods in American history. But as # 1 internationally bestselling author Bob Woodward and acclaimed reporter Robert Costa reveal for the first time."
     },
     {
         "id": 8,
@@ -76,8 +76,8 @@
         "autor": "Mark Manson",
         "isbn": "9780062641540",
         "type": "Libro",
-        "desc": "In this generation-defining self-help guide, a superstar blogger cuts through the crap to show us how to stop trying to be \"positive\" all the time so that we can truly become better, happier people. For decades, we’ve been told that positive thinking",
-        "price": 23200
+        "price": 23200,
+        "desc": "In this generation-defining self-help guide, a superstar blogger cuts through the crap to show us how to stop trying to be \"positive\" all the time so that we can truly become better, happier people. For decades, we’ve been told that positive thinking"
     },
     {
         "id": 9,
@@ -86,8 +86,8 @@
         "autor": "Anthony Bourdain & Laurie Woolever",
         "isbn": "9781526630216",
         "type": "Libro",
-        "desc": "A guide to some of the world’s most fascinating places, as seen and experienced by writer, television host, and relentlessly curious traveler Anthony Bourdain.",
-        "price": 90000
+        "price": 90000,
+        "desc": "A guide to some of the world’s most fascinating places, as seen and experienced by writer, television host, and relentlessly curious traveler Anthony Bourdain."
     },
     {
         "id": 10,
@@ -96,17 +96,7 @@
         "autor": "Adam H. Grant",
         "isbn": "9780593298749",
         "type": "Libro",
-        "desc": "Think Again is a book about the benefit of doubt, and about how we can get better at embracing the unknown and the joy of being wrong. Evidence has shown that creative geniuses are not attached to one identity, but constantly willing to rethink their stances and that leaders who admit they don't know something and seek critical feedback lead more productive and innovative teams.",
-        "price": 65000
-    },
-    {
-        "id": 11,
-        "name": "hdgjaj",
-        "autor": "jsdagaj",
-        "isbn": "hasdjgb",
-        "type": "gjgqb",
-        "price": "15000",
-        "desc": "gasdg",
-        "img": "producto1.png"
+        "price": 65000,
+        "desc": "Think Again is a book about the benefit of doubt, and about how we can get better at embracing the unknown and the joy of being wrong. Evidence has shown that creative geniuses are not attached to one identity, but constantly willing to rethink their stances and that leaders who admit they don't know something and seek critical feedback lead more productive and innovative teams."
     }
 ]

@@ -20,11 +20,10 @@ const controller = {
   },
 
   store: (req, res) => {
-    //res.send(req.body)
+    // res.send(req.body)
     productsModel.addProduct(req.body)
     
     res.redirect("/products")
-
   },
   
   edit: (req, res) => {
@@ -32,6 +31,7 @@ const controller = {
     let libro = productsModel.getProduct(id)
 
     res.render("product-edit", {libro, toThousand}) 
+    // res.send(libro)
   },
   
   update: (req, res) => {
@@ -44,7 +44,7 @@ const controller = {
   },
   
   delete: (req, res) => {
-    let id = req.params.id
+    let id = parseInt(req.params.id)
 
     productsModel.deleteProduct(id)
     

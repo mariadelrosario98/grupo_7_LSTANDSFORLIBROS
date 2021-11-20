@@ -173,6 +173,10 @@ textarea.login-box__input {
   height: 5em;
 }
 
+button, input[type="submit"]{
+  cursor: pointer;
+}
+
 .table{
   margin: auto;
   text-align: center;
@@ -255,7 +259,7 @@ textarea.login-box__input {
 .contenedor2 {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
   width: 100%;
 }
 
@@ -346,6 +350,10 @@ textarea.login-box__input {
   font-size: 16px
 }
 
+.delete-button{
+  border: none;
+}
+
 .product {
   border: 1px solid #ebebeb;
   width: 85%;
@@ -357,17 +365,24 @@ textarea.login-box__input {
 .descrip {
   text-align: justify;
   text-justify: inter-word;
+  width: 100%;
   padding: 2px;
   margin-top: 5px;
 }
 
 .details{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  
   background-color: #5C7AEA;
   border-radius: 5px;
   color: white;
   max-width: 50%;
+  height: 3em;
   margin: 15px auto;
-  padding: 10px;
+  padding: 10px 20px;
 }
 
 .logo-footer{
@@ -377,6 +392,7 @@ textarea.login-box__input {
 .footer-art{
   display:flex;
   justify-content:space-around;
+  align-items: center;
 }
 
 .articulo--top--img{
@@ -446,9 +462,10 @@ textarea.login-box__input {
   }
 
   .product{
-    box-shadow: 0px 0px 10px rgb (100,100,100);
+    /* box-shadow: 0px 0px 10px rgb (100,100,100); */
     display: flex;
     flex-wrap: wrap;
+    align-items: stretch;
   }
 
   .contenedor1,

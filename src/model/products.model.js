@@ -1,6 +1,6 @@
 const fs = require("fs")
 const path = require("path")
-let { productsDB } = require("../data")
+const { productsDB } = require("../data")
 
 const newID = () => {
   let id = 0
@@ -22,16 +22,11 @@ const model = {
   addProduct: function (product) {
     let newProduct = {
       id: newID(),
-      ...product
+      ...product,
+      price: parseInt(product.price)
     }
-    
+
     productsDB.push(newProduct)
-
-    writeProducts()
-  },
-
-  deleteProduct: function (id) {
-    productsDB = productsDB.filter(item => item.id !== id)
 
     writeProducts()
   },
@@ -43,12 +38,36 @@ const model = {
     let currentItem = this.getProduct(id)
     let editedItem = {
       ...currentItem,
-      ...product
+      name: product.name || currentItem.name,
+      autor: product.autor || currentItem.autor,
+      isbn: product.isbn || currentItem.isbn,
+      type: product.type || currentItem.type,
+      price: parseInt(product.price || currentItem.price),
+      desc: product.desc || currentItem.desc,
     }
 
-    this.deleteProduct(id)
-    this.addProduct(editedItem)
-  }
+    let index = productsDB.indexOf(currentItem)
+    productsDB[index] = editedItem
+
+    writeProducts()
+  },
+
+  deleteProduct: function (id) {
+    let productToDelete = this.getProduct(id)
+    if (!productToDelete)
+      return console.error("Este producto no existe!! id: ", id)
+
+    let indexToDelete = productsDB.indexOf(productToDelete)
+    productsDB.splice(indexToDelete, 1)
+
+    writeProducts()
+  },
 }
 
 module.exports = model
+
+// console.log(model.getProduct(0))
+// console.log(model.getProduct(1))
+// console.log(model.getProduct(3))
+// console.log(model.getProduct(5))
+// console.log(model.getProduct(7))
