@@ -10,7 +10,7 @@
       <form class="form-register" action=<%= "/products/" + libro.id + "?_method=PUT" %>  method="post">
         <h4 class="título form product-create">Formulario Edición Productos</h4>
         
-        <input class="controls login-box__input" type="text" name="name" id="name" placeholder= "<%= libro.name %>" >
+        <input class="controls login-box__input" type="text" name="name" id="name" placeholder= "<%= libro.name %>" autofocus>
         
         <input class="controls login-box__input" type="text" name="autor" id="autor" placeholder= "<%= libro.autor %>" >
         
@@ -19,7 +19,7 @@
         <input class="botons" type="submit" value="Editar">
         
         <p>
-          <a href="product-create">Quiero crear un producto</a>
+          <a href="/products/create">Quiero crear un producto</a>
         </p>
       </form>
     </main>

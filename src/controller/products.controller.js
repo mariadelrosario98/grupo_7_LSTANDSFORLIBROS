@@ -20,8 +20,8 @@ const controller = {
   },
 
   store: (req, res) => {
-    // res.send(req.body)
-    productsModel.addProduct(req.body)
+    // res.send(req.file)
+    productsModel.addProduct(req.body, req.file.filename)
     
     res.redirect("/products")
   },
@@ -37,8 +37,9 @@ const controller = {
   update: (req, res) => {
     let id = parseInt(req.params.id)
     let product = req.body
+    let fileName = req.file.filename || null
     
-    productsModel.editProduct(id, product)
+    productsModel.editProduct(id, product, fileName)
 
     res.redirect("/products")
   },

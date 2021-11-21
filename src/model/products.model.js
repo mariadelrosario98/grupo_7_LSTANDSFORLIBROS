@@ -19,9 +19,10 @@ const model = {
     return productsDB.find(item => item.id === id) || null
   },
 
-  addProduct: function (product) {
+  addProduct: function (product, fileName) {
     let newProduct = {
       id: newID(),
+      img: fileName,
       ...product,
       price: parseInt(product.price)
     }
@@ -31,13 +32,14 @@ const model = {
     writeProducts()
   },
 
-  editProduct: function (id, product) {
+  editProduct: function (id, product, fileName) {
     if (!this.getProduct(id))
       return console.error("Este producto no existe!!", id)
 
     let currentItem = this.getProduct(id)
     let editedItem = {
       ...currentItem,
+      img: fileName || currentItem.img,
       name: product.name || currentItem.name,
       autor: product.autor || currentItem.autor,
       isbn: product.isbn || currentItem.isbn,
