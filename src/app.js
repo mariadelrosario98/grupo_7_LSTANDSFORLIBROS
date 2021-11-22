@@ -28,6 +28,13 @@ app.use(session({secret: "Bienvenidos a nuestra libreria de libros ;)"}))
 const cookieParser = require("cookie-parser")
 app.use(cookieParser())
 
+//* Uso de libreria para encriptación
+const bcrypt = require("bcryptjs")
+let encryptedPassword = bcrypt.hashSync("123456", 10)
+console.log(encryptedPassword);
+let check = bcrypt.compareSync("123456", encryptedPassword)
+console.log(check);
+
 //* Requerir y definir las rutas
 const { homeRoutes, productsRoutes } = require("./routes")
 app.use("/", homeRoutes)
