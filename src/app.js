@@ -24,6 +24,10 @@ app.use(methodOverride("_method"))
 const session = require("express-session")
 app.use(session({secret: "Bienvenidos a nuestra libreria de libros ;)"}))
 
+//* Incluir el middleware para lectura y escritura de galletitas
+const cookieParser = require("cookie-parser")
+app.use(cookieParser())
+
 //* Requerir y definir las rutas
 const { homeRoutes, productsRoutes } = require("./routes")
 app.use("/", homeRoutes)

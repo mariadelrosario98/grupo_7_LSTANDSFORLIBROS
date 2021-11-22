@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/mariadelrosario98/grupo_7_LSTANDSFORLIBROS#readme",
   "dependencies": {
+    "cookie-parser": "^1.4.6",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
     "express-session": "^1.17.2",
