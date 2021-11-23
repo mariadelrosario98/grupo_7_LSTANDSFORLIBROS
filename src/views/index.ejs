@@ -22,9 +22,13 @@
               <div class="truckie"><i class="fas fa-truck"></i></div>
                 <p class="precio">$ <%= toThousand(libro.price) %></p>
             </div>
-            <p class="descrip">
-              <%= libro.desc %>
-            </p>
+            <div class="descrip">
+              <div class="title">
+                <%= libro.name %>
+              </div>
+              
+              <%= libro.autor %>
+            </div>
             </div>
             <a class="details" href=<%= "/products/" + libro.id %>>Ver más</a>
           </article>
