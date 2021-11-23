@@ -16,22 +16,24 @@
       <section class="contenedor1">
         <% libros.forEach(libro => { %>
 
-          <article class="product">
+          <a href=<%= "/products/" + libro.id %> class="product">
             <img class="product-image" src=<%= "/img/products/" + libro.img %> >
             <div class="total">
-              <div class="truckie"><i class="fas fa-truck"></i></div>
+              <!-- <div class="truckie"><i class="fas fa-truck"></i></div> -->
                 <p class="precio">$ <%= toThousand(libro.price) %></p>
             </div>
             <div class="descrip">
               <div class="title">
                 <%= libro.name %>
               </div>
-              
-              <%= libro.autor %>
+
+              <div class="autor">
+                <%= libro.autor %>
+              </div>
             </div>
             </div>
-            <a class="details" href=<%= "/products/" + libro.id %>>Ver más</a>
-          </article>
+            <!-- <a class="details" href=<%= "/products/" + libro.id %> >Ver más</a> -->
+          </a>
         <% }) %>
 
       </section>

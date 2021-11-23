@@ -31,9 +31,9 @@ app.use(cookieParser())
 //* Uso de libreria para encriptación
 const bcrypt = require("bcryptjs")
 let encryptedPassword = bcrypt.hashSync("123456", 10)
-console.log(encryptedPassword);
+// console.log(encryptedPassword);
 let check = bcrypt.compareSync("123456", encryptedPassword)
-console.log(check);
+// console.log(check);
 
 //* Requerir y definir las rutas
 const { homeRoutes, productsRoutes } = require("./routes")

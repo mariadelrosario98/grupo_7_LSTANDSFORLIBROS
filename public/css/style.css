@@ -259,7 +259,7 @@ button, input[type="submit"]{
 .contenedor2 {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: space-evenly;
   width: 100%;
 }
 
@@ -357,9 +357,17 @@ button, input[type="submit"]{
 .product {
   border: 1px solid #ebebeb;
   width: 85%;
-  padding: 10px;
-  border-radius: 5px;
+  padding: 15px;
+  margin: 10px;
+  border: 1px solid #335;
+  border-radius: 25px;
   text-align: center;
+}
+
+.product:hover{
+  cursor: pointer;
+  border: none;
+  box-shadow: 0px 0px 10px rgb(100,100,100);
 }
 
 .descrip {
@@ -371,7 +379,12 @@ button, input[type="submit"]{
 
 .title{
   font-weight: bold;
+  line-height: 1.2em;
   padding-bottom: 0.3em;
+}
+
+.autor{
+  font-style: italic;
 }
 
 .details{
@@ -383,7 +396,6 @@ button, input[type="submit"]{
   background-color: #5C7AEA;
   border-radius: 5px;
   color: white;
-  max-width: 50%;
   height: 3em;
   margin: 15px auto;
   padding: 10px 20px;
@@ -452,9 +464,12 @@ button, input[type="submit"]{
 
   .product {
     max-width: 40%;
-    padding: 10px;
     text-align: center;
-    border-radius: 5px;
+
+    /* box-shadow: 0px 0px 10px rgb (100,100,100); */
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
   }
 
   header .top .top-left .logo-text {
@@ -463,13 +478,6 @@ button, input[type="submit"]{
     flex-flow: wrap column;
     justify-content: center;
     font-weight: bold;
-  }
-
-  .product{
-    /* box-shadow: 0px 0px 10px rgb (100,100,100); */
-    display: flex;
-    flex-wrap: wrap;
-    align-items: stretch;
   }
 
   .contenedor1,
@@ -518,8 +526,8 @@ button, input[type="submit"]{
   }
 
   .product {
-    max-width: 25%;
-    padding: 10px;
+    min-width: calc(0.4 * 769);
+    width: 20em;
   }
 }
 
