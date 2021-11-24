@@ -10,11 +10,26 @@
       <form class="form-register" action=<%= "/products/" + libro.id + "?_method=PUT" %>  method="post">
         <h4 class="título form product-create">Formulario Edición Productos</h4>
         
+        <label for="name">Nombre:</label>
         <input class="controls login-box__input" type="text" name="name" id="name" placeholder= "<%= libro.name %>" autofocus>
-        
+
+        <label for="autor">Autor:</label>
         <input class="controls login-box__input" type="text" name="autor" id="autor" placeholder= "<%= libro.autor %>" >
         
-        <input class="controls login-box__input" type="number" name="isbn" id="isbn" placeholder= <%= libro.isbn %> >
+        <label for="isbn">ISBN:</label>
+        <input class="controls login-box__input" type="text" name="isbn" id="isbn" placeholder= <%= libro.isbn %> >
+
+        <label for="type">Género:</label>
+        <input class="controls login-box__input" type="text" name="type" id="type" placeholder= <%= libro.type %> >
+
+        <label for="price">Precio:</label>
+        <input class="controls login-box__input" type="number" name="price" id="price" placeholder= "<%= "$ " + toThousand(libro.price) %>"" min="0" step="100">
+
+        <label for="desc">Descripción:</label>
+        <textarea class="controls login-box__input" type="number" name="desc" id="desc" placeholder="<%= libro.desc %>"></textarea>
+
+        <label for="product_image">Imagen:</label>
+        <input class="controls login-box__input" type="file" name="product_image" id="product_image">
         
         <input class="botons" type="submit" value="Editar">
         
