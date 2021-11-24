@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
   <%- include("./partials/head", {title: "Detalles del producto"}) %>
 
   <body>
@@ -17,10 +18,10 @@
           <div class="articulo--top">
             <img src=<%= "/img/products/" + libro.img %> alt="" class="articulo--top--img">
             <div class="articulo--top--info">
-              <p><b> <%= libro.name %> </b></p>
-              <p><b>Autor:</b> <%= libro.autor %></p>
-              <p><b>ISBN:</b> <%= libro.isbn %></p>
-              <p><b>Tipo:</b> <%= libro.type %></p>
+              <p class="title"><b> <strong><%= libro.name %> </strong></b></p>
+              <p class="author"><b>Autor:</b> <%= libro.autor %></p>
+              <p class="isbn"><b>ISBN:</b> <%= libro.isbn %></p>
+              <p class="type"><b>Tipo:</b> <%= libro.type %></p>
 
               <p class="articulo--desc laptop">
                 <%= libro.desc %>

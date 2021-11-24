@@ -166,6 +166,7 @@ main {
 footer {
   background-color: #3d56b2;
   color: #E6E6E6;
+  margin-top: 5em;
 }
 
 textarea.login-box__input {
@@ -176,6 +177,7 @@ textarea.login-box__input {
 button, input[type="submit"]{
   cursor: pointer;
 }
+
 
 .table{
   margin: auto;
@@ -421,17 +423,33 @@ button, input[type="submit"]{
   align-items: center;
 }
 
-.articulo--top--img{
-  max-width: 50%;
+.articulo--top{
+  margin-bottom: 50px;
+}
 
+.articulo--top--img{
+  width: 40%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5%;
 }
 
 .articulo{
- border-radius: 5px;
- border: solid 1px black;
- max-width: 30%;
+ border-radius: 10px;
+ background-color: #ccc;
+ max-width: 50%;
  margin: auto;
- display: flex;
+ padding: 10px;
+}
+
+.title{
+  font-weight: bold;
+  text-align:center;
+}
+
+.articulo--top--info{
+  text-align:justify;
 }
 
 .whatsapp{
