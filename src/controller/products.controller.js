@@ -35,13 +35,14 @@ const controller = {
   },
   
   update: (req, res) => {
-    let id = parseInt(req.params.id)
-    let product = req.body
-    let fileName = req.file.filename || null
+    res.send(req.body)
+    // let id = parseInt(req.params.id)
+    // let product = req.body
+    // let fileName = req.file.filename || null
     
-    productsModel.editProduct(id, product, fileName)
+    // productsModel.editProduct(id, product, fileName)
 
-    res.redirect("/products")
+    // res.redirect("/products")
   },
   
   delete: (req, res) => {
