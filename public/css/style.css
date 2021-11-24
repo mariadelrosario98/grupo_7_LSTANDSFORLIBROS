@@ -259,14 +259,15 @@ button, input[type="submit"]{
 .contenedor2 {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: center;
+  margin: auto;
   width: 100%;
 }
 
-.total{
+/* .total{
   width: 100%;
   padding: 5px 0 0;
-}
+} */
 
 .truckie {
   background-color: white;
@@ -278,6 +279,7 @@ button, input[type="submit"]{
 
 .precio{
   margin: auto;
+  color: #14279B;
 }
 
 .small-container {
@@ -359,9 +361,14 @@ button, input[type="submit"]{
   width: 85%;
   padding: 15px;
   margin: 10px;
-  border: 1px solid #335;
+  border: 1px solid rgb(100,100,100);
   border-radius: 25px;
   text-align: center;
+  align-content: space-between;
+}
+
+.product img{
+  border-radius: 20px;
 }
 
 .product:hover{
@@ -373,21 +380,24 @@ button, input[type="submit"]{
 .descrip {
   text-align: center;
   width: 100%;
+  max-height: 4em;
   padding: 2px;
   margin-top: 5px;
+  display: flex;
+  flex-direction: column;
 }
 
 .title{
   font-weight: bold;
   line-height: 1.2em;
-  padding-bottom: 0.3em;
+  padding: 0.3em 0;
 }
 
 .autor{
   font-style: italic;
 }
 
-.details{
+/* .details{
   display: flex;
   justify-content: center;
   align-content: center;
@@ -399,7 +409,7 @@ button, input[type="submit"]{
   height: 3em;
   margin: 15px auto;
   padding: 10px 20px;
-}
+} */
 
 .logo-footer{
   flex-grow: 2;
