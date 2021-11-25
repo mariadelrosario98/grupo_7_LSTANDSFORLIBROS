@@ -101,12 +101,12 @@
     },
     {
         "id": 11,
-        "img": "product_image_1637719364495.jpg",
+        "img": "product_image_1637805034945.jpg",
         "name": "Hola Mundo",
         "autor": "Kevin Simanca",
         "isbn": "541484646842",
         "type": "Libro",
-        "price": 100000,
-        "desc": "Un librito muy peculiar, ademas de caro c:"
+        "price": 1000000,
+        "desc": "Un librito de texto muy peculiar, además de caro c:"
     }
 ]

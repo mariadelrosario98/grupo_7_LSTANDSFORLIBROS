@@ -17,7 +17,7 @@ let storage = multer.diskStorage({
   }
 })
 
-let upload = multer({storage: storage})
+let upload = multer({storage})
 
 
 //* Página de resumen
@@ -25,7 +25,7 @@ router.get("/", productsController.list)
 
 //* Página de creación de productos
 router.get("/create", productsController.create)
-router.post("/", upload.single("product_image"),productsController.store)
+router.post("/", upload.single("product_image"), productsController.store)
 
 //* Página de edición de productos
 router.get("/:id/edit", productsController.edit)
