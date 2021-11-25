@@ -432,6 +432,7 @@ button, input[type="submit"]{
 
 .articulo--top{
   margin-bottom: 50px;
+  padding: 2em;
 }
 
 .articulo--top--img{
@@ -447,7 +448,6 @@ button, input[type="submit"]{
  background-color: #ccc;
  max-width: 50%;
  margin: auto;
- padding: 10px;
 }
 
 .title{
