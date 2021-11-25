@@ -86,17 +86,17 @@ header .top .top-right i:hover {
   transform: rotate(-15deg);
 }
 
-header .top .top-right .button {
-  font-size: 12px;
+.top-button {
+  font-size: 16px;
   background-color: #5C7AEA;
   padding: 10px;
   margin-right: 10px;
   border: 1px solid #14279B;
-  border-radius: 10px;
+  border-radius: 3em;
   transition: all 0.2s;
 }
 
-header .top .top-right .button:hover {
+.top-button:hover {
   color: #14279B;
   background-color: #ebebeb;
 }
@@ -588,13 +588,14 @@ button, input[type="submit"]{
   margin: 0;
   padding: 0 0 20px;
   text-align: center;
-  font-size: 22px;
+  font-size: 25px;
 }
 
 .login-box label {
   margin: 0;
   padding: 0;
-  font-weight: 'Open Sans', sans-serif;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
   display: block;
 }
 

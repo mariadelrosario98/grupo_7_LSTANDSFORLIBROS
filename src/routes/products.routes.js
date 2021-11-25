@@ -25,11 +25,11 @@ router.get("/", productsController.list)
 
 //* Página de creación de productos
 router.get("/create", productsController.create)
-router.post("/", upload.single("product_image"), productsController.store)
+router.post("/", upload.single("product-image"), productsController.store)
 
 //* Página de edición de productos
 router.get("/:id/edit", productsController.edit)
-router.put("/:id", upload.single("product_image"), productsController.update)
+router.put("/:id", upload.single("product-image"), productsController.update)
 
 //* Página de product-deletion
 router.delete("/:id", productsController.delete)

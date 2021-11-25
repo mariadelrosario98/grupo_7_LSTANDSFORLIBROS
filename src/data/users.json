@@ -6,8 +6,9 @@
     "email": "maria.castrico@gmail.com",
     "password":"Encriptadita",
     "Categoria":"Vendor",
-    "Image":"user-image1.jpeg"
+    "image":"user-image1.jpeg"
   },
+  
   {
     "id": 2,
     "name": "Kevin",
@@ -15,8 +16,9 @@
     "email": "kevin.simanca@gmail.com",
     "password":"encript",
     "Categoria":"Buyer",
-    "Image":"user-image2.jpeg"
+    "image":"user-image2.jpeg"
   },
+  
   {
     "id": 3,
     "name": "Elisaul",
@@ -24,8 +26,9 @@
     "email": "elisaul.garcia@gmail.com",
     "password":"yuo",
     "Categoria":"Vendor",
-    "Image":"user-image3.jpeg"
+    "image":"user-image3.jpeg"
   },
+  
   {
     "id": 4,
     "name": "Zabdiel",
@@ -33,6 +36,6 @@
     "email": "zabdiel.blanco@gmail.com",
     "password":"loijas",
     "Categoria":"Seller",
-    "Image":"user-image4.jpeg"
+    "image":"user-image4.jpeg"
   }
 ]
