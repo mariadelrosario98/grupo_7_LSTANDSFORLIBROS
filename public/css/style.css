@@ -314,11 +314,12 @@ button, input[type="submit"]{
 }
 
 .form-register {
-  width: 400px;
+  width: 500px;
+  max-width: 100%;
   background: #3D56B2;
-  padding: 30px;
+  padding: 2em;
   margin: 50px auto;
-  border-radius: 4px;
+  border-radius: 3em;
   font-family: 'Open Sans', sans-serif;
   color: #E6E6E6;
   box-shadow: 7px 13px 37px #000;
@@ -539,6 +540,10 @@ button, input[type="submit"]{
   .contenedor2 {
     display: flex;
     flex-wrap: wrap;
+  }
+
+  .form-register {
+    padding: 3em;
   }
 }
 

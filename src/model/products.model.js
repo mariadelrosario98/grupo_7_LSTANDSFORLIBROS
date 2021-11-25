@@ -37,6 +37,12 @@ const model = {
       return console.error("Este producto no existe!!", id)
 
     let currentItem = this.getProduct(id)
+
+    if (fileName) {
+      let imgPath = path.resolve(__dirname, "..", "../public/img/products", currentItem.img)
+      fs.rmSync(imgPath)
+    }
+
     let editedItem = {
       ...currentItem,
       img: fileName || currentItem.img,

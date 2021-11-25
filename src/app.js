@@ -3,7 +3,7 @@ const app = express()
 const path = require("path")
 
 //* Declarar el puerto para uso con Heroku
-let port = process.env.PORT || 3000
+let port = process.env.PORT || 4000
 
 //* Definir el motor de templates y la carpeta views
 app.set("view engine", "ejs")
