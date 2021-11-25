@@ -2,9 +2,6 @@ const express = require("express")
 const app = express()
 const path = require("path")
 
-//* Declarar el puerto para uso con Heroku
-let port = process.env.PORT || 4000
-
 //* Definir el motor de templates y la carpeta views
 app.set("view engine", "ejs")
 app.set("views", path.join(__dirname, "views"))
@@ -47,5 +44,4 @@ app.use((req, res, next) => {
 })
 
 
-//! FAVOR NO AGREGAR CÓDIGO DEBAJO DE ESTA LINEA
-app.listen(port, () => console.log("Servidor corriendo en el puerto", port))
+module.exports = app
