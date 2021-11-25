@@ -1,41 +1,41 @@
 [
   {
     "id": 1,
+    "img":"user-image1.jpeg",
     "name": "Maria",
     "surname": "Castro",
     "email": "maria.castrico@gmail.com",
     "password":"Encriptadita",
-    "Categoria":"Vendor",
-    "image":"user-image1.jpeg"
+    "category":"vendor"
   },
   
   {
     "id": 2,
+    "img":"user-image2.jpeg",
     "name": "Kevin",
     "surname": "Simanca",
     "email": "kevin.simanca@gmail.com",
     "password":"encript",
-    "Categoria":"Buyer",
-    "image":"user-image2.jpeg"
+    "category":"buyer"
   },
   
   {
     "id": 3,
+    "img":"user-image3.jpeg",
     "name": "Elisaul",
     "surname": "García",
     "email": "elisaul.garcia@gmail.com",
     "password":"yuo",
-    "Categoria":"Vendor",
-    "image":"user-image3.jpeg"
+    "category":"vendor"
   },
   
   {
     "id": 4,
+    "img":"user-image4.jpeg",
     "name": "Zabdiel",
     "surname": "Blanco",
     "email": "zabdiel.blanco@gmail.com",
     "password":"loijas",
-    "Categoria":"Seller",
-    "image":"user-image4.jpeg"
+    "category":"vendor"
   }
 ]

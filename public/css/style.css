@@ -25,6 +25,8 @@ header {
   color: #ebebeb;
   background-color: #3D56B2;
 
+  border-bottom: 1px solid #ebebeb;
+
   position: fixed;
   z-index: 10;
 }
@@ -34,7 +36,7 @@ header .top {
   justify-content: space-between;
 
 
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #ebebeb;
 }
 
 header .top .top-left {
@@ -162,7 +164,6 @@ main {
   padding-top: 120px;
   width: 100%;
   background-color: #E6E6E6;
-  padding-bottom: 5em;
 }
 
 footer {
@@ -325,14 +326,21 @@ button, input[type="submit"]{
 
 .form-register h4 {
   font-size: 22 px;
-  margin-bottom: 20px;
+}
+
+.form-register label{
+  display: inline-block;
+  margin-top: 1em;
+}
+
+.category label{
+  margin: 0.5em;
 }
 
 .controls {
   width: 100%;
   background-color: #E6E6E6;
   padding: 10px;
-  margin-bottom: 16px;
   border: 1px solid #14279B;
   font-family: 'Open Sans', sans-serif;
   font-size: 18px;
@@ -355,13 +363,21 @@ button, input[type="submit"]{
 
 .form-register .botons {
   width: 100%;
+  height: 3em;
   background: #E6E6E6;
-  border: none;
+  border: 1px solid #ebebeb;
+  border-radius: 1.5em;
   padding: 12px;
   color: #14279B;
   font-weight: bold;
   margin: 16px 0;
-  font-size: 16px
+  font-size: 16px;
+  transition: all 0.2s;
+}
+
+.form-register .botons:hover {
+  background: #14279B;
+  color: #ebebeb;
 }
 
 .delete-button{
@@ -659,4 +675,12 @@ button, input[type="submit"]{
 
 .login-box form a:hover {
   color: rgb(131, 29, 29);
+}
+
+/* .category{
+  margin: 0.1em;
+} */
+
+.terms{
+  margin-top: 1em;
 }
