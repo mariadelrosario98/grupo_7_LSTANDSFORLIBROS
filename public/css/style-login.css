@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-flow: wrap row;
+}
+
+main{
+  padding: 0;
+  min-height: 100vh;
+}
+
+.banner{
+  display: none;
+}
+
+.login-box{
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 1.5em;
+  border: 1px solid #14279B;
+}
+
+.login-box .logo{
+  margin-right: 2em;
+}
+
+.login-box form{
+  max-width: 30em;
+  margin: auto;
+  padding-top: 8em;
+}
+
+.top{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.logo-text {
+  width: 100%;
+  display: flex;
+  flex-flow: wrap column;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.register-corner{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.register-corner p{
+  display: none;
+}
+
+@media (min-width: 481px) {
+  .register-corner p{
+    display: block;
+    text-align: center;
+    margin-right: 1em;
+  }
+}
+
+@media (min-width: 769px) {
+  .banner{
+    display: block;
+
+    min-height: 100vh;
+    width: 30%;
+
+    background-image: url(/img/side-banner.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .banner-content{
+    display: flex;
+    flex-flow: wrap column;
+    align-items: center;
+    justify-content: space-around;
+
+    position: fixed;
+    left: 0;
+    bottom: 0;
+
+    width: 30vw;
+    height: 90vh;
+
+    padding: 0 1.5em;
+
+    text-align: center;
+    color: #ebebeb;
+    text-shadow: 1px 1px 5px #111;
+  }
+
+  .desc{
+    text-align: center;
+  }
+
+  .desc img{
+    width: 5em;
+  }
+
+  .desc p{
+    text-align: justify;
+    margin-top: 0.5em;
+  }
+
+  .social{
+    flex-flow: wrap column;
+  }
+
+  .links{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 0.5em;
+  }
+
+  .login-box{
+    width: 70%;
+  }
+}
