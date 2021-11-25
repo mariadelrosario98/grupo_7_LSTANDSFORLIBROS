@@ -56,11 +56,12 @@ header .top .top-left i {
   font-size: 24px;
 }
 
-header .top .top-left img {
+a.logo img {
   height: 60px;
+  width: auto;
 }
 
-header .top .top-left a {
+a.logo {
   display: flex;
   justify-content: center;
 }
@@ -161,12 +162,12 @@ main {
   padding-top: 120px;
   width: 100%;
   background-color: #E6E6E6;
+  padding-bottom: 5em;
 }
 
 footer {
   background-color: #3d56b2;
   color: #E6E6E6;
-  margin-top: 5em;
 }
 
 textarea.login-box__input {
@@ -638,7 +639,7 @@ button, input[type="submit"]{
   color: #14279B;
 }
 
-.login-box a {
+.login-box form a {
   text-decoration: none;
   font-size: 12px;
   line-height: 20px;
@@ -646,6 +647,6 @@ button, input[type="submit"]{
   transition: all 0.1s;
 }
 
-.login-box a:hover {
+.login-box form a:hover {
   color: rgb(131, 29, 29);
 }
