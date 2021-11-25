@@ -120,7 +120,7 @@ main{
     margin-top: 0.5em;
   }
 
-  .social{
+  /* .social{
     flex-flow: wrap column;
   }
 
@@ -128,7 +128,7 @@ main{
     display: flex;
     justify-content: space-evenly;
     margin-top: 0.5em;
-  }
+  } */
 
   .login-box{
     width: 70%;

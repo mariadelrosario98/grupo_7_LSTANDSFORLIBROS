@@ -219,11 +219,20 @@ button, input[type="submit"]{
 .social {
   max-width: 40vw;
   display: flex;
+  flex-flow: wrap column;
   justify-content: center;
+  padding-top: 1em;
 }
 
 .social img {
   width: 20px;
+}
+
+.links{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-top: 0.5em;
 }
 
 .derecha {
@@ -254,9 +263,9 @@ button, input[type="submit"]{
   padding-top: 10px;
 }
 
-.cuadrito {
+/* .cuadrito {
   padding-top: 10px;
-}
+} */
 
 .contenedor1,
 .contenedor2 {
