@@ -36,9 +36,10 @@ let check = bcrypt.compareSync("123456", encryptedPassword)
 // console.log(check);
 
 //* Requerir y definir las rutas
-const { homeRoutes, productsRoutes } = require("./routes")
+const { homeRoutes, productsRoutes, usersRoutes } = require("./routes")
 app.use("/", homeRoutes)
 app.use("/products", productsRoutes)
+app.use("/users", usersRoutes)
 
 //* Renderizar la vista correspondiente al Error 404
 app.use((req, res, next) => {

@@ -7,14 +7,6 @@ const controller = {
     res.render("index", {libros: productsDB, toThousand})
   },
 
-  login: (req, res) => {
-    res.render("login")
-  },
-  
-  register: (req, res) => {
-    res.render("register")
-  },
-
   cart: (req, res) => {
     res.render("product-cart", {libros: productsDB, toThousand})
   },
