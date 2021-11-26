@@ -317,9 +317,9 @@ button, input[type="submit"]{
   width: 500px;
   max-width: 90%;
   background: #3D56B2;
-  padding: 3em 2em;
+  padding: 3em 2em 2em;
   margin: 50px auto;
-  border-radius: 3em;
+  border-radius: 2.5em;
   font-family: 'Open Sans', sans-serif;
   color: #E6E6E6;
   box-shadow: 7px 13px 37px #000;

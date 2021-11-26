@@ -9,19 +9,20 @@ const controller = {
     let id = parseInt(req.params.id)
     let libro = productsModel.getProduct(id)
 
-    res.render("product-detail", {libro, toThousand})
+    res.render("products/detail", {libro, toThousand})
   },
 
   list: (req, res) => {
-    res.render("product-list", {libros: productsDB, toThousand})
+    res.render("products/list", {libros: productsDB, toThousand})
   },
 
   create: (req, res) => {
-    res.render("product-create", {libros: productsDB, toThousand})
+    res.render("products/create", {libros: productsDB, toThousand})
   },
 
   store: (req, res) => {
     // res.send(req.file)
+    let errors = validationResult(req)
     productsModel.addProduct(req.body, req.file.filename)
     
     res.redirect("/products")
@@ -31,7 +32,7 @@ const controller = {
     let id = parseInt(req.params.id)
     let libro = productsModel.getProduct(id)
 
-    res.render("product-edit", {libro, toThousand}) 
+    res.render("products/edit", {libro, toThousand}) 
     // res.send(libro)
   },
   

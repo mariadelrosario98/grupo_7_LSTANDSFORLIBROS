@@ -2,12 +2,14 @@ const fs = require("fs")
 const path = require("path")
 const { productsDB } = require("../data")
 
+//* Crea un nuevo ID
 const newID = () => {
   let id = 0
   productsDB.forEach(p => p.id > id ? id = p.id : "")
   return id + 1
 }
 
+//* Escribe los datos actualizados en el archivo .json
 const writeProducts = () => {
   let dbJSON = JSON.stringify(productsDB, null, 4)
   let dbPath = path.resolve(__dirname, "../data/products.json")
@@ -15,10 +17,12 @@ const writeProducts = () => {
 }
 
 const model = {
+  //* Obtener un producto mediante un ID
   getProduct: function (id) {
     return productsDB.find(item => item.id === id) || null
   },
 
+  //* Añadir un nuevo producto
   addProduct: function (product, fileName) {
     let newProduct = {
       id: newID(),
@@ -32,6 +36,7 @@ const model = {
     writeProducts()
   },
 
+  //* Editar la información de un producto
   editProduct: function (id, product, fileName) {
     if (!this.getProduct(id))
       return console.error("Este producto no existe!!", id)
@@ -60,6 +65,7 @@ const model = {
     writeProducts()
   },
 
+  //* Borrar un producto
   deleteProduct: function (id) {
     let productToDelete = this.getProduct(id)
     if (!productToDelete)
