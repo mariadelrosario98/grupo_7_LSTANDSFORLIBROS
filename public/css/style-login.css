@@ -65,6 +65,11 @@ main{
   display: none;
 }
 
+.login-box label {
+  display: inline-block;
+}
+
+
 @media (min-width: 481px) {
   .login-box{
     padding: 1.5em;

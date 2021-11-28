@@ -34,5 +34,14 @@
         "category": "buyer",
         "email": "zabdiel.blanco@gmail.com",
         "password": "$2a$10$CJ9qa2nbngu5K5H5aR7NZu/Hi9sBTW7Fb1nVUA23Fk4RJYAn9OvSK"
+    },
+    {
+        "id": 5,
+        "img": "profile-pic_1638142432433.png",
+        "name": "Gabriel",
+        "surname": "Castro",
+        "category": "buyer",
+        "email": "gabriel@gmail.com",
+        "password": "$2a$10$ZsARBkQHeRe4zBbwexQNlOq/GaRVcyS0Fqyq.gcTHDaih0GVdoUfK"
     }
 ]

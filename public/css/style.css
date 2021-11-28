@@ -634,6 +634,10 @@ button, input[type="submit"]{
   margin-bottom: 20px;
 }
 
+.login-box input[type = "checkbox"]{
+  width: 20px;
+}
+
 .login-box__input {
   border: none;
   background: transparent;
