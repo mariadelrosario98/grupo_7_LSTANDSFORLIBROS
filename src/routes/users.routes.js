@@ -22,6 +22,7 @@ let upload = multer({storage})
 
 //* Inicio de sesión
 router.get("/login", usersController.login)
+router.post("/", usersController.signin)
 
 //* Registro
 router.get("/register", usersController.register)
