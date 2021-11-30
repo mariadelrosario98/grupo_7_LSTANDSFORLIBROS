@@ -9,24 +9,27 @@
     <main>
       <form class="form-register" action="/products" method="post" enctype="multipart/form-data">
         <h4 class="título form product-create">Formulario de creación de productos</h4>
+        <% if (locals.errors && errors.name) { %>
+          <p class="feedback"><%= errors.name %> </p>
+        <% } %>
 
         <label for="name">Nombre del libro:</label>
-        <input class="controls login-box__input" type="text" name="name" id="name" placeholder="Ingrese el nombre del libro" autofocus>
+        <input class="controls login-box__input" type="text" name="name" id="name" value="<%= locals.old && old.name %>" placeholder="Ingrese el nombre del libro" autofocus>
 
         <label for="autor">Nombre del autor:</label>
-        <input class="controls login-box__input" type="text" name="autor" id="autor" placeholder="Ingrese del autor">
+        <input class="controls login-box__input" type="text" name="autor" id="autor" value="<%= locals.old && old.autor %>" placeholder="Ingrese del autor">
         
         <label for="isbn">ISBN:</label>
-        <input class="controls login-box__input" type="text" name="isbn" id="isbn" placeholder="Ingrese el ISBN del texto">
+        <input class="controls login-box__input" type="text" name="isbn" id="isbn" value="<%= locals.old && old.isbn %>" placeholder="Ingrese el ISBN del texto">
         
         <label for="type">Género:</label>
-        <input class="controls login-box__input" type="text" name="type" id="type" placeholder="Ingrese el género de su libro">
+        <input class="controls login-box__input" type="text" name="type" id="type" value="<%= locals.old && old.type %>" placeholder="Ingrese el género de su libro">
         
         <label for="price">Precio:</label>
-        <input class="controls login-box__input" type="number" name="price" id="price" placeholder="Ingresa el precio del libro" min="0" step="100">
+        <input class="controls login-box__input" type="number" name="price" id="price" value="<%= locals.old && old.price %>" placeholder="Ingresa el precio del libro" min="0" step="100">
         
         <label for="desc">Descripción:</label>
-        <textarea class="controls login-box__input" name="desc" id="desc" placeholder="Ingrese una descripción"></textarea>
+        <textarea class="controls login-box__input" name="desc" id="desc" value="<%= locals.old && old.desc %>" placeholder="Ingrese una descripción"></textarea>
         
         <label for="product-image">Foto del libro:</label>
         <input class="controls login-box__input" type="file" name="product-image" id="product-image" accept="image/*">

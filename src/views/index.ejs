@@ -11,13 +11,15 @@
     <main>
       <img class="reference" src="/img/library.png" alt="library">
       <div>
-        <h1 class="initial">Algunos títulos que te recomendamos</h1>
+        <h1 class="initial">👇 Algunos títulos que te recomendamos 👇</h1>
       </div>
       <section class="contenedor1">
         <% libros.forEach(libro => { %>
 
         <a href=<%= "/products/" + libro.id %> class="product">
-          <img class="product-image" src=<%= "/img/products/" + libro.img %>>
+          <div class="image-container">
+            <img class="product-image" src=<%= "/img/products/" + libro.img %>>
+          </div>
 
           <div class="descrip">
             <div class="precio">

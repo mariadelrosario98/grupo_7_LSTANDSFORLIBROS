@@ -25,6 +25,7 @@ router.get("/", productsController.list)
 
 //* Creación de productos
 router.get("/create", productsController.create)
+
 const { validate_addProduct } = require("../middlewares/validator")
 router.post("/", validate_addProduct, upload.single("product-image"), productsController.store)
 

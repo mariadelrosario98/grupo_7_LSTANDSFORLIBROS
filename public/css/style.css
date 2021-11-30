@@ -163,6 +163,7 @@ nav {
 main {
   padding-top: 120px;
   width: 100%;
+  background-image: url("/img/bg.png");
   background-color: #E6E6E6;
 }
 
@@ -213,8 +214,10 @@ button, input[type="submit"]{
 .initial{
   display: flex;
   justify-content: center;
-  background-color: #5C7AEA;
-  color: white
+  align-items: center;
+  background-color: #3D56B2;
+  color: #ebebeb;
+  height: 2em;
 }
 
 .social {
@@ -397,7 +400,7 @@ button, input[type="submit"]{
 
   /* box-shadow: 0px 0px 10px rgb (100,100,100); */
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   align-content: space-between;
   align-items: stretch;
 }
@@ -410,6 +413,13 @@ button, input[type="submit"]{
   cursor: pointer;
   border: none;
   box-shadow: 0px 0px 10px rgb(100,100,100);
+}
+
+.image-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-grow: 2;
 }
 
 .descrip {
@@ -636,6 +646,7 @@ button, input[type="submit"]{
 
 .login-box input[type = "checkbox"]{
   width: 20px;
+  cursor: pointer;
 }
 
 .login-box__input {
