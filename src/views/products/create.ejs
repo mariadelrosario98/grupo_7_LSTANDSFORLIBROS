@@ -9,36 +9,51 @@
     <main>
       <form class="form-register" action="/products" method="post" enctype="multipart/form-data">
         <h4 class="título form product-create">Formulario de creación de productos</h4>
-        <% if (locals.errors && errors.name) { %>
-          <p class="feedback"><%= errors.name %> </p>
-        <% } %>
-
+        
         <label for="name">Nombre del libro:</label>
         <input class="controls login-box__input" type="text" name="name" id="name" value="<%= locals.old && old.name %>" placeholder="Ingrese el nombre del libro" autofocus>
+        <% if (locals.errors && errors.name) { %>
+          <p class="feedback"><%= errors.name.msg %> </p>
+        <% } %>
 
         <label for="autor">Nombre del autor:</label>
         <input class="controls login-box__input" type="text" name="autor" id="autor" value="<%= locals.old && old.autor %>" placeholder="Ingrese del autor">
+        <% if (locals.errors && errors.autor) { %>
+          <p class="feedback"><%= errors.autor.msg %> </p>
+        <% } %>
         
         <label for="isbn">ISBN:</label>
         <input class="controls login-box__input" type="text" name="isbn" id="isbn" value="<%= locals.old && old.isbn %>" placeholder="Ingrese el ISBN del texto">
+        <% if (locals.errors && errors.isbn) { %>
+          <p class="feedback"><%= errors.isbn.msg %> </p>
+        <% } %>
         
         <label for="type">Género:</label>
         <input class="controls login-box__input" type="text" name="type" id="type" value="<%= locals.old && old.type %>" placeholder="Ingrese el género de su libro">
+        <% if (locals.errors && errors.type) { %>
+          <p class="feedback"><%= errors.type.msg %> </p>
+        <% } %>
         
         <label for="price">Precio:</label>
         <input class="controls login-box__input" type="number" name="price" id="price" value="<%= locals.old && old.price %>" placeholder="Ingresa el precio del libro" min="0" step="100">
+        <% if (locals.errors && errors.price) { %>
+          <p class="feedback"><%= errors.price.msg %> </p>
+        <% } %>
         
         <label for="desc">Descripción:</label>
-        <textarea class="controls login-box__input" name="desc" id="desc" value="<%= locals.old && old.desc %>" placeholder="Ingrese una descripción"></textarea>
+        <textarea class="controls login-box__input" name="desc" id="desc" placeholder="Ingrese una descripción"><%= locals.old && old.desc %></textarea>
         
-        <label for="product-image">Foto del libro:</label>
-        <input class="controls login-box__input" type="file" name="product-image" id="product-image" accept="image/*">
+        <label for="product_image">Foto del libro:</label>
+        <input class="controls login-box__input" type="file" name="product_image" id="product_image" accept="image/*">
+        <% if (locals.errors && errors.product_image) { %>
+          <p class="feedback"><%= errors.product_image.msg %> </p>
+        <% } %>
 
-        <p>Estoy de acuerdo con los <a href="#"><b>Términos y Condiciones</b></a></p>
+        <p class="terms">Estoy de acuerdo con los <a href="#"><b>Términos y Condiciones</b></a></p>
         
         <input class="botons" type="submit" value="Registrar">
         
-        <p><a href="/products">Quiero modificar un producto ya creado</a></p>
+        <a href="/products">Quiero modificar un producto ya creado</a>
       </form>
     </main>
 

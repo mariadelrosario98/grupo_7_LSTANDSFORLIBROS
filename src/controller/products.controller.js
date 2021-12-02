@@ -26,14 +26,26 @@ const controller = {
   //* Almacena en la base de datos el producto enviado por el formulario de creación de producto
   store: (req, res) => {
     // res.send(req.file)
+    const errors = validationResult(req)
+
     let product = req.body
     let fileName = req.file ? req.file.filename : null
-    
-    let errors = validationResult(req)
-    if (errors.isEmpty) {
+
+    // res.send(errors)
+    if (errors.isEmpty()) {
+      //* Guarda el producto en la base de datos y redirige al listado de productos
       productsModel.addProduct(product, fileName)
       res.redirect("/products")
-    } else {
+    } 
+    else {
+      // res.send(errors.mapped())
+      //* Borra archivo si se ha enviado por el formulario
+      if (fileName) {
+        let imgPath = path.resolve(__dirname, "..", "../public/img/products", filename)
+        fs.rmSync(imgPath)
+      }
+
+      //* Renderiza el formulario de creación con mensajes de error añadidos
       res.render("products/create", { errors: errors.mapped(), old: req.body })
     }
   },

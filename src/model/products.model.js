@@ -72,6 +72,10 @@ const model = {
       return console.error("Este producto no existe!! id: ", id)
 
     let indexToDelete = productsDB.indexOf(productToDelete)
+
+    let imgPath = path.resolve(__dirname, "..", "../public/img/products", productsDB[indexToDelete].img)
+    fs.rmSync(imgPath)
+
     productsDB.splice(indexToDelete, 1)
 
     writeProducts()

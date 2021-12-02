@@ -12,7 +12,7 @@ let storage = multer.diskStorage({
   },
 
   filename: (req, file, cb) => {
-    let imageName = "product-image_" + Date.now() + path.extname(file.originalname) 
+    let imageName = "product_image_" + Date.now() + path.extname(file.originalname) 
     cb(null, imageName)
   }
 })
@@ -26,12 +26,12 @@ router.get("/", productsController.list)
 //* Creación de productos
 router.get("/create", productsController.create)
 
-const { validate_addProduct } = require("../middlewares/validator")
-router.post("/", validate_addProduct, upload.single("product-image"), productsController.store)
+const { validateProduct } = require("../middlewares/validator")
+router.post("/", validateProduct, upload.single("product_image"), productsController.store)
 
 //* Edición de productos
 router.get("/:id/edit", productsController.edit)
-router.put("/:id", upload.single("product-image"), productsController.update)
+router.put("/:id", upload.single("product_image"), productsController.update)
 
 //* Borrado de productos
 router.delete("/:id", productsController.delete)
