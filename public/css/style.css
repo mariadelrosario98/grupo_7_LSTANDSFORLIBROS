@@ -12,6 +12,20 @@ body{
   flex-direction: column;
 }
 
+::-webkit-scrollbar{
+  width: 1em;
+}
+
+::-webkit-scrollbar-track{
+  background: #5C7AEA;
+}
+
+::-webkit-scrollbar-thumb{
+  background: #ebebeb;
+  border: 1px solid #5C7AEA;
+  border-radius: 50px;
+}
+
 img{
   width: 100%;
   height: auto;
