@@ -183,23 +183,32 @@ button, input[type="submit"]{
 }
 
 
-.table{
+.products-table{
   margin: auto;
   text-align: center;
   padding-bottom: 10px;
 }
 
-.table td{
+.products-table td{
   border: 1px solid #e3e3e3;
-  padding: 4px 8px;
+  padding: 0.25em;
   text-align: center;
 }
 
-.table th{
-  text-align: center;
+.products-table td:first-child{
+  font-weight: bold;
+}
+
+.products-table th{
+  /* text-align: center; */
   background-color: #3D56B2;
   color: #FFF;
-  padding: 4px 30px 4px 8px;
+  padding: 0.5em 1em;
+  min-width: 4em;
+}
+
+.products-table fa-eye:hover{
+  color: #3D56B2;
 }
 
 .titulo-edit{
@@ -386,8 +395,25 @@ button, input[type="submit"]{
   color: #ebebeb;
 }
 
-.delete-button{
+.eyecon, .edit-icon, .delete-icon{
+  font-size: 1.2em;
+  transition: all 0.2s;
+}
+
+.eyecon:hover{
+  color: hsl(240deg, 100%, 60%);
+}
+
+.edit-icon:hover{
+  color: hsl(100deg, 100%, 30%);
+}
+
+.delete-icon{
   border: none;
+}
+
+.delete-icon:hover{
+  color: hsl(0, 100%, 50%);
 }
 
 .product{

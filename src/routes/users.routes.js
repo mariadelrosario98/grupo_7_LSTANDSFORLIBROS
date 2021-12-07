@@ -22,11 +22,11 @@ let upload = multer({storage})
 
 //* Inicio de sesión
 router.get("/login", usersController.login)
-router.post("/", usersController.signin)
+router.post("/login", usersController.signin)
 
 //* Registro
 router.get("/register", usersController.register)
-router.post("/", upload.single("profile-pic"), usersController.save)
+router.post("/register", upload.single("profile-pic"), usersController.save)
 
 
 module.exports = router

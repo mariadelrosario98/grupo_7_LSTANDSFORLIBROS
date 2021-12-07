@@ -19,7 +19,12 @@ app.use(methodOverride("_method"))
 
 //* Definiendo texto para identificar nuestro sitio web
 const session = require("express-session")
-app.use(session({secret: "Bienvenidos a nuestra libreria de libritos :D"}))
+app.use(session({
+  secret: "Bienvenidos a nuestra libreria de libritos :D",
+  saveUninitialized: true,
+  cookie: { maxAge: 1000 * 60 * 60 * 24 },
+  resave: false,
+}))
 
 //* Incluir el middleware para lectura y escritura de galletitas
 const cookieParser = require("cookie-parser")

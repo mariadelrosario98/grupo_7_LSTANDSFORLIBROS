@@ -13,7 +13,7 @@
       </h1>
 
       <section>
-        <table class="table">
+        <table class="products-table">
           <tr>
             <th>ID</th>
             <th>Nombre</th>
@@ -33,25 +33,23 @@
             </td>
 
             <td>
-              <a href=<%= "/products/" + libro.id  %> >
+              <a href=<%= "/products/" + libro.id  %> class="eyecon">
                 <i class="fas fa-eye"></i>
               </a>
             </td>
 
             <td>
-              <a href=<%= "/products/" + libro.id + "/edit" %> >
+              <a href=<%= "/products/" + libro.id + "/edit" %> class="edit-icon">
                 <i class="fas fa-edit"></i>
               </a>
             </td>
 
             <td>
-              <a href="#">
-                <form action= <%= "/products/" + libro.id + "?_method=DELETE" %> method="post">
-                  <button type="submit" class="delete-button">
-                    <i class="fas fa-trash-alt"></i>
-                  </button>
-                </form>
-              </a>
+              <form action= <%= "/products/" + libro.id + "?_method=DELETE" %> method="post" class="delete">
+                <button type="submit" class="delete-icon">
+                  <i class="fas fa-trash-alt"></i>
+                </button>
+              </form>
             </td>
           </tr>
           <% }) %> 

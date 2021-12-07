@@ -24,27 +24,43 @@ const controller = {
 
   //* Proceso de inicio de sesión
   signin: (req, res) => {
+    //* Guardamos las credenciales ingresadas dentro de variables
     let email = req.body.email
     let password = req.body.password
 
+    //* Se busca el usuario en la base de datos
     let user = usersDB.find(element => element.email === email)
-    if (user){
-      let check = bcrypt.compareSync(password, user.password)
-      if(check){
-        //todos Aquí habría que iniciar sesión
 
-
-        //* Aquí lo estamos redireccionando a la página principal
-        res.redirect("/");
-      } else {
-        //todos Aquí lo estamos redireccionando a la página del formulario con mensaje de error contraseña no cuadra
-        res.redirect("/users/login")
-      }
-    } else {
-       //todos Aquí lo estamos redireccionando a la página del formulario con mensaje de error usuario no existe
-       res.redirect("/users/login")
+    //* En caso de que no exista el usuario ingresado, se redirige al formulario de login
+    if (!user) {
+      res.render("users/login", {message: "Usuario no existe", user: req.body.email})
+      return
     }
-  }
+
+    //* Se verifica si la contraseña es correcta
+    let check = bcrypt.compareSync(password, user.password)
+
+    //* Si la contraseña es incorrecta, se redirige al formulario de login
+    if (!check) {
+      res.render("users/login", {message: "Contraseña incorrecta", user: req.body.email})
+      return
+    }
+
+    //todo: Aquí habría que iniciar sesión
+    req.session.userID = req.body.email
+    req.session.name = user.name
+    console.log(req.session);
+
+    //* Aquí lo estamos redireccionando a la página principal
+    console.log("Todo bien");
+    res.redirect("/");
+  },
+
+  //* Cierre de sesión
+  signout: (req, res) => {
+    req.session.destroy()
+    res.redirect("/")
+  },
 }
 
 
