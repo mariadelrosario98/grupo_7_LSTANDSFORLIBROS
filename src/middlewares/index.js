@@ -1,7 +1,3 @@
-// const homeobject = require("./home.object")
-// const productsController = require("./products.controller")
-// const usersController = require("./users.controller")
-
 const fs = require("fs")
 const path = require("path")
 const object = {}

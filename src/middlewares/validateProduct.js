@@ -19,4 +19,4 @@ let validateProduct = [
 ]
 
 
-module.exports = { validateProduct }
+module.exports = validateProduct

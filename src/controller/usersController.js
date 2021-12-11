@@ -47,9 +47,9 @@ const controller = {
     }
 
     //todo: Aquí habría que iniciar sesión
-    req.session.userID = req.body.email
-    req.session.name = user.name
-    console.log(req.session);
+    // req.session.userID = req.body.email
+    // req.session.name = user.name
+    // console.log(req.session);
 
     //* Aquí lo estamos redireccionando a la página principal
     console.log("Todo bien");

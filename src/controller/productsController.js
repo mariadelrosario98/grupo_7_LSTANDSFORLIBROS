@@ -2,6 +2,9 @@ const { productsDB } = require("../data");
 const { productsModel } = require("../model")
 const { validationResult } = require("express-validator")
 
+const fs = require("fs")
+const path = require("path")
+
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const controller = {
@@ -41,7 +44,7 @@ const controller = {
       // res.send(errors.mapped())
       //* Borra archivo si se ha enviado por el formulario
       if (fileName) {
-        let imgPath = path.resolve(__dirname, "..", "../public/img/products", filename)
+        let imgPath = path.resolve(__dirname, "..", "../public/img/products", fileName)
         fs.rmSync(imgPath)
       }
 
