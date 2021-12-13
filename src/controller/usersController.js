@@ -47,12 +47,13 @@ const controller = {
     }
 
     //todo: Aquí habría que iniciar sesión
-    // req.session.userID = req.body.email
-    // req.session.name = user.name
-    // console.log(req.session);
+    req.session = user
+    req.session.userID = req.body.email
+    req.session.admin = user.category === "vendor" ? true : false
+    // return res.send(req.session)
 
     //* Aquí lo estamos redireccionando a la página principal
-    console.log("Todo bien");
+    console.log("Todo bien")
     res.redirect("/");
   },
 

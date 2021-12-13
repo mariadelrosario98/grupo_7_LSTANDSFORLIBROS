@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
 
+:root{
+  --main-color1: #14279B;
+  --main-color2: #3D56B2;
+  --main-color3: #5C7AEA;
+  --main-color4: #E6E6E6;
+}
+
 *{
   margin: 0;
   padding: 0;
@@ -686,7 +693,7 @@ button, input[type="submit"]{
   margin-bottom: 20px;
 }
 
-.login-box input[type = "checkbox"]{
+.login-box input[type = "checkbox"], input[type = "radio"]{
   width: 20px;
   cursor: pointer;
 }

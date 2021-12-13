@@ -5,7 +5,7 @@ const { productsDB } = require("../data")
 //* Crea un nuevo ID
 const newID = () => {
   let id = 0
-  productsDB.forEach(p => p.id > id ? id = p.id : "")
+  productsDB.forEach(p => id = p.id > id ? p.id : id)
   return id + 1
 }
 

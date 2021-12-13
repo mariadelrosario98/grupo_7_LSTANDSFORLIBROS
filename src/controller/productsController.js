@@ -28,13 +28,15 @@ const controller = {
 
   //* Almacena en la base de datos el producto enviado por el formulario de creación de producto
   store: (req, res) => {
-    // res.send(req.file)
+    // return res.send(req.body)
+    //* Guardamos los errores en una variable
     const errors = validationResult(req)
+    // return res.send(errors)
 
+    //* Se almacenan los datos del producto y el nombre del archivo enviado (si existe) en variables
     let product = req.body
     let fileName = req.file ? req.file.filename : null
 
-    // res.send(errors)
     if (errors.isEmpty()) {
       //* Guarda el producto en la base de datos y redirige al listado de productos
       productsModel.addProduct(product, fileName)
