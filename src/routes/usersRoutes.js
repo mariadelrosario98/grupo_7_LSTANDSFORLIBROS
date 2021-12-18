@@ -1,7 +1,7 @@
 const express = require("express")
 const router = express.Router()
-const path = require("path")
 const { usersController } = require("../controller")
+const { multerUpload } = require("../middlewares")
 
 //* Definiendo la carpeta en la que se guardarán los archivos subidos por el usuario
 // const multer = require("multer")
@@ -22,12 +22,12 @@ const { usersController } = require("../controller")
 
 //* Inicio de sesión
 router.get("/login", usersController.login)
-router.post("/login", usersController.signin)
+
+const { loginCheck } = require("../middlewares")
+router.post("/login", loginCheck, usersController.signin)
 
 //* Registro
 router.get("/register", usersController.register)
-
-const { multerUpload } = require("../middlewares")
 router.post("/register", multerUpload("users", "profile-pic").single("profile-pic"), usersController.save)
 
 

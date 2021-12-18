@@ -1,9 +1,9 @@
 const multer = require("multer")
 
-module.exports = (imagefolder, prefix) => {
+const multerUpload = (imageFolder, prefix) => {
   let storage = multer.diskStorage({
     destination: (req, file, cb) => {
-      let folder = `public/img/${imagefolder}`
+      let folder = "public/img/" + imageFolder
       cb(null, folder)
     },
   
@@ -15,3 +15,5 @@ module.exports = (imagefolder, prefix) => {
   
   return multer({storage})
 }
+
+module.exports = multerUpload

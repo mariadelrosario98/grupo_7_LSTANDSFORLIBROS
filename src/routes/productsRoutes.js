@@ -1,6 +1,5 @@
 const express = require("express")
 const router = express.Router()
-const path = require("path")
 const { productsController } = require("../controller")
 const { multerUpload } = require("../middlewares")
 
@@ -32,7 +31,6 @@ router.post("/", multerUpload("products", "product_image").single("product_image
 
 //* Edición de productos
 router.get("/:id/edit", productsController.edit)
-
 router.put("/:id", multerUpload("products", "product_image").single("product_image"), productsController.update)
 
 //* Borrado de productos
