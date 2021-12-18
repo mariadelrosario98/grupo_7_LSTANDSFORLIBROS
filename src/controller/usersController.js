@@ -46,7 +46,7 @@ const controller = {
       return
     }
 
-    //todo: Aquí habría que iniciar sesión
+    //* Aquí se inicia sesión
     req.session = user
     req.session.userID = req.body.email
     req.session.admin = user.category === "vendor" ? true : false
