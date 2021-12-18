@@ -40,6 +40,8 @@ const controller = {
   //* Cierre de sesión
   signout: (req, res) => {
     req.session.destroy()
+    res.clearCookie("email")
+    res.clearCookie("password")
     res.redirect("/")
   },
 }

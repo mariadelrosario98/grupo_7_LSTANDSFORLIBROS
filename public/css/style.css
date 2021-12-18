@@ -99,14 +99,28 @@ header .top .top-right{
   justify-content: space-between;
 }
 
-header .top .top-right i{
+header .top .top-right .hola{
+  flex-grow: 4;
+}
+
+header .top .top-right .fa-shopping-cart{
   font-size: 2em;
   margin-right: 15px;
   transition: all 0.2s;
 }
 
-header .top .top-right i:hover{
+header .top .top-right .fa-shopping-cart:hover{
   transform: rotate(-15deg);
+}
+
+header .logout-icon{
+  font-size: 2.5em;
+  transition: all 0.2s;
+  color: #ebebeb;
+}
+
+header .logout-icon:hover{
+  color: hsl(0, 100%, 50%);
 }
 
 .top-button{
@@ -129,14 +143,22 @@ header .top .top-center{
 }
 
 header form{
-  width: 100%;
-  max-width: 800px;
+  height: 3.5em;
   text-align: center;
-  margin: 2px auto;
+  margin: 10px auto;
   padding: 10px 20px;
 
   display: flex;
   justify-content: center;
+}
+
+header form.laptop, form.mobile{
+  width: 100%;
+  max-width: 800px;
+}
+
+header form.logout{
+  padding: 0 1em;
 }
 
 header form input{
@@ -154,14 +176,15 @@ header form input{
 
 header form button{
   width: 40px;
-  padding: 5px 10px;
+  /* padding: 5px 10px; */
   border: none;
   border-radius: 10px;
 
   background-color: #ebebeb;
+}
 
-  position: relative;
-  right: 30px;
+header form button.logout-icon{
+  background-color: inherit;
 }
 
 ul{
@@ -196,11 +219,16 @@ footer{
 
 textarea{
   resize: none;
-  height: 5em;
+  height: 10em;
 }
 
 button, input[type="submit"]{
   cursor: pointer;
+}
+
+button.search{
+  position: relative;
+  right: 10px;
 }
 
 
@@ -623,9 +651,9 @@ button, input[type="submit"]{
     display: none;
   }
 
-  header .search{
+  /* header .search{
     display: none;
-  }
+  } */
 
   header .top .top-center{
     display: flex;

@@ -16,10 +16,10 @@
     </div>
 
     <div class="top-center">
-      <form action="/search" method="get">
-        <input type="text" name="search" id="search" placeholder="Busca tus libros">
+      <form action="/search" method="get" class="laptop">
+        <input type="search" name="search" id="search" placeholder="Busca tus libros">
 
-        <button type="submit">
+        <button type="submit" class="search">
           <i class="fas fa-search"></i>
         </button>
       </form>
@@ -31,10 +31,10 @@
       </a>
 
       <% if (locals.session && session.user) { %>
-        <h3>Hola <%= session.user.name %></h3>
+        <h3 class="hola">Hola <%= session.user.name %></h3>
 
-        <form action="/?_method=DELETE" method="post">
-          <button type="submit" class="delete-icon">
+        <form action="/users?_method=DELETE" method="post" class="logout">
+          <button type="submit" class="logout-icon">
             <i class="fas fa-sign-out-alt"></i>
           </button>
         </form>
@@ -47,10 +47,10 @@
     </div>
   </div>
 
-  <form action="search" method="get" class="search">
-    <input type="text" name="search" id="search" placeholder="Busca tus libros">
+  <form action="search" method="get" class="mobile">
+    <input type="search" name="search" id="search" placeholder="Busca tus libros">
 
-    <button type="submit">
+    <button type="submit" class="search">
       <i class="fas fa-search"></i>
     </button>
   </form>
@@ -62,10 +62,13 @@
       <li><a href="#">Ofertas</a></li>
       &nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp
       <li><a href="#">Historial</a></li>
-      &nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp
-      <li><a href="/products/create">Crear</a></li>
-      &nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp
-      <li><a href="/products">Productos</a></li>
+
+      <% if (locals.session && session.admin) { %>
+        &nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp
+        <li><a href="/products/create">Crear</a></li>
+        &nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp
+        <li><a href="/products">Productos</a></li>
+      <% } %>
     </ul>
   </nav>
 

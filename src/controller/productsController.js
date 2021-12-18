@@ -27,6 +27,7 @@ const controller = {
   },
 
   //* Almacena en la base de datos el producto enviado por el formulario de creación de producto
+  //todo: Mover esto a un middleware
   store: (req, res) => {
     // return res.send(req.body)
     //* Guardamos los errores en una variable
@@ -60,8 +61,7 @@ const controller = {
     let id = parseInt(req.params.id)
     let libro = productsModel.getProduct(id)
 
-    res.render("products/edit", {libro, toThousand, session: req.session || null}) 
-    // res.send(libro)
+    res.render("products/edit", {libro, toThousand, session: req.session || null})
   },
   
   //* Actualiza en la base de datos el producto enviado por el formulario de edición de producto
