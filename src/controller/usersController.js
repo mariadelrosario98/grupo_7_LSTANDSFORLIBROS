@@ -42,7 +42,7 @@ const controller = {
     req.session.destroy()
     res.clearCookie("email")
     res.clearCookie("password")
-    res.redirect("/")
+    res.redirect("/users/login")
   },
 }
 

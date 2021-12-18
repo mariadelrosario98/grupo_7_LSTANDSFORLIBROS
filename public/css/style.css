@@ -113,6 +113,19 @@ header .top .top-right .fa-shopping-cart:hover{
   transform: rotate(-15deg);
 }
 
+header .pfp{
+  height: 3em;
+  width: 3em;
+  border-radius: 50%;
+  overflow: hidden;
+
+  margin: 0 0.3em;
+}
+
+header .pfp img{
+  width: 100%;
+}
+
 header .logout-icon{
   font-size: 2.5em;
   transition: all 0.2s;
@@ -158,7 +171,7 @@ header form.laptop, form.mobile{
 }
 
 header form.logout{
-  padding: 0 1em;
+  padding: 0 0.5em;
 }
 
 header form input{
