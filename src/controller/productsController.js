@@ -13,17 +13,17 @@ const controller = {
     let id = parseInt(req.params.id)
     let libro = productsModel.getProduct(id)
 
-    res.render("products/detail", {libro, toThousand})
+    res.render("products/detail", {libro, toThousand, session: req.session || null})
   },
 
   //* Renderiza la vista de productos
   list: (req, res) => {
-    res.render("products/list", {libros: productsDB, toThousand})
+    res.render("products/list", {libros: productsDB, toThousand, session: req.session || null})
   },
 
   //* Renderiza el formulario de creación de producto
   create: (req, res) => {
-    res.render("products/create")
+    res.render("products/create", {session: req.session || null})
   },
 
   //* Almacena en la base de datos el producto enviado por el formulario de creación de producto
@@ -51,7 +51,7 @@ const controller = {
       }
 
       //* Renderiza el formulario de creación con mensajes de error añadidos
-      res.render("products/create", { errors: errors.mapped(), old: req.body })
+      res.render("products/create", { errors: errors.mapped(), old: req.body, session: req.session || null })
     }
   },
   
@@ -60,7 +60,7 @@ const controller = {
     let id = parseInt(req.params.id)
     let libro = productsModel.getProduct(id)
 
-    res.render("products/edit", {libro, toThousand}) 
+    res.render("products/edit", {libro, toThousand, session: req.session || null}) 
     // res.send(libro)
   },
   

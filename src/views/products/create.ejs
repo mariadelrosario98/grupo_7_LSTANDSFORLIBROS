@@ -4,8 +4,8 @@
   <%- include("../partials/head", {title: "Creación de productos"}) %>
 
   <body>
-    <%- include("../partials/header") %> 
-
+    <%- include("./partials/header", {session}) %>
+    
     <main>
       <form class="form-register" action="/products" method="post" enctype="multipart/form-data">
         <h4 class="título form product-create">Formulario de creación de productos</h4>

@@ -4,8 +4,8 @@
   <%- include("../partials/head", {title: "Edición"}) %>
 
   <body>
-    <%- include("../partials/header") %> 
-
+    <%- include("./partials/header", {session}) %>
+    
     <main>
       <form class="form-register" action=<%= "/products/" + libro.id + "?_method=PUT" %>  method="post" enctype="multipart/form-data">
         <h4 class="título form product-create">Formulario Edición Productos</h4>

@@ -23,12 +23,14 @@ const { multerUpload } = require("../middlewares")
 //* Inicio de sesión
 router.get("/login", usersController.login)
 
-const { loginCheck } = require("../middlewares")
-router.post("/login", loginCheck, usersController.signin)
+const { loginCheck, loginCookie } = require("../middlewares")
+router.post("/login", loginCheck, loginCookie, usersController.signin)
 
 //* Registro
 router.get("/register", usersController.register)
 router.post("/register", multerUpload("users", "profile-pic").single("profile-pic"), usersController.save)
 
+//* Cierre de sesión
+router.delete("/", usersController.signout)
 
 module.exports = router

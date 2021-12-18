@@ -30,9 +30,20 @@
         <i class="fas fa-shopping-cart"></i>
       </a>
 
-      <a href="/users/login" class="top-button">Ingresa</a>
+      <% if (locals.session && session.user) { %>
+        <h3>Hola <%= session.user.name %></h3>
 
-      <a href="/users/register" class="top-button">Regístrate</a>
+        <form action="/?_method=DELETE" method="post">
+          <button type="submit" class="delete-icon">
+            <i class="fas fa-sign-out-alt"></i>
+          </button>
+        </form>
+      <% } else { %>
+        <a href="/users/login" class="top-button">Ingresa</a>
+
+        <a href="/users/register" class="top-button">Regístrate</a>
+      <% } %>
+
     </div>
   </div>
 
