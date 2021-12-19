@@ -1,1 +1,0 @@
-module.exports = (req, res, next) => req.session.admin ? next() : res.redirect("/")

@@ -1,6 +1,6 @@
 const { check } = require("express-validator")
 
-let validateProduct = [
+let productErrors = [
   check("name").notEmpty().withMessage("Debes ingresar un nombre para este libro"),
 
   check("autor").notEmpty().withMessage("Debes ingresar un nombre de autor"),
@@ -19,4 +19,4 @@ let validateProduct = [
 ]
 
 
-module.exports = validateProduct
+module.exports = productErrors
