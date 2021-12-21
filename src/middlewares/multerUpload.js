@@ -1,4 +1,5 @@
 const multer = require("multer")
+const path = require("path")
 
 const multerUpload = (imageFolder, prefix) => {
   let storage = multer.diskStorage({
