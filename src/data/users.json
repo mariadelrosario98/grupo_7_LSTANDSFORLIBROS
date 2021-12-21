@@ -1,0 +1,56 @@
+[
+    {
+        "id": 1,
+        "img": "profile-pic_1637889896934.jpg",
+        "name": "María",
+        "surname": "Castro",
+        "category": "buyer",
+        "email": "maria.castrico@gmail.com",
+        "password": "$2a$10$8l142Fw168WDdqInccjeNe8uOI1YaqNgwlZCN081obw1eU5Omw37O"
+    },
+    {
+        "id": 2,
+        "img": "profile-pic_1637890207961.jpeg",
+        "name": "Kevin",
+        "surname": "Simanca",
+        "category": "vendor",
+        "email": "kevin.simanca@gmail.com",
+        "password": "$2a$10$tsnwAebeW3wopjurMBCQg.9uTyzFxQ5LiqQ7mVHbFTe.5yZPwzYjy"
+    },
+    {
+        "id": 3,
+        "img": "profile-pic_1637890298959.jpg",
+        "name": "Elisaul",
+        "surname": "García",
+        "category": "buyer",
+        "email": "elisaul.garcia@gmail.com",
+        "password": "$2a$10$9gdQSCWUe4i2x.2OZfPMeux9naSEZMorTX5NFub0nRW.6wiUDDHJ."
+    },
+    {
+        "id": 4,
+        "img": "profile-pic_1637890347724.jpeg",
+        "name": "Zabdiel",
+        "surname": "Blanco",
+        "category": "buyer",
+        "email": "zabdiel.blanco@gmail.com",
+        "password": "$2a$10$CJ9qa2nbngu5K5H5aR7NZu/Hi9sBTW7Fb1nVUA23Fk4RJYAn9OvSK"
+    },
+    {
+        "id": 5,
+        "img": "profile-pic_1638142432433.png",
+        "name": "Gabriel",
+        "surname": "Castro",
+        "category": "buyer",
+        "email": "gabriel@gmail.com",
+        "password": "$2a$10$ZsARBkQHeRe4zBbwexQNlOq/GaRVcyS0Fqyq.gcTHDaih0GVdoUfK"
+    },
+    {
+        "id": 6,
+        "img": "profile-pic_1640130829157.png",
+        "name": "",
+        "surname": "",
+        "category": "buyer",
+        "email": "",
+        "password": "$2a$10$MQ.DeDu1vDH3tmNZ0pxW7u9m5FN/wF8emEKy2ILBIzo227HX0TZHu"
+    }
+]

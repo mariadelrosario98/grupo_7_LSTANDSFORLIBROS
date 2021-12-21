@@ -12,7 +12,7 @@ const newID = () => {
 //* Escribe los datos actualizados en el archivo .json
 const writeProducts = () => {
   let dbJSON = JSON.stringify(productsDB, null, 4)
-  let dbPath = path.resolve(__dirname, "../data/products.json")
+  let dbPath = path.resolve(__dirname, "../data/productsDB.json")
   fs.writeFileSync(dbPath, dbJSON)
 }
 
