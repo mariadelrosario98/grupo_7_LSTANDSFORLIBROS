@@ -29,7 +29,7 @@ const controller = {
     //* Aquí se inicia sesión
     req.session.user = user
     req.session.userID = req.body.email
-    req.session.admin = user.category === "vendor" ? true : false
+    req.session.vendor = user.category === "vendor" ? true : false
 
     //* Aquí lo estamos redireccionando a la página principal
     console.log(req.body)
