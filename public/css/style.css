@@ -100,12 +100,13 @@ header .top .top-right{
 }
 
 header .top .top-right .hola{
+  margin-right: 1em;
   flex-grow: 4;
 }
 
 header .top .top-right .fa-shopping-cart{
   font-size: 2em;
-  margin-right: 15px;
+  margin-right: 1em;
   transition: all 0.2s;
 }
 

@@ -23,15 +23,10 @@ const controller = {
 
   //* Proceso de inicio de sesión (luego de pasar por el middleware loginCheck)
   signin: (req, res) => {
-    //* Se guarda el usuario en una variable
-    let user = usersDB.find(element => element.email === req.body.email)
+    //* Se inicia sesión
+    req.session.user = usersDB.find(element => element.email === req.body.email)
 
-    //* Aquí se inicia sesión
-    req.session.user = user
-    req.session.userID = req.body.email
-    req.session.vendor = user.category === "vendor" ? true : false
-
-    //* Aquí lo estamos redireccionando a la página principal
+    //* Redireccionando a la página principal
     console.log(req.body)
     res.redirect("/");
   },
@@ -41,7 +36,6 @@ const controller = {
   signout: (req, res) => {
     req.session.destroy()
     res.clearCookie("email")
-    res.clearCookie("password")
     res.redirect("/users/login")
   },
 }

@@ -9,17 +9,17 @@ const controller = {
     let id = parseInt(req.params.id)
     let libro = productsModel.getProduct(id)
 
-    res.render("products/detail", {libro, toThousand, session: req.session || null})
+    res.render("products/detail", {libro, toThousand})
   },
 
   //* Renderiza la vista de productos
   list: (req, res) => {
-    res.render("products/list", {libros: productsDB, toThousand, session: req.session || null})
+    res.render("products/list", {libros: productsDB, toThousand})
   },
 
   //* Renderiza el formulario de creación de producto
   create: (req, res) => {
-    res.render("products/create", {session: req.session || null})
+    res.render("products/create")
   },
 
   //* Almacena en la base de datos el producto enviado por el formulario de creación de producto
@@ -38,7 +38,7 @@ const controller = {
     let id = parseInt(req.params.id)
     let libro = productsModel.getProduct(id)
 
-    res.render("products/edit", {libro, toThousand, session: req.session || null})
+    res.render("products/edit", {libro, toThousand})
   },
   
   //* Actualiza en la base de datos el producto enviado por el formulario de edición de producto

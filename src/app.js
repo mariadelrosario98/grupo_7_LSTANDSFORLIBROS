@@ -36,13 +36,24 @@ let encryptedPassword = bcrypt.hashSync("123456", 10)
 let check = bcrypt.compareSync("123456", encryptedPassword)
 // console.log(check);
 
+//* Uso de middleware para usar datos de login en todas las vistas
+const { loginData } = require("./middlewares")
+app.use((req, res, next) => {
+  const { usersDB } = require("./data")
+
+  req.session.user = usersDB.find(element => element.email === req.cookies.email)
+
+  res.locals.session = req.session || null
+  next()
+})
+
 //* Requerir y definir las rutas
 const { homeRoutes, productsRoutes, usersRoutes } = require("./routes")
 app.use("/", homeRoutes)
 app.use("/products", productsRoutes)
 app.use("/users", usersRoutes)
 
-//* Renderizar la vista correspondiente al Error 404
+//* Renderizar la vista correspondiente al error 404
 app.use((req, res, next) => {
   res.status(404).render("not-found")
 })

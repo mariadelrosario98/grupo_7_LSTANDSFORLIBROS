@@ -4,7 +4,7 @@
   <%- include("partials/head", {title: "L STANDS FOR LIBROS"}) %>
 
   <body>
-    <%- include("./partials/header", {session}) %>
+    <%- include("./partials/header") %>
     
     <%- include("./partials/whatsapp") %>
 
@@ -34,7 +34,6 @@
               <%= libro.autor %>
             </div>
           </div>
-          <!-- <a class="details" href=<%= "/products/" + libro.id %> >Ver más</a> -->
         </a>
         <% }) %>
 

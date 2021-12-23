@@ -4,7 +4,7 @@
   <%- include("../partials/head", {title: "Edición"}) %>
 
   <body>
-    <%- include("../partials/header", {session}) %>
+    <%- include("../partials/header") %>
     
     <main>
       <form class="form-register" action=<%= "/products/" + libro.id + "?_method=PUT" %>  method="post" enctype="multipart/form-data">

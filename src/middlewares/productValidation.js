@@ -6,7 +6,7 @@ const productValidation = (req, res, next) => {
 
   //* Renderiza el formulario de creación con mensajes añadidos en caso de error
   if (!errors.isEmpty()) {
-    res.render("products/create", { errors: errors.mapped(), old: req.body, session: req.session || null })
+    res.render("products/create", { errors: errors.mapped(), old: req.body })
     return
   } 
 

@@ -4,12 +4,11 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const controller = {
   index: (req, res) => {
-    // res.send(req.session)
-    res.render("index", {libros: productsDB, toThousand, session: req.session || null})
+    res.render("index", {libros: productsDB, toThousand})
   },
 
   cart: (req, res) => {
-    res.render("product-cart", {libros: productsDB, toThousand, session: req.session || null})
+    res.render("product-cart", {libros: productsDB, toThousand})
   },
 }
 
