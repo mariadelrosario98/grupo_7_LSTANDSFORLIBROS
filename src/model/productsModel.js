@@ -40,13 +40,13 @@ const model = {
 
   //* Editar la información de un producto
   editProduct: function (id, product, fileName) {
-    //* Si no existe producto con el id ingresado...
-    if (!this.getProduct(id))
-      return console.error("Este producto no existe!!", id)
-
     //* Se obtiene el producto correspondiente al id ingresado
     let currentItem = this.getProduct(id)
     let index = productsDB.indexOf(currentItem)
+    
+    //* Si no existe producto con el id ingresado...
+    if (!currentItem)
+      return console.error("Este producto no existe!!", id)
 
     //* Si se subió una imagen, se elimina la anterior, siempre y cuando esta no sea la imagen por defecto
     if (fileName && currentItem.img !== "default.png") {
@@ -78,13 +78,14 @@ const model = {
     if (!productToDelete)
       return console.error("Este producto no existe!! id: ", id)
 
+    //* Se elimina la imagen del producto, siempre y cuando esta no sea la imagen por defecto
     if (productToDelete.img !== "default.png") {
       let imgPath = path.resolve(__dirname, "../../public/img/products", productsDB[indexToDelete].img)
       fs.rmSync(imgPath)
     }
 
+    //* Se elimina el producto de la base de datos
     productsDB.splice(indexToDelete, 1)
-
     writeProducts()
   },
 }
