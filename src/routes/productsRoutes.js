@@ -8,11 +8,11 @@ router.get("/", redirects.nonVendor, productsController.list)
 
 //* Creación de productos
 router.get("/create", redirects.nonVendor, productsController.create)
-router.post("/create", multerUpload("products", "product_image").single("product_image"), productsController.store)
+router.post("/", multerUpload("products", "product_image").single("product_image"), productsController.store)
 
 //* Edición de productos
 router.get("/:id/edit", redirects.nonVendor, productsController.edit)
-router.put("/:id/edit", multerUpload("products", "product_image").single("product_image"), productsController.update)
+router.put("/:id", multerUpload("products", "product_image").single("product_image"), productsController.update)
 
 //* Borrado de productos
 router.delete("/:id", productsController.delete)

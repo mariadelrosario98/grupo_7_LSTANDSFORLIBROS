@@ -22,6 +22,7 @@ const model = {
     return productsDB.find(item => item.id === id) || null
   },
 
+
   //* Añadir un nuevo producto
   addProduct: function (product, fileName) {
     let newProduct = {
@@ -36,51 +37,58 @@ const model = {
     writeProducts()
   },
 
+
   //* Editar la información de un producto
   editProduct: function (id, product, fileName) {
+    //* Si no existe producto con el id ingresado...
     if (!this.getProduct(id))
       return console.error("Este producto no existe!!", id)
 
+    //* Se obtiene el producto correspondiente al id ingresado
     let currentItem = this.getProduct(id)
+    let index = productsDB.indexOf(currentItem)
 
-    if (fileName) {
-      let imgPath = path.resolve(__dirname, "..", "../public/img/products", currentItem.img)
+    //* Si se subió una imagen, se elimina la anterior, siempre y cuando esta no sea la imagen por defecto
+    if (fileName && currentItem.img !== "default.png") {
+      let imgPath = path.resolve(__dirname, "../../public/img/products", currentItem.img)
       fs.rmSync(imgPath)
     }
 
+    //* Se guardan los datos del producto editado
     let editedItem = {
       ...currentItem,
       img: fileName || currentItem.img,
-      name: product.name || currentItem.name,
-      autor: product.autor || currentItem.autor,
-      isbn: product.isbn || currentItem.isbn,
-      type: product.type || currentItem.type,
+      ...product,
       price: parseInt(product.price || currentItem.price),
       desc: product.desc || currentItem.desc,
     }
 
-    let index = productsDB.indexOf(currentItem)
+    //* Se almacena el producto editado en la base de datos
     productsDB[index] = editedItem
-
     writeProducts()
   },
+
 
   //* Borrar un producto
   deleteProduct: function (id) {
     let productToDelete = this.getProduct(id)
+    let indexToDelete = productsDB.indexOf(productToDelete)
+
+    //* Si no existe producto con el id ingresado...
     if (!productToDelete)
       return console.error("Este producto no existe!! id: ", id)
 
-    let indexToDelete = productsDB.indexOf(productToDelete)
-
-    let imgPath = path.resolve(__dirname, "..", "../public/img/products", productsDB[indexToDelete].img)
-    fs.rmSync(imgPath)
+    if (productToDelete.img !== "default.png") {
+      let imgPath = path.resolve(__dirname, "../../public/img/products", productsDB[indexToDelete].img)
+      fs.rmSync(imgPath)
+    }
 
     productsDB.splice(indexToDelete, 1)
 
     writeProducts()
   },
 }
+
 
 module.exports = model
 

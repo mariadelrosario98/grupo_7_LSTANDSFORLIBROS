@@ -49,7 +49,7 @@ const controller = {
     let fileName = req.file?.filename || null
     
     productsModel.editProduct(id, product, fileName)
-    res.redirect("/products")
+    res.redirect("/products/" + req.params.id)
   },
   
   //* Borra de la base de datos un producto
