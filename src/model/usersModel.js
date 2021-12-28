@@ -27,7 +27,7 @@ const model = {
   addUser: function (user, fileName) {
     let newUser = {
       id: newID(),
-      img: fileName,
+      img: fileName || "default.png",
       ...user,
       password: bcrypt.hashSync(user.password, 10)
     }

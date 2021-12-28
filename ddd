@@ -1,0 +1,257 @@
+[33mcommit 141ec7aafad7c64afc89dffeef426badec289d9d[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: KevinAndSH <kevin@uninorte.edu.co>
+Date:   Tue Dec 28 15:44:04 2021 -0500
+
+    arreglo en el middleware de inicio de esión por cookie
+
+[33mcommit 920534da8ec38d34f981d61a9fcd4936e1a0b7fe[m
+Author: KevinAndSH <kevin@uninorte.edu.co>
+Date:   Wed Dec 22 21:05:01 2021 -0500
+
+    implementado inicio automático de sesión con cookies
+
+[33mcommit 22212e52c9f7441c1abaf3eea1e70d578cf44f12[m
+Author: KevinAndSH <kevin@uninorte.edu.co>
+Date:   Wed Dec 22 18:38:12 2021 -0500
+
+    admin renombrado a vendor
+
+[33mcommit 83acafd357f4b2e28a221d756bd10df46e8e5d51[m
+Author: KevinAndSH <kevin@uninorte.edu.co>
+Date:   Tue Dec 21 18:55:04 2021 -0500
+
+    correción en los modelos
+
+[33mcommit fbcff9a26f98210aaab03fa0eeb1d94fb265c912[m
+Author: KevinAndSH <kevin@uninorte.edu.co>
+Date:   Tue Dec 21 18:51:58 2021 -0500
+
+    adición de path en el middleware multer
+
+[33mcommit 5bb264f6174740c1869d87757d21f9753b4ba8c5[m
+Author: Maria Del Rosario Castro <71073724+mariadelrosario98@users.noreply.github.com>
+Date:   Tue Dec 21 18:34:37 2021 -0500
+
+    Create retro-s5.md
+
+[33mcommit dae62b923bf91971bbdf9b7f6e044deed1003c57[m
+Author: KevinAndSH <kevin@uninorte.edu.co>
+Date:   Sat Dec 18 19:17:21 2021 -0500
+
+    intento de implementación de express-validator
+
+[33mcommit 92e56976bf3f0ec55407a2f68e69c5b54b00330c[m
+Author: KevinAndSH <kevin@uninorte.edu.co>
+Date:   Sat Dec 18 18:25:28 2021 -0500
+
+    adición de foto de perfil
+
+[33mcommit 30caf5fc31db793e02bbcf5d41ee973a39027f28[m
+Author: KevinAndSH <kevin@uninorte.edu.co>
+Date:   Sat Dec 18 18:03:47 2021 -0500
+
+    implementación completa de sesión y redirects
+
+[33mcommit f53dc35b11a7a4a51a8473bdab310f99a1e3e1e8[m
+Author: KevinAndSH <kevin@uninorte.edu.co>
+Date:   Sat Dec 18 13:57:17 2021 -0500
+
+    cookies para login en funcionamiento
+
+[33mcommit 3f26b268acfb4efa0979960d1b64d0ad2a295da3[m
+Author: KevinAndSH <kevin@uninorte.edu.co>
+Date:   Sat Dec 18 11:57:42 2021 -0500
+
+    adición de middleware para inicio de sesión
+
+[33mcommit d0c608d4547d2859c4b69b0731df585455fcbd57[m
+Author: KevinAndSH <kevin@uninorte.edu.co>
+Date:   Sat Dec 18 11:03:35 2021 -0500
+
+    implementación de multer como middleware independiente
+
+[33mcommit 81d0c8fff220961cf0dde10c553ee38560bf6c1d[m
+Author: KevinAndSH <kevin@uninorte.edu.co>
+Date:   Sun Dec 12 19:39:11 2021 -0500
+
+    intento de implementación de session
+
+[33mcommit c6a398e265abb339b0e80fee55ee55754c70828f[m
+Author: KevinAndSH <kevin@uninorte.edu.co>
+Date:   Sat Dec 11 13:52:13 2021 -0500
+
+    automatización de requires en los archivos index.js
+
+[33mcommit 7a7aa21cee8117d06ca5c0be931a78b4cf56d9fb[m
+Author: KevinAndSH <kevin@uninorte.edu.co>
+Date:   Thu Dec 9 17:54:36 2021 -0500
+
+    instalación de Sequelize
+
+[33mcommit 9f043960f249781ce675627219d779cfcfbe77d3[m
+Author: KevinAndSH <kevin@uninorte.edu.co>
+Date:   Wed Dec 8 19:17:12 2021 -0500
+
+    cambio en la estética de la barra de scroll
+
+[33mcommit b360d529df0f3b9d76d130a4edd2a68c1b793d1a[m
+Author: KevinAndSH <kevin@uninorte.edu.co>
+Date:   Mon Dec 6 21:56:51 2021 -0500
+
+    cambio estético en la barra de scroll
+
+[33mcommit 349eeefaaed445cccaa2ca0320227a4b3e332a0f[m
+Author: KevinAndSH <kevin@uninorte.edu.co>
+Date:   Mon Dec 6 21:15:32 2021 -0500
+
+    cambios estéticos en listado de productos + validación de login
+
+[33mcommit d674a2e1fd3ab8e1db224f20d213e426429e8081[m
+Author: KevinAndSH <kevin@uninorte.edu.co>
+Date:   Wed Dec 1 19:55:19 2021 -0500
+
+    muchos cambios en el backend
+
+[33mcommit e9c7e11b1c3fee448cb5107df0216a4d61aa4deb[m
+Author: KevinAndSH <kevin@uninorte.edu.co>
+Date:   Mon Nov 29 20:22:18 2021 -0500
+
+    intento de adición de express validator + cambios estéticos menores
+
+[33mcommit 8c3b00f3119fb8b1ffc0c993bc06a73b9de9afa3[m
+Merge: 73bb26b 117ade9
+Author: KevinAndSH <kevin@uninorte.edu.co>
+Date:   Sun Nov 28 20:01:29 2021 -0500
+
+    Merge branch 'main' of https://github.com/mariadelrosario98/grupo_7_LSTANDSFORLIBROS into main
+
+[33mcommit 73bb26bcf77330f5f7f300e4c81641807e3c777b[m
+Author: KevinAndSH <kevin@uninorte.edu.co>
+Date:   Sun Nov 28 20:01:23 2021 -0500
+
+    ahora soy vendorgit add .!
+
+[33mcommit 117ade9e1a16b68e1573f11e3910bce456391035[m
+Author: mariadelrosario98 <md.castro@uniandes.edu.co>
+Date:   Sun Nov 28 19:48:11 2021 -0500
+
+    readme trello
+
+[33mcommit 9815cd67561695d1f497d64908c49412fb3d81df[m
+Author: mariadelrosario98 <md.castro@uniandes.edu.co>
+Date:   Sun Nov 28 19:45:53 2021 -0500
+
+    formulario login
+
+[33mcommit 354804447c107955c89f1ecfe695b8ab9d206058[m
+Author: mariadelrosario98 <md.castro@uniandes.edu.co>
+Date:   Sun Nov 28 18:57:55 2021 -0500
+
+    cambio en el style-login.css
+
+[33mcommit a23ca5043567a7a36377959c71b3629a2bd7ac81[m
+Author: KevinAndSH <kevin@uninorte.edu.co>
+Date:   Thu Nov 25 20:38:32 2021 -0500
+
+    más cambios en el backend
+
+[33mcommit f4a777a8df8663cc5e202bf52249c7436c945c1a[m
+Author: KevinAndSH <kevin@uninorte.edu.co>
+Date:   Thu Nov 25 19:04:02 2021 -0500
+
+    cambio menor en form de registro
+
+[33mcommit 3644cfe0c83c10b81c74d09195945317da7dbf75[m
+Author: KevinAndSH <kevin@uninorte.edu.co>
+Date:   Thu Nov 25 18:57:19 2021 -0500
+
+    creación de index.js en la carpeta principal
+
+[33mcommit d7b202e3882e6c7143720d252c6ddcbf65828b2f[m
+Author: KevinAndSH <kevin@uninorte.edu.co>
+Date:   Thu Nov 25 18:41:57 2021 -0500
+
+    cambios en el backend
+
+[33mcommit 5f6b465e0676c7cd6c100eca20700627ae5d2ecb[m
+Author: KevinAndSH <kevin@uninorte.edu.co>
+Date:   Thu Nov 25 17:08:55 2021 -0500
+
+    adición de archivos para el CRUD de usuarios
+
+[33mcommit 92d252f0d3a6104933385463b87a3c06881cf27f[m
+Author: KevinAndSH <kevin@uninorte.edu.co>
+Date:   Thu Nov 25 17:08:13 2021 -0500
+
+    avances en el CRUD de usuarios
+
+[33mcommit d5cd69a54bf249577bd5a9c3981b0a5968e7bd38[m
+Author: KevinAndSH <kevin@uninorte.edu.co>
+Date:   Thu Nov 25 16:23:59 2021 -0500
+
+    cambios en el form de registro
+
+[33mcommit 0189758a528d06144ab335237fe070712224baa0[m
+Author: KevinAndSH <kevin@uninorte.edu.co>
+Date:   Thu Nov 25 15:18:23 2021 -0500
+
+    update menor en el footer y login form
+
+[33mcommit 1e55c8bc94f456c1ab732223e52e26a8bac3b5f7[m
+Author: KevinAndSH <kevin@uninorte.edu.co>
+Date:   Thu Nov 25 14:36:32 2021 -0500
+
+    adición de archivos públicos
+
+[33mcommit 373e7292af4df7477b440f325226a3b93c96da1e[m
+Author: KevinAndSH <kevin@uninorte.edu.co>
+Date:   Thu Nov 25 14:35:35 2021 -0500
+
+    cambios mayores en el form de login
+
+[33mcommit 5393e52a18e76ad8e48b39983af8689096f89a3d[m
+Merge: a5e0886 20ef7f6
+Author: KevinAndSH <kevin@uninorte.edu.co>
+Date:   Wed Nov 24 21:47:00 2021 -0500
+
+    Merge branch 'main' of https://github.com/mariadelrosario98/grupo_7_LSTANDSFORLIBROS into main
+
+[33mcommit a5e0886678d1894649a89e3bdda7599632d12e1a[m
+Author: KevinAndSH <kevin@uninorte.edu.co>
+Date:   Wed Nov 24 21:46:47 2021 -0500
+
+    cambios en el form de login (roto)
+
+[33mcommit 20ef7f6ff874697073b2af36bcb62be6a7565e7f[m
+Author: mariadelrosario98 <md.castro@uniandes.edu.co>
+Date:   Wed Nov 24 21:20:07 2021 -0500
+
+    un cambio pequeno en el footer
+
+[33mcommit b45914c39d9820bb13b2ce175492a964a52a2d6d[m
+Author: mariadelrosario98 <md.castro@uniandes.edu.co>
+Date:   Wed Nov 24 21:14:53 2021 -0500
+
+    un cambio pequeno en el footer
+
+[33mcommit 5ede38f984514ab8fd00fbfa04c0aa722c60bc7b[m
+Merge: 29e0b9c 0106c5c
+Author: KevinAndSH <kevin@uninorte.edu.co>
+Date:   Wed Nov 24 20:53:31 2021 -0500
+
+    Merge branch 'main' of https://github.com/mariadelrosario98/grupo_7_LSTANDSFORLIBROS into main
+
+[33mcommit 29e0b9ca33feeef5c12da74c3ee7ad833f48f1e0[m
+Author: KevinAndSH <kevin@uninorte.edu.co>
+Date:   Wed Nov 24 20:53:20 2021 -0500
+
+    cambios en el form de edición (ya no está roto)
+
+[33mcommit 0106c5c8daf43318005ccca83595dc42b2acd98b[m
+Merge: cab4115 c1024d0
+Author: mariadelrosario98 <md.castro@uniandes.edu.co>
+Date:   Wed Nov 24 08:48:10 2021 -0500
+
+    Merge branch 'main' of https://github.com/mariadelrosario98/grupo_7_LSTANDSFORLIBROS into main
+
+[33mcommit cab41153dd81a12

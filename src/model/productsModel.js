@@ -26,7 +26,7 @@ const model = {
   addProduct: function (product, fileName) {
     let newProduct = {
       id: newID(),
-      img: fileName,
+      img: fileName || "default.png",
       ...product,
       price: parseInt(product.price)
     }

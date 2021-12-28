@@ -34,5 +34,14 @@
         "category": "buyer",
         "email": "zabdiel.blanco@gmail.com",
         "password": "$2a$10$CJ9qa2nbngu5K5H5aR7NZu/Hi9sBTW7Fb1nVUA23Fk4RJYAn9OvSK"
+    },
+    {
+        "id": 5,
+        "img": "default.png",
+        "name": "Cosme",
+        "surname": "Fulanito",
+        "category": "vendor",
+        "email": "cosme@fulanito.com",
+        "password": "$2a$10$g3JINQRgBVzbeSVZtdMjbuj9cBVEJPmOhh1yXtYbO37tVUjknNV1u"
     }
 ]
