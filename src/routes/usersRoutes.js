@@ -16,4 +16,5 @@ router.post("/register", multerUpload("users", "profile-pic").single("profile-pi
 //* Cierre de sesión
 router.delete("/", usersController.signout)
 
+
 module.exports = router

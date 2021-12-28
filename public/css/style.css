@@ -525,6 +525,7 @@ button.search{
 
 .title{
   font-weight: bold;
+  text-align:center;
   line-height: 1.2em;
   padding: 0.3em 0;
 }
@@ -577,10 +578,10 @@ button.search{
  margin: auto;
 }
 
-.title{
+/* .title{
   font-weight: bold;
   text-align:center;
-}
+} */
 
 .articulo--top--info{
   text-align:justify;

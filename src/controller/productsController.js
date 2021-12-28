@@ -26,7 +26,7 @@ const controller = {
   store: (req, res) => {
     //* Se almacenan los datos del producto y el nombre del archivo enviado (si existe) en variables
     let product = req.body
-    let fileName = req.file ? req.file.filename : null
+    let fileName = req.file?.filename || null
 
     //* Guarda el producto en la base de datos y redirige al listado de productos
     productsModel.addProduct(product, fileName)
@@ -46,7 +46,7 @@ const controller = {
     //res.send(req.file)
     let id = parseInt(req.params.id)
     let product = req.body
-    let fileName = req.file ? req.file.filename : null
+    let fileName = req.file?.filename || null
     
     productsModel.editProduct(id, product, fileName)
     res.redirect("/products")

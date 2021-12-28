@@ -41,7 +41,8 @@ const { loginData } = require("./middlewares")
 app.use((req, res, next) => {
   const { usersDB } = require("./data")
 
-  req.session.user = usersDB.find(element => element.email === req.cookies.email)
+  if (req.cookies?.email)
+    req.session.user = usersDB.find(element => element.email === req.cookies.email)
 
   res.locals.session = req.session || null
   next()

@@ -16,7 +16,7 @@ const controller = {
 
   //* Registra un usuario en la base de datos
   save: (req, res) => {
-    usersModel.addUser(req.body, req.file.filename)
+    usersModel.addUser(req.body, req.file?.filename)
     res.redirect("/")
   },
 
