@@ -1,7 +1,7 @@
 const path = require("path")
 const { check } = require("express-validator")
 
-let acceptedExtensions = [".jpg", ".png", ".gif", ".svg"]
+let acceptedExtensions = [".jpg", "jpeg", ".png", ".gif"]
 
 let errors = [
   check("name").notEmpty().withMessage("Debes ingresar un nombre para este libro"),
