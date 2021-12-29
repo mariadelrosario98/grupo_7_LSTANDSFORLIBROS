@@ -583,8 +583,9 @@ button.search{
 }
 
 .articulo--top--img{
-  width: 70%;
-  max-width: 400px;
+  width: clamp(240px, 70%, 400px);
+  /* width: 70%;
+  max-width: 400px; */
   display: block;
   margin: auto;
   padding: 1em;
