@@ -288,7 +288,7 @@ button.search{
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #3D56B2;
+  background-color: #3d56b2;
   color: #ebebeb;
   height: 2em;
 }
@@ -410,6 +410,10 @@ button.search{
   margin-top: 1em;
 }
 
+.form-register p label{
+  display: inline;
+}
+
 .category label{
   margin: 0.5em;
 }
@@ -423,8 +427,9 @@ button.search{
   font-size: 18px;
 }
 
-.form-register p{
-  height: 40px;
+.form-register p.terms{
+  /* height: 40px; */
+  margin-top: 2em;
   /* text-align: center; */
   font-size: 18px;
 }
@@ -798,14 +803,10 @@ button.search{
 } */
 
 .feedback{
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
   text-align: left;
-  font-style: italic;
   font-weight: bold;
 
-  color: hsl(0, 100%, 60%);
+  color: hsl(0, 100%, 62%);
   /* background-color: hsl(0, 60%, 70%); */
 
   /* padding: 1em; */

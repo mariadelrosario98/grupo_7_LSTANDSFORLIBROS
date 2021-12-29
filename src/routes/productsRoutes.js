@@ -8,7 +8,7 @@ router.get("/", redirects.nonVendor, productsController.list)
 
 //* Creación de productos
 router.get("/create", redirects.nonVendor, productsController.create)
-router.post("/", multerUpload("products", "product_image").single("product_image"), productsController.store)
+router.post("/", multerUpload("products", "product_image").single("product_image"), productErrors, productValidation, productsController.store)
 
 //* Edición de productos
 router.get("/:id/edit", redirects.nonVendor, productsController.edit)
