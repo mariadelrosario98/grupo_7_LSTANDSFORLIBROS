@@ -1,4 +1,4 @@
-const { productsDB } = require("../data");
+const { productsDB } = require("../data")
 const { productsModel } = require("../model")
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
@@ -38,12 +38,11 @@ const controller = {
     let id = parseInt(req.params.id)
     let libro = productsModel.getProduct(id)
 
-    res.render("products/edit", {libro, toThousand})
+    res.render("products/edit", {libro, id})
   },
   
   //* Actualiza en la base de datos el producto enviado por el formulario de edición de producto
   update: (req, res) => {
-    //res.send(req.file)
     let id = parseInt(req.params.id)
     let product = req.body
     let fileName = req.file?.filename || null

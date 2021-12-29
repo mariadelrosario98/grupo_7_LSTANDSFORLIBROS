@@ -18,18 +18,18 @@ let errors = [
     .notEmpty().withMessage("Debes definir un precio").bail()
     .isInt().withMessage("Debe ser un número"),
 
-  check("product_image").custom((value, {req}) => {
-    //* Extensión del archivo subido y extensiones aceptadas
-    let ext = path.extname(req.file.originalname)
+  // check("product_image").custom((value, {req}) => {
+  //   //* Extensión del archivo subido y extensiones aceptadas
+  //   let ext = path.extname(req.file.originalname)
 
-    //* Si la extensión del archivo no es aceptada, se genera un nuevo error
-    if(!acceptedExtensions.includes(ext)) {
-      throw new Error("Invalid extension")
-    }
+  //   //* Si la extensión del archivo no es aceptada, se genera un nuevo error
+  //   if(!acceptedExtensions.includes(ext)) {
+  //     throw new Error("Invalid extension")
+  //   }
 
-    //* Se retorna true para indicar el éxito de este custom validator
-    return true
-  }).withMessage(`Extensión inválida (extensiones aceptadas: ${acceptedExtensions.join(", ")})`)
+  //   //* Se retorna true para indicar el éxito de este custom validator
+  //   return true
+  // }).withMessage(`Extensión inválida (extensiones aceptadas: ${acceptedExtensions.join(", ")})`)
 ]
 
 

@@ -563,24 +563,31 @@ button.search{
   align-items: center;
 }
 
+.articulo{
+  border-radius: 10px;
+  background-color: #ccc;
+  width: clamp(300px, 80%, 800px);
+
+  margin: auto;
+}
+
 .articulo--top{
+  display: flex;
+  flex-direction: column;
   margin-bottom: 50px;
   padding: 2em;
 }
 
-.articulo--top--img{
-  width: 40%;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 5%;
+.articulo--top p{
+  margin: 0.2em 0;
 }
 
-.articulo{
- border-radius: 10px;
- background-color: #ccc;
- max-width: 50%;
- margin: auto;
+.articulo--top--img{
+  width: 70%;
+  max-width: 400px;
+  display: block;
+  margin: auto;
+  padding: 1em;
 }
 
 /* .title{
@@ -695,6 +702,10 @@ button.search{
   .product{
     min-width: calc(0.4 * 769);
     width: 20em;
+  }
+
+  .articulo--top{
+    flex-direction: row;
   }
 }
 
