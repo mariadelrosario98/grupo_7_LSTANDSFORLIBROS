@@ -46,7 +46,14 @@ const controller = {
     let id = parseInt(req.params.id)
     let product = req.body
     let fileName = req.file?.filename || null
+
+    //* Si se subió una imagen, se elimina la anterior, siempre y cuando esta no sea la imagen por defecto
+    if (fileName && currentItem.img !== "default.png") {
+      let imgPath = path.resolve(__dirname, "../../public/img/products", currentItem.img)
+      fs.rmSync(imgPath)
+    }
     
+    //* Se guarda el producto editado en la base de datos
     productsModel.editProduct(id, product, fileName)
     res.redirect("/products/" + req.params.id)
   },
@@ -55,6 +62,13 @@ const controller = {
   delete: (req, res) => {
     let id = parseInt(req.params.id)
 
+    //* Se elimina la imagen del producto, siempre y cuando esta no sea la imagen por defecto
+    if (productToDelete.img !== "default.png") {
+      let imgPath = path.resolve(__dirname, "../../public/img/products", productsDB[indexToDelete].img)
+      fs.rmSync(imgPath)
+    }
+
+    //* Se borra el producto de la base de datos
     productsModel.deleteProduct(id)
     res.redirect("/products")
   },

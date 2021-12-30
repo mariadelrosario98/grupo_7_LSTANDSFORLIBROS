@@ -18,12 +18,27 @@
           <div class="articulo--top">
             <img src=<%= "/img/products/" + libro.img %> alt="" class="articulo--top--img">
             <div class="articulo--top--info">
-              <p class="title"><b> <strong><%= libro.name %> </strong></b></p>
-              <p class="author"><b>Autor:</b> <%= libro.autor %></p>
-              <p class="isbn"><b>ISBN:</b> <%= libro.isbn %></p>
-              <p class="type"><b>Tipo:</b> <%= libro.type %></p>
+              <p class="title">
+                <b> <strong><%= libro.name %> </strong></b>
+              </p>
 
-              <p class="articulo--desc">
+              <p class="author">
+                <b>Autor:</b> <%= libro.autor %>
+              </p>
+
+              <p class="isbn">
+                <b>ISBN:</b> <%= libro.isbn %>
+              </p>
+
+              <p class="type">
+                <b>Tipo:</b> <%= libro.type %>
+              </p>
+
+              <p class="price">
+                <b>Precio:</b> $<%= toThousand(libro.price) %>
+              </p>
+
+              <p class="articulo--desc ">
                 <%= libro.desc %>
               </p>
             </div>

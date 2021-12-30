@@ -108,15 +108,5 @@
         "type": "Libro",
         "price": 1000000,
         "desc": "Un librito de texto muy peculiar, además de caro c:"
-    },
-    {
-        "id": 12,
-        "img": "default.png",
-        "name": "null",
-        "autor": "Kevin Simanca Herrera",
-        "isbn": "541484646842",
-        "type": "Libro",
-        "price": 100000,
-        "desc": ""
     }
 ]
