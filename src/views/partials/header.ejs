@@ -31,7 +31,7 @@
       </a>
 
       <% if (locals.session && session.user) { %>
-        <h3 class="hola">Hola <%= session.user.name %></h3>
+        <h3 class="hola laptop">Hola <%= session.user.name %></h3>
 
         <div class="pfp">
           <img src=<%= "/img/users/" + session.user.img %> alt="">
@@ -51,7 +51,7 @@
     </div>
   </div>
 
-  <form action="search" method="get" class="mobile">
+  <form action="/search" method="get" class="mobile">
     <input type="search" name="search" id="search" placeholder="Busca tus libros">
 
     <button type="submit" class="search">
