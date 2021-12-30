@@ -48,7 +48,7 @@ Similar a las demás referencias, en el header podremos encontrar el logo, una b
 </p>
 
 ## Tablero de trabajo
-Escogimos hacer nuestro tablero en Trello, los link es el siguiente:
+Decidimos hacer nuestro tablero en Trello, los links son los siguientes:
 
 Sprint 1: 
 https://trello.com/b/SnFHtmUu/sprint-1
