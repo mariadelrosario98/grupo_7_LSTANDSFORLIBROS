@@ -8,47 +8,47 @@
     
     <main>
       <form class="form-register" action=<%= "/products/" + id + "?_method=PUT" %>  method="post" enctype="multipart/form-data">
-        <h4 class="título form product-create">Formulario Edición Productos</h4>
+        <h3 class="título form product-create">Formulario Edición Productos</h3>
         
-        <label for="name">Nombre:</label>
+        <label for="name">Nombre <sup class="required">*</sup></label>
         <input class="controls login-box__input" type="text" name="name" id="name" 
         value= "<%= (locals.libro && libro.name) || old.name %>" autofocus>
         <% if (locals.errors && errors.name) { %>
           <p class="feedback"><%= errors.name.msg %> </p>
         <% } %>
 
-        <label for="autor">Autor:</label>
+        <label for="autor">Autor <sup class="required">*</sup></label>
         <input class="controls login-box__input" type="text" name="autor" id="autor" 
         value= "<%= (locals.libro && libro.autor) || old.autor %>" >
         <% if (locals.errors && errors.autor) { %>
           <p class="feedback"><%= errors.autor.msg %> </p>
         <% } %>
         
-        <label for="isbn">ISBN:</label>
+        <label for="isbn">ISBN <sup class="required">*</sup></label>
         <input class="controls login-box__input" type="text" name="isbn" id="isbn" 
         value= <%= (locals.libro && libro.isbn) || old.isbn %> >
         <% if (locals.errors && errors.isbn) { %>
           <p class="feedback"><%= errors.isbn.msg %> </p>
         <% } %>
 
-        <label for="type">Género:</label>
+        <label for="type">Género <sup class="required">*</sup></label>
         <input class="controls login-box__input" type="text" name="type" id="type" 
         value= <%= (locals.libro && libro.type) || old.type %> >
         <% if (locals.errors && errors.type) { %>
           <p class="feedback"><%= errors.type.msg %> </p>
         <% } %>
 
-        <label for="price">Precio:</label>
+        <label for="price">Precio <sup class="required">*</sup></label>
         <input class="controls login-box__input" type="number" name="price" id="price" 
         value= <%= (locals.libro && libro.price) || old.price %> min="0" step="100">
         <% if (locals.errors && errors.price) { %>
           <p class="feedback"><%= errors.price.msg %> </p>
         <% } %>
 
-        <label for="desc">Descripción:</label>
+        <label for="desc">Descripción</label>
         <textarea class="controls login-box__input" name="desc" id="desc"><%= (locals.libro && libro.desc) || (locals.old && old.desc) || "" %></textarea>
 
-        <label for="product_image">Imagen:</label>
+        <label for="product_image">Foto del libro</label>
         <input class="controls login-box__input" type="file" name="product_image" id="product_image" accept="image/*">
         <% if (locals.errors && errors.product_image) { %>
           <p class="feedback"><%= errors.product_image.msg %> </p>

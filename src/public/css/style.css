@@ -14,7 +14,7 @@
 }
 
 body{
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Open Sans', "Arial", sans-serif;
   display: flex;
   flex-direction: column;
 }
@@ -221,7 +221,7 @@ nav{
 main{
   padding-top: 120px;
   width: 100%;
-  min-height: 80vh;
+  min-height: 90vh;
   background-image: url("/img/bg.png");
   background-color: #E6E6E6;
 }
@@ -233,7 +233,7 @@ footer{
 
 textarea{
   resize: none;
-  height: 10em;
+  height: 5em;
 }
 
 button, input[type="submit"]{
@@ -414,6 +414,11 @@ button.search{
   display: inline;
 }
 
+.required{
+  color: hsl(0, 100%, 50%);
+  font-weight: bold;
+}
+
 .category label{
   margin: 0.5em;
 }
@@ -427,11 +432,17 @@ button.search{
   font-size: 18px;
 }
 
-.form-register p.terms{
+.terms{
+  display: flex;
+  align-items: baseline;
   /* height: 40px; */
-  margin-top: 2em;
+  /* margin-top: 2em; */
   /* text-align: center; */
   font-size: 18px;
+}
+
+.terms input{
+  width: 10%;
 }
 
 .form-register a{
@@ -753,9 +764,11 @@ button.search{
   margin-bottom: 20px;
 }
 
-.login-box input[type = "checkbox"], input[type = "radio"]{
-  width: 20px;
+input[type = "checkbox"], input[type = "radio"]{
+  width: 6%;
+  border: none;
   cursor: pointer;
+  margin-bottom: 20px;
 }
 
 .login-box__input{
@@ -763,7 +776,6 @@ button.search{
   background: transparent;
   outline: none;
   border-bottom: 1px solid #aaa;
-  height: 40px;
   color: #fff;
   font-size: 16px;
   transition: all 0.2s;

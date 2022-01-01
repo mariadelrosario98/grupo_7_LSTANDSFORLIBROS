@@ -7,7 +7,7 @@ app.set("view engine", "ejs")
 app.set("views", path.join(__dirname, "views"))
 
 //* Definir la carpeta pública
-app.use(express.static(path.join(__dirname, "..", "public")))
+app.use(express.static(path.join(__dirname, "public")))
 
 //* Configurar el entorno para que éste pueda recibir datos por POST
 app.use(express.urlencoded({ extended: false }))

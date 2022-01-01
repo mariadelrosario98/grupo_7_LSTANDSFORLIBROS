@@ -45,7 +45,7 @@ const model = {
     let currentItem = this.getUser(id)
 
     if (fileName) {
-      let imgPath = path.resolve(__dirname, "..", "../public/img/products", currentItem.img)
+      let imgPath = path.resolve(__dirname, "../public/img/products", currentItem.img)
       fs.rmSync(imgPath)
     }
 

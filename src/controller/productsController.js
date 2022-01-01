@@ -49,7 +49,7 @@ const controller = {
 
     //* Si se subió una imagen, se elimina la anterior, siempre y cuando esta no sea la imagen por defecto
     if (fileName && currentItem.img !== "default.png") {
-      let imgPath = path.resolve(__dirname, "../../public/img/products", currentItem.img)
+      let imgPath = path.resolve(__dirname, "../public/img/products", currentItem.img)
       fs.rmSync(imgPath)
     }
     
@@ -64,7 +64,7 @@ const controller = {
 
     //* Se elimina la imagen del producto, siempre y cuando esta no sea la imagen por defecto
     if (productToDelete.img !== "default.png") {
-      let imgPath = path.resolve(__dirname, "../../public/img/products", productsDB[indexToDelete].img)
+      let imgPath = path.resolve(__dirname, "../public/img/products", productsDB[indexToDelete].img)
       fs.rmSync(imgPath)
     }
 
