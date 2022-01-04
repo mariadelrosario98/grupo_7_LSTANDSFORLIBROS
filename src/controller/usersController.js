@@ -27,7 +27,7 @@ const controller = {
     req.session.user = usersDB.find(element => element.email === req.body.email)
 
     //* Redireccionando a la página principal
-    console.log(req.body)
+    console.table(req.body)
     res.redirect("/");
   },
 
