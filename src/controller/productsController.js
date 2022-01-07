@@ -1,3 +1,6 @@
+const fs = require("fs")
+const path = require("path")
+
 const { productsDB } = require("../data")
 const { productsModel } = require("../model")
 
@@ -61,10 +64,11 @@ const controller = {
   //* Borra de la base de datos un producto
   delete: (req, res) => {
     let id = parseInt(req.params.id)
+    let product = productsModel.getProduct(id)
 
     //* Se elimina la imagen del producto, siempre y cuando esta no sea la imagen por defecto
-    if (productToDelete.img !== "default.png") {
-      let imgPath = path.resolve(__dirname, "../public/img/products", productsDB[indexToDelete].img)
+    if (product.img !== "default.png") {
+      let imgPath = path.resolve(__dirname, "../public/img/products", product.img)
       fs.rmSync(imgPath)
     }
 
