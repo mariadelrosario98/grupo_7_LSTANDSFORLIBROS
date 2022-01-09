@@ -11,7 +11,7 @@ const loginCheck = (req, res, next) => {
   
   //* En caso de que no exista el usuario ingresado, se redirige al formulario de login
   if (!user) {
-    res.render("users/login", {message: "Usuario no existe", user: req.body.email})
+    res.status(400).render("users/login", {message: "Usuario no existe", user: req.body.email})
     return
   }
   
@@ -20,7 +20,7 @@ const loginCheck = (req, res, next) => {
   
   //* Si la contraseña es incorrecta, se redirige al formulario de login
   if (!check) {
-    res.render("users/login", {message: "Contraseña incorrecta", user: req.body.email})
+    res.status(400).render("users/login", {message: "Contraseña incorrecta", user: req.body.email})
     return
   }
 

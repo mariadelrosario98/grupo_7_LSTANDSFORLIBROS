@@ -2,7 +2,7 @@ const path = require("path")
 const { check } = require("express-validator")
 
 //* Longitud mínima de contraseña. Se asigna un valor bajo durante testeo, por conveniencia
-let min = 4
+let MIN_LENGTH = 4
 
 let acceptedExtensions = [".jpg", "jpeg", ".png", ".gif"]
 
@@ -17,7 +17,7 @@ let errors = [
 
   check("password")
     .notEmpty().withMessage("Ingresa una contraseña").bail()
-    .isLength({ min }).withMessage(`Tu contraseña debe tener al menos ${min} caracteres de longitud`),
+    .isLength({ MIN_LENGTH }).withMessage(`Tu contraseña debe tener al menos ${MIN_LENGTH} caracteres de longitud`),
 
   check("passwordConfirm").custom((value, {req}) => {
     //* Si las contraseñas no coinciden, se genera un nuevo error

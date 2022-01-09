@@ -9,7 +9,7 @@ const validation = (folder, view) => {
   
     //* Renderiza el formulario de creación con mensajes añadidos en caso de error
     if (!errors.isEmpty()) {
-      res.render(`${folder}/${view}`, { errors: errors.mapped(), old: req.body, id: req.params.id })
+      res.status(400).render(`${folder}/${view}`, { errors: errors.mapped(), old: req.body, id: req.params.id })
   
       //* Se elimina la imagen del producto, siempre y cuando esta no sea la imagen por defecto
       if (req.file?.filename && req.file.filename !== "default.png") {

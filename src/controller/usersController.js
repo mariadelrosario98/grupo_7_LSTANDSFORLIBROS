@@ -4,20 +4,20 @@ const { usersModel } = require("../model");
 const controller = {
   //* Renderiza el formulario de inicio de sesión
   login: (req, res) => {
-    res.render("users/login", {saved: req.cookies})
+    res.status(200).render("users/login", {saved: req.cookies})
   },
   
 
   //* Renderiza el formulario de registro
   register: (req, res) => {
-    res.render("users/register")
+    res.status(200).render("users/register")
   },
 
 
   //* Registra un usuario en la base de datos
   save: (req, res) => {
     usersModel.addUser(req.body, req.file?.filename)
-    res.redirect("/")
+    res.status(201).redirect("/")
   },
 
 
@@ -28,7 +28,7 @@ const controller = {
 
     //* Redireccionando a la página principal
     console.table(req.body)
-    res.redirect("/");
+    res.status(200).redirect("/");
   },
 
 

@@ -12,17 +12,17 @@ const controller = {
     let id = parseInt(req.params.id)
     let libro = productsModel.getProduct(id)
 
-    res.render("products/detail", {libro, toThousand})
+    res.status(200).render("products/detail", {libro, toThousand})
   },
 
   //* Renderiza la vista de productos
   list: (req, res) => {
-    res.render("products/list", {libros: productsDB, toThousand})
+    res.status(200).render("products/list", {libros: productsDB, toThousand})
   },
 
   //* Renderiza el formulario de creación de producto
   create: (req, res) => {
-    res.render("products/create")
+    res.status(200).render("products/create")
   },
 
   //* Almacena en la base de datos el producto enviado por el formulario de creación de producto
@@ -33,7 +33,7 @@ const controller = {
 
     //* Guarda el producto en la base de datos y redirige al listado de productos
     productsModel.addProduct(product, fileName)
-    res.redirect("/products")
+    res.status(201).redirect("/products")
   },
   
   //* Renderiza el formulario de edición de producto
@@ -41,7 +41,7 @@ const controller = {
     let id = parseInt(req.params.id)
     let libro = productsModel.getProduct(id)
 
-    res.render("products/edit", {libro, id})
+    res.status(200).render("products/edit", {libro, id})
   },
   
   //* Actualiza en la base de datos el producto enviado por el formulario de edición de producto
@@ -58,7 +58,7 @@ const controller = {
     
     //* Se guarda el producto editado en la base de datos
     productsModel.editProduct(id, product, fileName)
-    res.redirect("/products/" + req.params.id)
+    res.status(201).redirect("/products/" + req.params.id)
   },
   
   //* Borra de la base de datos un producto
@@ -74,7 +74,7 @@ const controller = {
 
     //* Se borra el producto de la base de datos
     productsModel.deleteProduct(id)
-    res.redirect("/products")
+    res.status(204).redirect("/products")
   },
 }
 
