@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-01-10T00:49:20.855Z" agent="5.0 (Macintosh)" etag="6G_fOsHg0fNabjurcIgc" version="16.2.4" type="github">
+<mxfile host="app.diagrams.net" modified="2022-01-10T03:10:54.417Z" agent="5.0 (Macintosh)" etag="616JnODJIOAx-BGkpYlZ" version="16.2.4" type="github">
   <diagram id="R2lEEEUBdFMjLlhIrx00" name="Page-1">
     <mxGraphModel dx="872" dy="-370" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0" extFonts="Permanent Marker^https://fonts.googleapis.com/css?family=Permanent+Marker">
       <root>
@@ -193,7 +193,7 @@
             <mxRectangle width="30" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="8YSvI5HDLCldSoKLDmNp-113" value="name varchar(50) NOT NULL" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;align=left;top=0;left=0;bottom=0;right=0;spacingLeft=6;" parent="8YSvI5HDLCldSoKLDmNp-111" vertex="1">
+        <mxCell id="8YSvI5HDLCldSoKLDmNp-113" value="product_name varchar(50) NOT NULL" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;align=left;top=0;left=0;bottom=0;right=0;spacingLeft=6;" parent="8YSvI5HDLCldSoKLDmNp-111" vertex="1">
           <mxGeometry x="30" width="230" height="30" as="geometry">
             <mxRectangle width="230" height="30" as="alternateBounds" />
           </mxGeometry>
@@ -245,7 +245,7 @@
             <mxRectangle width="30" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="8YSvI5HDLCldSoKLDmNp-162" value="house id int NOT NULL" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;align=left;top=0;left=0;bottom=0;right=0;spacingLeft=6;" parent="8YSvI5HDLCldSoKLDmNp-160" vertex="1">
+        <mxCell id="8YSvI5HDLCldSoKLDmNp-162" value="house_id int" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;align=left;top=0;left=0;bottom=0;right=0;spacingLeft=6;" parent="8YSvI5HDLCldSoKLDmNp-160" vertex="1">
           <mxGeometry x="30" width="230" height="30" as="geometry">
             <mxRectangle width="230" height="30" as="alternateBounds" />
           </mxGeometry>
