@@ -20,15 +20,16 @@ CREATE TABLE `users`(
 )
 
 --
---MySQL enables client sessions to acquire table locks explicitly for the purpose of cooperating with other sessions
---for access to tables, or to prevent other sessions from modifying tables during periods when a session requires exclusive 
---access to them.
+-- MySQL enables client sessions to acquire table locks explicitly for the purpose of cooperating with other sessions
+-- for access to tables, or to prevent other sessions from modifying tables during periods when a session requires exclusive 
+-- access to them.
+--
+--
+-- Dumping data into (*)
 --
 LOCK TABLES `users` WRITE;
---
---Dumping data into (*)
---
-INSERT INTO `users` (user_img, first_name, last_name, category, email, password) VALUES ('user-image1.jpeg',"Maria", "Castro", "Vendor", "maria.castrico@gmail.com", "$2a$10$8l142Fw168WDdqInccjeNe8uOI1YaqNgwlZCN081obw1eU5Omw37O"),
+INSERT INTO `users` (`user_img`, `first_name`, `last_name`, `category`, `email`, `password`) 
+VALUES ('user-image1.jpeg',"Maria", "Castro", "Vendor", "maria.castrico@gmail.com", "$2a$10$8l142Fw168WDdqInccjeNe8uOI1YaqNgwlZCN081obw1eU5Omw37O"),
 ('profile-pic_1637890207961.jpeg',"Kevin", "Simanca", "Vendor", "kevin.simanca@gmail.com", "$2a$10$tsnwAebeW3wopjurMBCQg.9uTyzFxQ5LiqQ7mVHbFTe.5yZPwzYjy"),
 ('profile-pic_1637890298959.jpg',"Elisaul", "García", "Vendor", "elisaul.garcia@gmail.com", "$2a$10$9gdQSCWUe4i2x.2OZfPMeux9naSEZMorTX5NFub0nRW.6wiUDDHJ."),
 ('profile-pic_1637890347724.jpeg',"Zabdiel", "Blanco", "buyer", "zabdiel.blanco@gmail.com", "$2a$10$CJ9qa2nbngu5K5H5aR7NZu/Hi9sBTW7Fb1nVUA23Fk4RJYAn9OvSK"),
@@ -49,7 +50,7 @@ CREATE TABLE `authors`(
 LOCK TABLES `authors` WRITE;
 
 --
---Dumping data into (*)
+-- Dumping data into (*)
 --
 INSERT INTO `authors` (author_name) VALUES ('Mr.Happy'),('AC/DC'),('Accept'),('Aerosmith'),('Alanis Morissette'),('Alice In Chains'),('Antônio Carlos Jobim');
 
