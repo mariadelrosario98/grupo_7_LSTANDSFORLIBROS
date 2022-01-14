@@ -232,7 +232,7 @@ footer{
 }
 
 textarea{
-  resize: none;
+  resize: vertical;
   height: 5em;
 }
 

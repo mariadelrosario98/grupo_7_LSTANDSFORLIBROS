@@ -1,7 +1,8 @@
+require('dotenv').config()
 const app = require("./app")
 
 //* Declarar el puerto para uso con Heroku
-let port = process.env.PORT || 4000
+let port = process.env.PORT
 
 
 //! FAVOR NO AGREGAR CÓDIGO DEBAJO DE ESTA LINEA

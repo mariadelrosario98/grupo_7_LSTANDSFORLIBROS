@@ -20,7 +20,7 @@ app.use(methodOverride("_method"))
 //* Definiendo texto para identificar nuestro sitio web
 const session = require("express-session")
 app.use(session({
-  secret: "Bienvenidos a nuestra libreria de libritos :D",
+  secret: "Bienvenidos a nuestra librería de libritos :D",
   saveUninitialized: true,
   resave: false,
 }))
@@ -29,7 +29,7 @@ app.use(session({
 const cookieParser = require("cookie-parser")
 app.use(cookieParser())
 
-//* Uso de libreria para encriptación
+//* Uso de librería para encriptación
 const bcrypt = require("bcryptjs")
 let encryptedPassword = bcrypt.hashSync("123456", 10)
 // console.log(encryptedPassword);
@@ -55,7 +55,7 @@ app.use("/products", productsRoutes)
 app.use("/users", usersRoutes)
 
 //* Renderizar la vista correspondiente al error 404
-app.use((req, res, next) => {
+app.use((req, res) => {
   res.status(404).render("not-found")
 })
 
