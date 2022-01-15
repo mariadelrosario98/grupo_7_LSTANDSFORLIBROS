@@ -10,6 +10,27 @@ const newID = () => {
   return id + 1
 }
 
+class User {
+  constructor({img, name, surname, category, email, password}) {
+    this.id = newID()
+    this.img = img ?? "default.png"
+    this.name = name
+    this.surname = surname
+    this.category = category
+    this.email = email
+    this.password = bcrypt.hashSync(password, 10)
+  }
+
+  edit({img, name, surname, category, email, password} = this) {
+    this.img = img ?? "default.png"
+    this.name = name
+    this.surname = surname
+    this.category = category
+    this.email = email
+    this.password = bcrypt.hashSync(password, 10)
+  }
+}
+
 //* Escribe los datos actualizados en el archivo .json
 const writeUsers = () => {
   let dbJSON = JSON.stringify(usersDB, null, 4)
@@ -25,15 +46,8 @@ const model = {
 
   //* Añadir un nuevo usuario
   addUser: function (user, fileName) {
-    let newUser = {
-      id: newID(),
-      img: fileName || "default.png",
-      ...user,
-      password: bcrypt.hashSync(user.password, 10)
-    }
-
+    let newUser = new User({...user, img: fileName})
     usersDB.push(newUser)
-
     writeUsers()
   },
 
@@ -49,18 +63,10 @@ const model = {
       fs.rmSync(imgPath)
     }
 
-    let editedItem = {
-      ...currentItem,
-      img: fileName || currentItem.img,
-      name: user.name || currentItem.name,
-      surname: user.surname || currentItem.surname,
-      category: user.category || currentItem.category,
-      email: user.email || currentItem.email,
-      password: bcrypt.hashSync(user.password, 10) || currentItem.password,
-    }
+    currentItem.edit({...user, img: fileName})
 
     let index = usersDB.indexOf(currentItem)
-    usersDB[index] = editedItem
+    usersDB[index] = currentItem
 
     writeUsers()
   },

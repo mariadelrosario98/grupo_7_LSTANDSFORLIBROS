@@ -10,9 +10,19 @@ const newID = () => {
 }
 
 class Product {
-  constructor({name, author, isbn, type, price, desc, img} = {img: "default.png"}) {
+  constructor({name, author, isbn, type, price, desc, img}) {
     this.id = newID()
-    this.img = img
+    this.img = img ?? "default.png"
+    this.name = name
+    this.author = author
+    this.isbn = isbn
+    this.type = type
+    this.price = parseInt(price)
+    this.desc = desc
+  }
+
+  edit({name, author, isbn, type, price, desc, img} = this) {
+    this.img = img ?? "default.png"
     this.name = name
     this.author = author
     this.isbn = isbn
@@ -55,16 +65,10 @@ const model = {
       return console.error("Este producto no existe!!", id)
 
     //* Se guardan los datos del producto editado
-    let editedItem = {
-      ...currentItem,
-      img: fileName || currentItem.img,
-      ...product,
-      price: parseInt(product.price || currentItem.price),
-      desc: product.desc || currentItem.desc,
-    }
+    currentItem.edit({...product, img: fileName})
 
     //* Se almacena el producto editado en la base de datos
-    productsDB[index] = editedItem
+    productsDB[index] = currentItem
     writeProducts()
   },
 
