@@ -6,7 +6,7 @@ let acceptedExtensions = [".jpg", "jpeg", ".png", ".gif"]
 let errors = [
   check("name").notEmpty().withMessage("Debes ingresar un nombre para este libro"),
 
-  check("autor").notEmpty().withMessage("Debes ingresar un nombre de autor"),
+  check("author").notEmpty().withMessage("Debes ingresar un nombre de autor"),
 
   check("isbn")
     .notEmpty().withMessage("Debes ingresar un ISBN").bail()

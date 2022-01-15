@@ -72,7 +72,7 @@ https://trello.com/b/SyV6ONkM/sprint-6
 - Kevin Simanca [@KevinAndSH](https://github.com/KevinAndSH) <br />
 Kevin estudió Ingeniería Mecánica y le gustan los perritos.
 - Elisaul García [@elisaulgarcia](https://github.com/elisaulgarcia) <br />
-- Zabdiel Blanco [@etaBlancoA](https://github.com/ZetaBlancoA) <br />
+- Zabdiel Blanco [@ZetaBlancoA](https://github.com/ZetaBlancoA) <br />
 Zabdiel estudia ingeniería electrónica y analista y desarrollador de sistemas de información. 
 - Maria del Rosario Castro [@mariadelrosario98](https://github.com/mariadelrosario98) <br />
 Maria del Rosario es economista, le gustan todos los animales 🐤 🐮 🐷 , los problemas sociales y el café ☕️

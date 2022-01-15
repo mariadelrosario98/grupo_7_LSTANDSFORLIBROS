@@ -17,11 +17,11 @@
           <p class="feedback"><%= errors.name.msg %> </p>
         <% } %>
 
-        <label for="autor">Autor <sup class="required">*</sup></label>
-        <input class="controls login-box__input" type="text" name="autor" id="autor" 
-        value= "<%= (locals.libro && libro.autor) || old.autor %>" >
-        <% if (locals.errors && errors.autor) { %>
-          <p class="feedback"><%= errors.autor.msg %> </p>
+        <label for="author">Autor <sup class="required">*</sup></label>
+        <input class="controls login-box__input" type="text" name="author" id="author" 
+        value= "<%= (locals.libro && libro.author) || old.author %>" >
+        <% if (locals.errors && errors.author) { %>
+          <p class="feedback"><%= errors.author.msg %> </p>
         <% } %>
         
         <label for="isbn">ISBN <sup class="required">*</sup></label>

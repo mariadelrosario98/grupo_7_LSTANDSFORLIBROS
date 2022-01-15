@@ -49,7 +49,7 @@ CREATE TABLE `products` (
     `isbn` varchar(13) NOT NULL,
 	`genre_id` int UNSIGNED NOT NULL,
     `house_id` int UNSIGNED NOT NULL,
-    `price` int NOT NULL,
+    `price` int UNSIGNED NOT NULL,
     `description` text,
 	
 	PRIMARY KEY (`id`),

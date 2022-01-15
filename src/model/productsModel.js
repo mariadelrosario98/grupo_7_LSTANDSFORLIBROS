@@ -9,6 +9,19 @@ const newID = () => {
   return id + 1
 }
 
+class Product {
+  constructor({name, author, isbn, type, price, desc, img} = {img: "default.png"}) {
+    this.id = newID()
+    this.img = img
+    this.name = name
+    this.author = author
+    this.isbn = isbn
+    this.type = type
+    this.price = parseInt(price)
+    this.desc = desc
+  }
+}
+
 //* Escribe los datos actualizados en el archivo .json
 const writeProducts = () => {
   let dbJSON = JSON.stringify(productsDB, null, 4)
@@ -25,15 +38,8 @@ const model = {
 
   //* Añadir un nuevo producto
   addProduct: function (product, fileName) {
-    let newProduct = {
-      id: newID(),
-      img: fileName || "default.png",
-      ...product,
-      price: parseInt(product.price)
-    }
-
+    let newProduct = new Product({...product, img: fileName})
     productsDB.push(newProduct)
-
     writeProducts()
   },
 
