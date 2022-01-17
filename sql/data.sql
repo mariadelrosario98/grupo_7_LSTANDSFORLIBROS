@@ -11,13 +11,13 @@ VALUES (DEFAULT, "Cosme", "Fulanito", "vendor", "cosme@fulanito.com", "$2a$10$g3
 (DEFAULT,'Bjørn','Hansen', "Vendor", "coahafdh@gsgad.com", "$2a$10$g3JINQRgBVzbeSVZtdMjfgtmOhh1yXtYbO37tVUjknNV1u");
 
 INSERT INTO `authors` (`name`) 
-VALUES ('Mr.Happy'),('AC/DC'),('Accept'),('Alanis Morissette'),('Alice In Chains'),('Antônio Carlos Jobim');
+VALUES ('Mr.Happy'),('AC/DC'),('Accept'),('Alanis Morissette'),('Alice In Chains'),('Antônio Carlos Jobim'), ('Jeannie Lamburn'),('Roarke Pointing'),('Ignaz Woller'),('Archibald Habbema');
 
 INSERT INTO `houses` (`name`) 
 VALUES ("Penguin Random House");
 
 INSERT INTO `genres` (`name`) 
-VALUES ("Romance");authorsauthors
+VALUES ("Romance");
 
 INSERT INTO `products` (`img_path`, `name`, `author_id`, `isbn`, `genre_id`, `house_id`, `price`, `description`) 
 VALUES (DEFAULT,'Happy ever after', 1, 12345679910, 1, 1, 45000, "like it");
