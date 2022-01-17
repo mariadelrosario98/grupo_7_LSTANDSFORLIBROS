@@ -1,6 +1,3 @@
-const fs = require("fs")
-const path = require("path")
-
 const db = require('../database/models');
 const Op = db.Sequelize.Op
 
@@ -16,14 +13,14 @@ class Product {
     this.desc = desc
   }
 
-  edit({name, author, isbn, type, price, desc, img} = this) {
-    this.img = img ?? "default.png"
-    this.name = name
-    this.author = author
-    this.isbn = isbn
-    this.type = type
-    this.price = parseInt(price)
-    this.desc = desc
+  static edit(product, {name, author, isbn, type, price, desc, img}) {
+    product.img = img ?? product.img
+    product.name = name ?? product.name
+    product.author = author ?? product.author
+    product.isbn = isbn ?? product.isbn
+    product.type = type ?? product.type
+    product.price = parseInt(price) ?? product.price
+    product.desc = desc ?? product.desc
   }
 }
 
@@ -73,18 +70,10 @@ const model = {
 
   //* Editar la información de un producto
   editProduct: async function (id, product, fileName) {
-    //* Se obtiene el producto correspondiente al id ingresado
-    let currentItem = await this.getProduct(id)
-    
-    //* Si no existe producto con el id ingresado...
-    if (!currentItem)
-      return console.error("Este producto no existe!! (o hubo un error en la base de datos, no sé XD)", id)
-
-    //* Se guardan los datos del producto editado
     //todo: cambiar las propiedades de esta variable
-    currentItem.edit({...product, img: fileName})
-
     try {
+      let currentItem = await this.getProduct(id)
+      Product.edit(currentItem, {...product, img: fileName})
       db.Product.update({...currentItem}, { where: {id} })
     } catch (err) {
       console.error(err)

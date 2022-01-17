@@ -1,9 +1,5 @@
-const fs = require("fs")
-const path = require("path")
 const bcrypt = require("bcryptjs")
-
 const db = require('../database/models');
-
 
 //todo: editar o eliminar esta clase
 class User {
@@ -16,13 +12,13 @@ class User {
     this.password = bcrypt.hashSync(password, 10)
   }
 
-  edit({img, name, surname, category, email, password} = this) {
-    this.img = img ?? "default.png"
-    this.name = name
-    this.surname = surname
-    this.category = category
-    this.email = email
-    this.password = bcrypt.hashSync(password, 10)
+  static edit(user, {img, name, surname, category, email, password}) {
+    user.img = img ?? user.img
+    user.name = name ?? user.name
+    user.surname = surname ?? user.surname
+    user.category = category ?? user.category
+    user.email = email ?? user.email
+    user.password = bcrypt.hashSync(password, 10) ?? user.password
   }
 }
 
@@ -51,17 +47,12 @@ const model = {
   },
 
 
-  //todo: Editar la información de un usuario
+  //* Editar la información de un usuario
   editUser: async function (id, user, fileName) {
-    let currentItem = await this.getUser(id)
-
-    if (!currentItem)
-      return console.error("Este usuario no existe!! (o hubo un error en la base de datos, no sé XD)", id)
-
     //todo: cambiar las propiedades de esta variable
-    currentItem.edit({...user, img: fileName})
-
     try {
+      let currentItem = await this.getUser(id)
+      User.edit(currentItem, {...user, img: fileName})
       db.User.update({...currentItem}, { where: {id} })
     } catch (err) {
       console.error(err)
@@ -69,7 +60,7 @@ const model = {
   },
 
 
-  //todo: Borrar un usuario
+  //* Borrar un usuario
   deleteUser: async function (id) {
     try {
       db.User.destroy({ where: {id} })
