@@ -20,8 +20,7 @@ DROP TABLE IF EXISTS `genres`;
 CREATE TABLE `genres`(
 	`id` int UNSIGNED NOT NULL AUTO_INCREMENT,
     `name` varchar(50) NOT NULL,
-    `rating` int NOT NULL,
-    `sales` int UNSIGNED NOT NULL,
+    `rating` int UNSIGNED NOT NULL,
 	
 	PRIMARY KEY (`id`)
 );
@@ -46,7 +45,7 @@ DROP TABLE IF EXISTS `products`;
 CREATE TABLE `products` (
 	`id` int UNSIGNED NOT NULL AUTO_INCREMENT,
 	`img_path` varchar(50) DEFAULT "default.png",
-	`name` varchar(50) NOT NULL,
+	`name` varchar(255) NOT NULL,
     `author_id` int UNSIGNED NOT NULL,
     `isbn` varchar(13) NOT NULL,
 	`genre_id` int UNSIGNED NOT NULL,
