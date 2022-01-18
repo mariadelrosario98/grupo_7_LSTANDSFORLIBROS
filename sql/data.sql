@@ -14,11 +14,30 @@ INSERT INTO `authors` (`name`)
 VALUES ('Mr.Happy'),('AC/DC'),('Accept'),('Alanis Morissette'),('Alice In Chains'),('Antônio Carlos Jobim'), ('Jeannie Lamburn'),('Roarke Pointing'),('Ignaz Woller'),('Archibald Habbema');
 
 INSERT INTO `houses` (`name`) 
-VALUES ("Penguin Random House");
+VALUES ("Penguin Random House"),('Dabvine'),('Tagfeed'),('Mymm'),('LiveZ'),('Voomm'),('Kimia'),('Topicblab'),('Gabspot'),('Podcat'),('Yambee'),('Dabfeed'),('Jayo'),('Yacero'),('Realbuzz'),('Digitube'),('Trudeo'),('Brainbox'),('Eire'),('Edgeblab'),('Yamia');
 
 INSERT INTO `genres` (`name`) 
-VALUES ("Romance");
+VALUES ('Drama|Thriller'),
+('Comedy|Horror|Musical|Mystery|Romance'),
+('Drama'),
+('Western'),
+('Comedy'),
+('Comedy'),
+('Action|Comedy|Horror|Thriller'),
+('Comedy|Drama'),
+('Action|Adventure|Fantasy'),
+('Drama'),
+('Drama'),
+('Drama'),
+('Crime|Drama|Thriller'),
+('Crime|Drama'),
+('Drama|Sci-Fi'),
+('Horror'),
+('Comedy|Drama|Romance'),
+('Comedy'),
+('Action|Comedy|Western'),
+('Crime|Horror|Thriller');
 
 INSERT INTO `products` (`img_path`, `name`, `author_id`, `isbn`, `genre_id`, `house_id`, `price`, `description`) 
-VALUES (DEFAULT,'Happy ever after', 1, 12345679910, 1, 1, 45000, "like it");
+VALUES (DEFAULT,'Happy ever after', 1, 12345679910, 1, 1, 45000, "like it"), 
 
