@@ -20,6 +20,8 @@ DROP TABLE IF EXISTS `genres`;
 CREATE TABLE `genres`(
 	`id` int UNSIGNED NOT NULL AUTO_INCREMENT,
     `name` varchar(50) NOT NULL,
+    `rating` int NOT NULL,
+    `sales` int UNSIGNED NOT NULL,
 	
 	PRIMARY KEY (`id`)
 );
@@ -50,6 +52,7 @@ CREATE TABLE `products` (
 	`genre_id` int UNSIGNED NOT NULL,
     `house_id` int UNSIGNED NOT NULL,
     `price` int UNSIGNED NOT NULL,
+    `sales` int UNSIGNED NOT NULL,
     `description` text,
 	
 	PRIMARY KEY (`id`),
