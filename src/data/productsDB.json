@@ -31,13 +31,13 @@
     },
     {
         "id": 4,
-        "img": "harlem_shuffle..jpeg",
+        "img": "harlem_shuffle.jpeg",
         "name": "Harlem Shuffle",
         "author": "Colson Whitehead",
         "isbn": "0385545134",
-        "desc": "\"Ray Carney was only slightly bent when it came to being crooked...\" To his customers and neighbors on 125th street, Carney is an upstanding salesman of reasonably priced furnit,ure, making a decent life for himself and his family. He and his wife Elizabeth are expecting their second child...",
         "type": "Libro",
-        "price": 9000
+        "price": 9000,
+        "desc": "\"Ray Carney was only slightly bent when it came to being crooked...\" To his customers and neighbors on 125th street, Carney is an upstanding salesman of reasonably priced furnit,ure, making a decent life for himself and his family. He and his wife Elizabeth are expecting their second child..."
     },
     {
         "id": 5,
@@ -47,7 +47,7 @@
         "isbn": "9783749903276",
         "type": "Libro",
         "price": 20000,
-        "desc": "After a tumultuous period in American politics, a new administration has just been sworn in, and to everyone’s surprise the president chooses a political enemy for the vital position of secretary of state."
+        "desc": "After a tumultuous period in American politics, a new administration has just been sworn in, and to everyone's surprise the president chooses a political enemy for the vital position of secretary of state."
     },
     {
         "id": 6,
