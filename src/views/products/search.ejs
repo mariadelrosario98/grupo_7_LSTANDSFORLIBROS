@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+
+  <%- include("../partials/head", {title: "Detalles del producto"}) %>
+
+  <body>
+    <%- include("../partials/header") %>
+    
+    <%- include("../partials/whatsapp") %>
+
+    <main>
+      <h1>
+        Resultado busqueda
+      </h1>
+
+      <section>
+        <article class="articulo">
+          <div class="articulo--top">
+            <img src=<%= "/img/products/" + libro.img %> alt="" class="articulo--top--img">
+            <div class="articulo--top--info">
+              <p class="title">
+                <b> <strong><%= libro.name %> </strong></b>
+              </p>
+
+              <p class="author">
+                <b>Autor:</b> <%= libro.author %>
+              </p>
+
+              <p class="isbn">
+                <b>ISBN:</b> <%= libro.isbn %>
+              </p>
+
+              <p class="type">
+                <b>Tipo:</b> <%= libro.type %>
+              </p>
+
+              <p class="price">
+                <b>Precio:</b> $<%= toThousand(libro.price) %>
+              </p>
+
+              <p class="articulo--desc ">
+                <%= libro.desc %>
+              </p>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <%- include("../partials/footer") %>
+  </body>
+
+</html>

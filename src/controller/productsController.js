@@ -1,3 +1,4 @@
+const { decodeBase64 } = require("bcryptjs");
 const fs = require("fs")
 const path = require("path")
 
@@ -8,6 +9,11 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 
 const controller = {
+
+  //*search:(req, res) => {
+    //*db.Products.findByPk(req.params.id)
+  //*},
+
   //* Renderiza la vista de detalles de un producto cuyo id fue definido en la URL
   detail: (req, res) => {
     let id = parseInt(req.params.id)
