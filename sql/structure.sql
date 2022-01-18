@@ -52,6 +52,7 @@ CREATE TABLE `products` (
     `house_id` int UNSIGNED NOT NULL,
     `price` int UNSIGNED NOT NULL,
     `sales` int UNSIGNED NOT NULL,
+    `rating` int NOT NULL,
     `description` text,
 	
 	PRIMARY KEY (`id`),
@@ -70,3 +71,4 @@ CREATE TABLE `user_product`(
     FOREIGN KEY (`user_id`) REFERENCES `users`(`id`),
     FOREIGN KEY (`product_id`) REFERENCES `products`(`id`)
 );
+
