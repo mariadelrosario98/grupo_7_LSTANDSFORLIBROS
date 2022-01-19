@@ -15,15 +15,7 @@
       </a>
     </div>
 
-    <div class="top-center">
-      <form action="/search" method="get" class="laptop">
-        <input type="search" name="search" id="search" placeholder="Busca tus libros">
-
-        <button type="submit" class="search">
-          <i class="fas fa-search"></i>
-        </button>
-      </form>
-    </div>
+    <%- include("search-form", {deviceClass: "laptop"}) %>
 
     <div class="top-right">
       <a href="/product-cart">
@@ -51,16 +43,10 @@
     </div>
   </div>
 
-  <form action="/search" method="get" class="mobile">
-    <input type="search" name="search" id="search" placeholder="Busca tus libros">
-
-    <button type="submit" class="search">
-      <i class="fas fa-search"></i>
-    </button>
-  </form>
+  <%- include("search-form", {deviceClass: "mobile"}) %>
 
   <nav>
-    <ul>
+    <ul class="navbar">
       <li><a href="#">Categorias</a></li>
       &nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp
       <li><a href="#">Ofertas</a></li>

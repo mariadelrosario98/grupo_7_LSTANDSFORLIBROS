@@ -10,5 +10,7 @@ router.get("/", homeController.index)
 //* Carrito de compra
 router.get("/product-cart", homeController.cart)
 
+//* Resultados de busqueda
+router.get("/search", homeController.search)
 
 module.exports = router

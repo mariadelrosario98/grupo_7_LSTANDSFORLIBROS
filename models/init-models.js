@@ -1,37 +1,37 @@
 var DataTypes = require("sequelize").DataTypes;
-var _authors = require("./authors");
-var _genres = require("./genres");
-var _houses = require("./houses");
-var _products = require("./products");
-var _user_product = require("./user_product");
-var _users = require("./users");
+var _Authors = require("./Authors");
+var _Genres = require("./Genres");
+var _Houses = require("./Houses");
+var _Products = require("./Products");
+var _UserProduct = require("./UserProduct");
+var _Users = require("./Users");
 
 function initModels(sequelize) {
-  var authors = _authors(sequelize, DataTypes);
-  var genres = _genres(sequelize, DataTypes);
-  var houses = _houses(sequelize, DataTypes);
-  var products = _products(sequelize, DataTypes);
-  var user_product = _user_product(sequelize, DataTypes);
-  var users = _users(sequelize, DataTypes);
+  var Authors = _Authors(sequelize, DataTypes);
+  var Genres = _Genres(sequelize, DataTypes);
+  var Houses = _Houses(sequelize, DataTypes);
+  var Products = _Products(sequelize, DataTypes);
+  var UserProduct = _UserProduct(sequelize, DataTypes);
+  var Users = _Users(sequelize, DataTypes);
 
-  products.belongsTo(authors, { as: "author", foreignKey: "author_id"});
-  authors.hasMany(products, { as: "products", foreignKey: "author_id"});
-  products.belongsTo(genres, { as: "genre", foreignKey: "genre_id"});
-  genres.hasMany(products, { as: "products", foreignKey: "genre_id"});
-  products.belongsTo(houses, { as: "house", foreignKey: "house_id"});
-  houses.hasMany(products, { as: "products", foreignKey: "house_id"});
-  user_product.belongsTo(products, { as: "product", foreignKey: "product_id"});
-  products.hasMany(user_product, { as: "user_products", foreignKey: "product_id"});
-  user_product.belongsTo(users, { as: "user", foreignKey: "user_id"});
-  users.hasMany(user_product, { as: "user_products", foreignKey: "user_id"});
+  Products.belongsTo(Authors, { as: "author", foreignKey: "author_id"});
+  Authors.hasMany(Products, { as: "Products", foreignKey: "author_id"});
+  Products.belongsTo(Genres, { as: "genre", foreignKey: "genre_id"});
+  Genres.hasMany(Products, { as: "Products", foreignKey: "genre_id"});
+  Products.belongsTo(Houses, { as: "house", foreignKey: "house_id"});
+  Houses.hasMany(Products, { as: "Products", foreignKey: "house_id"});
+  UserProduct.belongsTo(Products, { as: "product", foreignKey: "product_id"});
+  Products.hasMany(UserProduct, { as: "UserProducts", foreignKey: "product_id"});
+  UserProduct.belongsTo(Users, { as: "user", foreignKey: "user_id"});
+  Users.hasMany(UserProduct, { as: "UserProducts", foreignKey: "user_id"});
 
   return {
-    authors,
-    genres,
-    houses,
-    products,
-    user_product,
-    users,
+    Authors,
+    Genres,
+    Houses,
+    Products,
+    UserProduct,
+    Users,
   };
 }
 module.exports = initModels;

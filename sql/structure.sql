@@ -3,21 +3,21 @@ CREATE DATABASE `l_stands_for_libros`;
 
 USE `l_stands_for_libros`;
 
-DROP TABLE IF EXISTS `users`;
-CREATE TABLE `users`(
+DROP TABLE IF EXISTS `Users`;
+CREATE TABLE `Users`(
 	`id` int UNSIGNED NOT NULL AUTO_INCREMENT,
 	`img_path` varchar(50) DEFAULT "default.png",
     `first_name` varchar(50) NOT NULL,
     `last_name` varchar(50) NOT NULL,
     `category` varchar(10) NOT NULL,
-    `email` varchar(50) NOT NULL,
+    `email` varchar(50) NOT NULL UNIQUE,
     `password` char(60) NOT NULL,
 	
 	PRIMARY KEY (`id`)
 );
 
-DROP TABLE IF EXISTS `genres`;
-CREATE TABLE `genres`(
+DROP TABLE IF EXISTS `Genres`;
+CREATE TABLE `Genres`(
 	`id` int UNSIGNED NOT NULL AUTO_INCREMENT,
     `name` varchar(50) NOT NULL,
     `rating` int UNSIGNED NOT NULL,
@@ -25,24 +25,24 @@ CREATE TABLE `genres`(
 	PRIMARY KEY (`id`)
 );
 
-DROP TABLE IF EXISTS `houses`;
-CREATE TABLE `houses`(
+DROP TABLE IF EXISTS `Houses`;
+CREATE TABLE `Houses`(
 	`id` int UNSIGNED NOT NULL AUTO_INCREMENT,
     `name` varchar(50) NOT NULL,
 	
 	PRIMARY KEY (`id`)
 );
 
-DROP TABLE IF EXISTS `authors`;
-CREATE TABLE `authors`(
+DROP TABLE IF EXISTS `Authors`;
+CREATE TABLE `Authors`(
 	`id` int UNSIGNED NOT NULL AUTO_INCREMENT,
     `name` varchar(50) NOT NULL,
 	
 	PRIMARY KEY (`id`)
 );
 
-DROP TABLE IF EXISTS `products`;
-CREATE TABLE `products` (
+DROP TABLE IF EXISTS `Products`;
+CREATE TABLE `Products` (
 	`id` int UNSIGNED NOT NULL AUTO_INCREMENT,
 	`img_path` varchar(50) DEFAULT "default.png",
 	`name` varchar(255) NOT NULL,
@@ -56,19 +56,19 @@ CREATE TABLE `products` (
     `description` text,
 	
 	PRIMARY KEY (`id`),
-    FOREIGN KEY (`author_id`) REFERENCES `authors`(`id`),
-    FOREIGN KEY (`genre_id`) REFERENCES `genres`(`id`),
-    FOREIGN KEY (`house_id`) REFERENCES `houses`(`id`)
+    FOREIGN KEY (`author_id`) REFERENCES `Authors`(`id`),
+    FOREIGN KEY (`genre_id`) REFERENCES `Genres`(`id`),
+    FOREIGN KEY (`house_id`) REFERENCES `Houses`(`id`)
 );
 
-DROP TABLE IF EXISTS `user_product`;
-CREATE TABLE `user_product`(
+DROP TABLE IF EXISTS `UserProduct`;
+CREATE TABLE `UserProduct`(
 	`id` int UNSIGNED NOT NULL AUTO_INCREMENT,
     `user_id` int UNSIGNED NOT NULL,
     `product_id` int UNSIGNED NOT NULL,
 	
 	PRIMARY KEY (`id`),
-    FOREIGN KEY (`user_id`) REFERENCES `users`(`id`),
-    FOREIGN KEY (`product_id`) REFERENCES `products`(`id`)
+    FOREIGN KEY (`user_id`) REFERENCES `Users`(`id`),
+    FOREIGN KEY (`product_id`) REFERENCES `Products`(`id`)
 );
 

@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('houses', {
+  return sequelize.define('Genres', {
     id: {
       autoIncrement: true,
       type: DataTypes.INTEGER.UNSIGNED,
@@ -10,10 +10,14 @@ module.exports = function(sequelize, DataTypes) {
     name: {
       type: DataTypes.STRING(50),
       allowNull: false
+    },
+    rating: {
+      type: DataTypes.INTEGER.UNSIGNED,
+      allowNull: false
     }
   }, {
     sequelize,
-    tableName: 'houses',
+    tableName: 'Genres',
     timestamps: false,
     indexes: [
       {

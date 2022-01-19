@@ -15,9 +15,14 @@ const controller = {
 
 
   //* Registra un usuario en la base de datos
-  save: (req, res) => {
-    usersModel.addUser(req.body, req.file?.filename)
-    res.status(201).redirect("/")
+  save: async (req, res) => {
+    try {
+      await usersModel.addUser(req.body, req.file?.filename)
+      res.status(201).redirect("/")
+    } catch (error) {
+      console.error(error)
+      res.status(500).send("500! Error!! Ayayay")
+    }
   },
 
 

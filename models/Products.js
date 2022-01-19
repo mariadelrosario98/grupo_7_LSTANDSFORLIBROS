@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('products', {
+  return sequelize.define('Products', {
     id: {
       autoIncrement: true,
       type: DataTypes.INTEGER.UNSIGNED,
@@ -13,14 +13,14 @@ module.exports = function(sequelize, DataTypes) {
       defaultValue: "default.png"
     },
     name: {
-      type: DataTypes.STRING(50),
+      type: DataTypes.STRING(255),
       allowNull: false
     },
     author_id: {
       type: DataTypes.INTEGER.UNSIGNED,
       allowNull: false,
       references: {
-        model: 'authors',
+        model: 'Authors',
         key: 'id'
       }
     },
@@ -32,7 +32,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.INTEGER.UNSIGNED,
       allowNull: false,
       references: {
-        model: 'genres',
+        model: 'Genres',
         key: 'id'
       }
     },
@@ -40,11 +40,19 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.INTEGER.UNSIGNED,
       allowNull: false,
       references: {
-        model: 'houses',
+        model: 'Houses',
         key: 'id'
       }
     },
     price: {
+      type: DataTypes.INTEGER.UNSIGNED,
+      allowNull: false
+    },
+    sales: {
+      type: DataTypes.INTEGER.UNSIGNED,
+      allowNull: false
+    },
+    rating: {
       type: DataTypes.INTEGER,
       allowNull: false
     },
@@ -54,7 +62,7 @@ module.exports = function(sequelize, DataTypes) {
     }
   }, {
     sequelize,
-    tableName: 'products',
+    tableName: 'Products',
     timestamps: false,
     indexes: [
       {

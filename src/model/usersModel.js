@@ -1,18 +1,9 @@
-const fs = require("fs")
-const path = require("path")
 const bcrypt = require("bcryptjs")
-const { usersDB } = require("../data")
+const db = require('../database/models');
 
-//* Crea un nuevo ID
-const newID = () => {
-  let id = 0
-  usersDB.forEach(p => p.id > id ? id = p.id : "")
-  return id + 1
-}
-
+//todo: editar o eliminar esta clase
 class User {
   constructor({img, name, surname, category, email, password}) {
-    this.id = newID()
     this.img = img ?? "default.png"
     this.name = name
     this.surname = surname
@@ -21,73 +12,72 @@ class User {
     this.password = bcrypt.hashSync(password, 10)
   }
 
-  edit({img, name, surname, category, email, password} = this) {
-    this.img = img ?? "default.png"
-    this.name = name
-    this.surname = surname
-    this.category = category
-    this.email = email
-    this.password = bcrypt.hashSync(password, 10)
+  static edit(user, {img, name, surname, category, email, password}) {
+    user.img = img ?? user.img
+    user.name = name ?? user.name
+    user.surname = surname ?? user.surname
+    user.category = category ?? user.category
+    user.email = email ?? user.email
+    user.password = bcrypt.hashSync(password, 10) ?? user.password
   }
 }
 
-//* Escribe los datos actualizados en el archivo .json
-const writeUsers = () => {
-  let dbJSON = JSON.stringify(usersDB, null, 4)
-  let dbPath = path.resolve(__dirname, "../data/usersDB.json")
-  fs.writeFileSync(dbPath, dbJSON)
-}
 
 const model = {
   //* Obtener un usuario mediante un ID
-  getUser: function (id) {
-    return usersDB.find(item => item.id === id) || null
+  getUser: async function (id) {
+    try {
+      return await db.User.findbyPk(id)
+    } catch (error) {
+      console.error(error)
+    }
   },
+
+  //* Busca un usuario por su email
+  findUser: async function (inputEmail) {
+    try {
+      return await db.User.findOne({ where: { email: inputEmail } })
+    } catch (error) {
+      console.error(error)
+    }
+  },
+
 
   //* Añadir un nuevo usuario
-  addUser: function (user, fileName) {
+  addUser: async function (user, fileName) {
+    //todo: cambiar las propiedades de esta variable
     let newUser = new User({...user, img: fileName})
-    usersDB.push(newUser)
-    writeUsers()
+    
+    try {
+      db.User.create({...newUser})
+    } catch (error) {
+      console.error(error)
+    }
   },
+
 
   //* Editar la información de un usuario
-  editUser: function (id, user, fileName) {
-    if (!this.getUser(id))
-      return console.error("Este usuario no existe!!", id)
-
-    let currentItem = this.getUser(id)
-
-    if (fileName) {
-      let imgPath = path.resolve(__dirname, "../public/img/products", currentItem.img)
-      fs.rmSync(imgPath)
+  editUser: async function (id, user, fileName) {
+    //todo: cambiar las propiedades de esta variable
+    try {
+      let currentItem = await this.getUser(id)
+      User.edit(currentItem, {...user, img: fileName})
+      db.User.update({...currentItem}, { where: {id} })
+    } catch (error) {
+      console.error(error)
     }
-
-    currentItem.edit({...user, img: fileName})
-
-    let index = usersDB.indexOf(currentItem)
-    usersDB[index] = currentItem
-
-    writeUsers()
   },
 
+
   //* Borrar un usuario
-  deleteUser: function (id) {
-    let userToDelete = this.getUser(id)
-    if (!userToDelete)
-      return console.error("Este usuario no existe!! id: ", id)
-
-    let indexToDelete = usersDB.indexOf(userToDelete)
-    usersDB.splice(indexToDelete, 1)
-
-    writeUsers()
+  deleteUser: async function (id) {
+    try {
+      db.User.destroy({ where: {id} })
+    } catch (error) {
+      console.error(error);
+    }
   },
 }
 
-module.exports = model
 
-// console.log(model.getUser(0))
-// console.log(model.getUser(1))
-// console.log(model.getUser(3))
-// console.log(model.getUser(5))
-// console.log(model.getUser(7))
+module.exports = model

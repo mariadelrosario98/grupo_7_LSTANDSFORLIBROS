@@ -156,6 +156,10 @@ header .top .top-center{
   display: none;
 }
 
+.navbar li:hover{
+  font-weight: bolder;
+}
+
 header form{
   height: 3.5em;
   text-align: center;
@@ -290,7 +294,8 @@ button.search{
   align-items: center;
   background-color: #3d56b2;
   color: #ebebeb;
-  height: 2em;
+  height: fit-content;
+  padding: 0.5em;
 }
 
 .social{
