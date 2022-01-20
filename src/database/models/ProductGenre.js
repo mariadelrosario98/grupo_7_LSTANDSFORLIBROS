@@ -1,19 +1,11 @@
 const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('UserProduct', {
+  return sequelize.define('ProductGenre', {
     id: {
       autoIncrement: true,
       type: DataTypes.INTEGER.UNSIGNED,
       allowNull: false,
       primaryKey: true
-    },
-    user_id: {
-      type: DataTypes.INTEGER.UNSIGNED,
-      allowNull: false,
-      references: {
-        model: 'Users',
-        key: 'id'
-      }
     },
     product_id: {
       type: DataTypes.INTEGER.UNSIGNED,
@@ -22,10 +14,19 @@ module.exports = function(sequelize, DataTypes) {
         model: 'Products',
         key: 'id'
       }
+    },
+    genre_id: {
+      type: DataTypes.INTEGER.UNSIGNED,
+      allowNull: false,
+      references: {
+        model: 'Genres',
+        key: 'id'
+      }
     }
   }, {
     sequelize,
-    tableName: 'UserProduct',
+    tableName: 'ProductGenre',
+    freezeTableName: true,
     timestamps: false,
     indexes: [
       {
@@ -37,17 +38,17 @@ module.exports = function(sequelize, DataTypes) {
         ]
       },
       {
-        name: "user_id",
-        using: "BTREE",
-        fields: [
-          { name: "user_id" },
-        ]
-      },
-      {
         name: "product_id",
         using: "BTREE",
         fields: [
           { name: "product_id" },
+        ]
+      },
+      {
+        name: "genre_id",
+        using: "BTREE",
+        fields: [
+          { name: "genre_id" },
         ]
       },
     ]

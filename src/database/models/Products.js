@@ -28,14 +28,6 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING(13),
       allowNull: false
     },
-    genre_id: {
-      type: DataTypes.INTEGER.UNSIGNED,
-      allowNull: false,
-      references: {
-        model: 'Genres',
-        key: 'id'
-      }
-    },
     house_id: {
       type: DataTypes.INTEGER.UNSIGNED,
       allowNull: false,
@@ -63,6 +55,7 @@ module.exports = function(sequelize, DataTypes) {
   }, {
     sequelize,
     tableName: 'Products',
+    freezeTableName: true,
     timestamps: false,
     indexes: [
       {
@@ -78,13 +71,6 @@ module.exports = function(sequelize, DataTypes) {
         using: "BTREE",
         fields: [
           { name: "author_id" },
-        ]
-      },
-      {
-        name: "genre_id",
-        using: "BTREE",
-        fields: [
-          { name: "genre_id" },
         ]
       },
       {

@@ -29,7 +29,17 @@ const model = {
   //* Obtener un producto mediante un ID
   getProduct: async function (id) {
     try {
-      return await db.Product.findByPk(id)
+      return await db.Products.findByPk(id)
+    } catch (error) {
+      console.error(error)
+    }
+  },
+
+
+  //* Obtener todos los productos
+  getAllProducts: async function() {
+    try {
+      return await db.Products.findAll()
     } catch (error) {
       console.error(error)
     }
@@ -39,7 +49,7 @@ const model = {
   //* Buscar productos mediante barra de busqueda
   searchProductsByName: async function (query, {orderBy, orderHow, limit, offset} = {limit: 10, offset: 10}) {
     try {
-      return await db.Product.findAll({
+      return await db.Products.findAll({
         where: {
           name: {[Op.like]: `%${query}%`}
         },
@@ -61,7 +71,7 @@ const model = {
     let newProduct = new Product({...product, img: fileName})
 
     try {
-      db.Product.create({...newProduct})
+      db.Products.create({...newProduct})
     } catch (error) {
       console.error(error)
     }
@@ -74,7 +84,7 @@ const model = {
     try {
       let currentItem = await this.getProduct(id)
       Product.edit(currentItem, {...product, img: fileName})
-      db.Product.update({...currentItem}, { where: {id} })
+      db.Products.update({...currentItem}, { where: {id} })
     } catch (error) {
       console.error(error)
     }
@@ -84,12 +94,13 @@ const model = {
   //* Borrar un producto
   deleteProduct: async function (id) {
     try {
-      db.Product.destroy({ where: {id} })
+      db.Products.destroy({ where: {id} })
     } catch (error) {
       console.error(error);
     }
   },
 }
 
+// model.getAllProducts().then(p => p.forEach(i => console.log(i.name)))
 
 module.exports = model

@@ -27,7 +27,7 @@ const model = {
   //* Obtener un usuario mediante un ID
   getUser: async function (id) {
     try {
-      return await db.User.findbyPk(id)
+      return await db.Users.findbyPk(id)
     } catch (error) {
       console.error(error)
     }
@@ -36,7 +36,7 @@ const model = {
   //* Busca un usuario por su email
   findUser: async function (inputEmail) {
     try {
-      return await db.User.findOne({ where: { email: inputEmail } })
+      return await db.Users.findOne({ where: { email: inputEmail } })
     } catch (error) {
       console.error(error)
     }
@@ -49,7 +49,7 @@ const model = {
     let newUser = new User({...user, img: fileName})
     
     try {
-      db.User.create({...newUser})
+      db.Users.create({...newUser})
     } catch (error) {
       console.error(error)
     }
@@ -62,7 +62,7 @@ const model = {
     try {
       let currentItem = await this.getUser(id)
       User.edit(currentItem, {...user, img: fileName})
-      db.User.update({...currentItem}, { where: {id} })
+      db.Users.update({...currentItem}, { where: {id} })
     } catch (error) {
       console.error(error)
     }
@@ -72,7 +72,7 @@ const model = {
   //* Borrar un usuario
   deleteUser: async function (id) {
     try {
-      db.User.destroy({ where: {id} })
+      db.Users.destroy({ where: {id} })
     } catch (error) {
       console.error(error);
     }
