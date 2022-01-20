@@ -47,7 +47,7 @@ const model = {
 
 
   //* Buscar productos mediante barra de busqueda
-  searchProductsByName: async function (query, {orderBy, orderHow, limit, offset} = {limit: 10, offset: 10}) {
+  searchProductsByName: async function (query, {orderBy, orderHow, limit, offset} = {limit: 10, offset: 0}) {
     try {
       return await db.Products.findAll({
         where: {
