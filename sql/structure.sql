@@ -20,7 +20,6 @@ DROP TABLE IF EXISTS `Genres`;
 CREATE TABLE `Genres`(
 	`id` int UNSIGNED NOT NULL AUTO_INCREMENT,
     `name` varchar(50) NOT NULL,
-    `rating` int UNSIGNED NOT NULL,
 	
 	PRIMARY KEY (`id`)
 );
@@ -48,7 +47,6 @@ CREATE TABLE `Products` (
 	`name` varchar(255) NOT NULL,
     `author_id` int UNSIGNED NOT NULL,
     `isbn` varchar(13) NOT NULL,
-	`genre_id` int UNSIGNED NOT NULL,
     `house_id` int UNSIGNED NOT NULL,
     `price` int UNSIGNED NOT NULL,
     `sales` int UNSIGNED NOT NULL,
@@ -57,7 +55,6 @@ CREATE TABLE `Products` (
 	
 	PRIMARY KEY (`id`),
     FOREIGN KEY (`author_id`) REFERENCES `Authors`(`id`),
-    FOREIGN KEY (`genre_id`) REFERENCES `Genres`(`id`),
     FOREIGN KEY (`house_id`) REFERENCES `Houses`(`id`)
 );
 
@@ -70,5 +67,16 @@ CREATE TABLE `UserProduct`(
 	PRIMARY KEY (`id`),
     FOREIGN KEY (`user_id`) REFERENCES `Users`(`id`),
     FOREIGN KEY (`product_id`) REFERENCES `Products`(`id`)
+);
+
+DROP TABLE IF EXISTS `ProductGenre`;
+CREATE TABLE `ProductGenre`(
+	`id` int UNSIGNED NOT NULL AUTO_INCREMENT,
+    `product_id` int UNSIGNED NOT NULL,
+    `genre_id` int UNSIGNED NOT NULL,
+	
+	PRIMARY KEY (`id`),
+    FOREIGN KEY (`product_id`) REFERENCES `Products`(`id`),
+    FOREIGN KEY (`genre_id`) REFERENCES `Genres`(`id`)
 );
 
