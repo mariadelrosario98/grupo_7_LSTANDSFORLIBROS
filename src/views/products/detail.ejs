@@ -18,28 +18,28 @@
           <div class="articulo--top">
             <img src=<%= "/img/products/" + libro.img_path %> alt="" class="articulo--top--img">
             <div class="articulo--top--info">
-              <p class="title">
+              <h2 class="title-info">
                 <b> <strong><%= libro.name %> </strong></b>
+              </h2>
+
+              <p class="author-info">
+                <b>Autor:</b> <%= libro.author_id %>
               </p>
 
-              <p class="author">
-                <b>Autor:</b> <%= libro.author %>
-              </p>
-
-              <p class="isbn">
+              <p class="isbn-info">
                 <b>ISBN:</b> <%= libro.isbn %>
               </p>
 
-              <p class="type">
+              <p class="type-info">
                 <b>Tipo:</b> <%= libro.type %>
               </p>
 
-              <p class="price">
+              <p class="price-info">
                 <b>Precio:</b> $<%= toThousand(libro.price) %>
               </p>
 
-              <p class="articulo--desc ">
-                <%= libro.desc %>
+              <p class="description-info">
+                <%= libro.description %>
               </p>
             </div>
           </div>

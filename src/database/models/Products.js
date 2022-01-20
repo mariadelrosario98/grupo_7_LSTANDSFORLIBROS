@@ -42,11 +42,13 @@ module.exports = function(sequelize, DataTypes) {
     },
     sales: {
       type: DataTypes.INTEGER.UNSIGNED,
-      allowNull: false
+      allowNull: true,
+      defaultValue: 0
     },
     rating: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: true,
+      defaultValue: 0
     },
     description: {
       type: DataTypes.TEXT,
@@ -55,7 +57,6 @@ module.exports = function(sequelize, DataTypes) {
   }, {
     sequelize,
     tableName: 'Products',
-    freezeTableName: true,
     timestamps: false,
     indexes: [
       {

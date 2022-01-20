@@ -26,7 +26,6 @@ module.exports = function(sequelize, DataTypes) {
   }, {
     sequelize,
     tableName: 'ProductGenre',
-    freezeTableName: true,
     timestamps: false,
     indexes: [
       {

@@ -62,7 +62,7 @@ const controller = {
 
     try {
       let libro = await productsModel.getProduct(id)
-      res.status(200).render("products/edit", {libro, id})
+      res.status(200).render("products/edit", {libro, id, toThousand})
     } catch (error) {
       console.error(error)
       res.status(500).send("500! Error!! Ayayay")

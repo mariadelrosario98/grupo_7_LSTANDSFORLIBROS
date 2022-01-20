@@ -22,11 +22,19 @@ module.exports = function(sequelize, DataTypes) {
         model: 'Products',
         key: 'id'
       }
+    },
+    quantity: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      defaultValue: 1
+    },
+    rating: {
+      type: DataTypes.TINYINT.UNSIGNED,
+      allowNull: true
     }
   }, {
     sequelize,
     tableName: 'UserProduct',
-    freezeTableName: true,
     timestamps: false,
     indexes: [
       {

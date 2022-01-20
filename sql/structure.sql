@@ -49,8 +49,8 @@ CREATE TABLE `Products` (
     `isbn` varchar(13) NOT NULL,
     `house_id` int UNSIGNED NOT NULL,
     `price` int UNSIGNED NOT NULL,
-    `sales` int UNSIGNED NOT NULL,
-    `rating` int NOT NULL,
+    `sales` int UNSIGNED DEFAULT 0,
+    `rating` int DEFAULT 0,
     `description` text,
 	
 	PRIMARY KEY (`id`),
@@ -63,6 +63,8 @@ CREATE TABLE `UserProduct`(
 	`id` int UNSIGNED NOT NULL AUTO_INCREMENT,
     `user_id` int UNSIGNED NOT NULL,
     `product_id` int UNSIGNED NOT NULL,
+    `quantity` int DEFAULT 1,
+    `rating` tinyint UNSIGNED,
 	
 	PRIMARY KEY (`id`),
     FOREIGN KEY (`user_id`) REFERENCES `Users`(`id`),

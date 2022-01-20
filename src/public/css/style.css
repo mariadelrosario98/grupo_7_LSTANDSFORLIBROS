@@ -544,7 +544,7 @@ button.search{
   flex-direction: column;
 }
 
-.title{
+.title-info{
   font-weight: bold;
   text-align:center;
   line-height: 1.2em;
@@ -606,11 +606,6 @@ button.search{
   margin: auto;
   padding: 1em;
 }
-
-/* .title{
-  font-weight: bold;
-  text-align:center;
-} */
 
 .articulo--top--info{
   text-align:justify;
