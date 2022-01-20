@@ -4,7 +4,7 @@ const path = require("path")
 const { productsDB } = require("../data")
 const { productsModel } = require("../model")
 
-const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
 
 const controller = {
 

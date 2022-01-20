@@ -288,7 +288,7 @@ button.search{
   width: 100%;
 }
 
-.initial{
+.initial, .initial__search{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -296,6 +296,12 @@ button.search{
   color: #ebebeb;
   height: fit-content;
   padding: 0.5em;
+}
+
+.initial__search{
+  background-color: inherit;
+  color: black;
+  font-weight: bold;
 }
 
 .social{
@@ -542,6 +548,12 @@ button.search{
   margin-top: 5px;
   display: flex;
   flex-direction: column;
+}
+
+.title {
+  font-weight: bold;
+  padding: 0.3em 0;
+  line-height: 1.2em;
 }
 
 .title-info{
