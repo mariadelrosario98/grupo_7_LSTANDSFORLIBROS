@@ -11,7 +11,7 @@ const validation = (folder, view) => {
     if (!errors.isEmpty()) {
       res.status(400).render(`${folder}/${view}`, {
         errors: errors.mapped(),
-        libro: req.body,
+        body: req.body,
         id: req.params.id,
         toThousand: n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
       })

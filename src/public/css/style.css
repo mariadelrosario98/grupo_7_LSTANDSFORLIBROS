@@ -117,6 +117,7 @@ header .top .top-right .fa-shopping-cart:hover{
 header .pfp{
   height: 3em;
   width: 3em;
+  min-width: 3em;
   border-radius: 50%;
   overflow: hidden;
 

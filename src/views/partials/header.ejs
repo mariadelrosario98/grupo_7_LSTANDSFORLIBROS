@@ -25,9 +25,9 @@
       <% if (locals.session && session.user) { %>
         <h3 class="hola laptop">Hola <%= session.user.name %></h3>
 
-        <div class="pfp">
+        <a href="#" class="pfp">
           <img src=<%= "/img/users/" + session.user.img %> alt="">
-        </div>
+        </a>
 
         <form action="/users?_method=DELETE" method="post" class="logout">
           <button type="submit" class="logout-icon">

@@ -11,7 +11,7 @@ router.post("/login", loginCheck, loginCookie, usersController.signin)
 
 //* Registro
 router.get("/register", redirects.user, usersController.register)
-router.post("/register", multerUpload("users", "profile-pic").single("profile-pic"), userErrors, validation("users", "register"), usersController.save)
+router.post("/register", multerUpload("users", "profile_pic").single("profile_pic"), userErrors, validation("users", "register"), usersController.save)
 
 //* Cierre de sesión
 router.delete("/", usersController.signout)

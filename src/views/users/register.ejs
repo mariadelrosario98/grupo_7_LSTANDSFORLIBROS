@@ -10,48 +10,60 @@
       <form class="form-register" action="/users/register" method="post" enctype="multipart/form-data">
         <h3>Formulario de registro</h3>
 
-        <label for="name">Nombre <sup class="required">*</sup></label>
-        <input class="controls login-box__input" type="text" name="name" id="name" value="<%= locals.old && old.name %>" placeholder="Ingrese su nombre aquí"  autofocus>
-        <% if (locals.errors && errors.name) { %>
-          <p class="feedback"><%= errors.name.msg %> </p>
-        <% } %>
+        <label for="first_name">
+          Nombre <sup class="required">*</sup>
+        </label>
+        <input class="controls login-box__input" type="text" name="first_name" id="first_name" 
+        value="<%= locals.body?.first_name %>" placeholder="Ingrese su nombre aquí"  autofocus>
+        <p class="feedback"><%= locals.errors?.first_name?.msg %> </p>
         
-        <label for="surname">Apellido <sup class="required">*</sup></label>
-        <input class="controls login-box__input" type="text" name="surname" id="surname" value="<%= locals.old && old.surname %>" placeholder="Ingrese sus apellidos aquí">
-        <% if (locals.errors && errors.surname) { %>
-          <p class="feedback"><%= errors.surname.msg %> </p>
-        <% } %>
+        <label for="last_name">
+          Apellido <sup class="required">*</sup>
+        </label>
+        <input class="controls login-box__input" type="text" name="last_name" id="last_name" 
+        value="<%= locals.body?.last_name %>" placeholder="Ingrese sus apellidos aquí">
+        <p class="feedback"><%= locals.errors?.last_name?.msg %> </p>
         
-        <label for="category">Categoria <sup class="required">*</sup></label>
+        <label for="category">
+          Categoria <sup class="required">*</sup>
+        </label>
         <div class="category">
-          <input type="radio" name="category" id="buyer" value="buyer" checked>
+          <input type="radio" name="category" id="buyer" value="buyer"
+          <% if (locals.body?.category !== "vendor") { %> checked <% } %> >
           <label for="buyer">Comprador</label>
         </div>
         <div class="category">
-          <input type="radio" name="category" id="vendor" value="vendor">
+          <input type="radio" name="category" id="vendor" value="vendor"
+          <% if (locals.body?.category === "vendor") { %> checked <% } %> >
           <label for="vendor">Vendedor</label>
         </div>
         
-        <label for="email">Correo electrónico <sup class="required">*</sup></label>
-        <input class="controls login-box__input" type="email" name="email" id="email" value="<%= locals.old && old.email %>" placeholder="Ingrese su correo aquí">
-        <% if (locals.errors && errors.email) { %>
-          <p class="feedback"><%= errors.email.msg %> </p>
-        <% } %>
+        <label for="email">
+          Correo electrónico <sup class="required">*</sup>
+        </label>
+        <input class="controls login-box__input" type="email" name="email" id="email" 
+        value="<%= locals.body?.email %>" placeholder="Ingrese su correo aquí">
+        <p class="feedback"><%= locals.errors?.email?.msg %> </p>
         
-        <label for="password">Contraseña <sup class="required">*</sup></label>
-        <input class="controls login-box__input" type="password" name="password" id="password" placeholder="Ingrese su contraseña aquí">
-        <% if (locals.errors && errors.password) { %>
-          <p class="feedback"><%= errors.password.msg %> </p>
-        <% } %>
+        <label for="password">
+          Contraseña <sup class="required">*</sup>
+        </label>
+        <input class="controls login-box__input" type="password" name="password" id="password"
+        placeholder="Ingrese su contraseña aquí">
+        <p class="feedback"><%= locals.errors?.password?.msg %> </p>
+        
+        <label for="passwordConfirm">
+          Confirmar contraseña <sup class="required">*</sup>
+        </label>
+        <input class="controls login-box__input" type="password" name="passwordConfirm" id="passwordConfirm"
+        placeholder="Ingrese su contraseña aquí">
+        <p class="feedback"><%= locals.errors?.passwordConfirm?.msg %> </p>
 
-        <label for="passwordConfirm">Confirmar contraseña <sup class="required">*</sup></label>
-        <input class="controls login-box__input" type="password" name="passwordConfirm" id="passwordConfirm" placeholder="Ingrese su contraseña aquí">
-        <% if (locals.errors && errors.passwordConfirm) { %>
-          <p class="feedback"><%= errors.passwordConfirm.msg %> </p>
-        <% } %>
-
-        <label for="profile-pic">Foto de perfil</label>
-        <input class="controls login-box__input" type="file" name="profile-pic" id="profile-pic" accept="image/*">
+        <label for="profile_pic">
+          Foto de perfil
+        </label>
+        <input class="controls login-box__input" type="file" name="profile_pic" id="profile_pic" accept="image/*">
+        <p class="feedback"><%= locals.errors?.profile_pic.msg %> </p>
         
         
         <p class="terms">

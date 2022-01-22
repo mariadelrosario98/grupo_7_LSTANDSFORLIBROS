@@ -3,22 +3,22 @@ const Op = db.Sequelize.Op
 
 //todo: editar o eliminar esta clase
 class Product {
-  constructor({name, author, isbn, type, price, desc, img}) {
-    this.img = img ?? "default.png"
+  constructor({name, author, isbn, genre, price, desc, img_path}) {
+    this.img_path = img_path ?? "default.png"
     this.name = name
     this.author = author
     this.isbn = isbn
-    this.type = type
+    this.genre = genre
     this.price = parseInt(price)
     this.desc = desc
   }
 
-  static edit(product, {name, author, isbn, type, price, desc, img}) {
-    product.img = img ?? product.img
+  static edit(product, {name, author, isbn, genre, price, desc, img_path}) {
+    product.img_path = img_path ?? product.img_path
     product.name = name ?? product.name
     product.author = author ?? product.author
     product.isbn = isbn ?? product.isbn
-    product.type = type ?? product.type
+    product.genre = genre ?? product.genre
     product.price = parseInt(price) ?? product.price
     product.desc = desc ?? product.desc
   }
@@ -83,7 +83,7 @@ const model = {
   //* Añadir un nuevo producto
   addProduct: async function (product, fileName) {
     //todo: cambiar las propiedades de esta variable
-    let newProduct = new Product({...product, img: fileName})
+    let newProduct = new Product({...product, img_path: fileName})
 
     try {
       db.Products.create({...newProduct})
@@ -98,7 +98,7 @@ const model = {
     //todo: cambiar las propiedades de esta variable
     try {
       let currentItem = await this.getProduct(id)
-      Product.edit(currentItem, {...product, img: fileName})
+      Product.edit(currentItem, {...product, img_path: fileName})
       db.Products.update({...currentItem}, { where: {id} })
     } catch (error) {
       console.error(error)

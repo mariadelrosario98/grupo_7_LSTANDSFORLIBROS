@@ -1,13 +1,13 @@
 const bcrypt = require("bcryptjs")
-const { usersDB } = require("../data");
+const { usersModel } = require('../model')
 
-const loginCheck = (req, res, next) => {
+const loginCheck = async (req, res, next) => {
   //* Guardamos las credenciales ingresadas dentro de variables
   let email = req.body.email
   let password = req.body.password
   
   //* Se busca el usuario en la base de datos
-  let user = usersDB.find(element => element.email === email)
+  let user = await usersModel.findUserByEmail(email)
   
   //* En caso de que no exista el usuario ingresado, se redirige al formulario de login
   if (!user) {

@@ -14,7 +14,7 @@
           Nombre del libro <sup class="required">*</sup>
         </label>
         <input class="controls login-box__input" type="text" name="name" id="name"
-        value="<%= locals.libro?.name %>" placeholder="Ingrese el nombre del libro" autofocus>
+        value="<%= locals.body?.name %>" placeholder="Ingrese el nombre del libro" autofocus>
         <p class="feedback">
           <%= locals.errors?.name?.msg %>
         </p>
@@ -23,7 +23,7 @@
           Nombre del autor <sup class="required">*</sup>
         </label>
         <input class="controls login-box__input" type="text" name="author" id="author"
-        value="<%= locals.libro?.author %>" placeholder="Ingrese el nombre del autor">
+        value="<%= locals.body?.author %>" placeholder="Ingrese el nombre del autor">
         <p class="feedback">
           <%= locals.errors?.author?.msg %>
         </p>
@@ -32,7 +32,7 @@
           ISBN <sup class="required">*</sup>
         </label>
         <input class="controls login-box__input" type="text" name="isbn" id="isbn"
-        value="<%= locals.libro?.isbn %>" placeholder="Ingrese el ISBN del texto">
+        value="<%= locals.body?.isbn %>" placeholder="Ingrese el ISBN del texto">
         <p class="feedback">
           <%= locals.errors?.isbn?.msg %>
         </p>
@@ -41,7 +41,7 @@
           Género <sup class="required">*</sup>
         </label>
         <input class="controls login-box__input" type="text" name="genre" id="genre"
-        value="<%= locals.libro?.type %>" placeholder="Ingrese el género de su libro">
+        value="<%= locals.body?.type %>" placeholder="Ingrese el género de su libro">
         <p class="feedback">
           <%= locals.errors?.type?.msg %>
         </p>
@@ -50,16 +50,16 @@
           Precio <sup class="required">*</sup>
         </label>
         <input class="controls login-box__input" type="number" name="price" id="price"
-        value="<%= locals.libro?.price %>" placeholder="Ingresa el precio del libro" min="0" step="100">
+        value="<%= locals.body?.price %>" placeholder="Ingresa el precio del libro" min="0" step="100">
         <p class="feedback">
           <%= locals.errors?.price?.msg %>
         </p>
         
-        <label for="desc">
+        <label for="description">
           Descripción
         </label>
         <textarea class="controls login-box__input" name="description" id="description"
-        placeholder="Ingrese una descripción"><%= locals.libro?.description %></textarea>
+        placeholder="Ingrese una descripción"><%= locals.body?.description %></textarea>
         
         <label for="product_image">
           Foto del libro
