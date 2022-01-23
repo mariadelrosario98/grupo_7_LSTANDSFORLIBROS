@@ -23,7 +23,7 @@ app.use(session({
   secret: "Bienvenidos a nuestra librería de libritos :D",
   saveUninitialized: true,
   resave: false,
-  //cookie: { secure: true }
+  cookie: { secure: true }
 }))
 
 //* Incluir el middleware para lectura y escritura de galletitas

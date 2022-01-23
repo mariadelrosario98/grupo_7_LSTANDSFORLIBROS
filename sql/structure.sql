@@ -24,38 +24,20 @@ CREATE TABLE `Genres`(
 	PRIMARY KEY (`id`)
 );
 
-DROP TABLE IF EXISTS `Houses`;
-CREATE TABLE `Houses`(
-	`id` int UNSIGNED NOT NULL AUTO_INCREMENT,
-    `name` varchar(50) NOT NULL,
-	
-	PRIMARY KEY (`id`)
-);
-
-DROP TABLE IF EXISTS `Authors`;
-CREATE TABLE `Authors`(
-	`id` int UNSIGNED NOT NULL AUTO_INCREMENT,
-    `name` varchar(50) NOT NULL,
-	
-	PRIMARY KEY (`id`)
-);
-
 DROP TABLE IF EXISTS `Products`;
 CREATE TABLE `Products` (
 	`id` int UNSIGNED NOT NULL AUTO_INCREMENT,
 	`img_path` varchar(50) DEFAULT "default.png",
 	`name` varchar(255) NOT NULL,
-    `author_id` int UNSIGNED NOT NULL,
+    `author` varchar(50) NOT NULL,
     `isbn` varchar(13) NOT NULL,
-    `house_id` int UNSIGNED NOT NULL,
+    `house` varchar(50) NOT NULL,
     `price` int UNSIGNED NOT NULL,
     `sales` int UNSIGNED DEFAULT 0,
     `rating` int DEFAULT 0,
     `description` text,
 	
-	PRIMARY KEY (`id`),
-    FOREIGN KEY (`author_id`) REFERENCES `Authors`(`id`),
-    FOREIGN KEY (`house_id`) REFERENCES `Houses`(`id`)
+	PRIMARY KEY (`id`)
 );
 
 DROP TABLE IF EXISTS `UserProduct`;

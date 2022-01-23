@@ -102,6 +102,7 @@ header .top .top-right{
 header .top .top-right .hola{
   margin-right: 1em;
   flex-grow: 4;
+  text-align: center;
 }
 
 header .top .top-right .fa-shopping-cart{
