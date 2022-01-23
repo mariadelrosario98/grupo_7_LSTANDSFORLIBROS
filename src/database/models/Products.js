@@ -16,25 +16,17 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING(255),
       allowNull: false
     },
-    author_id: {
-      type: DataTypes.INTEGER.UNSIGNED,
-      allowNull: false,
-      references: {
-        model: 'Authors',
-        key: 'id'
-      }
+    author: {
+      type: DataTypes.STRING(50),
+      allowNull: false
     },
     isbn: {
       type: DataTypes.STRING(13),
       allowNull: false
     },
-    house_id: {
-      type: DataTypes.INTEGER.UNSIGNED,
-      allowNull: false,
-      references: {
-        model: 'Houses',
-        key: 'id'
-      }
+    house: {
+      type: DataTypes.STRING(50),
+      allowNull: false
     },
     price: {
       type: DataTypes.INTEGER.UNSIGNED,
@@ -65,20 +57,6 @@ module.exports = function(sequelize, DataTypes) {
         using: "BTREE",
         fields: [
           { name: "id" },
-        ]
-      },
-      {
-        name: "author_id",
-        using: "BTREE",
-        fields: [
-          { name: "author_id" },
-        ]
-      },
-      {
-        name: "house_id",
-        using: "BTREE",
-        fields: [
-          { name: "house_id" },
         ]
       },
     ]
