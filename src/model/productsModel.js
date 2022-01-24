@@ -29,13 +29,7 @@ const model = {
   //* Obtener un producto mediante un ID
   getProduct: async function (id) {
     try {
-      return await db.Products.findOne({
-        where: { id },
-        include: {
-          model: db.Authors,
-          as: "author"
-        }
-      })
+      return await db.Products.findByPk(id)
     } catch (error) {
       console.error(error)
     }
@@ -45,12 +39,7 @@ const model = {
   //* Obtener todos los productos
   getAllProducts: async function() {
     try {
-      return await db.Products.findAll({
-        include: {
-          model: db.Authors,
-          as: "author"
-        }
-      })
+      return await db.Products.findAll()
     } catch (error) {
       console.error(error)
     }
@@ -68,11 +57,7 @@ const model = {
           [orderBy ?? "name", orderHow ?? "ASC"]
         ],
         limit,
-        offset,
-        include: {
-          model: db.Authors,
-          as: "author"
-        }
+        offset
       })
     } catch (error) {
       console.error(error)

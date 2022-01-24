@@ -12,6 +12,8 @@ let errors = [
     .notEmpty().withMessage("Debes ingresar un ISBN").bail()
     .isISBN().withMessage("ISBN inválido"),
 
+  check("house").notEmpty().withMessage("Debes ingresar un nombre de editorial"),
+
   check("type").notEmpty().withMessage("Debes ingresar un género"),
 
   check("price")

@@ -15,35 +15,54 @@
         </label>
         <input class="controls login-box__input" type="text" name="name" id="name" 
         value= "<%= locals.body?.name %>" placeholder="<%= locals.body?.name %>" autofocus>
-        <p class="feedback"><%= locals.errors?.name?.msg %> </p>
+        <p class="feedback">
+          <%= locals.errors?.name?.msg %>
+        </p>
 
         <label for="author">
           Autor <sup class="required">*</sup>
         </label>
         <input class="controls login-box__input" type="text" name="author" id="author" 
         value= "<%= locals.body?.author %>" placeholder="<%= locals.body?.author %>" >
-        <p class="feedback"><%= locals.errors?.author?.msg %> </p>
+        <p class="feedback">
+          <%= locals.errors?.author?.msg %>
+        </p>
         
         <label for="isbn">
           ISBN <sup class="required">*</sup>
         </label>
         <input class="controls login-box__input" type="text" name="isbn" id="isbn" 
         value= "<%= locals.body?.isbn %>" placeholder="<%= locals.body?.isbn %>" >
-        <p class="feedback"><%= locals.errors?.isbn?.msg %> </p>
+        <p class="feedback">
+          <%= locals.errors?.isbn?.msg %>
+        </p>
+
+        <label for="house">
+          Editorial <sup class="required">*</sup>
+        </label>
+        <input class="controls login-box__input" type="text" name="house" id="house" 
+        value= "<%= locals.body?.house %>" placeholder="<%= locals.body?.house %>" >
+        <p class="feedback">
+          <%= locals.errors?.house?.msg %>
+        </p>
 
         <label for="genre">
           Género <sup class="required">*</sup>
         </label>
         <input class="controls login-box__input" type="text" name="genre" id="genre" 
         value= <%= locals.body?.type %> >
-        <p class="feedback"><%= locals.errors?.type?.msg %> </p>
+        <p class="feedback">
+          <%= locals.errors?.type?.msg %>
+        </p>
 
         <label for="price">
           Precio <sup class="required">*</sup>
         </label>
         <input class="controls login-box__input" type="number" name="price" id="price" 
         value= <%= locals.body?.price %> placeholder= "<%= "$ " + toThousand(locals.body?.price) %>" min="0" step="100">
-        <p class="feedback"><%= locals.errors?.price?.msg %> </p>
+        <p class="feedback">
+          <%= locals.errors?.price?.msg %>
+        </p>
 
         <label for="desc">
           Descripción
@@ -55,7 +74,9 @@
           Foto del libro
         </label>
         <input class="controls login-box__input" type="file" name="product_image" id="product_image" accept="image/*">
-        <p class="feedback"><%= locals.errors?.product_image?.msg %> </p>
+        <p class="feedback">
+          <%= locals.errors?.product_image?.msg %>
+        </p>
         
         <input class="botons" type="submit" value="Editar">
         

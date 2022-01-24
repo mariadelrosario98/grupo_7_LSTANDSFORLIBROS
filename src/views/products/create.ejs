@@ -32,9 +32,18 @@
           ISBN <sup class="required">*</sup>
         </label>
         <input class="controls login-box__input" type="text" name="isbn" id="isbn"
-        value="<%= locals.body?.isbn %>" placeholder="Ingrese el ISBN del texto">
+        value="<%= locals.body?.isbn %>" placeholder="Ingrese el ISBN">
         <p class="feedback">
           <%= locals.errors?.isbn?.msg %>
+        </p>
+
+        <label for="house">
+          Editorial <sup class="required">*</sup>
+        </label>
+        <input class="controls login-box__input" type="text" name="house" id="house"
+        value="<%= locals.body?.house %>" placeholder="Ingrese el nombre de la editorial">
+        <p class="feedback">
+          <%= locals.errors?.house?.msg %>
         </p>
         
         <label for="genre">

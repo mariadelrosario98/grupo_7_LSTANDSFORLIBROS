@@ -9,7 +9,7 @@ const controller = {
       res.status(200).render("index", {libros, toThousand})
     } catch (error) {
       console.error(error)
-      res.status(500).send("500! Error!! Ayayay")
+      res.status(500).send(error)
     }
   },
 
@@ -19,7 +19,7 @@ const controller = {
       res.status(200).render("product-cart", {libros, toThousand})
     } catch (error) {
       console.error(error)
-      res.status(500).send("500! Error!! Ayayay")
+      res.status(500).send(error)
     }
   },
 
@@ -30,7 +30,7 @@ const controller = {
       res.status(200).render("search", { libros, toThousand })
     } catch (error) {
       console.error(error)
-      res.status(500).send("500! Error!! Ayayay")
+      res.status(500).send(error)
     }
   }
 }

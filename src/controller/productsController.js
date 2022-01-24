@@ -1,7 +1,3 @@
-const fs = require("fs")
-const path = require("path")
-
-const { productsDB } = require("../data")
 const { productsModel } = require("../model")
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
@@ -21,14 +17,14 @@ const controller = {
       res.status(200).render("products/detail", {libro, toThousand})
     } catch (error) {
       console.error(error)
-      res.status(500).send("500! Error!! Ayayay")
+      res.status(500).send(error)
     }
   },
 
 
   //* Renderiza la vista de productos
-  list: (req, res) => {
-    let libros = productsDB
+  list: async (req, res) => {
+    let libros = await productsModel.getAllProducts()
     res.status(200).render("products/list", {libros, toThousand})
   },
 
@@ -51,7 +47,7 @@ const controller = {
       res.status(201).redirect("/products")
     } catch (error) {
       console.error(error)
-      res.status(500).send("500! Error!! Ayayay")
+      res.status(500).send(error)
     }
   },
   
@@ -65,7 +61,7 @@ const controller = {
       res.status(200).render("products/edit", {body: libro, id, toThousand})
     } catch (error) {
       console.error(error)
-      res.status(500).send("500! Error!! Ayayay")
+      res.status(500).send(error)
     }
   },
   
@@ -89,7 +85,7 @@ const controller = {
       res.status(201).redirect("/products" + req.params.id)
     } catch (error) {
       console.error(error)
-      res.status(500).send("500! Error!! Ayayay")
+      res.status(500).send(error)
     }
   },
   
@@ -112,7 +108,7 @@ const controller = {
       res.status(204).redirect("/products")
     } catch (error) {
       console.error(error)
-      res.status(500).send("500! Error!! Ayayay")
+      res.status(500).send(error)
     }
   },
 }
