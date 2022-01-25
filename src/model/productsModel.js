@@ -3,21 +3,23 @@ const Op = db.Sequelize.Op
 
 //todo: editar o eliminar esta clase
 class Product {
-  constructor({name, author, isbn, genre, price, desc, img_path}) {
+  constructor({name, author, isbn, house, genre, price, desc, img_path}) {
     this.img_path = img_path ?? "default.png"
     this.name = name
     this.author = author
     this.isbn = isbn
+    this.house = house
     this.genre = genre
     this.price = parseInt(price)
     this.desc = desc
   }
 
-  static edit(product, {name, author, isbn, genre, price, desc, img_path}) {
+  static edit(product, {name, author, isbn, house, genre, price, desc, img_path}) {
     product.img_path = img_path ?? product.img_path
     product.name = name ?? product.name
     product.author = author ?? product.author
     product.isbn = isbn ?? product.isbn
+    product.house = house ?? product.house
     product.genre = genre ?? product.genre
     product.price = parseInt(price) ?? product.price
     product.desc = desc ?? product.desc
