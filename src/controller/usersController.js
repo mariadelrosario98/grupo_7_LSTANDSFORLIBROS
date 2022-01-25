@@ -35,6 +35,20 @@ const controller = {
     res.status(200).redirect("/");
   },
 
+  //* Para ver el detalle de perfil de usuario
+  profile: async (req, res) => {
+    let id = parseInt(req.session.user.id)
+    
+
+    try {
+      let user = await usersModel.getUser(id)
+      
+      res.status(200).render("users/profile", {user})
+    } catch (error) {
+      console.error(error)
+      res.status(500).send(error)
+    }
+  },
 
   //* Cierre de sesión
   signout: (req, res) => {
