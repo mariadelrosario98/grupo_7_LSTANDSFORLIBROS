@@ -125,6 +125,10 @@ header .pfp{
   margin: 0 0.3em;
 }
 
+header .pfp:hover::after{
+  content: "Perfil";
+}
+
 header .pfp img{
   object-fit: cover;
 }

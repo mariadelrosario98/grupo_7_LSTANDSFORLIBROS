@@ -12,12 +12,12 @@
       <div class="card-container">
         <div class="upper-container">
           <div class="image-container">
-            <img src=<%= "/img/users/" + locals.session.user.img_path %> />
+            <img src=<%= "/img/users/" + locals.user.img_path %> />
           </div>
         </div>
         <div class="lower-container">
           <div>
-            <h3><%= locals.session.user.first_name %> <%= locals.session.user.last_name %></h3>
+            <h3><%= locals.user.first_name %> <%= locals.user.last_name %></h3>
           </div>
         </div>
         <div>

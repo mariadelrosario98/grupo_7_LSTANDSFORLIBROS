@@ -29,7 +29,6 @@ const controller = {
   signin: async (req, res) => {
     try {
       req.session.user = await usersModel.findUserByEmail(req.body.email)
-      // return res.json(req.session.user)
       res.status(200).redirect("/")
     } catch (error) {
       console.error(error)
@@ -38,11 +37,11 @@ const controller = {
   },
 
 
-  //* Para ver el detalle de perfil de usuario
-  profile: async (req, res) => {
+  //* Perfil de usuario
+  profile: (req, res) => {
     let user = req.session.user
-    // res.status(200).render("users/profile", {user})
-    res.status(200).json(user)
+    // return res.status(200).json(user)
+    res.status(200).render("users/profile", {user})
   },
 
 
