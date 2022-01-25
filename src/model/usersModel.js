@@ -24,10 +24,11 @@ class User {
 
 
 const model = {
+
   //* Obtener un usuario mediante un ID
   getUser: async function (id) {
     try {
-      return await db.Users.findbyPk(id)
+      return await db.Users.findByPk(id)
     } catch (error) {
       console.error(error)
     }
@@ -78,6 +79,9 @@ const model = {
     }
   },
 }
+
+model.getUser(5).then (user => console.log(user))
+
 
 
 module.exports = model
