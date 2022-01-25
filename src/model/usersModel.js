@@ -80,8 +80,5 @@ const model = {
   },
 }
 
-model.getUser(5).then (user => console.log(user))
-
-
 
 module.exports = model

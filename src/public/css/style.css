@@ -185,20 +185,17 @@ header form input{
   width: 100%;
   padding: 5px 10px;
   border: none;
-  border-radius: 10px;
+  border-radius: 10px 0 0 10px;
   outline: none;
 
   background-color: #ebebeb;
-
-  position: relative;
-  left: 10px;
 }
 
 header form button{
   width: 40px;
   /* padding: 5px 10px; */
   border: none;
-  border-radius: 10px;
+  border-radius: 0 10px 10px 0;
 
   background-color: #ebebeb;
 }
