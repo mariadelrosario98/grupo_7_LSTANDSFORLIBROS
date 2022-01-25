@@ -1,6 +1,3 @@
-// const productsDB = require("./products.json") || []
-// const usersDB = require("./users.json") || []
-
 const fs = require("fs")
 const path = require("path")
 const object = {}

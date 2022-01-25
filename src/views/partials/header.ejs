@@ -22,11 +22,11 @@
         <i class="fas fa-shopping-cart"></i>
       </a>
 
-      <% if (locals.session && session.user) { %>
-        <h3 class="hola laptop">Hola <%= session.user.name %></h3>
+      <% if (locals.session?.user) { %>
+        <h3 class="hola laptop">Hola <%= session.user.first_name %></h3>
 
         <a href="/users/profile" class="pfp">
-          <img src=<%= "/img/users/" + session.user.img %> alt="">
+          <img src=<%= "/img/users/" + session.user.img_path %> alt="">
         </a>
 
         <form action="/users?_method=DELETE" method="post" class="logout">
@@ -53,7 +53,7 @@
       &nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp
       <li><a href="#">Historial</a></li>
 
-      <% if (locals.session.user && session.user.category === "vendor") { %>
+      <% if (locals.session?.user?.category === "vendor") { %>
         &nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp
         <li><a href="/products/create">Crear</a></li>
         &nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp

@@ -103,6 +103,6 @@ const model = {
   },
 }
 
-// model.getAllProducts().then(p => p.forEach(i => console.log(i.name)))
+// model.searchProductsByName("a").then(p => p.forEach(i => console.log(i.name)))
 
 module.exports = model

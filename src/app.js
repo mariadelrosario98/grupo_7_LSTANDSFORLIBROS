@@ -30,20 +30,12 @@ app.use(session({
 const cookieParser = require("cookie-parser")
 app.use(cookieParser())
 
-//* Uso de librería para encriptación
-const bcrypt = require("bcryptjs")
-let encryptedPassword = bcrypt.hashSync("123456", 10)
-// console.log(encryptedPassword);
-let check = bcrypt.compareSync("123456", encryptedPassword)
-// console.log(check);
-
 //* Uso de middleware para usar datos de login en todas las vistas
-const { loginData } = require("./middlewares")
-app.use((req, res, next) => {
-  const { usersDB } = require("./data")
+app.use(async (req, res, next) => {
+  const { usersModel } = require("./model")
 
-  if (req.cookies?.email)
-    req.session.user = usersDB.find(element => element.email === req.cookies.email)
+  if (!req.session.user && req.cookies?.email)
+    req.session.user = await usersModel.findUserByEmail(req.cookies.email)
 
   res.locals.session = req.session || null
   next()

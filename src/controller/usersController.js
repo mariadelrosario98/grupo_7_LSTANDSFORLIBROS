@@ -5,7 +5,7 @@ const controller = {
   login: (req, res) => {
     res.status(200).render("users/login")
   },
-  
+
 
   //* Renderiza el formulario de registro
   register: (req, res) => {
@@ -27,33 +27,30 @@ const controller = {
 
   //* Proceso de inicio de sesión (luego de pasar por el middleware loginCheck)
   signin: async (req, res) => {
-    //* Se inicia sesión
-    req.session.user = await usersModel.findUserByEmail(req.body.email)
-
-    //* Redireccionando a la página principal
-    console.table(req.body)
-    res.status(200).redirect("/");
-  },
-
-  //* Para ver el detalle de perfil de usuario
-  profile: async (req, res) => {
-    let id = parseInt(req.session.user.id)
-    
-
     try {
-      let user = await usersModel.getUser(id)
-      
-      res.status(200).render("users/profile", {user})
+      req.session.user = await usersModel.findUserByEmail(req.body.email)
+      // return res.json(req.session.user)
+      res.status(200).redirect("/")
     } catch (error) {
       console.error(error)
       res.status(500).send(error)
     }
   },
 
+
+  //* Para ver el detalle de perfil de usuario
+  profile: async (req, res) => {
+    let user = req.session.user
+    // return res.json(user)
+    res.status(200).render("users/profile", {user})
+  },
+
+
   //* Cierre de sesión
   signout: (req, res) => {
     req.session.destroy()
     res.clearCookie("email")
+    // return res.json(req.session)
     res.redirect("/users/login")
   },
 }
