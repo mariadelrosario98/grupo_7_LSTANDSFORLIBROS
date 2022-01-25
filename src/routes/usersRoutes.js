@@ -13,11 +13,17 @@ router.post("/login", loginCheck, loginCookie, usersController.signin)
 router.get("/register", redirects.user, usersController.register)
 router.post("/register", multerUpload("users", "profile_pic").single("profile_pic"), userErrors, validation("users", "register"), usersController.save)
 
-//* Perfil Usuario
+//* Perfil de usuario
 router.get("/profile", redirects.guest, usersController.profile)
 
 //* Cierre de sesión
 router.delete("/", usersController.signout)
+
+//? Pruebas
+router.get("/all", (req, res) => {
+  const { usersModel } = require('../model')
+  usersModel.getAllUsers().then(users => res.json(users))
+})
 
 
 module.exports = router

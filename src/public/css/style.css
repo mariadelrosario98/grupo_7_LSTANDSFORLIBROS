@@ -126,7 +126,7 @@ header .pfp{
 }
 
 header .pfp img{
-  width: 100%;
+  object-fit: cover;
 }
 
 header .logout-icon{

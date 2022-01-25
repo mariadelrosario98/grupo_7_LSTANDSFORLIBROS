@@ -34,6 +34,14 @@ const model = {
     }
   },
 
+  getAllUsers: async function() {
+    try {
+      return await db.Users.findAll()
+    } catch (error) {
+      console.error(error)
+    }
+  },
+
   //* Busca un usuario por su email
   findUserByEmail: async function (inputEmail) {
     try {

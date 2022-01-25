@@ -1,11 +1,11 @@
 USE `l_stands_for_libros`;
 
 INSERT INTO `Users` (`img_path`, `first_name`, `last_name`, `category`, `email`, `password`)
-VALUES (DEFAULT, "Cosme", "Fulanito", "vendor", "cosme@fulanito.com", "$2a$10$g3JINQRgBVzbeSVZtdMjbuj9cBVEJPmOhh1yXtYbO37tVUjknNV1u"),
-(DEFAULT,"Maria", "Castro", "vendor", "maria.castrico@gmail.com", "$2a$10$8l142Fw168WDdqInccjeNe8uOI1YaqNgwlZCN081obw1eU5Omw37O"),
-(DEFAULT,"Kevin", "Simanca", "vendor", "kevin.simanca@gmail.com", "$2a$10$tsnwAebeW3wopjurMBCQg.9uTyzFxQ5LiqQ7mVHbFTe.5yZPwzYjy"),
-(DEFAULT,"Elisaul", "García", "vendor", "elisaul.garcia@gmail.com", "$2a$10$9gdQSCWUe4i2x.2OZfPMeux9naSEZMorTX5NFub0nRW.6wiUDDHJ."),
-(DEFAULT,"Zabdiel", "Blanco", "buyer", "zabdiel.blanco@gmail.com", "$2a$10$CJ9qa2nbngu5K5H5aR7NZu/Hi9sBTW7Fb1nVUA23Fk4RJYAn9OvSK");
+VALUES ("profile-pic_1637889896934.jpg","Maria", "Castro", "vendor", "maria.castrico@gmail.com", "$2a$10$8l142Fw168WDdqInccjeNe8uOI1YaqNgwlZCN081obw1eU5Omw37O"),
+("profile-pic_1637890207961.jpeg","Kevin", "Simanca", "vendor", "kevin.simanca@gmail.com", "$2a$10$tsnwAebeW3wopjurMBCQg.9uTyzFxQ5LiqQ7mVHbFTe.5yZPwzYjy"),
+("profile-pic_1637890298959.jpg","Elisaul", "García", "vendor", "elisaul.garcia@gmail.com", "$2a$10$9gdQSCWUe4i2x.2OZfPMeux9naSEZMorTX5NFub0nRW.6wiUDDHJ."),
+("profile-pic_1637890347724.jpeg","Zabdiel", "Blanco", "buyer", "zabdiel.blanco@gmail.com", "$2a$10$CJ9qa2nbngu5K5H5aR7NZu/Hi9sBTW7Fb1nVUA23Fk4RJYAn9OvSK"),
+(DEFAULT, "Cosme", "Fulanito", "vendor", "cosme@fulanito.com", "$2a$10$g3JINQRgBVzbeSVZtdMjbuj9cBVEJPmOhh1yXtYbO37tVUjknNV1u");
 
 INSERT INTO `Genres` (`name`) 
 VALUES ("Fantasy"), ("Adventure"), ("Romance"), ("Contemporary"), ("Dystopian"), ("Mystery"), ("Horror"), ("Thriller"), ("Paranormal"), ("Historical fiction"), ("Science Fiction"), ("Childrens"), ("Memoir"), ("Cooking"), ("Art"), ("Self-help / Personal"), ("Development"), ("Motivational"), ("Health"), ("History"), ("Travel"), ("Guide / How-to"), ("Families & Relationships"), ("Humor");

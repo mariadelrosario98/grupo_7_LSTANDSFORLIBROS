@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html lang="es">
-  <%- include("../partials/head", {title: "Perfil Usuario", uniqueStyle: "profileDetailStyling.css"}) %>
+
+  <%- include("../partials/head", {title: "Perfil", uniqueStyle: "style-perfil.css"}) %>
 
   <body>
     <%- include("../partials/header") %>
+
     <%- include("../partials/whatsapp") %>
 
     <main>
       <div class="card-container">
         <div class="upper-container">
           <div class="image-container">
-            <img src=<%= "/img/users/" + locals.user.image_path %> />
+            <img src=<%= "/img/users/" + locals.session.user.img_path %> />
           </div>
         </div>
         <div class="lower-container">
           <div>
-            <h3><%= locals.user.name %></h3>
+            <h3><%= locals.session.user.first_name %> <%= locals.session.user.last_name %></h3>
           </div>
         </div>
         <div>

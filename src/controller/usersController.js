@@ -41,8 +41,8 @@ const controller = {
   //* Para ver el detalle de perfil de usuario
   profile: async (req, res) => {
     let user = req.session.user
-    // return res.json(user)
-    res.status(200).render("users/profile", {user})
+    // res.status(200).render("users/profile", {user})
+    res.status(200).json(user)
   },
 
 
