@@ -22,7 +22,7 @@ const session = require("express-session")
 app.use(session({
   secret: "Bienvenidos a nuestra librería de libritos :D",
   saveUninitialized: true,
-  resave: false,
+  resave: true,
   cookie: { secure: true }
 }))
 

@@ -39,7 +39,6 @@ const controller = {
 
   //* Perfil de usuario
   profile: (req, res) => {
-    // return res.status(200).json(user)
     res.status(200).render("users/profile")
   },
 

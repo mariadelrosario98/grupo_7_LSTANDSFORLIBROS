@@ -7,7 +7,7 @@
     <%- include("../partials/header") %>
     
     <main>
-      <form class="form-register" action="/products" method="post" enctype="multipart/form-data">
+      <form class="form-register" action="/products" method="post">
         <h3 class="título form product-create">Formulario de creación de productos</h3>
         
         <label for="name">
@@ -46,15 +46,6 @@
           <%= locals.errors?.house?.msg %>
         </p>
         
-        <label for="genre">
-          Género <sup class="required">*</sup>
-        </label>
-        <input class="controls login-box__input" type="text" name="genre" id="genre"
-        value="<%= locals.body?.type %>" placeholder="Ingrese el género de su libro">
-        <p class="feedback">
-          <%= locals.errors?.type?.msg %>
-        </p>
-        
         <label for="price">
           Precio <sup class="required">*</sup>
         </label>
@@ -70,13 +61,13 @@
         <textarea class="controls login-box__input" name="description" id="description"
         placeholder="Ingrese una descripción"><%= locals.body?.description %></textarea>
         
-        <label for="product_image">
+        <!-- <label for="product_image">
           Foto del libro
         </label>
         <input class="controls login-box__input" type="file" name="product_image" id="product_image" accept="image/*">
         <p class="feedback">
           <%= locals.errors?.product_image?.msg %>
-        </p>
+        </p> -->
 
         <p class="terms">
           <input type="checkbox" name="agree" id="agree">

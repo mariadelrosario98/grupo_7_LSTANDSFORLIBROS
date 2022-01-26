@@ -16,7 +16,10 @@
       <section>
         <article class="articulo">
           <div class="articulo--top">
-            <img src=<%= "/img/products/" + libro.img_path %> alt="" class="articulo--top--img">
+            <div class="articulo--top--img">
+              <img src=<%= "/img/products/" + libro.img_path %> alt="">
+            </div>
+
             <div class="articulo--top--info">
               <h2 class="title-info">
                 <b> <strong><%= libro.name %> </strong></b>
@@ -32,10 +35,6 @@
 
               <p class="house-info">
                 <b>Editorial:</b> <%= libro.house %>
-              </p>
-
-              <p class="type-info">
-                <b>Tipo:</b> <%= libro.type %>
               </p>
 
               <p class="price-info">
