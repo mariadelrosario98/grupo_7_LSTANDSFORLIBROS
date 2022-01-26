@@ -11,10 +11,11 @@
     <main>
       <div class="card-container">
         <div class="upper-container">
-          <div class="image-container">
+          <form class="image-container">
             <img src=<%= "/img/users/" + locals.session.user.img_path %> />
-            <a href="#" class="btn-2">Cambia foto de perfil</a>
-          </div>
+            <label href="#" class="btn-2" for="profile_pic">Cambia foto de perfil</label>
+            <input type="file" id="profile_pic">
+          </form>
         </div>
         <div class="lower-container">
           <div>
@@ -34,11 +35,6 @@
           <div>
             <a href="/users/profile-edit/" class="btn-1">Editar Perfil</a>
           </div>        
-
-          <div>
-            <a href="#" class="btn-3">Cambiar contraseña</a>
-          </div>
-          
         </div>
       </div>
     </main>

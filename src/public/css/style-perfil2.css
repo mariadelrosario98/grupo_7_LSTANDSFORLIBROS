@@ -1,0 +1,68 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  background: #f1f1f1;
+  box-sizing: border-box;
+}
+
+.banner {
+  display: none;
+}
+
+.desc {
+  text-align: center;
+}
+
+.desc img {
+  width: 5em;
+}
+
+.desc p {
+  text-align: justify;
+  margin-top: 0.5em;
+}
+
+@media (min-width: 769px) {
+  .banner {
+    display: block;
+
+    min-height: 100vh;
+    width: 30%;
+
+    background-image: url(/img/side-banner.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+.btn-1 {
+  padding: 12px 20px;
+  background: #14279B;
+  border: none;
+  color: white;
+  border-radius: 30px;
+  font-size: 12px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all .3s ease-in;
+}
+
+.lower-container .btn-1:hover{
+  background: transparent;
+  color: #14279b;
+  border: 2px solid #14279B;
+  padding: 1em;
+}
+
+.profile-descrip{
+  padding-top: 3em;
+}
+.btn-2{
+  position: relative;
+  bottom: 100%;
+  background-color: rgba(0, 255, 247, 0.5);
+  cursor: pointer;
+  display: none;
+}
