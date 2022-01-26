@@ -7,7 +7,7 @@
     <%- include("../partials/header") %>
     
     <main>
-      <form class="form-register" action=<%= "/products/" + id + "?_method=PUT" %>  method="post" enctype="multipart/form-data">
+      <form class="form-register" action=<%= "/products/" + id + "?_method=PUT" %>  method="post">
         <h3 class="título form product-create">Formulario Edición Productos</h3>
         
         <label for="name">
@@ -60,14 +60,6 @@
         </label>
         <textarea class="controls login-box__input" name="description" id="description"
         placeholder= "<%= locals.body?.description || "" %>"><%= locals.body?.description %></textarea>
-
-        <label for="product_image">
-          Foto del libro
-        </label>
-        <input class="controls login-box__input" type="file" name="product_image" id="product_image" accept="image/*">
-        <p class="feedback">
-          <%= locals.errors?.product_image?.msg %>
-        </p>
         
         <input class="botons" type="submit" value="Editar">
         

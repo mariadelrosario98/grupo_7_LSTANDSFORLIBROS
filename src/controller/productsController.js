@@ -39,11 +39,11 @@ const controller = {
   store: async (req, res) => {
     //* Se almacenan los datos del producto y el nombre del archivo enviado (si existe) en variables
     let product = req.body
-    let fileName = "default.png"
+    product.img_path = "default.png"
 
     //* Guarda el producto en la base de datos y redirige al listado de productos
     try {
-      await productsModel.addProduct(product, fileName)
+      await productsModel.addProduct(product)
       res.status(201).redirect("/products")
     } catch (error) {
       console.error(error)
@@ -70,18 +70,10 @@ const controller = {
   update: async (req, res) => {
     let id = parseInt(req.params.id)
     let product = req.body
-    let fileName = req.file?.filename || null
 
-    //* Si se subió una imagen, se elimina la anterior, siempre y cuando esta no sea la imagen por defecto
-    //todo: replantear esto
-    // if (fileName && currentItem.img !== "default.png") {
-    //   let imgPath = path.resolve(__dirname, "../public/img/products", currentItem.img)
-    //   fs.rmSync(imgPath)
-    // }
-    
     //* Se guarda el producto editado en la base de datos
     try {
-      await productsModel.editProduct(id, product, fileName)
+      await productsModel.editProduct(id, product)
       res.status(201).redirect("/products/" + req.params.id)
     } catch (error) {
       console.error(error)
