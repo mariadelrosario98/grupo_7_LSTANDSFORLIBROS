@@ -1,33 +1,89 @@
 <!DOCTYPE html>
 <html lang="es">
-  <%- include("../partials/head", {title: "Edita tu Perfil Usuario", uniqueStyle: "profileDetailStyling.css"}) %>
+
+  <%- include("../partials/head", {title: "Perfil", uniqueStyle: "style-perfil.css"}) %>
+
   <body>
     <%- include("../partials/header") %>
+
     <%- include("../partials/whatsapp") %>
+
     <main>
-    <div class= "card-container">
-    <div class="upper-container">
-      <div class="image-container">
-        <img src= <%= "/img/users/" + locals.user.image_path %> />
+      <div class="card-container">
+        <div class="upper-container">
+          <div class="image-container">
+            <img src=<%= "/img/users/" + locals.session.user.img_path %> />
+            <a href="#" class="btn-2">Cambia foto de perfil</a>
+          </div>
+        </div>
+        <div class="lower-container">
+          <div>
+            
+            <form class="form-register" action="/users/register" method="post" enctype="multipart/form-data">
+              <h3>Registrate</h3>
+      
+              <label for="first_name">
+                Nombre <sup class="required">*</sup>
+              </label>
+              <input class="controls login-box__input" type="text" name="first_name" id="first_name" 
+              value="<%= locals.body?.first_name %>" placeholder="Ingrese su nombre aquí"  autofocus>
+              <p class="feedback"><%= locals.errors?.first_name?.msg %> </p>
+              
+              <label for="last_name">
+                Apellido <sup class="required">*</sup>
+              </label>
+              <input class="controls login-box__input" type="text" name="last_name" id="last_name" 
+              value="<%= locals.body?.last_name %>" placeholder="Ingrese sus apellidos aquí">
+              <p class="feedback"><%= locals.errors?.last_name?.msg %> </p>
+              
+              <label for="category">
+                Categoria <sup class="required">*</sup>
+              </label>
+              <div class="category">
+                <input type="radio" name="category" id="buyer" value="buyer"
+                <% if (locals.body?.category !== "vendor") { %> checked <% } %> >
+                <label for="buyer">Comprador</label>
+              </div>
+              <div class="category">
+                <input type="radio" name="category" id="vendor" value="vendor"
+                <% if (locals.body?.category === "vendor") { %> checked <% } %> >
+                <label for="vendor">Vendedor</label>
+              </div>
+              
+              <label for="email">
+                Correo electrónico <sup class="required">*</sup>
+              </label>
+              <input class="controls login-box__input" type="email" name="email" id="email" 
+              value="<%= locals.body?.email %>" placeholder="Ingrese su correo aquí">
+              <p class="feedback"><%= locals.errors?.email?.msg %> </p>
+         
+         
+         
+            </div>
+          <diV class="profile-descrip">
+            <p>
+              <% if (locals.session.user.category == "vendor") { %>
+                Vendedor
+              <% } %>
+              <% if (locals.session.user.category == "buyer") { %>
+                Comprador
+              <% } %>
+            </p>
+            <p><%= locals.session.user.email %></p>
+          </diV>
+          <div>
+            <a href="#" class="btn-1">Editar Perfil</a>
+          </div>        
+
+          <div>
+            <a href="#" class="btn-3">Cambiar contraseña</a>
+          </div>
+          
+        </div>
       </div>
-    </div>
-    <div class="lower-container">
-      <div>
-        <h3><%= user.name %></h3>
-      </div>
-    </div>
-    <div>
-      <p>sodales accumsan ligula. Aenean sed diam tristique,
-        fermentum mi nec, ornare arch.
-      </p>
-    </div>
-    <div>
-      <a href="#" class="btn">View profile</a>
-    </div>
-  </div>
- </div>
-</main>
+    </main>
+
     <%- include("../partials/footer") %>
   </body>
-</html>
 
+</html>

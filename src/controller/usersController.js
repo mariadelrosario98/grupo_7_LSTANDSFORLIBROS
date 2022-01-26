@@ -39,11 +39,17 @@ const controller = {
 
   //* Perfil de usuario
   profile: (req, res) => {
-    let user = req.session.user
     // return res.status(200).json(user)
-    res.status(200).render("users/profile", {user})
+    res.status(200).render("users/profile")
   },
 
+  //* Renderizar formulario de edición de perfil de usuario
+  edit: (req, res) => {
+    res.status(200).render("users/profile-edit")
+  },
+
+  update: (req, res) => {
+  },
 
   //* Cierre de sesión
   signout: (req, res) => {
