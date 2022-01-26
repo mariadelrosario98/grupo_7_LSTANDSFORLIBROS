@@ -31,6 +31,7 @@ const model = {
       return await db.Users.findByPk(id)
     } catch (error) {
       console.error(error)
+      res.status(500).send(error)
     }
   },
 
@@ -39,6 +40,7 @@ const model = {
       return await db.Users.findAll()
     } catch (error) {
       console.error(error)
+      res.status(500).send(error)
     }
   },
 
@@ -48,6 +50,7 @@ const model = {
       return await db.Users.findOne({ where: { email: inputEmail } })
     } catch (error) {
       console.error(error)
+      res.status(500).send(error)
     }
   },
 
@@ -61,6 +64,7 @@ const model = {
       db.Users.create({...newUser})
     } catch (error) {
       console.error(error)
+      res.status(500).send(error)
     }
   },
 
@@ -74,6 +78,7 @@ const model = {
       db.Users.update({...currentItem}, { where: {id} })
     } catch (error) {
       console.error(error)
+      res.status(500).send(error)
     }
   },
 
@@ -83,7 +88,8 @@ const model = {
     try {
       db.Users.destroy({ where: {id} })
     } catch (error) {
-      console.error(error);
+      console.error(error)
+      res.status(500).send(error)
     }
   },
 }

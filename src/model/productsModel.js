@@ -1,4 +1,4 @@
-const db = require('../database/models');
+const db = require('../database/models')
 const Op = db.Sequelize.Op
 
 //todo: editar o eliminar esta clase
@@ -34,6 +34,7 @@ const model = {
       return await db.Products.findByPk(id)
     } catch (error) {
       console.error(error)
+      res.status(500).send(error)
     }
   },
 
@@ -44,6 +45,7 @@ const model = {
       return await db.Products.findAll()
     } catch (error) {
       console.error(error)
+      res.status(500).send(error)
     }
   },
 
@@ -63,6 +65,7 @@ const model = {
       })
     } catch (error) {
       console.error(error)
+      res.status(500).send(error)
     }
   },
 
@@ -76,6 +79,7 @@ const model = {
       db.Products.create({...newProduct})
     } catch (error) {
       console.error(error)
+      res.status(500).send(error)
     }
   },
 
@@ -89,6 +93,7 @@ const model = {
       db.Products.update({...currentItem}, { where: {id} })
     } catch (error) {
       console.error(error)
+      res.status(500).send(error)
     }
   },
 
@@ -98,7 +103,8 @@ const model = {
     try {
       db.Products.destroy({ where: {id} })
     } catch (error) {
-      console.error(error);
+      console.error(error)
+      res.status(500).send(error)
     }
   },
 }

@@ -1,11 +1,12 @@
-body{
+body {
   margin: 0px;
   padding: 0px;
   background: #f1f1f1;
   font-family: arial;
   box-sizing: border-box;
-  }
-  .card-container{
+}
+
+.card-container {
   width: 300px;
   height: 430px;
   background: #FFF;
@@ -13,51 +14,57 @@ body{
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   box-shadow: 0px 1px 10px 1px #000;
   overflow: hidden;
   display: inline-block;
-  }
-  .upper-container{
+}
+
+.upper-container {
   height: 150px;
   background: #14279B;
-  }
-  .image-container{
+}
+
+.image-container {
   background: white;
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  padding: 5px;
-  transform: translate(100px,100px);
-  }
-  .image-container img{
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  }
-  .lower-container{
+  transform: translate(100px, 100px);
+}
+
+.image-container img {
+  object-fit: cover;
+}
+
+.lower-container {
   height: 280px;
   background: #FFF;
   padding: 20px;
   padding-top: 40px;
   text-align: center;
-  }
-  .lower-container h3, h4{
+}
+
+.lower-container h3,
+h4 {
   box-sizing: border-box;
   line-height: .6;
   font-weight: lighter;
-  }
-  .lower-container h4{
+}
+
+.lower-container h4 {
   color: #14279B;
   opacity: .6;
   font-weight: bold;
-  }
-  .lower-container p{
+}
+
+.lower-container p {
   font-size: 16px;
   color: gray;
   margin-bottom: 30px;
-  }
-  .lower-container .btn{
+}
+
+.lower-container .btn {
   padding: 12px 20px;
   background: #14279B;
   border: none;
@@ -67,9 +74,10 @@ body{
   text-decoration: none;
   font-weight: bold;
   transition: all .3s ease-in;
-  }
-  .lower-container .btn:hover{
+}
+
+.lower-container .btn:hover {
   background: transparent;
   color: #14279b;
   border: 2px solid #14279B;
-  }
+}
