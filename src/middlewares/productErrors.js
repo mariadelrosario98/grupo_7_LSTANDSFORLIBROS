@@ -14,8 +14,6 @@ let errors = [
 
   check("house").notEmpty().withMessage("Debes ingresar un nombre de editorial"),
 
-  check("type").notEmpty().withMessage("Debes ingresar un género"),
-
   check("price")
     .notEmpty().withMessage("Debes definir un precio").bail()
     .isInt().withMessage("Debe ser un número"),

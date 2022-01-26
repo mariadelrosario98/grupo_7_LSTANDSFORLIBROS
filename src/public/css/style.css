@@ -87,6 +87,7 @@ a.logo img{
 a.logo{
   display: flex;
   justify-content: center;
+  padding-left: 10px;
 }
 
 header .top .top-left .logo-text{
@@ -100,15 +101,15 @@ header .top .top-right{
 }
 
 header .top .top-right .hola{
-  margin-right: 1em;
-  flex-grow: 4;
+  margin: 0 1em;
+  min-width: 5em;
   text-align: center;
 }
 
 header .top .top-right .fa-shopping-cart{
   font-size: 2em;
-  margin-right: 1em;
   transition: all 0.2s;
+  margin: 0 0.5em;
 }
 
 header .top .top-right .fa-shopping-cart:hover{
@@ -178,11 +179,11 @@ header form{
 
 header form.laptop, form.mobile{
   width: 100%;
-  max-width: 800px;
+  max-width: 700px;
 }
 
 header form.logout{
-  padding: 0 0.5em;
+  padding: 0 1em;
 }
 
 header form input{
@@ -604,6 +605,7 @@ button.search{
 
 .articulo--top{
   display: flex;
+  justify-content: space-between;
   flex-direction: column;
   margin-bottom: 50px;
   padding: 2em;
@@ -614,16 +616,20 @@ button.search{
 }
 
 .articulo--top--img{
-  width: clamp(240px, 70%, 400px);
-  /* width: 70%;
-  max-width: 400px; */
+  min-width: 40%;
+  max-height: 30em;
   display: block;
-  margin: auto;
-  padding: 1em;
+  padding: 0 1em;
+}
+
+.articulo--top--img img{
+  object-fit: contain;
 }
 
 .articulo--top--info{
   text-align:justify;
+  width: 50%;
+  padding: 1em;
 }
 
 .whatsapp{
@@ -674,6 +680,7 @@ button.search{
 
   header .top .top-left .logo-text{
     width: 100%;
+    margin-left: 10px;
     display: flex;
     flex-flow: wrap column;
     justify-content: center;

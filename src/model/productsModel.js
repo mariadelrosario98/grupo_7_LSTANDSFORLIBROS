@@ -13,17 +13,6 @@ class Product {
     this.price = parseInt(price)
     this.desc = desc
   }
-
-  static edit(product, {name, author, isbn, house, genre, price, desc, img_path}) {
-    product.img_path = img_path ?? product.img_path
-    product.name = name ?? product.name
-    product.author = author ?? product.author
-    product.isbn = isbn ?? product.isbn
-    product.house = house ?? product.house
-    product.genre = genre ?? product.genre
-    product.price = parseInt(price) ?? product.price
-    product.desc = desc ?? product.desc
-  }
 }
 
 
@@ -72,11 +61,10 @@ const model = {
 
   //* Añadir un nuevo producto
   addProduct: async function (product, fileName) {
-    //todo: cambiar las propiedades de esta variable
     let newProduct = new Product({...product, img_path: fileName})
 
     try {
-      db.Products.create({...newProduct})
+      await db.Products.create({...newProduct})
     } catch (error) {
       console.error(error)
       res.status(500).send(error)
@@ -89,8 +77,7 @@ const model = {
     //todo: cambiar las propiedades de esta variable
     try {
       let currentItem = await this.getProduct(id)
-      Product.edit(currentItem, {...product, img_path: fileName})
-      db.Products.update({...currentItem}, { where: {id} })
+      currentItem.update({...product, img_path: fileName})
     } catch (error) {
       console.error(error)
       res.status(500).send(error)
@@ -109,6 +96,5 @@ const model = {
   },
 }
 
-// model.searchProductsByName("a").then(p => p.forEach(i => console.log(i.name)))
 
 module.exports = model
