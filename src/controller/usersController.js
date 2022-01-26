@@ -48,7 +48,16 @@ const controller = {
     res.status(200).render("users/profile-edit")
   },
 
-  update: (req, res) => {
+  update: async (req, res) => {
+    let id = req.session.user.id
+    let user = req.body;
+    try {
+      await usersModel.editUser(id, user)
+      res.status(200).redirect("/users/profile")
+    } catch (error) {
+      console.error(error)
+      res.status(500).send(error)
+    }
   },
 
   //* Cierre de sesión

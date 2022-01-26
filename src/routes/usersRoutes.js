@@ -18,7 +18,7 @@ router.get("/profile", redirects.guest, usersController.profile)
 
 //* Edición de usuario
 router.get("/profile-edit", redirects.guest, usersController.edit)
-router.post("/profile-edit", userErrors, validation("users", "profile-edit"), usersController.update)
+router.post("/profile-edit", usersController.update)
 
 //* Cierre de sesión
 router.delete("/", usersController.signout)

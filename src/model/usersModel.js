@@ -18,7 +18,7 @@ class User {
     user.last_name = last_name ?? user.last_name
     user.category = category ?? user.category
     user.email = email ?? user.email
-    user.password = bcrypt.hashSync(password, 10) ?? user.password
+    user.password = bcrypt.hashSync(password, 10) 
   }
 }
 
@@ -31,7 +31,6 @@ const model = {
       return await db.Users.findByPk(id)
     } catch (error) {
       console.error(error)
-      res.status(500).send(error)
     }
   },
 
@@ -40,7 +39,6 @@ const model = {
       return await db.Users.findAll()
     } catch (error) {
       console.error(error)
-      res.status(500).send(error)
     }
   },
 
@@ -50,7 +48,6 @@ const model = {
       return await db.Users.findOne({ where: { email: inputEmail } })
     } catch (error) {
       console.error(error)
-      res.status(500).send(error)
     }
   },
 
@@ -64,7 +61,6 @@ const model = {
       db.Users.create({...newUser})
     } catch (error) {
       console.error(error)
-      res.status(500).send(error)
     }
   },
 
@@ -74,11 +70,10 @@ const model = {
     //todo: cambiar las propiedades de esta variable
     try {
       let currentItem = await this.getUser(id)
-      User.edit(currentItem, {...user, img_path: fileName})
+      User.edit(currentItem, {...user})
       db.Users.update({...currentItem}, { where: {id} })
     } catch (error) {
       console.error(error)
-      res.status(500).send(error)
     }
   },
 
@@ -89,7 +84,6 @@ const model = {
       db.Users.destroy({ where: {id} })
     } catch (error) {
       console.error(error)
-      res.status(500).send(error)
     }
   },
 }
