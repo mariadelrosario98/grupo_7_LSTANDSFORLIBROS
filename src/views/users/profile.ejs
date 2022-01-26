@@ -9,33 +9,38 @@
     <%- include("../partials/whatsapp") %>
 
     <main>
-      <div class="card-container">
-        <div class="upper-container">
-          <form class="image-container">
+      <div class="banner">
+        <div class="banner-content">
+          <div class="desc">
             <img src=<%= "/img/users/" + locals.session.user.img_path %> />
-            <label href="#" class="btn-2" for="profile_pic">Cambia foto de perfil</label>
-            <input type="file" id="profile_pic">
-          </form>
-        </div>
-        <div class="lower-container">
-          <div>
-            <h3><%= locals.session.user.first_name %> <%= locals.session.user.last_name %></h3>
+            <form class="image-container">
+              <img src=<%= "/img/users/" + locals.session.user.img_path %> />
+              <label href="#" class="btn-2" for="profile_pic">Cambia foto de perfil</label>
+              <input type="file" id="profile_pic">
+            </form>
           </div>
-          <diV class="profile-descrip">
-            <p>
-              <% if (locals.session.user.category == "vendor") { %>
-                Vendedor
-              <% } %>
-              <% if (locals.session.user.category == "buyer") { %>
-                Comprador
-              <% } %>
-            </p>
-            <p><%= locals.session.user.email %></p>
-          </diV>
-          <div>
-            <a href="/users/profile-edit/" class="btn-1">Editar Perfil</a>
-          </div>        
         </div>
+      </div>
+
+
+      <div class="right-container">
+        <div>
+          <h3><%= locals.session.user.first_name %> <%= locals.session.user.last_name %></h3>
+        </div>
+        <diV class="profile-descrip">
+          <p>
+            <% if (locals.session.user.category == "vendor") { %>
+              Vendedor
+            <% } %>
+            <% if (locals.session.user.category == "buyer") { %>
+              Comprador
+            <% } %>
+          </p>
+          <p><%= locals.session.user.email %></p>
+      </div>
+
+      <div>
+        <a href="/users/profile-edit/" class="btn-1">Editar Perfil</a>
       </div>
     </main>
 

@@ -227,7 +227,7 @@ nav{
 }
 
 main{
-  padding-top: 120px;
+  padding-top: 160px;
   width: 100%;
   min-height: 90vh;
   background-image: url("/img/bg.png");
@@ -616,10 +616,11 @@ button.search{
 }
 
 .articulo--top--img{
-  min-width: 40%;
+  width: 100%;
   max-height: 30em;
-  display: block;
+  display: flex;
   padding: 0 1em;
+  overflow: hidden;
 }
 
 .articulo--top--img img{
@@ -628,7 +629,7 @@ button.search{
 
 .articulo--top--info{
   text-align:justify;
-  width: 50%;
+  width: 100%;
   padding: 1em;
 }
 
@@ -703,6 +704,10 @@ button.search{
 
 /* Vista laptop */
 @media (min-width: 769px){
+  main{
+    padding-top: 120px;
+  }
+
   .laptop{
     display: flex;
   }
@@ -743,6 +748,14 @@ button.search{
 
   .articulo--top{
     flex-direction: row;
+  }
+
+  .articulo--top--img{
+    width: 40%;
+  }
+
+  .articulo--top--info{
+    width: 50%;
   }
 }
 

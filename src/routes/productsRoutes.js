@@ -12,7 +12,7 @@ router.post("/", productErrors, validation("products", "create"), productsContro
 
 //* Edición de productos
 router.get("/:id/edit", redirects.nonVendor, productsController.edit)
-router.put("/:id", multerUpload("products", "product_image").single("product_image"), productErrors, validation("products", "edit"),  productsController.update)
+router.put("/:id", productErrors, validation("products", "edit"), productsController.update)
 
 //* Borrado de productos
 router.delete("/:id", productsController.delete)
