@@ -18,7 +18,9 @@ class User {
     user.last_name = last_name ?? user.last_name
     user.category = category ?? user.category
     user.email = email ?? user.email
-    user.password = bcrypt.hashSync(password, 10) 
+    if (password) {
+      user.password = bcrypt.hashSync(password, 10)
+    } 
   }
 }
 
@@ -71,6 +73,7 @@ const model = {
     try {
       let currentItem = await this.getUser(id)
       User.edit(currentItem, {...user})
+      console.table(currentItem)
       db.Users.update({...currentItem}, { where: {id} })
     } catch (error) {
       console.error(error)
