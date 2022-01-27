@@ -43,6 +43,25 @@ const controller = {
     res.status(200).render("users/profile")
   },
 
+  //* Actualiza la foto del usuario
+  updatePic: async (req, res) => {
+    let id = parseInt(req.params.id)
+    let img_path = req.file?.filename
+
+    try {
+      let product = await productsModel.getProduct(id)
+      let fullPath = path.resolve(__dirname, "../public/img/products", product.img_path)
+      if (product.img_path && product.img_path !== "default.png" && fs.existsSync(fullPath))
+        fs.rmSync(fullPath)
+      
+      await productsModel.editProduct(id, { img_path })
+      res.status(201).redirect("/products/" + req.params.id)
+    } catch (error) {
+      console.error(error)
+      res.status(500).send(error)
+    }
+  },
+
 
   //* Renderizar formulario de edición de perfil de usuario
   edit: function(req, res) {
