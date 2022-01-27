@@ -146,6 +146,7 @@ body{
   height: 300px;
   border-radius: 0.5em;
   overflow: hidden;
+  display: flex;
 }
 
 .image-container{
