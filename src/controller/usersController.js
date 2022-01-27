@@ -47,6 +47,10 @@ const controller = {
     res.status(200).render("users/profile-edit")
   },
 
+  changePass: (req, res) => {
+    res.status(200).render("users/password-edit")
+  },
+
   update: async (req, res) => {
     let id = req.session.user.id
     let user = req.body;

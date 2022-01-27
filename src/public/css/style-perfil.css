@@ -4,7 +4,6 @@
   padding: 0;
   box-sizing: border-box;
   list-style: none;
-  font-family: 'Open Sans', "Arial", sans-serif;
 }
 
 body{
@@ -93,6 +92,7 @@ body{
   background: #3d56b2;
   border: none;
   color: white;
+  border: 2px solid #3d56b2;
   border-radius: 30px;
   font-size: 12px;
   text-decoration: none;
@@ -104,8 +104,7 @@ body{
 .btn-1:hover {
   background: transparent;
   color: #3d56b2;
-  border: 2px solid #3d56b2;
-  transition: all .3s ease-in;
+  transition: all .1s ease-in;
 }
 
 .card--pic__hover{
