@@ -20,6 +20,9 @@ router.get("/profile", redirects.guest, usersController.profile)
 router.get("/profile/edit", redirects.guest, usersController.edit)
 router.post("/profile/edit", errors.user, validation("users", "profile-edit"), usersController.update)
 
+//* Cambio de foto de perfil
+router.put("/profile/", multerUpload("users", "profile_pic").single("profile_pic"), usersController.updatePic)
+
 //* Cambio de contraseña
 router.get("/profile/password", redirects.guest, usersController.changePass)
 router.post("/profile/password", errors.password, validation("users", "password-edit"), usersController.updatePass)

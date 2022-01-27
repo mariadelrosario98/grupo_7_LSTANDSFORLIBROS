@@ -52,6 +52,12 @@
               <p class="description-info">
                 <%= libro.description %>
               </p>
+
+              <% if (locals.session?.user?.category === "vendor") { %>
+              <a href=<%= "/products/" + locals.id + "/edit" %> class="articulo--edit">
+                Editar producto
+              </a>
+              <% } %>
             </div>
           </div>
         </article>

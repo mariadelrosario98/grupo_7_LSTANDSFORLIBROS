@@ -75,13 +75,37 @@
 }
 
 .articulo--top--info {
-  text-align:justify;
   width: 100%;
   padding: 1em;
 }
 
 .articulo--top--info p {
   margin: 0.3em 0;
+}
+
+.description-info {
+  text-align: justify;
+}
+
+.articulo--edit {
+  display: inline-block;
+  margin: auto;
+  margin-top: 2em;
+  padding: 1em 1.5em;
+
+  background-color: #3D56B2;
+  color: #ebebeb;
+  font-weight: bold;
+
+  border: 2px solid #3D56B2;
+  border-radius: 1.5em;
+
+  transition: all 0.1s ease-in;
+}
+
+.articulo--edit:hover {
+  background-color: #ebebeb;
+  color: #3D56B2;
 }
 
 @media (max-width: 769px) {

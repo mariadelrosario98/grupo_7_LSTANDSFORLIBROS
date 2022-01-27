@@ -87,6 +87,26 @@ const controller = {
   },
 
 
+  //* Actualiza la foto de perfil
+  updatePic: async (req, res) => {
+    let id = parseInt(req.session.user.id)
+    let img_path = req.file?.filename
+
+    try {
+      let user = await userModel.getUser(id)
+      let fullPath = path.resolve(__dirname, "../public/img/users", user.img_path)
+      if (user.img_path && user.img_path !== "default.png" && fs.existsSync(fullPath))
+        fs.rmSync(fullPath)
+      
+      await userModel.editUser(id, { img_path })
+      res.status(201).redirect("/users/profile")
+    } catch (error) {
+      console.error(error)
+      res.status(500).send(error)
+    }
+  },
+
+
   updatePass: async function(req, res) {
     let id = req.session.user.id
     let password = bcrypt.hashSync(req.body.new_password, 10)
