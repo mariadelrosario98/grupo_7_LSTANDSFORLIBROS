@@ -8,52 +8,50 @@
     <%- include("../partials/whatsapp") %>
     <main>
       <div class="wrapper">
-          <div class="left">
-            <div class = "image">
-              <img src=<%= "/img/users/" + locals.session.user.img_path %> 
-              alt="user" width="100">
-            
-              <div class="card--pic__hover">
-                <form class="image-container" action="/users/profile?_method=PUT" method="post" enctype="multipart/form-data">
-                  <label for="profile_pic" class="btn-3">Cambiar foto</label>
-                  <input type="file" id="profile_pic" name = "profile_pic" accept="image/*">
-                  <input type="submit" value = "Confirmar cambio" class="btn-2">
-                </form>
+        <div class="left">
+          <div class="image">
+            <img src=<%= "/img/users/" + locals.session.user.img_path %> alt="user" width="100">
+
+            <form class="image-container" action="/users/profile?_method=PUT" method="post"
+              enctype="multipart/form-data">
+              <label for="profile_pic" class="btn-3">Cambiar foto</label>
+              <input type="file" id="profile_pic" name="profile_pic" accept="image/*">
+              <input type="submit" value="Confirmar cambio" class="btn-2">
+            </form>
+          </div>
+          <h2><%= locals.session.user.first_name %> <%= locals.session.user.last_name %></h2>
+        </div>
+        <div class="right">
+          <div class="info">
+            <h2>Información Pública</h2>
+            <div class="info_data">
+              <div class="data">
+                <h4>Email</h4>
+                <p><%= locals.session.user.email %></p>
+              </div>
+              <div class="data">
+                <h4>
+                  <% if (locals.session.user.category == "vendor") { %>
+                  Vendedor
+                  <% } %>
+                  <% if (locals.session.user.category == "buyer") { %>
+                  Comprador
+                  <% } %>
+                </h4>
               </div>
             </div>
-              <h2><%= locals.session.user.first_name %> <%= locals.session.user.last_name %></h2>
           </div>
-          <div class="right">
-              <div class="info">
-                  <h2>Información Pública</h2>
-                  <div class="info_data">
-                       <div class="data">
-                          <h4>Email</h4>
-                          <p><%= locals.session.user.email %></p>
-                       </div>
-                       <div class="data">
-                         <h4>
-                           <% if (locals.session.user.category == "vendor") { %>
-                          Vendedor
-                        <% } %>
-                        <% if (locals.session.user.category == "buyer") { %>
-                          Comprador
-                        <% } %>
-                         </h4>
-                       </div>
-                  </div>
-              </div>
-              <div class="edit_public">
-                <a href="/users/profile/edit/" class="btn-1">Editar Info. Pública</a>
-              </div>
-              <div class="edit_password">
-                <a href="/users/profile/password/" class="btn-1">Cambiar contraseña</a>
-              </div>
+          <div class="edit_public">
+            <a href="/users/profile/edit/" class="btn-1">Editar Info. Pública</a>
           </div>
+          <div class="edit_password">
+            <a href="/users/profile/password/" class="btn-1">Cambiar contraseña</a>
+          </div>
+        </div>
       </div>
     </main>
   </body>
-    <%- include("../partials/footer") %>
+  <%- include("../partials/footer") %>
   </body>
 
 </html>
