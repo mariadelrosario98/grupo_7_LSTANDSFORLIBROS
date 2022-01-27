@@ -1,20 +1,17 @@
+const fs = require('fs')
+const path = require('path');
 const { productsModel } = require("../model")
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
 
 const controller = {
-
-  // search:(req, res) => {
-  //   db.Products.findByPk(req.params.id)
-  // },
-
   //* Renderiza la vista de detalles de un producto cuyo id fue definido en la URL
   detail: async (req, res) => {
     let id = parseInt(req.params.id)
 
     try {
       let libro = await productsModel.getProduct(id)
-      res.status(200).render("products/detail", {libro, toThousand})
+      res.status(200).render("products/detail", {id, libro, toThousand})
     } catch (error) {
       console.error(error)
       res.status(500).send(error)
@@ -74,6 +71,25 @@ const controller = {
     //* Se guarda el producto editado en la base de datos
     try {
       await productsModel.editProduct(id, product)
+      res.status(201).redirect("/products/" + req.params.id)
+    } catch (error) {
+      console.error(error)
+      res.status(500).send(error)
+    }
+  },
+
+
+  //* Actualiza la foto del producto
+  updatePic: async (req, res) => {
+    let id = parseInt(req.params.id)
+    let img_path = req.file.filename
+
+    try {
+      let product = await productsModel.getProduct(id)
+      if (product.img_path && product.img_path !== "default.png")
+        fs.rmSync(path.resolve(__dirname, "../public/img/products", product.img_path))
+      
+      await productsModel.editProduct(id, { img_path })
       res.status(201).redirect("/products/" + req.params.id)
     } catch (error) {
       console.error(error)

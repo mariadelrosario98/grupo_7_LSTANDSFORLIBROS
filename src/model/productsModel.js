@@ -2,7 +2,6 @@ const res = require('express/lib/response')
 const db = require('../database/models')
 const Op = db.Sequelize.Op
 
-//todo: editar o eliminar esta clase
 class Product {
   constructor({name, author, isbn, house, genre, price, desc, img_path}) {
     this.img_path = img_path ?? "default.png"

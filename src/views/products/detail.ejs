@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
 
-  <%- include("../partials/head", {title: "Detalles del producto"}) %>
+  <%- include("../partials/head", {title: "Detalles del producto", uniqueStyle: "style-detail.css"}) %>
 
   <body>
     <%- include("../partials/header") %>
-    
+
     <%- include("../partials/whatsapp") %>
 
     <main>
@@ -18,12 +18,19 @@
           <div class="articulo--top">
             <div class="articulo--top--img">
               <img src=<%= "/img/products/" + libro.img_path %> alt="">
-              <form action="" method="post"></form>
+
+              <% if (locals.session?.user?.category === "vendor") { %>
+              <form action=<%= "/products/" + locals.id + "/edit?_method=PUT" %> method="post" class="articulo--top--img-edit" enctype='multipart/form-data'>
+                <label for="img-edit">Cambiar foto de perfil</label>
+                <input type="file" name="product_img" id="img-edit" accept="image/*">
+                <input type="submit" value="Confirmar">
+              </form>
+              <% } %>
             </div>
 
             <div class="articulo--top--info">
               <h2 class="title-info">
-                <b> <strong><%= libro.name %> </strong></b>
+                <strong><%= libro.name %></strong>
               </h2>
 
               <p class="author-info">

@@ -14,6 +14,9 @@ router.post("/", productErrors, validation("products", "create"), productsContro
 router.get("/:id/edit", redirects.nonVendor, productsController.edit)
 router.put("/:id", productErrors, validation("products", "edit"), productsController.update)
 
+//* Edición de imagen de productos
+router.put("/:id/edit", multerUpload("products", "product_img").single("product_img"), productsController.updatePic)
+
 //* Borrado de productos
 router.delete("/:id", productsController.delete)
 

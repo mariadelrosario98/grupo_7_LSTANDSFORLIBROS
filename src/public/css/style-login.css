@@ -23,20 +23,20 @@ main {
   margin-right: 2em;
 }
 
-.login-box form{
+.login-box form {
   max-width: 30em;
   margin: auto;
   padding-top: 8em;
 }
 
-.top{
+.top {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
 }
 
-.logo-text{
+.logo-text {
   width: 100%;
   display: flex;
   flex-flow: wrap column;
@@ -44,21 +44,21 @@ main {
   font-weight: bold;
 }
 
-.register-corner{
+.register-corner {
   display: flex;
   align-items: center;
   justify-content: space-around;
 }
 
-.register-corner p{
+.register-corner p {
   display: none;
 }
 
-.login-box label{
+.login-box label {
   display: inline-block;
 }
 
-.login-error{
+.login-error {
   background-color: hsl(0, 30%, 60%);
 
   text-align: center;
