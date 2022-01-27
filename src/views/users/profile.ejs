@@ -24,10 +24,9 @@
 
 
       <div class="right-container">
-        <div>
-          <h3><%= locals.session.user.first_name %> <%= locals.session.user.last_name %></h3>
-        </div>
-        <diV class="profile-descrip">
+        <h3><%= locals.session.user.first_name %> <%= locals.session.user.last_name %></h3>
+
+        <div class="profile-descrip">
           <p>
             <% if (locals.session.user.category == "vendor") { %>
               Vendedor
@@ -36,12 +35,11 @@
               Comprador
             <% } %>
           </p>
+
           <p><%= locals.session.user.email %></p>
       </div>
 
-      <div>
-        <a href="/users/profile-edit/" class="btn-1">Editar Perfil</a>
-      </div>
+      <a href="/users/profile-edit/" class="btn-1">Editar Perfil</a>
     </main>
 
     <%- include("../partials/footer") %>

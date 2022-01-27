@@ -5,6 +5,10 @@ body {
   box-sizing: border-box;
 }
 
+main {
+  display: flex;
+}
+
 .banner {
   display: none;
 }
@@ -31,7 +35,6 @@ body {
 
     background-image: url(/img/side-banner.jpg);
     background-repeat: no-repeat;
-    background-attachment: fixed;
     background-size: cover;
     background-position: center;
   }
@@ -43,7 +46,6 @@ body {
   border: none;
   color: white;
   border-radius: 30px;
-  font-size: 12px;
   text-decoration: none;
   font-weight: bold;
   transition: all .3s ease-in;
