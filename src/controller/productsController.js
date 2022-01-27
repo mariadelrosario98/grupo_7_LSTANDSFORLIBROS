@@ -108,7 +108,7 @@ const controller = {
       let fullPath = path.resolve(__dirname, "../public/img/products", product.img_path)
   
       //* Se elimina la imagen del producto, siempre y cuando esta no sea la imagen por defecto
-      if (product.img_path && product.img_path !== "default.png" && fs.existsSync(old_img_path))
+      if (product.img_path && product.img_path !== "default.png" && fs.existsSync(fullPath))
         fs.rmSync(fullPath)
   
       await productsModel.deleteProduct(id)
