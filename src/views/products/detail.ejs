@@ -18,14 +18,7 @@
           <div class="articulo--top">
             <div class="articulo--top--img">
               <img src=<%= "/img/products/" + libro.img_path %> alt="">
-
-              <% if (locals.session?.user?.category === "vendor") { %>
-              <form action=<%= "/products/" + locals.id + "/edit?_method=PUT" %> method="post" class="articulo--top--img-edit" enctype='multipart/form-data'>
-                <label for="img-edit">Cambiar foto</label>
-                <input type="file" name="product_img" id="img-edit" accept="image/*">
-                <input type="submit" value="Confirmar cambio">
-              </form>
-              <% } %>
+              <form action="" method="post"></form>
             </div>
 
             <div class="articulo--top--info">
