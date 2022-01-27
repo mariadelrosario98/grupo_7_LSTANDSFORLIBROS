@@ -84,10 +84,10 @@ body {
   padding: 1em;
 }
 
-.profile-descrip{
-  padding-top: 3em;
+.profile-descrip {
+  padding: 1em;
 }
-.btn-2{
+.btn-2 {
   position: relative;
   bottom: 100%;
   background-color: rgba(0, 255, 247, 0.5);

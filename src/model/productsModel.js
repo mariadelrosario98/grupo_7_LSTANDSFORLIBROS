@@ -1,7 +1,7 @@
+const res = require('express/lib/response')
 const db = require('../database/models')
 const Op = db.Sequelize.Op
 
-//todo: editar o eliminar esta clase
 class Product {
   constructor({name, author, isbn, house, genre, price, desc, img_path}) {
     this.img_path = img_path ?? "default.png"
@@ -60,11 +60,10 @@ const model = {
 
 
   //* Añadir un nuevo producto
-  addProduct: async function (product, fileName) {
-    let newProduct = new Product({...product, img_path: fileName})
-
+  addProduct: async function (body) {
+    let newProduct = new Product(body)
     try {
-      await db.Products.create({...newProduct})
+      await db.Products.create(newProduct)
     } catch (error) {
       console.error(error)
       res.status(500).send(error)
@@ -73,11 +72,10 @@ const model = {
 
 
   //* Editar la información de un producto
-  editProduct: async function (id, product, fileName) {
-    //todo: cambiar las propiedades de esta variable
+  editProduct: async function (id, product) {
     try {
       let currentItem = await this.getProduct(id)
-      currentItem.update({...product, img_path: fileName})
+      await currentItem.update({...product})
     } catch (error) {
       console.error(error)
       res.status(500).send(error)

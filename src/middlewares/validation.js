@@ -17,10 +17,10 @@ const validation = (folder, view) => {
       })
   
       //* Se elimina la imagen del producto, siempre y cuando esta no sea la imagen por defecto
-      if (req.file?.filename && req.file.filename !== "default.png") {
-        let imgPath = path.resolve(__dirname, `../public/img/${folder}`, req.file.filename)
-        fs.rmSync(imgPath)
-      }
+      // if (req.file?.filename && req.file.filename !== "default.png") {
+      //   let imgPath = path.resolve(__dirname, `../public/img/${folder}`, req.file.filename)
+      //   fs.rmSync(imgPath)
+      // }
   
       return
     } 

@@ -1,9 +1,9 @@
-.libros{
+.libros {
   display: flex;
   flex-wrap: wrap;
 }
 
-.libro{
+.libro {
   display: flex;
   flex-flow: wrap column;
 
@@ -16,56 +16,56 @@
   border-radius: 20px;
 }
 
-.libro--titulo{
+.libro--titulo {
   font-size: 1.5em;
   line-height: 1.2em;
 }
 
-.libro--top{
+.libro--top {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
 }
 
-.libro--top--img{
+.libro--top--img {
   width: 30%;
 }
 
-.libro--cuerpo{
+.libro--cuerpo {
   line-height: 1.3em;
   margin-left: 15px;
 }
 
-.libro--cuerpo--top{
+.libro--cuerpo--top {
   width: 100%;
 
   display: flex;
   justify-content: space-between;
 }
 
-.libro--desc{
+.libro--desc {
   margin: 10px 0;
 }
 
-.libro--bottom{
+.libro--bottom {
   display: flex;
   justify-content: space-around;
 
   padding-top: 10px;
 }
 
-.libro--bottom--cant{
+.libro--bottom--cant {
   width: 60px;
   padding: 5px;
 
   border-radius: 10px;
 }
 
-.libro--bottom--cost{
+.libro--bottom--cost {
   padding: 10px;
 }
 
-.libro--remove{
+.libro--remove {
   position: relative;
   top: -10px;
   right: -5px;
@@ -87,14 +87,14 @@
   transition: all 0.1s;
 }
 
-.libro--remove:hover{
+.libro--remove:hover {
   color: #ebebeb;
   font-weight: bold;
   background-color: red;
   cursor: pointer;
 }
 
-.costos{
+.costos {
   display: flex;
   justify-content: space-between;
 
@@ -105,16 +105,16 @@
   line-height: 2em;
 }
 
-.rotulos, .valores{
+.rotulos, .valores {
   width: 50%;
   text-align: right;
 }
 
-.descuento{
+.descuento {
   color: #292;
 }
 
-.botones{
+.botones {
   font-size: 3vw;
 
   width: 80%;
@@ -123,7 +123,7 @@
   margin: 30px auto;
 }
 
-.boton{
+.boton {
   width: 30vw;
   height: 12vw;
 
@@ -141,47 +141,47 @@
   transition: all 0.2s;
 }
 
-.boton:hover{
+.boton:hover {
   color: #ebebeb;
   background-color: #14279B;
   cursor: pointer;
 }
 
-.laptop{
+.laptop {
   display: none;
 }
 
 @media (min-width: 481px) {
-  .libro{
+  .libro {
     font-size: 16px;
   }
 
-  .costos{
+  .costos {
     font-size: 24px;
   }
 
-  .botones{
+  .botones {
     font-size: 14px;
   }
 
-  .boton{
+  .boton {
     width: 150px;
     height: 60px;
   }
 }
 
 @media (min-width: 769px) {
-  .laptop{
+  .laptop {
     display: flex;
   }
 
-  .mobile{
+  .mobile {
     display: none;
   }
 }
 
 @media (min-width: 1280px) {
-  .libro{
+  .libro {
     width: 40%;
   }
 }
