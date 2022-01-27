@@ -11,6 +11,12 @@
           <div class="left">
               <img src=<%= "/img/users/" + locals.session.user.img_path %> 
               alt="user" width="100">
+              <div class="card--pic__hover">
+                <form class="image-container">
+                  <label href="#" for="profile_pic">Cambia foto de perfil</label>
+                  <input type="file" id="profile_pic">
+                </form>
+              </div>
               <h2><%= locals.session.user.first_name %> <%= locals.session.user.last_name %></h2>
           </div>
           <div class="right">
