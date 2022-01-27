@@ -22,7 +22,7 @@ router.post("/profile/edit", errors.user, validation("users", "profile-edit"), u
 
 //* Cambio de contraseña
 router.get("/profile/password", redirects.guest, usersController.changePass)
-// router.post("/profile/password", usersController.updatePass)
+router.post("/profile/password", errors.password, validation("users", "password-edit"), usersController.updatePass)
 
 //* Cierre de sesión
 router.delete("/", usersController.signout)

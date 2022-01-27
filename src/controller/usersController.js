@@ -1,3 +1,4 @@
+const bcrypt = require('bcryptjs');
 const { usersModel } = require("../model")
 
 const controller = {
@@ -59,6 +60,19 @@ const controller = {
     let user = req.body;
     try {
       await usersModel.editUser(id, user)
+      res.status(200).redirect("/users/profile")
+    } catch (error) {
+      console.error(error)
+      res.status(500).send(error)
+    }
+  },
+
+
+  updatePass: async function(req, res) {
+    let id = req.session.user.id
+    let password = bcrypt.hashSync(req.body.new_password, 10)
+    try {
+      await usersModel.editUser(id, { password })
       res.status(200).redirect("/users/profile")
     } catch (error) {
       console.error(error)
