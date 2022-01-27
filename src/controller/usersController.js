@@ -1,5 +1,6 @@
-const path = require('path');
-const bcrypt = require('bcryptjs');
+const fs = require('fs');
+const path = require('path')
+const bcrypt = require('bcryptjs')
 const { usersModel } = require("../model")
 
 const controller = {
