@@ -13,17 +13,45 @@ main {
   display: none;
 }
 
+.profile-box {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 1em;
+  border: 1px solid #14279B;
+}
+
+.profile-box .logo {
+  margin-right: 2em;
+}
+
 .desc {
   text-align: center;
 }
 
-.desc img {
-  width: 5em;
+.profile-box form{
+  max-width: 30em;
+  margin: auto;
+  padding-top: 8em;
 }
 
-.desc p {
-  text-align: justify;
-  margin-top: 0.5em;
+.top{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.logo-text{
+  width: 100%;
+  display: flex;
+  flex-flow: wrap column;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.profile-box label{
+  display: inline-block;
 }
 
 @media (min-width: 769px) {
@@ -40,6 +68,17 @@ main {
   }
 }
 
+@media (min-width: 481px) {
+  .profile-box {
+    padding: 1.5em;
+  }
+}
+
+.profile-box {
+    width: 70%;
+  }
+
+
 .btn-1 {
   padding: 12px 20px;
   background: #14279B;
@@ -51,16 +90,14 @@ main {
   transition: all .3s ease-in;
 }
 
-.lower-container .btn-1:hover{
+.btn-1:hover{
   background: transparent;
   color: #14279b;
   border: 2px solid #14279B;
   padding: 1em;
 }
 
-.profile-descrip{
-  padding-top: 3em;
-}
+
 .btn-2{
   position: relative;
   bottom: 100%;

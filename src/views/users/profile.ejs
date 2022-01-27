@@ -4,24 +4,33 @@
   <%- include("../partials/head", {title: "Perfil", uniqueStyle: "style-perfil.css"}) %>
 
   <body>
-    <%- include("../partials/header") %>
 
     <%- include("../partials/whatsapp") %>
 
-    <main>
-      <div class="banner">
-        <div class="banner-content">
-          <div class="desc">
+    <div class="banner">
+      <div class="banner-content">
+        <div class="desc">
+          <img src=<%= "/img/users/" + locals.session.user.img_path %> />
+          <form class="image-container">
             <img src=<%= "/img/users/" + locals.session.user.img_path %> />
-            <form class="image-container">
-              <img src=<%= "/img/users/" + locals.session.user.img_path %> />
-              <label href="#" class="btn-2" for="profile_pic">Cambia foto de perfil</label>
-              <input type="file" id="profile_pic">
-            </form>
-          </div>
+            <label href="#" class="btn-2" for="profile_pic">Cambia foto de perfil</label>
+            <input type="file" id="profile_pic">
+          </form>
         </div>
       </div>
+    </div>
 
+    <main class="profile-box">
+      <div class="top">
+        <a href="/" class="logo">
+          <img src="/img/logo.png" alt="">
+  
+          <div class="logo-text">
+            <p>L&nbspSTANDS</p>
+            <p>FOR&nbspLIBROS</p>
+          </div>
+        </a>
+      </div>
 
       <div class="right-container">
         <h3><%= locals.session.user.first_name %> <%= locals.session.user.last_name %></h3>
