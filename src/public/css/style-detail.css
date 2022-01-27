@@ -27,8 +27,54 @@
 }
 
 .articulo--top--img-edit {
-  position: relative;
-  right: 100%;
+  display: none;
+}
+
+.articulo--top--img:hover .articulo--top--img-edit {
+  position: absolute;
+  bottom: 0;
+
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background-color: #5C7AEAAA;
+}
+
+.articulo--top--img-edit label {
+  font-size: 1.5em;
+  color: #ebebeb;
+  font-weight: bold;
+  margin: 0.5em;
+  transition: all 0.2s;
+}
+
+.articulo--top--img-edit label:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  font-weight: bold;
+  text-shadow: 0 0 0.1em #334;
+}
+
+.articulo--top--img-edit input[type="file"] {
+  display: none;
+}
+
+.articulo--top--img-edit input[type="submit"] {
+  background-color: #ebebeb;
+  font-size: 1.2em;
+  padding: 0.5em;
+  margin: 0 0 0.5em;
+  border-radius: 1em;
+  transition: all 0.1s;
+}
+
+.articulo--top--img-edit input[type="submit"]:hover {
+  background-color: #3D56B2;
+  font-weight: bold;
+  color: #ebebeb;
 }
 
 .articulo--top--info {
