@@ -6,26 +6,17 @@ const validation = (folder, view) => {
   return (req, res, next) => {
     //* Guardamos los errores en una variable
     const errors = validationResult(req)
+
+    //* Si no hay errores, se procede a almacenar la información
+    if (errors.isEmpty()) return next()
   
     //* Renderiza el formulario de creación con mensajes añadidos en caso de error
-    if (!errors.isEmpty()) {
-      res.status(400).render(`${folder}/${view}`, {
-        errors: errors.mapped(),
-        body: req.body,
-        id: req.params.id,
-        toThousand: n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
-      })
-  
-      //* Se elimina la imagen del producto, siempre y cuando esta no sea la imagen por defecto
-      // if (req.file?.filename && req.file.filename !== "default.png") {
-      //   let imgPath = path.resolve(__dirname, `../public/img/${folder}`, req.file.filename)
-      //   fs.rmSync(imgPath)
-      // }
-  
-      return
-    } 
-  
-    next()
+    return res.status(400).render(`${folder}/${view}`, {
+      errors: errors.mapped(),
+      body: req.body,
+      id: req.params.id,
+      toThousand: n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
+    })
   }
 }
 

@@ -23,7 +23,6 @@ const model = {
       return await db.Products.findByPk(id)
     } catch (error) {
       console.error(error)
-      res.status(500).send(error)
     }
   },
 
@@ -34,7 +33,6 @@ const model = {
       return await db.Products.findAll()
     } catch (error) {
       console.error(error)
-      res.status(500).send(error)
     }
   },
 
@@ -54,7 +52,6 @@ const model = {
       })
     } catch (error) {
       console.error(error)
-      res.status(500).send(error)
     }
   },
 
@@ -66,7 +63,6 @@ const model = {
       await db.Products.create(newProduct)
     } catch (error) {
       console.error(error)
-      res.status(500).send(error)
     }
   },
 
@@ -78,7 +74,6 @@ const model = {
       await currentItem.update({...product})
     } catch (error) {
       console.error(error)
-      res.status(500).send(error)
     }
   },
 
@@ -89,7 +84,6 @@ const model = {
       db.Products.destroy({ where: {id} })
     } catch (error) {
       console.error(error)
-      res.status(500).send(error)
     }
   },
 }

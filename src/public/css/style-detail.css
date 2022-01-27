@@ -63,8 +63,9 @@
   font-size: 1.2em;
   padding: 0.5em;
   margin: 0 0 0.5em;
+  border: 2px solid #3D56B2;
   border-radius: 1em;
-  transition: all 0.1s;
+  transition: all 0.1s ease-in;
 }
 
 .articulo--top--img-edit input[type="submit"]:hover {

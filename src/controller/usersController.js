@@ -2,19 +2,19 @@ const { usersModel } = require("../model")
 
 const controller = {
   //* Renderiza el formulario de inicio de sesión
-  login: (req, res) => {
+  login: function(req, res) {
     res.status(200).render("users/login")
   },
 
 
   //* Renderiza el formulario de registro
-  register: (req, res) => {
+  register: function(req, res) {
     res.status(200).render("users/register")
   },
 
 
   //* Registra un usuario en la base de datos
-  save: async (req, res) => {
+  save: async function(req, res) {
     try {
       await usersModel.addUser(req.body, req.file?.filename)
       res.status(201).redirect("/")
@@ -26,10 +26,10 @@ const controller = {
 
 
   //* Proceso de inicio de sesión (luego de pasar por el middleware loginCheck)
-  signin: async (req, res) => {
+  signin: async function(req, res) {
     try {
       req.session.user = await usersModel.findUserByEmail(req.body.email)
-      res.status(200).redirect("/")
+      res.status(200).redirect("/users/profile")
     } catch (error) {
       console.error(error)
       res.status(500).send(error)
@@ -38,20 +38,23 @@ const controller = {
 
 
   //* Perfil de usuario
-  profile: (req, res) => {
+  profile: function(req, res) {
     res.status(200).render("users/profile")
   },
 
+
   //* Renderizar formulario de edición de perfil de usuario
-  edit: (req, res) => {
+  edit: function(req, res) {
     res.status(200).render("users/profile-edit")
   },
 
-  changePass: (req, res) => {
+
+  changePass: function(req, res) {
     res.status(200).render("users/password-edit")
   },
 
-  update: async (req, res) => {
+
+  update: async function(req, res) {
     let id = req.session.user.id
     let user = req.body;
     try {
@@ -63,8 +66,9 @@ const controller = {
     }
   },
 
+  
   //* Cierre de sesión
-  signout: (req, res) => {
+  signout: function(req, res) {
     req.session.destroy()
     res.clearCookie("email")
     // return res.json(req.session)
