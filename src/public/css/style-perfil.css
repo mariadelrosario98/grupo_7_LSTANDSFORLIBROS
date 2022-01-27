@@ -107,13 +107,61 @@ body{
   transition: all .1s ease-in;
 }
 
+.btn-2{
+  padding: 12px 20px;
+  background: #3d56b2;
+  border: none;
+  color: white;
+  border: 2px solid white;
+  border-radius: 30px;
+  font-size: 12px;
+  text-decoration: none;
+  font-weight: bold;
+  height: 10%;
+}
+
+.btn-2:hover{
+  background: transparent;
+  color: white;
+  transition: all .1s ease-in;
+}
+
+.btn-3:hover{
+  cursor: pointer;
+  transform: scale(1.1);
+  font-weight: bold;
+  text-shadow: 0 0 0.1em #334;
+}
+
+.btn-3:hover{
+  cursor: pointer;
+  transform: scale(1.1);
+  font-weight: bold;
+  text-shadow: 0 0 0.1em #334;
+}
+
+
 .image{
   position: relative;
 }
 
 .image-container{
   position: absolute;
-  bottom: 50%;
-  background-color: rgba(0, 255, 247, 0.5);
+  bottom: 0;
+  background-color: rgba(61,86,178, 0.5);
+  width: 100%;
+  height: 20%;
+  display: none;
+}
+
+.image:hover .image-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+#profile_pic{
+  display: none;
 }
 
