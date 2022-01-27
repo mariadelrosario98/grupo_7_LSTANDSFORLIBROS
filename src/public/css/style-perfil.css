@@ -79,10 +79,13 @@ body{
   color: #919aa3;
 }
 
-.wrapper .edit{
+.wrapper .edit_public,
+.wrapper .edit_password
+{
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 1em;
 }
 
 .btn-1{
