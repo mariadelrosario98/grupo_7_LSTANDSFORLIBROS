@@ -27,10 +27,6 @@
 }
 
 .articulo--top--img-edit {
-  display: none;
-}
-
-.articulo--top--img:hover .articulo--top--img-edit {
   position: absolute;
   bottom: 0;
 
@@ -105,6 +101,14 @@
 
   .articulo--top--info {
     width: 50%;
+  }
+
+  .articulo--top--img-edit {
+    display: none;
+  }
+
+  .articulo--top--img:hover .articulo--top--img-edit {
+    display: flex;
   }
 }
 

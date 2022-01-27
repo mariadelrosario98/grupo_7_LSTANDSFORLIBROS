@@ -82,12 +82,13 @@ const controller = {
   //* Actualiza la foto del producto
   updatePic: async (req, res) => {
     let id = parseInt(req.params.id)
-    let img_path = req.file.filename
+    let img_path = req.file?.filename
 
     try {
       let product = await productsModel.getProduct(id)
-      if (product.img_path && product.img_path !== "default.png")
-        fs.rmSync(path.resolve(__dirname, "../public/img/products", product.img_path))
+      let fullPath = path.resolve(__dirname, "../public/img/products", product.img_path)
+      if (product.img_path && product.img_path !== "default.png" && fs.existsSync(fullPath))
+        fs.rmSync(fullPath)
       
       await productsModel.editProduct(id, { img_path })
       res.status(201).redirect("/products/" + req.params.id)
@@ -96,7 +97,7 @@ const controller = {
       res.status(500).send(error)
     }
   },
-  
+
 
   //* Borra de la base de datos un producto
   delete: async (req, res) => {
@@ -104,12 +105,11 @@ const controller = {
 
     try {
       let product = await productsModel.getProduct(id)
+      let fullPath = path.resolve(__dirname, "../public/img/products", product.img_path)
   
       //* Se elimina la imagen del producto, siempre y cuando esta no sea la imagen por defecto
-      if (product.img_path !== "default.png") {
-        let imgPath = path.resolve(__dirname, "../public/img/products", product.img_path)
-        fs.rm(imgPath)
-      }
+      if (product.img_path && product.img_path !== "default.png" && fs.existsSync(old_img_path))
+        fs.rmSync(fullPath)
   
       await productsModel.deleteProduct(id)
       res.status(204).redirect("/products")
