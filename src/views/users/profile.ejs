@@ -4,53 +4,44 @@
   <%- include("../partials/head", {title: "Perfil", uniqueStyle: "style-perfil.css"}) %>
 
   <body>
-
+    <%- include("../partials/header") %>
     <%- include("../partials/whatsapp") %>
-
-    <div class="banner">
-      <div class="banner-content">
-        <div class="desc">
-          <img src=<%= "/img/users/" + locals.session.user.img_path %> />
-          <form class="image-container">
-            <img src=<%= "/img/users/" + locals.session.user.img_path %> />
-            <label href="#" class="btn-2" for="profile_pic">Cambia foto de perfil</label>
-            <input type="file" id="profile_pic">
-          </form>
-        </div>
-      </div>
-    </div>
-
-    <main class="profile-box">
-      <div class="top">
-        <a href="/" class="logo">
-          <img src="/img/logo.png" alt="">
-  
-          <div class="logo-text">
-            <p>L&nbspSTANDS</p>
-            <p>FOR&nbspLIBROS</p>
+    <main>
+      <div class="wrapper">
+          <div class="left">
+              <img src=<%= "/img/users/" + locals.session.user.img_path %> 
+              alt="user" width="100">
+              <h2><%= locals.session.user.first_name %> <%= locals.session.user.last_name %></h2>
           </div>
-        </a>
+          <div class="right">
+              <div class="info">
+                  <h2>Información</h2>
+                  <div class="info_data">
+                       <div class="data">
+                          <h4>Email</h4>
+                          <p><%= locals.session.user.email %></p>
+                       </div>
+                       <div class="data">
+                         <h4>
+                           <% if (locals.session.user.category == "vendor") { %>
+                          Vendedor
+                        <% } %>
+                        <% if (locals.session.user.category == "buyer") { %>
+                          Comprador
+                        <% } %>
+                         </h4>
+                       </div>
+                  </div>
+              </div>
+            
+            
+              <div class="edit">
+                <a href="/users/profile-edit/" class="btn-1">Editar Perfil</a>
+              </div>
+          </div>
       </div>
-
-      <div class="right-container">
-        <h3><%= locals.session.user.first_name %> <%= locals.session.user.last_name %></h3>
-
-        <div class="profile-descrip">
-          <p>
-            <% if (locals.session.user.category == "vendor") { %>
-              Vendedor
-            <% } %>
-            <% if (locals.session.user.category == "buyer") { %>
-              Comprador
-            <% } %>
-          </p>
-
-          <p><%= locals.session.user.email %></p>
-      </div>
-
-      <a href="/users/profile-edit/" class="btn-1">Editar Perfil</a>
     </main>
-
+  </body>
     <%- include("../partials/footer") %>
   </body>
 
