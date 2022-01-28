@@ -122,12 +122,8 @@ header .pfp {
   min-width: 3em;
   border-radius: 50%;
   overflow: hidden;
-
   margin: 0 0.3em;
-}
-
-header .pfp:hover::after {
-  content: "Perfil";
+  display: flex;
 }
 
 header .pfp img {
