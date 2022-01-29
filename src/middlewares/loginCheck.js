@@ -7,7 +7,7 @@ const loginCheck = async (req, res, next) => {
   let password = req.body.password
   
   //* Se busca el usuario en la base de datos
-  let user = await usersModel.findUserByEmail(email)
+  let user = await usersModel.getUserBy({email})
   
   //* En caso de que no exista el usuario ingresado, se redirige al formulario de login
   if (!user) {
@@ -24,6 +24,7 @@ const loginCheck = async (req, res, next) => {
     return
   }
 
+  //* Si el usuario existe y la contraseña es correcta, se procede con el login
   next()
 }
 

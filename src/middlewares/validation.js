@@ -1,6 +1,6 @@
 const { validationResult } = require("express-validator")
 
-const validation = (folder, view) => {
+const validation = (view) => {
   return (req, res, next) => {
     //* Guardamos los errores en una variable
     const errors = validationResult(req)
@@ -9,7 +9,7 @@ const validation = (folder, view) => {
     if (errors.isEmpty()) return next()
   
     //* Renderiza el formulario de creación con mensajes añadidos en caso de error
-    return res.status(400).render(`${folder}/${view}`, {
+    return res.status(400).render(view, {
       errors: errors.mapped(),
       body: req.body,
       id: req.params.id,

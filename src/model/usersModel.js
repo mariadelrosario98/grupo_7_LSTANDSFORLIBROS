@@ -14,16 +14,16 @@ class User {
 
 
 const model = {
-
-  //* Obtener un usuario mediante un ID
-  getUser: async function (id) {
+  //* Obtener un usuario mediante campo especificado
+  getUserBy: async function (where) {
     try {
-      return await db.Users.findByPk(id)
+      return await db.Users.findOne({ where })
     } catch (error) {
       console.error(error)
     }
   },
 
+  //* Obtener todos los usuarios
   getAllUsers: async function() {
     try {
       return await db.Users.findAll()
@@ -32,19 +32,10 @@ const model = {
     }
   },
 
-  //* Busca un usuario por su email
-  findUserByEmail: async function (inputEmail) {
-    try {
-      return await db.Users.findOne({ where: { email: inputEmail } })
-    } catch (error) {
-      console.error(error)
-    }
-  },
-
 
   //* Añadir un nuevo usuario
-  addUser: async function (user, fileName = "default.png") {
-    let newUser = new User({...user, img_path: fileName})
+  addUser: async function (user) {
+    let newUser = new User(user)
     
     try {
       db.Users.create({...newUser})
@@ -57,7 +48,7 @@ const model = {
   //* Editar la información de un usuario
   editUser: async function (id, user) {
     try {
-      let currentItem = await this.getUser(id)
+      let currentItem = await this.getUserBy({id})
       await currentItem.update(user)
     } catch (error) {
       console.error(error)

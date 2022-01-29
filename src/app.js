@@ -7,7 +7,7 @@ app.set("view engine", "ejs")
 app.set("views", path.join(__dirname, "views"))
 
 //* Definir la carpeta pública
-app.use(express.static(path.join(__dirname, "public")))
+app.use(express.static(path.join(__dirname, "../public")))
 
 //* Configurar el entorno para que éste pueda recibir datos por POST
 app.use(express.urlencoded({ extended: false }))
@@ -34,8 +34,10 @@ app.use(cookieParser())
 app.use(async (req, res, next) => {
   const { usersModel } = require("./model")
 
-  if (!req.session.user && req.cookies?.email)
-    req.session.user = await usersModel.findUserByEmail(req.cookies.email)
+  if (!req.session.user && req.cookies?.email) {
+    let email = req.cookies.email
+    req.session.user = await usersModel.getUserBy({email})
+  }
 
   res.locals.session = req.session || null
   next()

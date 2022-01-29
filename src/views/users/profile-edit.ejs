@@ -26,18 +26,20 @@
         value="<%= locals.session.user.last_name %>" placeholder="<%= locals.session.user.last_name %>">
         <p class="feedback"><%= locals.errors?.last_name?.msg %> </p>
         
-        <label for="category">
-          Categoria <sup class="required">*</sup>
-        </label>
-        <div class="category">
-          <input type="radio" name="category" id="buyer" value="buyer"
-          <% if (locals.session.user.category !== "vendor") { %> checked <% } %> >
-          <label for="buyer">Comprador</label>
-        </div>
-        <div class="category">
-          <input type="radio" name="category" id="vendor" value="vendor"
-          <% if (locals.session.user.category === "vendor") { %> checked <% } %> >
-          <label for="vendor">Vendedor</label>
+        <div class="category-box">
+          <label for="category">
+            Categoria <sup class="required">*</sup>
+          </label>
+          <div class="category">
+            <input type="radio" name="category" id="buyer" value="buyer"
+            <% if (locals.session.user.category === "buyer") { %> checked <% } %> >
+            <label for="buyer">Comprador</label>
+          </div>
+          <div class="category">
+            <input type="radio" name="category" id="vendor" value="vendor"
+            <% if (locals.session.user.category === "vendor") { %> checked <% } %> >
+            <label for="vendor">Vendedor</label>
+          </div>
         </div>
         
         <label for="email">

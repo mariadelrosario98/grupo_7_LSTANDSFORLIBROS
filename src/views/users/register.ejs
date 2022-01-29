@@ -7,7 +7,7 @@
     <%- include("../partials/header") %> 
 
     <main>
-      <form class="form-register" action="/users/register" method="post" enctype="multipart/form-data">
+      <form class="form-register" action="/users/register" method="post">
         <h3>Registrate</h3>
 
         <label for="first_name">
@@ -24,18 +24,20 @@
         value="<%= locals.body?.last_name %>" placeholder="Ingrese sus apellidos aquí">
         <p class="feedback"><%= locals.errors?.last_name?.msg %> </p>
         
-        <label for="category">
-          Categoria <sup class="required">*</sup>
-        </label>
-        <div class="category">
-          <input type="radio" name="category" id="buyer" value="buyer"
-          <% if (locals.body?.category !== "vendor") { %> checked <% } %> >
-          <label for="buyer">Comprador</label>
-        </div>
-        <div class="category">
-          <input type="radio" name="category" id="vendor" value="vendor"
-          <% if (locals.body?.category === "vendor") { %> checked <% } %> >
-          <label for="vendor">Vendedor</label>
+        <div class="category-box">
+          <label for="category">
+            Categoria <sup class="required">*</sup>
+          </label>
+          <div class="category">
+            <input type="radio" name="category" id="buyer" value="buyer"
+            <% if (locals.body?.category !== "vendor") { %> checked <% } %> >
+            <label for="buyer">Comprador</label>
+          </div>
+          <div class="category">
+            <input type="radio" name="category" id="vendor" value="vendor"
+            <% if (locals.body?.category === "vendor") { %> checked <% } %> >
+            <label for="vendor">Vendedor</label>
+          </div>
         </div>
         
         <label for="email">
@@ -58,12 +60,6 @@
         <input class="controls login-box__input" type="password" name="passwordConfirm" id="passwordConfirm"
         placeholder="Ingrese su contraseña aquí">
         <p class="feedback"><%= locals.errors?.passwordConfirm?.msg %> </p>
-
-        <label for="profile_pic">
-          Foto de perfil
-        </label>
-        <input class="controls login-box__input" type="file" name="profile_pic" id="profile_pic" accept="image/*">
-        <p class="feedback"><%= locals.errors?.profile_pic?.msg %> </p>
         
         
         <p class="terms">

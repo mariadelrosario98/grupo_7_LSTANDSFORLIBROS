@@ -19,8 +19,11 @@ const controller = {
   //* Registra un usuario en la base de datos
   save: async function(req, res) {
     try {
-      await usersModel.addUser(req.body, req.file?.filename)
-      res.status(201).redirect("/")
+      await usersModel.addUser(req.body)
+
+      let email = req.body.email
+      req.session.user = await usersModel.getUserBy({email})
+      res.status(200).redirect("/users/profile")
     } catch (error) {
       console.error(error)
       res.status(500).send(error)
@@ -31,7 +34,11 @@ const controller = {
   //* Proceso de inicio de sesión (luego de pasar por el middleware loginCheck)
   signin: async function(req, res) {
     try {
-      req.session.user = await usersModel.findUserByEmail(req.body.email)
+      let email = req.body.email
+      let user = await usersModel.getUserBy({email})
+      req.session.user = user
+      req.session.id = user.email
+      return res.json(req.session)
       res.status(200).redirect("/users/profile")
     } catch (error) {
       console.error(error)
@@ -76,8 +83,8 @@ const controller = {
     let img_path = req.file?.filename
 
     try {
-      let user = await usersModel.getUser(id)
-      let fullPath = path.resolve(__dirname, "../public/img/users", user.img_path)
+      let user = await usersModel.getUserBy({id})
+      let fullPath = path.resolve(__dirname, "../../public/img/users", user.img_path)
       if (user.img_path && user.img_path !== "default.png" && fs.existsSync(fullPath))
         fs.rmSync(fullPath)
       

@@ -434,6 +434,10 @@ button.search {
   margin: 0.5em;
 }
 
+.category-box {
+  display: none;
+}
+
 .controls {
   width: 100%;
   background-color: #E6E6E6;
