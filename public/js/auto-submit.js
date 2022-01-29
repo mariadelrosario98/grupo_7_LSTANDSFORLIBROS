@@ -1,6 +1,6 @@
-const form = document.querySelector(`form.change-pic`)
+const form = document.querySelector(`form.auto-submit`)
 const input = document.querySelector(`input[type = "file"]`)
 
-input.addEventListener("input", e => {
+input && input.addEventListener("input", e => {
   form.submit()
 })

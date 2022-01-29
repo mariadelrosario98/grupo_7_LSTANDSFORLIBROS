@@ -629,6 +629,11 @@ button.search {
   display: none;
 }
 
+.flex-responsive {
+  flex-direction: column;
+  align-items: center;
+}
+
 
 /* Vista tablet */
 @media (min-width: 481px) {
@@ -660,8 +665,6 @@ button.search {
     padding: 3em;
   }
 }
-
-
 
 
 /* Vista laptop */
@@ -706,6 +709,10 @@ button.search {
   .product {
     min-width: calc(0.4 * 769);
     width: 20em;
+  }
+
+  .flex-responsive {
+    flex-direction: row;
   }
 }
 

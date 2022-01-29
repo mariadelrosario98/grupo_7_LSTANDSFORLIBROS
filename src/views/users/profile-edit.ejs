@@ -35,11 +35,12 @@
             <% if (locals.session.user.category === "buyer") { %> checked <% } %> >
             <label for="buyer">Comprador</label>
           </div>
-          <div class="category">
-            <input type="radio" name="category" id="vendor" value="vendor"
-            <% if (locals.session.user.category === "vendor") { %> checked <% } %> >
-            <label for="vendor">Vendedor</label>
-          </div>
+          <% if (locals.session.user.category === "vendor") { %>
+            <div class="category">
+              <input type="radio" name="category" id="vendor" value="vendor" checked>
+              <label for="vendor">Vendedor</label>
+            </div>
+          <% } %>
         </div>
         
         <label for="email">
@@ -49,7 +50,6 @@
         value="<%= locals.session.user.email %>" placeholder="<%= locals.session.user.email %>">
         <p class="feedback"><%= locals.errors?.email?.msg %> </p>
         
-
         <input class="botons" type="submit" value="Guardar">
       </form>
     </main>
