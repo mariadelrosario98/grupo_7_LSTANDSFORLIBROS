@@ -38,7 +38,6 @@ const controller = {
       let user = await usersModel.getUserBy({email})
       req.session.user = user
       req.session.id = user.email
-      return res.json(req.session)
       res.status(200).redirect("/users/profile")
     } catch (error) {
       console.error(error)

@@ -26,7 +26,7 @@
         value="<%= locals.session.user.last_name %>" placeholder="<%= locals.session.user.last_name %>">
         <p class="feedback"><%= locals.errors?.last_name?.msg %> </p>
         
-        <div class="category-box">
+        <div class="category-box" <% if (locals.session.user.category === "vendor") { %> style="display: block" <% } %> >
           <label for="category">
             Categoria <sup class="required">*</sup>
           </label>
