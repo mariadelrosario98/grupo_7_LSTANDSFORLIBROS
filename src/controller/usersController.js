@@ -85,7 +85,7 @@ const controller = {
       let user = await usersModel.getUserBy({id})
       let fullPath = path.resolve(__dirname, "../../public/img/users", user.img_path)
       if (user.img_path && user.img_path !== "default.png" && fs.existsSync(fullPath))
-        fs.rmSync(fullPath)
+        fs.rm(fullPath, {}, err => console.error(err))
       
       await usersModel.editUser(id, { img_path })
       res.status(201).redirect("/users/profile")

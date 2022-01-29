@@ -88,7 +88,7 @@ const controller = {
       let product = await productsModel.getProduct(id)
       let fullPath = path.resolve(__dirname, "../../public/img/products", product.img_path)
       if (product.img_path && product.img_path !== "default.png" && fs.existsSync(fullPath))
-        fs.rmSync(fullPath)
+        fs.rm(fullPath, {}, err => console.error(err))
       
       await productsModel.editProduct(id, { img_path })
       res.status(201).redirect("/products/" + req.params.id)
@@ -109,7 +109,7 @@ const controller = {
   
       //* Se elimina la imagen del producto, siempre y cuando esta no sea la imagen por defecto
       if (product.img_path && product.img_path !== "default.png" && fs.existsSync(fullPath))
-        fs.rmSync(fullPath)
+        fs.rm(fullPath, {}, err => console.error(err))
   
       await productsModel.deleteProduct(id)
       res.status(204).redirect("/products")

@@ -116,6 +116,7 @@ body{
 }
 
 .btn-2:hover{
+  cursor: pointer;
   background: transparent;
   color: white;
 }

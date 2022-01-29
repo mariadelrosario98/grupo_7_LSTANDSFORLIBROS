@@ -6,7 +6,7 @@ const { usersModel } = require('../model');
 //* Longitud mínima de contraseña. Se asigna un valor bajo durante testeo, por conveniencia
 let MIN_LENGTH = 4
 
-let acceptedExtensions = [".jpg", "jpeg", ".png", ".gif"]
+let acceptedExtensions = [".jpg", ".jpeg", ".png", ".gif"]
 
 
 module.exports = {
