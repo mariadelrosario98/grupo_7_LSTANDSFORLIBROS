@@ -4,19 +4,19 @@ const bcrypt = require('bcryptjs')
 const { usersModel } = require("../model")
 
 const controller = {
-  //* Renderiza el formulario de inicio de sesión
+  // Renderiza el formulario de inicio de sesión
   login: function(req, res) {
     res.status(200).render("users/login")
   },
 
 
-  //* Renderiza el formulario de registro
+  // Renderiza el formulario de registro
   register: function(req, res) {
     res.status(200).render("users/register")
   },
 
 
-  //* Registra un usuario en la base de datos
+  // Registra un usuario en la base de datos
   save: async function(req, res) {
     try {
       await usersModel.addUser(req.body)
@@ -31,7 +31,7 @@ const controller = {
   },
 
 
-  //* Proceso de inicio de sesión (luego de pasar por el middleware loginCheck)
+  // Proceso de inicio de sesión (luego de pasar por el middleware loginCheck)
   signin: async function(req, res) {
     try {
       let email = req.body.email
@@ -46,13 +46,13 @@ const controller = {
   },
 
 
-  //* Perfil de usuario
+  // Perfil de usuario
   profile: function(req, res) {
     res.status(200).render("users/profile")
   },
 
 
-  //* Renderizar formulario de edición de perfil de usuario
+  // Renderizar formulario de edición de perfil de usuario
   edit: function(req, res) {
     res.status(200).render("users/profile-edit")
   },
@@ -76,7 +76,7 @@ const controller = {
   },
 
 
-  //* Actualiza la foto de perfil
+  // Actualiza la foto de perfil
   updatePic: async (req, res) => {
     let id = parseInt(req.session.user.id)
     let img_path = req.file?.filename
@@ -109,7 +109,7 @@ const controller = {
   },
 
   
-  //* Cierre de sesión
+  // Cierre de sesión
   signout: function(req, res) {
     req.session.destroy()
     res.clearCookie("email")

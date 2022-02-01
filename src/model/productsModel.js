@@ -17,7 +17,7 @@ class Product {
 
 
 const model = {
-  //* Obtener un producto mediante un ID
+  // Obtener un producto mediante un ID
   getProduct: async function (id) {
     try {
       return await db.Products.findByPk(id)
@@ -27,7 +27,7 @@ const model = {
   },
 
 
-  //* Obtener todos los productos
+  // Obtener todos los productos
   getAllProducts: async function() {
     try {
       return await db.Products.findAll()
@@ -37,7 +37,7 @@ const model = {
   },
 
 
-  //* Buscar productos mediante barra de busqueda
+  // Buscar productos mediante barra de busqueda
   searchProductsByName: async function (query, {orderBy, orderHow, limit, offset} = {limit: 10, offset: 0}) {
     try {
       return await db.Products.findAll({
@@ -56,7 +56,7 @@ const model = {
   },
 
 
-  //* Añadir un nuevo producto
+  // Añadir un nuevo producto
   addProduct: async function (body) {
     let newProduct = new Product(body)
     try {
@@ -67,7 +67,7 @@ const model = {
   },
 
 
-  //* Editar la información de un producto
+  // Editar la información de un producto
   editProduct: async function (id, product) {
     try {
       let currentItem = await this.getProduct(id)
@@ -78,7 +78,7 @@ const model = {
   },
 
 
-  //* Borrar un producto
+  // Borrar un producto
   deleteProduct: async function (id) {
     try {
       db.Products.destroy({ where: {id} })

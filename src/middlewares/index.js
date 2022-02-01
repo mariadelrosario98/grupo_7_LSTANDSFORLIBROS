@@ -2,7 +2,7 @@ const fs = require("fs")
 const path = require("path")
 const object = {}
 
-//* Rutina de código para requerir todos los archivos en la carpeta
+// Rutina de código para requerir todos los archivos en la carpeta
 fs
   .readdirSync(__dirname)
   .filter(file => {

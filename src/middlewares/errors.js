@@ -3,7 +3,7 @@ const bcrypt = require('bcryptjs');
 const { check } = require("express-validator")
 const { usersModel } = require('../model');
 
-//* Longitud mínima de contraseña. Se asigna un valor bajo durante testeo, por conveniencia
+// Longitud mínima de contraseña. Se asigna un valor bajo durante testeo, por conveniencia
 const MIN_LENGTH = 8
 
 const acceptedExtensions = [".jpg", ".jpeg", ".png", ".gif"]
@@ -52,11 +52,11 @@ module.exports = {
     .isLength({ min: MIN_LENGTH }).withMessage(`Tu contraseña debe tener al menos ${MIN_LENGTH} caracteres de longitud`),
 
     check("new_password_confirm").custom((value, {req}) => {
-      //* Si las contraseñas no coinciden, se genera un nuevo error
+      // Si las contraseñas no coinciden, se genera un nuevo error
       if (value !== req.body.new_password)
         throw new Error("Passwords don't match")
 
-      //* Se retorna true para indicar el éxito de este custom validator
+      // Se retorna true para indicar el éxito de este custom validator
       return true
     }).withMessage("Contraseñas no coinciden"),
   ],
@@ -86,11 +86,11 @@ module.exports = {
     }).withMessage(`Tu contraseña debe tener al menos ${MIN_LENGTH} caracteres de longitud`),
 
     check("passwordConfirm").custom((value, {req}) => {
-      //* Si las contraseñas no coinciden, se genera un nuevo error
+      // Si las contraseñas no coinciden, se genera un nuevo error
       if (value !== req.body.password)
         throw new Error("Passwords don't match")
 
-      //* Se retorna true para indicar el éxito de este custom validator
+      // Se retorna true para indicar el éxito de este custom validator
       return true
     }).withMessage("Contraseñas no coinciden"),
   ],
@@ -98,15 +98,15 @@ module.exports = {
   pic: (name) => {
     return [
       check(name).custom((value, {req}) => {
-        //* Extensión del archivo subido y extensiones aceptadas
+        // Extensión del archivo subido y extensiones aceptadas
         let ext = path.extname(req.file?.originalname)
 
-        //* Si la extensión del archivo no es aceptada, se genera un nuevo error
+        // Si la extensión del archivo no es aceptada, se genera un nuevo error
         if (!acceptedExtensions.includes(ext)) {
           throw new Error("Invalid extension")
         }
 
-        //* Se retorna true para indicar el éxito de este custom validator
+        // Se retorna true para indicar el éxito de este custom validator
         return true
       }).withMessage(`Extensión inválida (extensiones aceptadas: ${acceptedExtensions.join(", ")})`)
     ]

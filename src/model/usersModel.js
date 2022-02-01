@@ -14,7 +14,7 @@ class User {
 
 
 const model = {
-  //* Obtener un usuario mediante campo especificado
+  // Obtener un usuario mediante campo especificado
   getUserBy: async function (where) {
     try {
       return await db.Users.findOne({ where })
@@ -23,7 +23,7 @@ const model = {
     }
   },
 
-  //* Obtener todos los usuarios
+  // Obtener todos los usuarios
   getAllUsers: async function() {
     try {
       return await db.Users.findAll()
@@ -33,7 +33,7 @@ const model = {
   },
 
 
-  //* Añadir un nuevo usuario
+  // Añadir un nuevo usuario
   addUser: async function (user) {
     let newUser = new User(user)
     
@@ -45,7 +45,7 @@ const model = {
   },
 
 
-  //* Editar la información de un usuario
+  // Editar la información de un usuario
   editUser: async function (id, user) {
     try {
       let currentItem = await this.getUserBy({id})
@@ -56,7 +56,7 @@ const model = {
   },
 
 
-  //* Borrar un usuario
+  // Borrar un usuario
   deleteUser: async function (id) {
     try {
       db.Users.destroy({ where: {id} })

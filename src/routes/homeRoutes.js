@@ -4,13 +4,13 @@ const router = express.Router()
 const { homeController } = require("../controller")
 
 
-//* Página principal
+// Página principal
 router.get("/", homeController.index)
 
-//* Carrito de compra
+// Carrito de compra
 router.get("/product-cart", homeController.cart)
 
-//* Resultados de busqueda
+// Resultados de busqueda
 router.get("/search", homeController.search)
 
 module.exports = router
