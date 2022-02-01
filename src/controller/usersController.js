@@ -36,8 +36,8 @@ const controller = {
     try {
       let email = req.body.email
       let user = await usersModel.getUserBy({email})
+      delete user.password
       req.session.user = user
-      req.session.id = user.email
       res.status(200).redirect("/users/profile")
     } catch (error) {
       console.error(error)
@@ -68,6 +68,7 @@ const controller = {
     let user = req.body;
     try {
       await usersModel.editUser(id, user)
+      req.session.user = await usersModel.getUserBy({id})
       res.status(200).redirect("/users/profile")
     } catch (error) {
       console.error(error)
@@ -97,6 +98,7 @@ const controller = {
   },
 
 
+  // Actualizar contraseña
   updatePass: async function(req, res) {
     let id = req.session.user.id
     let password = bcrypt.hashSync(req.body.new_password, 10)
@@ -109,7 +111,7 @@ const controller = {
     }
   },
 
-  
+
   // Cierre de sesión
   signout: function(req, res) {
     req.session.destroy()
