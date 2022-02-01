@@ -10,7 +10,7 @@ const acceptedExtensions = [".jpg", ".jpeg", ".png", ".gif"]
 
 
 module.exports = {
-  user: [
+  editUser: [
     check("first_name")
       .notEmpty().withMessage("Ingresa tu nombre").bail()
       .isLength({min: 2}).withMessage("Debe tener al menos 2 caracteres"),
@@ -26,7 +26,7 @@ module.exports = {
         let email = value
         let isExisting = await usersModel.getUserBy({email})
 
-        if (isExisting)
+        if (isExisting && email !== req.session.user.email)
           throw new Error("Email already exists")
 
         return true
@@ -61,7 +61,7 @@ module.exports = {
     }).withMessage("Contraseñas no coinciden"),
   ],
 
-  fullUser: [
+  register: [
     check("first_name").notEmpty().withMessage("Ingresa tu nombre"),
 
     check("last_name").notEmpty().withMessage("Ingresa tu apellido"),
