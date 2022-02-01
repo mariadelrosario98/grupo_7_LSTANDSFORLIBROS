@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
 
-  <%- include("../partials/head", {title: "Registro"}) %>
+  <head>
+    <%- include("../partials/head") %>
+    <title>Registro</title>
+    <script defer src="/js/show-category.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/validator/13.7.0/validator.min.js" integrity="sha512-rJU+PnS2bHzDCvRGFhXouCSxf4YYaUyUfjXMHsHFfMKhWDIEBr8go2LZ2EYXOqASey1tWc2qToeOCYh9et2aGQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script defer src="/js/validations/register.js"></script>
+  </head>
 
   <body>
     <%- include("../partials/header") %> 
@@ -78,8 +84,5 @@
     </main>
 
     <%- include("../partials/footer") %>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/validator/13.7.0/validator.min.js" integrity="sha512-rJU+PnS2bHzDCvRGFhXouCSxf4YYaUyUfjXMHsHFfMKhWDIEBr8go2LZ2EYXOqASey1tWc2qToeOCYh9et2aGQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script type="module" src="/js/validations/register.js"></script>
   </body>
 </html>

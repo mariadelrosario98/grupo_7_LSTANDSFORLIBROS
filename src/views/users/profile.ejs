@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
 
-  <%- include("../partials/head", {title: "Perfil", uniqueStyle: "style-perfil.css"}) %>
+  <head>
+    <%- include("../partials/head") %>
+    <title>Tu perfil</title>
+    <link rel="stylesheet" href="/css/style-perfil.css">
+    <script defer src="/js/auto-submit.js"></script>
+  </head>
 
   <body>
     <%- include("../partials/header") %>

@@ -1,7 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
 
-  <%- include("../partials/head", {title: "Detalles del producto", uniqueStyle: "style-detail.css"}) %>
+  <head>
+    <%- include("../partials/head") %>
+    <title>Detalles del producto</title>
+    <link rel="stylesheet" href="/css/style-detail.css">
+
+    <% if (locals.session?.user?.category === "vendor") { %>
+      <script defer src="/js/auto-submit.js"></script>
+    <% } %>
+  </head>
 
   <body>
     <%- include("../partials/header") %>
