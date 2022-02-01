@@ -82,6 +82,4 @@ submitBtn.addEventListener("click", e => {
   sendFeedback(emailInput, validEmail())
   sendFeedback(passwordInput, validPassword())
   sendFeedback(passwordConfirmInput, validConfirmPassword())
-  sendFeedback(submitBtn, "Favor revisar si rellenaste los campos debidamente")
-  setTimeout(() => sendFeedback(submitBtn, ""), 2000)
 })
