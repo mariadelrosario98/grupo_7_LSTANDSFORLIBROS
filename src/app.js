@@ -22,8 +22,8 @@ const session = require("express-session")
 app.use(session({
   secret: "Bienvenidos a nuestra librería de libritos :D",
   saveUninitialized: true,
-  resave: true,
-  cookie: { secure: true }
+  resave: false,
+  // cookie: { secure: true }
 }))
 
 //* Incluir el middleware para lectura y escritura de galletitas
@@ -37,7 +37,6 @@ app.use(async (req, res, next) => {
   if (!req.session.user && req.cookies?.email) {
     let email = req.cookies.email
     req.session.user = await usersModel.getUserBy({email})
-    req.session.id = req.session.user.email
   }
 
   res.locals.session = req.session || null

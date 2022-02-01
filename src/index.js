@@ -1,4 +1,4 @@
-require('dotenv').config()
+require('dotenv')?.config()
 const app = require("./app")
 
 //* Definir el puerto en el cual nuestro servidor va a correr
