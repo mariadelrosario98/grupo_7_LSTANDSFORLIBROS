@@ -88,6 +88,7 @@ const controller = {
         fs.rm(fullPath, {}, err => console.error(err))
       
       await usersModel.editUser(id, { img_path })
+      req.session.user.img_path = img_path
       res.status(201).redirect("/users/profile")
     } catch (error) {
       console.error(error)
