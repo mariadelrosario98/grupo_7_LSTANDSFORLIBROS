@@ -1,54 +1,87 @@
-let firstNameInput = document.querySelector("#first_name");
-let lastNameInput = document.querySelector("#last_name");
-let emailInput = document.querySelector("#email");
-let passwordInput = document.querySelector("#password");
-let passwordConfirmInput = document.querySelector("#passwordConfirm");
+const firstNameInput = document.querySelector("#first_name")
+const lastNameInput = document.querySelector("#last_name")
+const emailInput = document.querySelector("#email")
+const passwordInput = document.querySelector("#password")
+const passwordConfirmInput = document.querySelector("#passwordConfirm")
 
-// let data = {
-//   firstName: firstName.value,
-//   lastName: lastName.value,
-//   email: email.value,
-//   password: password.value,
-//   passwordConfirm: passwordConfirm.value,  
-// }
+const form = document.querySelector(".form-register")
+const submitBtn = document.querySelector(`.form-register input[type="submit"]`)
 
-const validateName = name => {
-  if (!name) return "Rellene este campo"
-  if (name.length < 2) return "Debe tener al menos 2 caracteres"
-  return ""
+const validFirstName = () => {
+  let firstName = firstNameInput.value
+  if (!firstName) return "Por favor ingresa tu nombre"
+  if (firstName.length < 2) return "Debe tener al menos 2 caracteres"
+  return null
 }
 
-const validateEmail = email => {
-  if (!email) return "Rellene este campo"
-  if (!validator.isEmail(email)) return "Email invalido"
-  return ""
+const validLastName = () => {
+  let lastName = lastNameInput.value
+  if (!lastName) return "Por favor ingresa tu apellido"
+  if (lastName.length < 2) return "Debe tener al menos 2 caracteres"
+  return null
 }
 
-const validatePassword = password => {
-  if (!password) return "Rellene este campo"
+const validEmail = () => {
+  let email = emailInput.value
+  if (!email) return "Por favor ingresa tu dirección de correo electrónico"
+  if (!validator.isEmail(email)) return "Email inválido"
+  return null
+}
+
+const validPassword = () => {
+  let password = passwordInput.value
+  if (!password) return "Por favor ingresa una contraseña"
   if (password.length < 8) return "Debe tener al menos 8 caracteres"
-  return ""
+  return null
 }
 
-const validate = (firstName, lastName, email, password, confirmPassword) => {
-
+const validConfirmPassword = () => {
+  let password = passwordInput.value
+  let confirm = passwordConfirmInput.value
+  if (password !== confirm) return "Contraseñas no coinciden"
+  return null
 }
 
 
-let data = {
-  firstName: "Kevin",
-  lastName: "simanca",
-  email: "kevin@gmail.com",
-  password: "1234",
-  passwordConfirm: "123",  
+const sendFeedback = (element, message) => {
+  const feedbackEl = element.nextElementSibling
+  if (feedbackEl.innerText === message) return
+  feedbackEl.innerText = message
 }
 
-let rules = {
-  firstName: 'required|min:2|string', 
-  lastName: 'required|min:2|string',
-  email: 'required|email',
-  password: 'required|size:8',
-  passwordConfirm: 'same:password'
-}
 
-console.log(validator)
+firstNameInput.addEventListener("input", e => {
+  sendFeedback(firstNameInput, validFirstName())
+})
+
+lastNameInput.addEventListener("input", e => {
+  sendFeedback(lastNameInput, validLastName())
+})
+
+emailInput.addEventListener("input", e => {
+  sendFeedback(emailInput, validEmail())
+})
+
+passwordInput.addEventListener("input", e => {
+  sendFeedback(passwordInput, validPassword())
+  sendFeedback(passwordConfirmInput, validConfirmPassword())
+})
+
+passwordConfirmInput.addEventListener("input", e => {
+  sendFeedback(passwordInput, validPassword())
+  sendFeedback(passwordConfirmInput, validConfirmPassword())
+})
+
+submitBtn.addEventListener("click", e => {
+  e.preventDefault()
+  if (!validFirstName() && !validLastName() && !validEmail() && !validPassword() && !validConfirmPassword())
+    return form.submit()
+
+  sendFeedback(firstNameInput, validFirstName())
+  sendFeedback(lastNameInput, validLastName())
+  sendFeedback(emailInput, validEmail())
+  sendFeedback(passwordInput, validPassword())
+  sendFeedback(passwordConfirmInput, validConfirmPassword())
+  sendFeedback(submitBtn, "Favor revisar si rellenaste los campos debidamente")
+  setTimeout(() => sendFeedback(submitBtn, ""), 2000)
+})

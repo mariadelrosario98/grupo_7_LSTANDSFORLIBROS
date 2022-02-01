@@ -20,6 +20,7 @@ const vendorField = `
 `
 
 function showCategories() {
+  alert("Permiso concedido ;)")
   categoryBox.style.display = "block"
   categoryBox.innerHTML += vendorField
 }

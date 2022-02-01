@@ -15,14 +15,18 @@
         </label>
         <input class="controls login-box__input" type="text" name="first_name" id="first_name" 
         value="<%= locals.body?.first_name %>" placeholder="Ingrese su nombre aquí"  autofocus>
-        <p class="feedback"><%= locals.errors?.first_name?.msg %> </p>
+        <p class="feedback">
+          <%= locals.errors?.first_name?.msg %>
+        </p>
         
         <label for="last_name">
           Apellido <sup class="required">*</sup>
         </label>
         <input class="controls login-box__input" type="text" name="last_name" id="last_name" 
         value="<%= locals.body?.last_name %>" placeholder="Ingrese sus apellidos aquí">
-        <p class="feedback"><%= locals.errors?.last_name?.msg %> </p>
+        <p class="feedback">
+          <%= locals.errors?.last_name?.msg %>
+        </p>
         
         <div class="category-box">
           <label for="category">
@@ -39,21 +43,27 @@
         </label>
         <input class="controls login-box__input" type="email" name="email" id="email" 
         value="<%= locals.body?.email %>" placeholder="Ingrese su correo aquí">
-        <p class="feedback"><%= locals.errors?.email?.msg %> </p>
+        <p class="feedback">
+          <%= locals.errors?.email?.msg %>
+        </p>
         
         <label for="password">
           Contraseña <sup class="required">*</sup>
         </label>
         <input class="controls login-box__input" type="password" name="password" id="password"
         placeholder="Ingrese su contraseña aquí">
-        <p class="feedback"><%= locals.errors?.password?.msg %> </p>
+        <p class="feedback">
+          <%= locals.errors?.password?.msg %>
+        </p>
         
         <label for="passwordConfirm">
           Confirmar contraseña <sup class="required">*</sup>
         </label>
         <input class="controls login-box__input" type="password" name="passwordConfirm" id="passwordConfirm"
         placeholder="Ingrese su contraseña aquí">
-        <p class="feedback"><%= locals.errors?.passwordConfirm?.msg %> </p>
+        <p class="feedback">
+          <%= locals.errors?.passwordConfirm?.msg %>
+        </p>
         
         
         <p class="terms">
@@ -64,6 +74,7 @@
         </p>
         
         <input class="botons" type="submit" value="Registrar">
+        <p class="feedback" style="height: 1em"></p>
       </form>
     </main>
 
