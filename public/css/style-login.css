@@ -16,7 +16,7 @@ main {
   width: 100%;
   margin: 0;
   padding: 1em;
-  border: 1px solid #14279B;
+  border: 1px solid var(--main-color1);
 }
 
 .login-box .logo {
@@ -114,8 +114,8 @@ main {
     padding: 0 1.5em;
 
     text-align: center;
-    color: #ebebeb;
-    text-shadow: 1px 1px 5px #111;
+    color: var(--main-color4);
+    text-shadow: 1px 1px 5px var(--shadow-color);
   }
 
   .desc {

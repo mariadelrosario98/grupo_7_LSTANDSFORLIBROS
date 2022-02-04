@@ -12,7 +12,7 @@
   margin: 0 auto 25px;
   padding: 20px;
 
-  border: 2px solid #14279B;
+  border: 2px solid var(--main-color1);
   border-radius: 20px;
 }
 
@@ -88,7 +88,7 @@
 }
 
 .libro--remove:hover {
-  color: #ebebeb;
+  color: var(--main-color4);
   font-weight: bold;
   background-color: red;
   cursor: pointer;
@@ -128,7 +128,7 @@
   height: 12vw;
 
   font-weight: bold;
-  border: 1px solid #14279B;
+  border: 1px solid var(--main-color1);
   border-radius: 10px;
 
   margin: auto;
@@ -142,8 +142,8 @@
 }
 
 .boton:hover {
-  color: #ebebeb;
-  background-color: #14279B;
+  color: var(--main-color4);
+  background-color: var(--main-color1);
   cursor: pointer;
 }
 

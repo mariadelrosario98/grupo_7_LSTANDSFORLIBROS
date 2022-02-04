@@ -1,6 +1,6 @@
 .articulo {
   border-radius: 1.5em;
-  background-color: #ccc;
+  background-color: var(--detail-color);
   width: clamp(300px, 80%, 800px);
 
   margin: auto;
@@ -38,12 +38,12 @@
   justify-content: center;
   align-items: center;
 
-  background-color: #5C7AEAAA;
+  background-color: var(--main-color3__transparent);
 }
 
 .articulo--top--img-edit label {
   font-size: 1.5em;
-  color: #ebebeb;
+  color: var(--main-color4);
   font-weight: bold;
   margin: 0.5em;
   transition: all 0.2s ease-in;
@@ -53,7 +53,7 @@
   cursor: pointer;
   transform: scale(1.1);
   font-weight: bold;
-  text-shadow: 0 0 0.1em #334;
+  text-shadow: 0 0 0.1em var(--shadow-color);
 }
 
 .articulo--top--img-edit input[type="file"] {
@@ -61,19 +61,19 @@
 }
 
 .articulo--top--img-edit input[type="submit"] {
-  background-color: #ebebeb;
+  background-color: var(--main-color4);
   font-size: 1.2em;
   padding: 0.5em;
   margin: 0 0 0.5em;
-  border: 2px solid #3D56B2;
+  border: 2px solid var(--main-color2);
   border-radius: 1em;
   transition: all 0.1s ease-in;
 }
 
 .articulo--top--img-edit input[type="submit"]:hover {
-  background-color: #3D56B2;
+  background-color: var(--main-color2);
   font-weight: bold;
-  color: #ebebeb;
+  color: var(--main-color4);
 }
 
 .articulo--top--info {
@@ -95,19 +95,19 @@
   margin-top: 2em;
   padding: 1em 1.5em;
 
-  background-color: #3D56B2;
-  color: #ebebeb;
+  background-color: var(--main-color2);
+  color: var(--main-color4);
   font-weight: bold;
 
-  border: 2px solid #3D56B2;
+  border: 2px solid var(--main-color2);
   border-radius: 1.5em;
 
   transition: all 0.1s ease-in;
 }
 
 .articulo--edit:hover {
-  background-color: #ebebeb;
-  color: #3D56B2;
+  background-color: var(--main-color4);
+  color: var(--main-color2);
 }
 
 @media (max-width: 769px) {

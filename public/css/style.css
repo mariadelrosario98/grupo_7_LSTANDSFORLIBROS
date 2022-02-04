@@ -4,7 +4,21 @@
   --main-color1: #14279B;
   --main-color2: #3D56B2;
   --main-color3: #5C7AEA;
+  --main-color3__transparent: #5C7AEAAA;
   --main-color4: #E6E6E6;
+  --shadow-color: #000;
+  --detail-color: #ccc;
+  --profile-color: #fff;
+  --white-text-color: #fff;
+
+  --bg: url("/img/bg.png")
+}
+
+.dark-mode {
+  --main-color1: black;
+  --main-color2: red;
+  --main-color3: green;
+  --main-color4: yellow;
 }
 
 * {
@@ -24,12 +38,12 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #5C7AEA;
+  background: var(--main-color3);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #ebebeb;
-  border: 3px solid #5C7AEA;
+  background: var(--main-color4);
+  border: 3px solid var(--main-color3);
   border-radius: 50px;
 }
 
@@ -43,10 +57,10 @@ header {
   display: flex;
   flex-flow: wrap column;
 
-  color: #ebebeb;
-  background-color: #3D56B2;
+  color: var(--main-color4);
+  background-color: var(--main-color2);
 
-  border-bottom: 1px solid #ebebeb;
+  border-bottom: 1px solid var(--main-color4);
 
   position: fixed;
   z-index: 10;
@@ -56,8 +70,7 @@ header .top {
   display: flex;
   justify-content: space-between;
 
-
-  border-bottom: 1px solid #ebebeb;
+  border-bottom: 1px solid var(--main-color4);
 }
 
 header .top .top-left {
@@ -73,7 +86,7 @@ header .top .top-left i {
 
   padding: 5px;
   margin: 10px;
-  border: 1px solid #ebebeb;
+  border: 1px solid var(--main-color4);
   border-radius: 20%;
 
   font-size: 24px;
@@ -133,7 +146,7 @@ header .pfp img {
 header .logout-icon {
   font-size: 2.5em;
   transition: all 0.2s;
-  color: #ebebeb;
+  color: var(--main-color4);
 }
 
 header .logout-icon:hover {
@@ -142,17 +155,17 @@ header .logout-icon:hover {
 
 .top-button {
   font-size: 16px;
-  background-color: #5C7AEA;
+  background-color: var(--main-color3);
   padding: 10px;
   margin-right: 10px;
-  border: 1px solid #14279B;
+  border: 1px solid var(--main-color1);
   border-radius: 3em;
   transition: all 0.2s;
 }
 
 .top-button:hover {
-  color: #14279B;
-  background-color: #ebebeb;
+  color: var(--main-color1);
+  background-color: var(--main-color4);
 }
 
 header .top .top-center {
@@ -189,7 +202,7 @@ header form input {
   border-radius: 10px 0 0 10px;
   outline: none;
 
-  background-color: #ebebeb;
+  background-color: var(--main-color4);
 }
 
 header form button {
@@ -198,7 +211,7 @@ header form button {
   border: none;
   border-radius: 0 10px 10px 0;
 
-  background-color: #ebebeb;
+  background-color: var(--main-color4);
 }
 
 header form button.logout-icon {
@@ -226,13 +239,13 @@ main {
   padding-top: 160px;
   width: 100%;
   min-height: 90vh;
-  background-image: url("/img/bg.png");
-  background-color: #E6E6E6;
+  background-image: var(--bg);
+  background-color: var(--main-color4);
 }
 
 footer {
-  background-color: #3d56b2;
-  color: #E6E6E6;
+  background-color: var(--main-color2);
+  color: var(--main-color4);
 }
 
 textarea {
@@ -257,7 +270,7 @@ button.search {
 }
 
 .products-table td {
-  border: 1px solid #e3e3e3;
+  border: 1px solid var(--main-color4);
   padding: 0.25em;
   text-align: center;
 }
@@ -268,14 +281,14 @@ button.search {
 
 .products-table th {
   /* text-align: center; */
-  background-color: #3D56B2;
-  color: #FFF;
+  background-color: var(--main-color2);
+  color: var(--main-color4);
   padding: 0.5em 1em;
   min-width: 4em;
 }
 
 .products-table fa-eye:hover {
-  color: #3D56B2;
+  color: var(--main-color2);
 }
 
 .titulo-edit {
@@ -292,8 +305,8 @@ button.search {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #3d56b2;
-  color: #ebebeb;
+  background-color: var(--main-color2);
+  color: var(--main-color4);
   height: fit-content;
   padding: 0.5em;
 }
@@ -379,7 +392,7 @@ button.search {
 
 .precio {
   margin: auto;
-  color: #14279B;
+  color: var(--main-color1);
 }
 
 .small-container {
@@ -403,13 +416,13 @@ button.search {
 .form-register {
   width: 500px;
   max-width: 90%;
-  background: #3D56B2;
+  background: var(--main-color2);
   padding: 3em 2em 2em;
   margin: 50px auto;
   border-radius: 2.5em;
   font-family: 'Open Sans', sans-serif;
-  color: #E6E6E6;
-  box-shadow: 7px 13px 37px #000;
+  color: var(--main-color4);
+  box-shadow: 7px 13px 37px var(--shadow-color);
 }
 
 .form-register h4 {
@@ -440,9 +453,9 @@ button.search {
 
 .controls {
   width: 100%;
-  background-color: #E6E6E6;
+  background-color: var(--main-color4);
   padding: 10px;
-  border: 1px solid #14279B;
+  border: 1px solid var(--main-color1);
   font-family: 'Open Sans', sans-serif;
   font-size: 18px;
 }
@@ -473,11 +486,11 @@ button.search {
 .form-register .botons {
   width: 100%;
   height: 3em;
-  background: #E6E6E6;
-  border: 1px solid #ebebeb;
+  background: var(--main-color4);
+  border: 1px solid var(--main-color4);
   border-radius: 1.5em;
   padding: 12px;
-  color: #14279B;
+  color: var(--main-color1);
   font-weight: bold;
   margin: 16px 0;
   font-size: 16px;
@@ -485,8 +498,8 @@ button.search {
 }
 
 .form-register .botons:hover {
-  background: #14279B;
-  color: #ebebeb;
+  background: var(--main-color1);
+  color: var(--main-color4);
 }
 
 .eyecon, .edit-icon, .delete-icon {
@@ -511,7 +524,7 @@ button.search {
 }
 
 .product {
-  border: 1px solid #ebebeb;
+  border: 1px solid var(--main-color4);
   width: 85%;
   padding: 15px;
   margin: 10px;
@@ -577,7 +590,7 @@ button.search {
   align-content: center;
   align-items: center;
   
-  background-color: #5C7AEA;
+  background-color: var(--main-color3);
   border-radius: 5px;
   color: white;
   height: 3em;
@@ -723,8 +736,8 @@ button.search {
 .login-box {
   width: 320px;
   height: 420px;
-  background: #3D56B2;
-  color: #E6E6E6;
+  background: var(--main-color2);
+  color: var(--main-color4);
   box-sizing: border-box;
   margin: 10px auto 30px;
   padding: 70px 30px;
@@ -789,7 +802,7 @@ input[type = "checkbox"], input[type = "radio"] {
   outline: none;
   height: 40px;
   background: #b80f22;
-  color: #fff;
+  color: var(--main-color4);
   font-size: 18px;
   border-radius: 20px;
   transition: all 0.2s;
@@ -797,8 +810,8 @@ input[type = "checkbox"], input[type = "radio"] {
 
 .login-box input[type="submit"]:hover {
   cursor: pointer;
-  background: #ebebeb;
-  color: #14279B;
+  background: var(--main-color4);
+  color: var(--main-color1);
 }
 
 .login-box form a {

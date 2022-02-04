@@ -42,7 +42,6 @@ const validConfirmPassword = () => {
   return null
 }
 
-
 const sendFeedback = (element, message) => {
   const feedbackEl = element.nextElementSibling
   if (feedbackEl.innerText === message) return
