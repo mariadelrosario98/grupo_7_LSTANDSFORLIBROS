@@ -67,6 +67,11 @@ https://trello.com/b/SvySsXFJ/sprint-5
 Sprint 6:
 https://trello.com/b/SyV6ONkM/sprint-6
 
+Sprint 7:
+https://trello.com/b/nmeeE0C7/sprint-7
+Para revisarlo puedes entrar por el siguiente link de invitación:
+https://trello.com/invite/b/nmeeE0C7/337f460bb08b5e882ba472bed5566307/sprint-
+
 
 ## Integrantes
 - Kevin Simanca [@KevinAndSH](https://github.com/KevinAndSH) <br />
