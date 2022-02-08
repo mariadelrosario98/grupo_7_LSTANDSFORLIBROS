@@ -754,13 +754,13 @@ button.search {
 
 .login-box h1 {
   margin: 0;
-  padding: 0 0 20px;
   text-align: center;
   font-size: 25px;
 }
 
 .login-box label {
   margin: 0;
+  margin-top: 20px;
   padding: 0;
   font-family: 'Open Sans', sans-serif;
   font-weight: bold;
@@ -769,7 +769,6 @@ button.search {
 
 .login-box input {
   width: 100%;
-  margin-bottom: 20px;
 }
 
 input[type = "checkbox"], input[type = "radio"] {

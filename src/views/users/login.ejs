@@ -5,6 +5,8 @@
     <%- include("../partials/head") %>
     <title>Inicia sesión</title>
     <link rel="stylesheet" href="/css/style-login.css">
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/validator/13.7.0/validator.min.js" integrity="sha512-rJU+PnS2bHzDCvRGFhXouCSxf4YYaUyUfjXMHsHFfMKhWDIEBr8go2LZ2EYXOqASey1tWc2qToeOCYh9et2aGQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script defer src="/js/validations/login.js"></script>
   </head>
 
   <body>
@@ -59,18 +61,20 @@
 
         <% if (locals.message) { %>
           <p class="login-error">
-            <%= message %> 
+            <%= locals.message %> 
           </p>
         <% } %>
         
         <!--* USERNAME INPUT -->
         <label for="email">Correo electrónico</label>
-        <input name="email" class="login-box__input controls" id= "email" type="text" placeholder="Ingresa aquí tu correo electrónico" value= "<%= locals.user %>" autofocus>
+        <input name="email" class="login-box__input controls" id="email" type="text" placeholder="Ingresa aquí tu correo electrónico" value= "<%= locals.user %>" autofocus>
+        <p class="feedback"></p>
         
         <!--* PASSWORD INPUT -->
         <label for="password">Contraseña</label>
-        <input name="password" class="login-box__input controls" id= "password" type="password" 
+        <input name="password" class="login-box__input controls" id="password" type="password" 
         placeholder="Ingresa aquí tu contraseña">
+        <p class="feedback"></p>
 
         <div class="terms">
           <input name="rememberEmail" class="login-box__input controls" id="rememberEmail" type= "checkbox">

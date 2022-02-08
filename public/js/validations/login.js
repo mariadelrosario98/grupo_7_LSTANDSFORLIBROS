@@ -1,5 +1,5 @@
-const emailInput = document.querySelectorAll("#email")
-const passwordInput = document.querySelectorAll("#password")
+const emailInput = document.querySelector("#email")
+const passwordInput = document.querySelector("#password")
 
 const form = document.querySelector(".form-login")
 const submitBtn = document.querySelector(`.form-login input[type="submit"]`)
