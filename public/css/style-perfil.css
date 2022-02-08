@@ -1,4 +1,3 @@
-
 *{
   margin: 0;
   padding: 0;
@@ -8,21 +7,30 @@
 
 .wrapper{
   position: absolute;
+
   display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1em;
+
   box-shadow: 0 1px 20px 0 rgba(69,90,100,.08);
   box-sizing: content-box;
   position: relative;
-  padding: 5em;
+  margin: 2em;
 }
 
 .wrapper .left{
   background:  var(--main-color2);
   padding: 30px 25px;
-  min-width: 350px;
   border-radius: 1em;
   text-align: center;
   color: var(--white-text-color);
   overflow: hidden;
+  flex: 0 1 400px;
+  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .wrapper .left img{
@@ -35,16 +43,20 @@
 }
 
 .wrapper .right{
-  width: 65%;
-  background: var(--profile-color);
-
+  /* background: var(--profile-color); */
+  justify-self: stretch;
+  flex: 1 1 auto;
 }
 
 .wrapper .right .info{
   margin: auto;
   margin-bottom: 25px;
   padding-top: 5em;
-  width: 70%;
+  width: 90%;
+}
+
+.wrapper .right .info h2{
+  text-align: center;
 }
 
 .wrapper .right  h2{

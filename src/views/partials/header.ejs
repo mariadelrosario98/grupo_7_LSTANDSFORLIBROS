@@ -40,6 +40,7 @@
         <a href="/users/register" class="top-button">Regístrate</a>
       <% } %>
 
+      <!-- 
       <ul class="menu">
         <li><a href="#" class="menuItem">Categorias</a></li>
         &nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp
@@ -52,17 +53,34 @@
           <li><a href="/products/create" class="menuItem">Crear</a></li>
           &nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp
           <li><a href="/products" class="menuItem">Productos</a></li>
-          <% } %>
+        <% } %>
       </ul>
   
-    <button class="hamburger"></button>
-      <i class="menuIcon material-icons">menu</i>
-      <i class="closeIcon material-icons">close</i>
-    </button>
+      <button class="hamburger"></button>
+        <i class="menuIcon material-icons">menu</i>
+        <i class="closeIcon material-icons">close</i>
+      </button> 
+      -->
 
     </div>
   </div>
 
   <%- include("search-form", {deviceClass: "mobile"}) %>
+
+  <nav>
+    <ul class="navbar">
+      <li><a href="#">Categorias</a></li>
+      &nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp
+      <li><a href="#">Ofertas</a></li>
+      &nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp
+      <li><a href="#">Historial</a></li>
+      <% if (locals.session?.user?.category === "vendor") { %>
+        &nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp
+        <li><a href="/products/create">Crear</a></li>
+        &nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp
+        <li><a href="/products">Productos</a></li>
+      <% } %>
+    </ul>
+  </nav>
 
 </header>
