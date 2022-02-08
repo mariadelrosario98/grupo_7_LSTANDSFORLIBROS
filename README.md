@@ -76,7 +76,7 @@ https://trello.com/invite/b/nmeeE0C7/337f460bb08b5e882ba472bed5566307/sprint-
 
 ## Integrantes
 - Kevin Simanca [@KevinAndSH](https://github.com/KevinAndSH) <br />
-Kevin estudió Ingeniería Mecánica y le gustan los perritos.
+Kevin estudió Ingeniería Mecánica y le gustan los gatitos :3
 - Elisaul García [@elisaulgarcia](https://github.com/elisaulgarcia) <br />
 - Zabdiel Blanco [@ZetaBlancoA](https://github.com/ZetaBlancoA) <br />
 Zabdiel estudia ingeniería electrónica y analista y desarrollador de sistemas de información. 

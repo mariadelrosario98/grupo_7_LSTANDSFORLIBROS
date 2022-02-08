@@ -38,12 +38,12 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--main-color3);
+  background: var(--main-color1);
 }
 
 ::-webkit-scrollbar-thumb {
   background: var(--main-color4);
-  border: 3px solid var(--main-color3);
+  border: 3px solid var(--main-color1);
   border-radius: 50px;
 }
 
