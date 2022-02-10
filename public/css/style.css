@@ -62,7 +62,8 @@ header {
 
   border-bottom: 1px solid var(--main-color4);
 
-  position: fixed;
+  position: sticky;
+  top: 0;
   z-index: 10;
 }
 
@@ -236,7 +237,6 @@ nav {
 }
 
 main {
-  padding-top: 160px;
   width: 100%;
   min-height: 90vh;
   background-image: var(--bg);
@@ -682,10 +682,6 @@ button.search {
 
 /* Vista laptop */
 @media (min-width: 769px) {
-  main {
-    padding-top: 120px;
-  }
-
   .laptop {
     display: flex;
   }
