@@ -4,6 +4,8 @@
   <head>
     <%- include("../partials/head") %>
     <title>Creación de productos</title>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/validator/13.7.0/validator.min.js" integrity="sha512-rJU+PnS2bHzDCvRGFhXouCSxf4YYaUyUfjXMHsHFfMKhWDIEBr8go2LZ2EYXOqASey1tWc2qToeOCYh9et2aGQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script defer src="/js/validations/products/create.js"></script>
   </head>
 
   <body>
@@ -63,6 +65,9 @@
         </label>
         <textarea class="controls login-box__input" name="description" id="description"
         placeholder="Ingrese una descripción"><%= locals.body?.description %></textarea>
+        <p class="feedback">
+          <%= locals.errors?.passwordConfirm?.msg %>
+        </p>
 
         <p class="terms">
           <input type="checkbox" name="agree" id="agree">

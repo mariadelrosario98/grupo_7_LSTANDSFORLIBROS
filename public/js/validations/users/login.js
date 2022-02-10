@@ -34,7 +34,7 @@ passwordInput.addEventListener("input", e => {
 
 submitBtn.addEventListener("click", e => {
   e.preventDefault()
-  if (!validFirstName() && !validLastName() && !validEmail() && !validPassword() && !validConfirmPassword())
+  if (!validEmail() && !validPassword())
     return form.submit()
 
   sendFeedback(emailInput, validEmail())
