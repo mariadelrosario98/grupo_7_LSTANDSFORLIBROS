@@ -9,70 +9,68 @@
   <body>
     <%- include("../partials/header") %>
     
-    <main>
-      <form class="form-register" action=<%= "/products/" + id + "?_method=PUT" %>  method="post">
-        <h3 class="título form product-create">Formulario Edición Productos</h3>
-        
-        <label for="name">
-          Nombre <sup class="required">*</sup>
-        </label>
-        <input class="controls login-box__input" type="text" name="name" id="name" 
-        value= "<%= locals.body?.name %>" placeholder="<%= locals.body?.name %>" autofocus>
-        <p class="feedback">
-          <%= locals.errors?.name?.msg %>
-        </p>
-
-        <label for="author">
-          Autor <sup class="required">*</sup>
-        </label>
-        <input class="controls login-box__input" type="text" name="author" id="author" 
-        value= "<%= locals.body?.author %>" placeholder="<%= locals.body?.author %>" >
-        <p class="feedback">
-          <%= locals.errors?.author?.msg %>
-        </p>
-        
-        <label for="isbn">
-          ISBN <sup class="required">*</sup>
-        </label>
-        <input class="controls login-box__input" type="text" name="isbn" id="isbn" 
-        value= "<%= locals.body?.isbn %>" placeholder="<%= locals.body?.isbn %>" >
-        <p class="feedback">
-          <%= locals.errors?.isbn?.msg %>
-        </p>
-
-        <label for="house">
-          Editorial <sup class="required">*</sup>
-        </label>
-        <input class="controls login-box__input" type="text" name="house" id="house" 
-        value= "<%= locals.body?.house %>" placeholder="<%= locals.body?.house %>" >
-        <p class="feedback">
-          <%= locals.errors?.house?.msg %>
-        </p>
-
-        <label for="price">
-          Precio <sup class="required">*</sup>
-        </label>
-        <input class="controls login-box__input" type="number" name="price" id="price" 
-        value= <%= locals.body?.price %> placeholder= "<%= "$ " + toThousand(locals.body?.price) %>" min="0" step="100">
-        <p class="feedback">
-          <%= locals.errors?.price?.msg %>
-        </p>
-
-        <label for="desc">
-          Descripción
-        </label>
-        <textarea class="controls login-box__input" name="description" id="description"
-        placeholder= "<%= locals.body?.description || "" %>"><%= locals.body?.description %></textarea>
-        
-        <input class="botons" type="submit" value="Editar">
-        
-        <p>
-          <a href="/products/create">Quiero crear un producto</a>
-        </p>
-      </form>
-    </main>
-    
-    <%- include("../partials/footer") %>
+    <div class="body-wrapper">
+      <main>
+        <form class="form-register" action=<%= "/products/" + id + "?_method=PUT" %>  method="post">
+          <h3 class="título form product-create">Formulario Edición Productos</h3>
+      
+          <label for="name">
+            Nombre <sup class="required">*</sup>
+          </label>
+          <input class="controls login-box__input" type="text" name="name" id="name"
+          value= "<%= locals.body?.name %>" placeholder="<%= locals.body?.name %>" autofocus>
+          <p class="feedback">
+            <%= locals.errors?.name?.msg %>
+          </p>
+          <label for="author">
+            Autor <sup class="required">*</sup>
+          </label>
+          <input class="controls login-box__input" type="text" name="author" id="author"
+          value= "<%= locals.body?.author %>" placeholder="<%= locals.body?.author %>" >
+          <p class="feedback">
+            <%= locals.errors?.author?.msg %>
+          </p>
+      
+          <label for="isbn">
+            ISBN <sup class="required">*</sup>
+          </label>
+          <input class="controls login-box__input" type="text" name="isbn" id="isbn"
+          value= "<%= locals.body?.isbn %>" placeholder="<%= locals.body?.isbn %>" >
+          <p class="feedback">
+            <%= locals.errors?.isbn?.msg %>
+          </p>
+          <label for="house">
+            Editorial <sup class="required">*</sup>
+          </label>
+          <input class="controls login-box__input" type="text" name="house" id="house"
+          value= "<%= locals.body?.house %>" placeholder="<%= locals.body?.house %>" >
+          <p class="feedback">
+            <%= locals.errors?.house?.msg %>
+          </p>
+          <label for="price">
+            Precio <sup class="required">*</sup>
+          </label>
+          <input class="controls login-box__input" type="number" name="price" id="price"
+          value= <%= locals.body?.price %> placeholder= "<%= "$ " + toThousand(locals.body?.price) %>" min="0" step="100">
+          <p class="feedback">
+            <%= locals.errors?.price?.msg %>
+          </p>
+          <label for="desc">
+            Descripción
+          </label>
+          <textarea class="controls login-box__input" name="description" id="description"
+          placeholder= "<%= locals.body?.description || "" %>"><%= locals.body?.description %></textarea>
+      
+          <input class="botons" type="submit" value="Editar">
+      
+          <p>
+            <a href="/products/create">Quiero crear un producto</a>
+          </p>
+        </form>
+      </main>
+      
+      <%- include("../partials/footer") %>
+    </div>
   </body>
 
 </html>

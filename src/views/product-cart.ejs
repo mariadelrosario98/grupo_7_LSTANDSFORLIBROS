@@ -12,121 +12,109 @@
 
     <%- include("./partials/whatsapp") %>
 
-    <main>
-      <h1>
-        Tu carrito de compras
-      </h1>
-
-      <section class="libros">
-
-        <% libros.forEach(libro => { %>
-        <article class="libro">
-          <div class="libro--top">
-            <img src=<%= "/img/products/" + libro.img_path %> alt="" class="libro--top--img">
-
-            <div class="libro--cuerpo">
-              <div class="libro--cuerpo--top">
-                <div class="libro--texto">
-                  <p class="libro--titulo"><b><%= libro.name %> </b></p>
-                  <p><b>Autor:</b> <%= libro.author %> </p>
-                  <p><b>ISBN:</b> <%= libro.isbn %></p>
-                  <p><b>Tipo:</b> <%= libro.type %></p>
+    <div class="body-wrapper">
+      <main>
+        <h1>
+          Tu carrito de compras
+        </h1>
+        <section class="libros">
+          <% libros.forEach(libro => { %>
+          <article class="libro">
+            <div class="libro--top">
+              <img src=<%= "/img/products/" + libro.img_path %> alt="" class="libro--top--img">
+              <div class="libro--cuerpo">
+                <div class="libro--cuerpo--top">
+                  <div class="libro--texto">
+                    <p class="libro--titulo"><b><%= libro.name %> </b></p>
+                    <p><b>Autor:</b> <%= libro.author %> </p>
+                    <p><b>ISBN:</b> <%= libro.isbn %></p>
+                    <p><b>Tipo:</b> <%= libro.type %></p>
+                  </div>
+                  <p class="libro--remove">
+                    <i class="fas fa-times"></i>
+                  </p>
                 </div>
-
-                <p class="libro--remove">
-                  <i class="fas fa-times"></i>
+                <p class="libro--desc">
+                  <%= libro.description %>
                 </p>
-              </div>
-
-              <p class="libro--desc">
-                <%= libro.description %>
-              </p>
-
-              <div class="libro--bottom laptop">
-                <select name="cant" class="libro--bottom--cant" id="cant">
-                  <option value="1" selected>1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                  <option value="6">6</option>
-                  <option value="7">7</option>
-                  <option value="8">8</option>
-                  <option value="9">9</option>
-                  <option value="10">10</option>
-                  <option value="11">11</option>
-                  <option value="12">12</option>
-                  <option value="13">13</option>
-                  <option value="14">14</option>
-                  <option value="15">15</option>
-                  <option value="16">16</option>
-                  <option value="17">17</option>
-                  <option value="18">18</option>
-                  <option value="19">19</option>
-                  <option value="20">20</option>
-                </select>
-
-                <p class="libro--bottom--cost">
-                  <b>Costo unitario:</b> $ <%= toThousand(libro.price) %>
-                </p>
+                <div class="libro--bottom laptop">
+                  <select name="cant" class="libro--bottom--cant" id="cant">
+                    <option value="1" selected>1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                  </select>
+                  <p class="libro--bottom--cost">
+                    <b>Costo unitario:</b> $ <%= toThousand(libro.price) %>
+                  </p>
+                </div>
               </div>
             </div>
-
+            <div class="libro--bottom mobile">
+              <select name="cant" class="libro--bottom--cant" id="cant">
+                <option value="1" selected>1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+              </select>
+              <p class="libro--bottom--cost">
+                <b>Costo unitario:</b> $ <%= toThousand(libro.price) %>
+              </p>
+            </div>
+          </article>
+          <% }) %>
+        </section>
+        <section class="costos">
+          <div class="rotulos">
+            <p>Subtotal:</p>
+            <p>Descuento:</p>
+            <p>Total a pagar:</p>
           </div>
-
-          <div class="libro--bottom mobile">
-            <select name="cant" class="libro--bottom--cant" id="cant">
-              <option value="1" selected>1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-              <option value="10">10</option>
-              <option value="11">11</option>
-              <option value="12">12</option>
-              <option value="13">13</option>
-              <option value="14">14</option>
-              <option value="15">15</option>
-              <option value="16">16</option>
-              <option value="17">17</option>
-              <option value="18">18</option>
-              <option value="19">19</option>
-              <option value="20">20</option>
-            </select>
-            <p class="libro--bottom--cost">
-              <b>Costo unitario:</b> $ <%= toThousand(libro.price) %>
-            </p>
+          <div class="valores">
+            <p> $ <%= toThousand(libros.reduce((total, libro) => total + libro.price, 0)) %> </p>
+            <p class="descuento"> - $ <%= toThousand(0.1 * libros.reduce((total, libro) => total + libro.price, 0)) %></p>
+            <p> $ <%= toThousand(0.9 * libros.reduce((total, libro) => total + libro.price, 0)) %></p>
           </div>
-        </article>
-        <% }) %>
-
-      </section>
-
-      <section class="costos">
-        <div class="rotulos">
-          <p>Subtotal:</p>
-          <p>Descuento:</p>
-          <p>Total a pagar:</p>
-        </div>
-
-        <div class="valores">
-          <p> $ <%= toThousand(libros.reduce((total, libro) => total + libro.price, 0)) %> </p>
-          <p class="descuento"> - $ <%= toThousand(0.1 * libros.reduce((total, libro) => total + libro.price, 0)) %></p>
-          <p> $ <%= toThousand(0.9 * libros.reduce((total, libro) => total + libro.price, 0)) %></p>
-        </div>
-      </section>
-
-      <section class="botones">
-        <div class="boton">Buscar mas <br> productos</div>
-        <div class="boton">Finalizar compra</div>
-      </section>
-    </main>
-
-    <%- include("./partials/footer") %>
+        </section>
+        <section class="botones">
+          <div class="boton">Buscar mas <br> productos</div>
+          <div class="boton">Finalizar compra</div>
+        </section>
+      </main>
+      <%- include("./partials/footer") %>
+    </div>
   </body>
 
 </html>

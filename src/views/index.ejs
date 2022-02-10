@@ -11,41 +11,38 @@
     
     <%- include("./partials/whatsapp") %>
 
-    <main>
-      <img class="reference" src="/img/library.png" alt="library">
-
-      <div>
-        <h1 class="initial">
-          <span class="laptop">👇</span> Algunos títulos que te recomendamos <span class="laptop">👇</span>
-        </h1>
-      </div>
-
-      <section class="contenedor1">
-        <% locals.libros?.forEach(libro => { %>
-        <a href=<%= "/products/" + libro.id %> class="product">
-          <div class="image-container">
-            <img class="product-image" src=<%= "/img/products/" + libro.img_path %> >
-          </div>
-
-          <div class="descrip">
-            <div class="precio">
-              $ <%= toThousand(libro.price) %>
+    <div class="body-wrapper">
+      <main>
+        <img class="reference" src="/img/library.png" alt="library">
+        <div>
+          <h1 class="initial">
+            <span class="laptop">👇</span> Algunos títulos que te recomendamos <span class="laptop">👇</span>
+          </h1>
+        </div>
+        <section class="contenedor1">
+          <% locals.libros?.forEach(libro => { %>
+          <a href=<%= "/products/" + libro.id %> class="product">
+            <div class="image-container">
+              <img class="product-image" src=<%= "/img/products/" + libro.img_path %> >
             </div>
-
-            <div class="title">
-              <%= libro.name %>
+            <div class="descrip">
+              <div class="precio">
+                $ <%= toThousand(libro.price) %>
+              </div>
+              <div class="title">
+                <%= libro.name %>
+              </div>
+              <div class="author">
+                <%= libro.author %>
+              </div>
             </div>
-
-            <div class="author">
-              <%= libro.author %>
-            </div>
-          </div>
-        </a>
-        <% }) %>
-      </section>
-    </main>
-
-    <%- include("./partials/footer") %>
+          </a>
+          <% }) %>
+        </section>
+      </main>
+      
+      <%- include("./partials/footer") %>
+    </div>
   </body>
 
 </html>

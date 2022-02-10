@@ -11,38 +11,35 @@
     
     <%- include("./partials/whatsapp") %>
 
-    <main>
-      <div>
-        <h1 class="initial">Resultados de busqueda:</h1>
-      </div>
-      <section class="contenedor1">
-        <% libros.forEach(libro => { %>
-
-        <a href=<%= "/products/" + libro.id %> class="product">
-          <div class="image-container">
-            <img class="product-image" src=<%= "/img/products/" + libro.img_path %>>
-          </div>
-
-          <div class="descrip">
-            <div class="precio">
-              $ <%= toThousand(libro.price) %>
+    <div class="body-wrapper">
+      <main>
+        <div>
+          <h1 class="initial">Resultados de busqueda:</h1>
+        </div>
+        <section class="contenedor1">
+          <% libros.forEach(libro => { %>
+          <a href=<%= "/products/" + libro.id %> class="product">
+            <div class="image-container">
+              <img class="product-image" src=<%= "/img/products/" + libro.img_path %>>
             </div>
-
-            <div class="title">
-              <%= libro.name %>
+            <div class="descrip">
+              <div class="precio">
+                $ <%= toThousand(libro.price) %>
+              </div>
+              <div class="title">
+                <%= libro.name %>
+              </div>
+              <div class="author">
+                <%= libro.author %>
+              </div>
             </div>
-
-            <div class="author">
-              <%= libro.author %>
-            </div>
-          </div>
-        </a>
-        <% }) %>
-
-      </section>
-
-    </main>
-    <%- include("./partials/footer") %>
+          </a>
+          <% }) %>
+        </section>
+      </main>
+      
+      <%- include("./partials/footer") %>
+    </div>
   </body>
 
 </html>

@@ -16,62 +16,54 @@
 
     <%- include("../partials/whatsapp") %>
 
-    <main>
-      <h1>
-        Detalle del producto
-      </h1>
-
-      <section>
-        <article class="articulo">
-          <div class="articulo--top">
-            <div class="articulo--top--img">
-              <img src=<%= "/img/products/" + libro.img_path %> alt="">
-
-              <% if (locals.session?.user?.category === "vendor") { %>
-              <form action=<%= "/products/" + locals.id + "/edit?_method=PUT" %> method="post" class="articulo--top--img-edit auto-submit" enctype='multipart/form-data'>
-                <label for="img-edit">Cambiar foto</label>
-                <input type="file" name="product_img" id="img-edit" accept="image/*">
-              </form>
-              <% } %>
+    <div class="body-wrapper">
+      <main>
+        <h1>
+          Detalle del producto
+        </h1>
+        <section>
+          <article class="articulo">
+            <div class="articulo--top">
+              <div class="articulo--top--img">
+                <img src=<%= "/img/products/" + libro.img_path %> alt="">
+                <% if (locals.session?.user?.category === "vendor") { %>
+                <form action=<%= "/products/" + locals.id + "/edit?_method=PUT" %> method="post" class="articulo--top--img-edit auto-submit" enctype='multipart/form-data'>
+                  <label for="img-edit">Cambiar foto</label>
+                  <input type="file" name="product_img" id="img-edit" accept="image/*">
+                </form>
+                <% } %>
+              </div>
+              <div class="articulo--top--info">
+                <h2 class="title-info">
+                  <strong><%= libro.name %></strong>
+                </h2>
+                <p class="author-info">
+                  <b>Autor:</b> <%= libro.author %>
+                </p>
+                <p class="isbn-info">
+                  <b>ISBN:</b> <%= libro.isbn %>
+                </p>
+                <p class="house-info">
+                  <b>Editorial:</b> <%= libro.house %>
+                </p>
+                <p class="price-info">
+                  <b>Precio:</b> $<%= toThousand(libro.price) %>
+                </p>
+                <p class="description-info">
+                  <%= libro.description %>
+                </p>
+                <% if (locals.session?.user?.category === "vendor") { %>
+                <a href=<%= "/products/" + locals.id + "/edit" %> class="articulo--edit">
+                  Editar producto
+                </a>
+                <% } %>
+              </div>
             </div>
-
-            <div class="articulo--top--info">
-              <h2 class="title-info">
-                <strong><%= libro.name %></strong>
-              </h2>
-
-              <p class="author-info">
-                <b>Autor:</b> <%= libro.author %>
-              </p>
-
-              <p class="isbn-info">
-                <b>ISBN:</b> <%= libro.isbn %>
-              </p>
-
-              <p class="house-info">
-                <b>Editorial:</b> <%= libro.house %>
-              </p>
-
-              <p class="price-info">
-                <b>Precio:</b> $<%= toThousand(libro.price) %>
-              </p>
-
-              <p class="description-info">
-                <%= libro.description %>
-              </p>
-
-              <% if (locals.session?.user?.category === "vendor") { %>
-              <a href=<%= "/products/" + locals.id + "/edit" %> class="articulo--edit">
-                Editar producto
-              </a>
-              <% } %>
-            </div>
-          </div>
-        </article>
-      </section>
-    </main>
-
-    <%- include("../partials/footer") %>
+          </article>
+        </section>
+      </main>
+      <%- include("../partials/footer") %>
+    </div>
   </body>
 
 </html>
