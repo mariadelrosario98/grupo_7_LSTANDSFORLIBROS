@@ -18,9 +18,9 @@
     <%- include("search-form", {deviceClass: "laptop"}) %>
 
     <div class="top-right">
-      <a href="/product-cart">
-        <i class="fas fa-shopping-cart"></i>
-      </a>
+      <div class="color-switch">
+
+      </div>
 
       <% if (locals.session?.user) { %>
         <h3 class="hola laptop">Hola <%= session.user.first_name %></h3>
@@ -35,9 +35,9 @@
           </button>
         </form>
       <% } else { %>
-        <a href="/users/login" class="top-button">Ingresa</a>
+        <a href="/users/login" class="top-button btn">Ingresa</a>
 
-        <a href="/users/register" class="top-button">Regístrate</a>
+        <a href="/users/register" class="top-button btn">Regístrate</a>
       <% } %>
 
       <!-- 

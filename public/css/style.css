@@ -1,24 +1,42 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
 
 :root {
-  --main-color1: #14279B;
-  --main-color2: #3D56B2;
-  --main-color3: #5C7AEA;
-  --main-color3__transparent: #5C7AEAAA;
-  --main-color4: #E6E6E6;
+  --main-color1: #362706;
+  --main-color2: #464E2E;
+  --main-color3: #ACB992;
+  --main-color3__transparent: #ACB992AA;
+  --main-color4: #E9E5D6;
+
+  --band-color: var(--main-color2);
+  --text-color: var(--black);
+  --switch-color: black;
+
+  --mode-icon: "🌙";
+
   --shadow-color: #000;
   --detail-color: #ccc;
   --profile-color: #fff;
-  --white-text-color: #fff;
+
+  --white: #fff;
+  --black: #222;
 
   --bg: url("/img/bg.png")
 }
 
 .dark-mode {
-  --main-color1: black;
-  --main-color2: red;
-  --main-color3: green;
-  --main-color4: yellow;
+  --main-color1: #0F044C;
+  --main-color2: #141E61;
+  --main-color3: #787A91;
+  --main-color3__transparent: #787A91AA;
+  --main-color4: #EEEEEE;
+  --band-color: transparent;
+  --text-color: var(--white);
+  --switch-color: white;
+  --mode-icon: "☀️";
+  --logo-shadow: 0.5em;
+  --detail-color: #555;
+
+  --bg: url("/img/dark-bg.jpg");
 }
 
 * {
@@ -131,6 +149,30 @@ header .top .top-right .fa-shopping-cart:hover {
   transform: rotate(-15deg);
 }
 
+header .color-switch {
+  height: 1.2em;
+  padding: 1.2em;
+  position: relative;
+  background-color: var(--switch-color);
+  opacity: 0.8;
+  margin-right: 1em;
+  border-radius: 100%;
+}
+
+header .color-switch:hover {
+  cursor: pointer;
+  box-shadow: 0 0 20px var(--switch-color);
+  opacity: 1;
+}
+
+header .color-switch::after {
+  content: var(--mode-icon);
+  position: absolute;
+  right: 50%;
+  bottom: 50%;
+  transform: translate(50%, 50%);
+}
+
 header .pfp {
   height: 3em;
   width: 3em;
@@ -156,18 +198,7 @@ header .logout-icon:hover {
 }
 
 .top-button {
-  font-size: 16px;
-  background-color: var(--main-color3);
-  padding: 10px;
-  margin-right: 10px;
-  border: 1px solid var(--main-color1);
-  border-radius: 3em;
-  transition: all 0.2s;
-}
-
-.top-button:hover {
-  color: var(--main-color1);
-  background-color: var(--main-color4);
+  display: none;
 }
 
 header .top .top-center {
@@ -231,6 +262,7 @@ a {
 
 h1 {
   text-align: center;
+  color: var(--text-color);
 }
 
 nav {
@@ -244,8 +276,8 @@ nav {
 
 main {
   width: 100%;
-  background-image: var(--bg);
-  background-color: var(--main-color4);
+  padding: 50px 0;
+  background: var(--bg);
 }
 
 footer {
@@ -306,19 +338,24 @@ button.search {
   width: 100%;
 }
 
-.initial, .initial__search {
+.initial {
+  padding-top: 1em;
+}
+
+.initial h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--main-color2);
+  background-color: var(--band-color);
   color: var(--main-color4);
   height: fit-content;
+  margin: 0;
   padding: 0.5em;
 }
 
-.initial__search {
+.initial__search h1 {
   background-color: inherit;
-  color: black;
+  color: var(--text-color);
   font-weight: bold;
 }
 
@@ -387,17 +424,16 @@ button.search {
   padding: 5px 0 0;
 } */
 
-.truckie {
+/* .truckie {
   background-color: white;
   color: #39b54a;
   text-align: left;
   position: relative;
   max-width: 2px;
-}
+} */
 
 .precio {
   margin: auto;
-  color: var(--main-color1);
 }
 
 .small-container {
@@ -423,7 +459,7 @@ button.search {
   max-width: 90%;
   background: var(--main-color2);
   padding: 3em 2em 2em;
-  margin: 50px auto;
+  margin: 0 auto;
   border-radius: 2.5em;
   font-family: 'Open Sans', sans-serif;
   color: var(--main-color4);
@@ -568,6 +604,7 @@ button.search {
   height: 5em;
   padding: 2px;
   margin-top: 5px;
+  color: var(--text-color);
   display: flex;
   flex-direction: column;
 }
@@ -671,6 +708,23 @@ button.search {
     flex-flow: wrap column;
     justify-content: center;
     font-weight: bold;
+    text-shadow: 0 0 var(--logo-shadow, 0) white;
+  }
+
+  .top-button {
+    display: block;
+    font-size: 16px;
+    background-color: var(--main-color3);
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid var(--main-color1);
+    border-radius: 3em;
+    transition: all 0.2s;
+  }
+  
+  .top-button:hover {
+    color: var(--main-color1);
+    background-color: var(--main-color4);
   }
 
   .contenedor1,

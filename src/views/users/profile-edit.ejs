@@ -12,53 +12,53 @@
 
     <%- include("../partials/whatsapp") %>
 
-    <main>
-      <form class="form-register" action="/users/profile/edit?_method=PUT" method="post">
-        <h3>Edita tu perfil</h3>
-
-        <label for="first_name">
-          Nombre <sup class="required">*</sup>
-        </label>
-        <input class="controls login-box__input" type="text" name="first_name" id="first_name" 
-        value="<%= locals.session.user.first_name %>" placeholder="<%= locals.session.user.first_name %>" autofocus> 
-        <p class="feedback"><%= locals.errors?.first_name?.msg %> </p>
-        
-        <label for="last_name">
-          Apellido <sup class="required">*</sup>
-        </label>
-        <input class="controls login-box__input" type="text" name="last_name" id="last_name" 
-        value="<%= locals.session.user.last_name %>" placeholder="<%= locals.session.user.last_name %>">
-        <p class="feedback"><%= locals.errors?.last_name?.msg %> </p>
-        
-        <div class="category-box" <% if (locals.session.user.category === "vendor") { %> style="display: block" <% } %> >
-          <label for="category">
-            Categoria <sup class="required">*</sup>
+    <div class="body-wrapper">
+      <main>
+        <form class="form-register" action="/users/profile/edit?_method=PUT" method="post">
+          <h3>Edita tu perfil</h3>
+          <label for="first_name">
+            Nombre <sup class="required">*</sup>
           </label>
-          <div class="category">
-            <input type="radio" name="category" id="buyer" value="buyer"
-            <% if (locals.session.user.category === "buyer") { %> checked <% } %> >
-            <label for="buyer">Comprador</label>
-          </div>
-          <% if (locals.session.user.category === "vendor") { %>
+          <input class="controls login-box__input" type="text" name="first_name" id="first_name"
+          value="<%= locals.session.user.first_name %>" placeholder="<%= locals.session.user.first_name %>" autofocus>
+          <p class="feedback"><%= locals.errors?.first_name?.msg %> </p>
+      
+          <label for="last_name">
+            Apellido <sup class="required">*</sup>
+          </label>
+          <input class="controls login-box__input" type="text" name="last_name" id="last_name"
+          value="<%= locals.session.user.last_name %>" placeholder="<%= locals.session.user.last_name %>">
+          <p class="feedback"><%= locals.errors?.last_name?.msg %> </p>
+      
+          <div class="category-box" <% if (locals.session.user.category === "vendor") { %> style="display: block" <% } %> >
+            <label for="category">
+              Categoria <sup class="required">*</sup>
+            </label>
             <div class="category">
-              <input type="radio" name="category" id="vendor" value="vendor" checked>
-              <label for="vendor">Vendedor</label>
+              <input type="radio" name="category" id="buyer" value="buyer"
+              <% if (locals.session.user.category === "buyer") { %> checked <% } %> >
+              <label for="buyer">Comprador</label>
             </div>
-          <% } %>
-        </div>
-        
-        <label for="email">
-          Correo electrónico <sup class="required">*</sup>
-        </label>
-        <input class="controls login-box__input" type="email" name="email" id="email" 
-        value="<%= locals.session.user.email %>" placeholder="<%= locals.session.user.email %>">
-        <p class="feedback"><%= locals.errors?.email?.msg %> </p>
-        
-        <input class="botons" type="submit" value="Guardar">
-      </form>
-    </main>
-
-    <%- include("../partials/footer") %>
+            <% if (locals.session.user.category === "vendor") { %>
+              <div class="category">
+                <input type="radio" name="category" id="vendor" value="vendor" checked>
+                <label for="vendor">Vendedor</label>
+              </div>
+            <% } %>
+          </div>
+      
+          <label for="email">
+            Correo electrónico <sup class="required">*</sup>
+          </label>
+          <input class="controls login-box__input" type="email" name="email" id="email"
+          value="<%= locals.session.user.email %>" placeholder="<%= locals.session.user.email %>">
+          <p class="feedback"><%= locals.errors?.email?.msg %> </p>
+      
+          <input class="botons" type="submit" value="Guardar">
+        </form>
+      </main>
+      <%- include("../partials/footer") %>
+    </div>
   </body>
 
 </html>

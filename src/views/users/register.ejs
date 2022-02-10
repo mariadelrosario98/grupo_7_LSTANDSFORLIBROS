@@ -12,77 +12,77 @@
   <body>
     <%- include("../partials/header") %> 
 
-    <main>
-      <form class="form-register" action="/users/register" method="post">
-        <h3>Registrate</h3>
-
-        <label for="first_name">
-          Nombre <sup class="required">*</sup>
-        </label>
-        <input class="controls login-box__input" type="text" name="first_name" id="first_name" 
-        value="<%= locals.body?.first_name %>" placeholder="Ingrese su nombre aquí"  autofocus>
-        <p class="feedback">
-          <%= locals.errors?.first_name?.msg %>
-        </p>
-        
-        <label for="last_name">
-          Apellido <sup class="required">*</sup>
-        </label>
-        <input class="controls login-box__input" type="text" name="last_name" id="last_name" 
-        value="<%= locals.body?.last_name %>" placeholder="Ingrese sus apellidos aquí">
-        <p class="feedback">
-          <%= locals.errors?.last_name?.msg %>
-        </p>
-        
-        <div class="category-box">
-          <label for="category">
-            Categoria <sup class="required">*</sup>
+    <div class="body-wrapper">
+      <main>
+        <form class="form-register" action="/users/register" method="post">
+          <h3>Registrate</h3>
+          <label for="first_name">
+            Nombre <sup class="required">*</sup>
           </label>
-          <div class="category">
-            <input type="radio" name="category" id="buyer" value="buyer" checked>
-            <label for="buyer">Comprador</label>
+          <input class="controls login-box__input" type="text" name="first_name" id="first_name"
+          value="<%= locals.body?.first_name %>" placeholder="Ingrese su nombre aquí"  autofocus>
+          <p class="feedback">
+            <%= locals.errors?.first_name?.msg %>
+          </p>
+      
+          <label for="last_name">
+            Apellido <sup class="required">*</sup>
+          </label>
+          <input class="controls login-box__input" type="text" name="last_name" id="last_name"
+          value="<%= locals.body?.last_name %>" placeholder="Ingrese sus apellidos aquí">
+          <p class="feedback">
+            <%= locals.errors?.last_name?.msg %>
+          </p>
+      
+          <div class="category-box">
+            <label for="category">
+              Categoria <sup class="required">*</sup>
+            </label>
+            <div class="category">
+              <input type="radio" name="category" id="buyer" value="buyer" checked>
+              <label for="buyer">Comprador</label>
+            </div>
           </div>
-        </div>
-        
-        <label for="email">
-          Correo electrónico <sup class="required">*</sup>
-        </label>
-        <input class="controls login-box__input" type="email" name="email" id="email" 
-        value="<%= locals.body?.email %>" placeholder="Ingrese su correo aquí">
-        <p class="feedback">
-          <%= locals.errors?.email?.msg %>
-        </p>
-        
-        <label for="password">
-          Contraseña <sup class="required">*</sup>
-        </label>
-        <input class="controls login-box__input" type="password" name="password" id="password"
-        placeholder="Ingrese su contraseña aquí">
-        <p class="feedback">
-          <%= locals.errors?.password?.msg %>
-        </p>
-        
-        <label for="passwordConfirm">
-          Confirmar contraseña <sup class="required">*</sup>
-        </label>
-        <input class="controls login-box__input" type="password" name="passwordConfirm" id="passwordConfirm"
-        placeholder="Ingrese su contraseña aquí">
-        <p class="feedback">
-          <%= locals.errors?.passwordConfirm?.msg %>
-        </p>
-        
-        
-        <p class="terms">
-          <input type="checkbox" name="agree" id="agree">
-          <label for="agree">
-            Estoy de acuerdo con los <a href="#"><b>Términos y Condiciones</b></a>
+      
+          <label for="email">
+            Correo electrónico <sup class="required">*</sup>
           </label>
-        </p>
-        
-        <input class="botons" type="submit" value="Registrar">
-      </form>
-    </main>
-
-    <%- include("../partials/footer") %>
+          <input class="controls login-box__input" type="email" name="email" id="email"
+          value="<%= locals.body?.email %>" placeholder="Ingrese su correo aquí">
+          <p class="feedback">
+            <%= locals.errors?.email?.msg %>
+          </p>
+      
+          <label for="password">
+            Contraseña <sup class="required">*</sup>
+          </label>
+          <input class="controls login-box__input" type="password" name="password" id="password"
+          placeholder="Ingrese su contraseña aquí">
+          <p class="feedback">
+            <%= locals.errors?.password?.msg %>
+          </p>
+      
+          <label for="passwordConfirm">
+            Confirmar contraseña <sup class="required">*</sup>
+          </label>
+          <input class="controls login-box__input" type="password" name="passwordConfirm" id="passwordConfirm"
+          placeholder="Ingrese su contraseña aquí">
+          <p class="feedback">
+            <%= locals.errors?.passwordConfirm?.msg %>
+          </p>
+      
+      
+          <p class="terms">
+            <input type="checkbox" name="agree" id="agree">
+            <label for="agree">
+              Estoy de acuerdo con los <a href="#"><b>Términos y Condiciones</b></a>
+            </label>
+          </p>
+      
+          <input class="botons" type="submit" value="Registrar">
+        </form>
+      </main>
+      <%- include("../partials/footer") %>
+    </div>
   </body>
 </html>

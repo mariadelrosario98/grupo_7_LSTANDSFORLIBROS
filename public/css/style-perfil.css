@@ -13,7 +13,6 @@
   flex-wrap: wrap;
   gap: 1em;
 
-  box-shadow: 0 1px 20px 0 rgba(69,90,100,.08);
   box-sizing: content-box;
   position: relative;
   margin: 2em;
@@ -24,7 +23,7 @@
   padding: 30px 25px;
   border-radius: 1em;
   text-align: center;
-  color: var(--white-text-color);
+  color: var(--white);
   overflow: hidden;
   flex: 0 1 400px;
   max-width: 350px;
@@ -53,6 +52,7 @@
   margin-bottom: 25px;
   padding-top: 5em;
   width: 90%;
+  color: var(--text-color);
 }
 
 .wrapper .right .info h2{
@@ -73,9 +73,8 @@
 }
 
 .wrapper .right .info_data .data h4{
-  color: #353c4e;
+  /* color: #353c4e; */
   margin-bottom: 5px;
-
 }
 
 .wrapper .right .info_data p{
@@ -161,7 +160,7 @@
 .image-container{
   position: absolute;
   bottom: 0;
-  background-color: rgba(61,86,178, 0.5);
+  background-color: var(--main-color3__transparent);
   width: 100%;
   height: 30%;
   display: none;

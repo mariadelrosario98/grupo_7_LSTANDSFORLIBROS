@@ -1,5 +1,6 @@
 .articulo {
   border-radius: 1.5em;
+  color: var(--text-color);
   background-color: var(--detail-color);
   width: clamp(300px, 80%, 800px);
 
