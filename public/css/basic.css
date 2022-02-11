@@ -1,19 +1,19 @@
 .btn {
-  --solid: var(--main-color3);
-  --light: var(--text-color);
+  --btn-fill: var(--main-color3, red);
+  --btn-text: var(--text-color, white);
 
   padding: 1em 1.5em;
-  border: 1px solid var(--solid);
+  border: 1px solid var(--btn-fill);
   border-radius: 9999px;
-  background-color: var(--solid);
-  color: var(--light);
+  background-color: var(--btn-fill);
+  color: var(--btn-text);
 
   transition: 0.1s;
 }
 
 .btn:hover {
-  --solid: var(--text-color);
-  --light: var(--main-color3);
+  --btn-fill: var(--text-color);
+  --btn-text: var(--main-color3);
 
   cursor: pointer;
 }

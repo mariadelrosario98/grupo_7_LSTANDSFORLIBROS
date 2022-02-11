@@ -6,9 +6,11 @@ const controller = {
   index: async (req, res) => {
     // return res.json(req.session)
     try {
+      console.time("Test")
       let libros = await productsModel.getAllProducts()
+      console.timeEnd("Test")
       res.status(200).render("index", {libros, toThousand})
-    } catch (error) {
+  } catch (error) {
       console.error(error)
       res.status(500).send(error)
     }
