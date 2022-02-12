@@ -17,7 +17,7 @@
   --detail-color: #ccc;
   --profile-color: #fff;
 
-  --white: #fff;
+  --white: #eee;
   --black: #222;
 
   --bg: url("/img/bg.png")
@@ -168,6 +168,7 @@ header .color-switch:hover {
 header .color-switch::after {
   content: var(--mode-icon);
   position: absolute;
+  font-size: 1.4em;
   right: 50%;
   bottom: 50%;
   transform: translate(50%, 50%);
@@ -188,13 +189,7 @@ header .pfp img {
 }
 
 header .logout-icon {
-  font-size: 2.5em;
-  transition: all 0.2s;
-  color: var(--main-color4);
-}
-
-header .logout-icon:hover {
-  color: hsl(0, 100%, 50%);
+  display: none;
 }
 
 .top-button {
@@ -245,10 +240,6 @@ header form button {
   border-radius: 0 10px 10px 0;
 
   background-color: var(--main-color4);
-}
-
-header form button.logout-icon {
-  background-color: inherit;
 }
 
 ul {
@@ -304,6 +295,7 @@ button.search {
   margin: auto;
   text-align: center;
   padding-bottom: 10px;
+  color: var(--text-color)
 }
 
 .products-table td {
@@ -328,6 +320,10 @@ button.search {
   color: var(--main-color2);
 }
 
+.products-table form.delete button{
+  background-color: transparent;
+}
+
 .titulo-edit {
   display: flex;
   margin: auto;
@@ -343,9 +339,6 @@ button.search {
 }
 
 .initial h1 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background-color: var(--band-color);
   color: var(--main-color4);
   height: fit-content;
@@ -549,7 +542,7 @@ button.search {
 }
 
 .eyecon:hover {
-  color: hsl(240deg, 100%, 60%);
+  color: hsl(210deg, 100%, 60%);
 }
 
 .edit-icon:hover {
@@ -558,6 +551,7 @@ button.search {
 
 .delete-icon {
   border: none;
+  color: var(--text-color);
 }
 
 .delete-icon:hover {
@@ -680,10 +674,6 @@ button.search {
   background-color: #128C7E;
 }
 
-.laptop {
-  display: none;
-}
-
 .flex-responsive {
   flex-direction: column;
   align-items: center;
@@ -727,6 +717,18 @@ button.search {
     background-color: var(--main-color4);
   }
 
+  header .logout-icon {
+    display: block;
+    font-size: 2.5em;
+    transition: all 0.2s;
+    color: var(--main-color4);
+    background-color: transparent;
+  }
+  
+  header .logout-icon:hover {
+    color: hsl(0, 100%, 50%);
+  }
+
   .contenedor1,
   .contenedor2 {
     display: flex;
@@ -738,13 +740,14 @@ button.search {
   }
 }
 
+@media (max-width: 769px) {
+  .laptop {
+    display: none;
+  }
+}
 
 /* Vista laptop */
 @media (min-width: 769px) {
-  .laptop {
-    display: flex;
-  }
-
   .mobile {
     display: none;
   }
