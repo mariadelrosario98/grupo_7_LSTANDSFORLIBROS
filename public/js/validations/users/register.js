@@ -1,11 +1,10 @@
-const firstNameInput = document.querySelector("#first_name")
-const lastNameInput = document.querySelector("#last_name")
-const emailInput = document.querySelector("#email")
-const passwordInput = document.querySelector("#password")
-const passwordConfirmInput = document.querySelector("#passwordConfirm")
-
 const form = document.querySelector(".form-register")
-const submitBtn = document.querySelector(`.form-register input[type="submit"]`)
+
+const firstNameInput = form.first_name
+const lastNameInput = form.last_name
+const emailInput = form.email
+const passwordInput = form.password
+const passwordConfirmInput = form.passwordConfirm
 
 const validFirstName = () => {
   let firstName = firstNameInput.value
@@ -71,7 +70,7 @@ passwordConfirmInput.addEventListener("input", e => {
   sendFeedback(passwordConfirmInput, validConfirmPassword())
 })
 
-submitBtn.addEventListener("click", e => {
+form.addEventListener("submit", e => {
   e.preventDefault()
   if (!validFirstName() && !validLastName() && !validEmail() && !validPassword() && !validConfirmPassword())
     return form.submit()

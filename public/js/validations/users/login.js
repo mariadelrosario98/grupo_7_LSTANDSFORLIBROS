@@ -1,8 +1,7 @@
-const emailInput = document.querySelector("#email")
-const passwordInput = document.querySelector("#password")
-
 const form = document.querySelector(".form-login")
-const submitBtn = document.querySelector(`.form-login input[type="submit"]`)
+
+const emailInput = form.email
+const passwordInput = form.password
 
 const validEmail = () => {
   let email = emailInput.value
@@ -32,7 +31,7 @@ passwordInput.addEventListener("input", e => {
   sendFeedback(passwordInput, validPassword())
 })
 
-submitBtn.addEventListener("click", e => {
+form.addEventListener("submit", e => {
   e.preventDefault()
   if (!validEmail() && !validPassword())
     return form.submit()

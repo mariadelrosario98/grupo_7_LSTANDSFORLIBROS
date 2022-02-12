@@ -4,7 +4,6 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const controller = {
   index: async (req, res) => {
-    // return res.json(req.session)
     try {
       console.time("Test")
       let libros = await productsModel.getAllProducts()
