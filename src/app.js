@@ -36,7 +36,9 @@ app.use(async (req, res, next) => {
 
   if (!req.session.user && req.cookies?.email) {
     let email = req.cookies.email
+    console.time("Get user")
     req.session.user = await usersModel.getUserBy({email})
+    console.timeEnd("Get user")
   }
 
   res.locals.session = req.session || null

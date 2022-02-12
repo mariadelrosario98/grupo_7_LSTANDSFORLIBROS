@@ -1,19 +1,6 @@
-const res = require('express/lib/response')
 const db = require('../database/models')
 const Op = db.Sequelize.Op
-
-class Product {
-  constructor({name, author, isbn, house, genre, price, desc, img_path}) {
-    this.img_path = img_path ?? "default.png"
-    this.name = name
-    this.author = author
-    this.isbn = isbn
-    this.house = house
-    this.genre = genre
-    this.price = parseInt(price)
-    this.desc = desc
-  }
-}
+const { Product } = require('./classes')
 
 
 const model = {
