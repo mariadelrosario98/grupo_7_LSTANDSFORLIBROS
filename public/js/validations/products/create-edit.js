@@ -4,7 +4,6 @@ const isbnInput = document.querySelector("#isbn")
 const houseInput = document.querySelector("#house")
 const priceInput = document.querySelector("#price")
 const descriptionInput = document.querySelector("#description")
-const ISBN = require( 'isbn-validate' )  //! Borrar esta linea
 
 const form = document.querySelector(".form-register")
 const submitBtn = document.querySelector(`.form-register input[type="submit"]`)
@@ -26,8 +25,7 @@ const validAuthor = () => {
 const validIsbn = () => {
   let isbn = isbnInput.value
   if (!isbn) return "Por favor ingresa el código del libro"
-  if (!ISBN.Validate(isbn)) return "Por favor ingresa un código válido" //! Utiliza validator.isISBN(isbn) para validar
-  return null
+  if (!validator.isISBN(isbn)) return "Por favor ingresa un código válido" 
 }
 
 const validHouse = () => {
@@ -39,8 +37,7 @@ const validHouse = () => {
 
 const validPrice = () => {
   let price = priceInput.value
-  if (!price) return "Por favor ingresa una contraseña"
-  if (!isNaN(price)) return "Debes ingresar un número" //! Esta validación no es necesaria
+  if (!price) return "Por favor ingresa un precio"
   return null
 }
 
