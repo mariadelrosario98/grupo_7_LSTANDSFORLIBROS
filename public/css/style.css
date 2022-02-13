@@ -13,7 +13,7 @@
 
   --mode-icon: "🌙";
 
-  --shadow-color: black;
+  --shadow-color: #000;
   --detail-color: #ccc;
   --profile-color: #fff;
 
@@ -63,7 +63,7 @@ body {
 ::-webkit-scrollbar-thumb {
   background: var(--main-color4);
   border: 3px solid var(--main-color2);
-  border-radius: 50px;
+  border-radius: 9999em;
 }
 
 img {
@@ -829,7 +829,8 @@ button.search {
   width: 100%;
 }
 
-input[type = "checkbox"], input[type = "radio"] {
+input[type = "checkbox"],
+input[type = "radio"] {
   width: 6%;
   border: none;
   cursor: pointer;
@@ -900,4 +901,8 @@ input[type = "checkbox"], input[type = "radio"] {
 
   /* padding: 1em; */
   margin-top: 0.5em;
+}
+
+.center {
+  text-align: center;
 }

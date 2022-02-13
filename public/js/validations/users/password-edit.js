@@ -17,6 +17,7 @@ const validNewPassword = () => {
   if (newpassword.length < 8) return "Debe tener al menos 8 caracteres"
   return null
 }
+
 const validConfirmPassword = () => {
   let newpassword = new_password.value
   let passwordconfirm = passwordConfirmInput.value

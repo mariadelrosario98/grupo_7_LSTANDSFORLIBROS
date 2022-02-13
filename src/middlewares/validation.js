@@ -13,7 +13,7 @@ const validation = (view) => {
     // Si se envió un archivo, se elimina de la carpeta pública
     if (req.file) {
       let filename = req.file.filename
-      let folder = filename.slice(0, 7) === "profile" ? "users" : "products"
+      let folder = view.split("/")[0]
       let fullPath = path.resolve(__dirname, "../../public/img", folder, filename)
 
       if (filename && filename !== "default.png" && fs.existsSync(fullPath))

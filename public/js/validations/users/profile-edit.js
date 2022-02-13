@@ -46,6 +46,7 @@ emailInput.addEventListener("input", e => {
   sendFeedback(emailInput, validEmail())
 })
 
+
 form.addEventListener("submit", e => {
   e.preventDefault()
   if (!validFirstName() && !validLastName() && !validEmail())
