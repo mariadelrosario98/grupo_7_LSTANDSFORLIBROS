@@ -106,8 +106,9 @@
 
 .btn-1:hover {
   background: transparent;
-  color: var(--main-color2);
+  color: var(--profile-text-color);
   transition: all .1s ease-in;
+  text-shadow: 0 0 0.5em white
 }
 
 .btn-2{

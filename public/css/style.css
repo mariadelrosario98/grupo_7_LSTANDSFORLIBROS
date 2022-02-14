@@ -16,6 +16,7 @@
   --shadow-color: #000;
   --detail-color: #ccc;
   --profile-color: #fff;
+  --profile-text-color: var(--main-color2) ; 
 
   --white: #eee;
   --black: #222;
@@ -35,6 +36,7 @@
   --mode-icon: "☀️";
   --logo-shadow: 0.5em;
   --detail-color: #555;
+  --profile-text-color: white;
 
   --bg: url("/img/dark-bg.jpg");
 }

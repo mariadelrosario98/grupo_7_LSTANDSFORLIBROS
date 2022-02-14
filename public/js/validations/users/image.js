@@ -1,18 +1,18 @@
-const form = document.querySelector(".image-container auto-submit")
-const imageInput = document.getElementById('profile_pic').value.split('.').pop().toLowerCase();
-
+const form = document.querySelector("form.image-container")
+const imageInput = document.getElementById('profile_pic');
+let allowedExtensions = ['jpeg', 'jpg', 'png', 'gif'];
 
 const validImage = () => {
-  let allowedExtension = ['jpeg', 'jpg', 'png', 'gif'];
-  let isValidFile = false;
-  for(i in allowedExtension) {
-    if(fileExtension === allowedExtension[i]) {
-        isValidFile = true; 
-        break;
-    }
-  }
-  if(!isValidFile) {
-    alert('Debes subir un archivo en los siguientes formatos: *.' + allowedExtension.join(', *.'));
-  }
-  return isValidFile;
+  let extension = imageInput.value.split('.').pop().toLowerCase()
+  return allowedExtensions.includes(extension);
 }
+
+form.addEventListener("submit", e => {
+  e.preventDefault();
+  if(!validImage){
+    document.querySelector(".feedback").innerText="Tu imagen debe ser de las siguientes extensiones: jpeg, jpg, png o gif" 
+  }
+  else{
+    form.submit()
+  }
+})

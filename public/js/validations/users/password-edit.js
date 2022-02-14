@@ -1,27 +1,27 @@
 const form = document.querySelector(".form-register")
 
-const oldPassword = form.old_password
-const newPassword = form.new_password
+const oldPasswordInput = form.old_password
+const newPasswordInput = form.new_password
 const passwordConfirmInput = form.new_password_confirm
 
 const validOldPassword = () => {
-  let oldpassword = old_password.value
+  let oldpassword = oldPasswordInput.value
   if (!oldpassword) return "Por favor ingresa una contraseña"
   if (oldpassword.length < 8) return "Debe tener al menos 8 caracteres"
   return null
 }
 
 const validNewPassword = () => {
-  let newpassword = new_password.value
+  let newpassword = newPasswordInput.value
   if (!newpassword) return "Por favor ingresa una contraseña"
   if (newpassword.length < 8) return "Debe tener al menos 8 caracteres"
   return null
 }
 
 const validConfirmPassword = () => {
-  let newpassword = new_password.value
+  let newpassword = newPasswordInput.value
   let passwordconfirm = passwordConfirmInput.value
-  if (new_password !== passwordConfirmInput) return "Contraseñas no coinciden"
+  if (newpassword !== passwordconfirm) return "Contraseñas no coinciden"
   return null
 }
 

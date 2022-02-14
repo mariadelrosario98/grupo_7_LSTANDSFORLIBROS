@@ -113,18 +113,33 @@ module.exports = {
   },
 
   product: [
-    check("name").notEmpty().withMessage("Debes ingresar un nombre para este libro"),
+    check("name").notEmpty().withMessage("Debes ingresar un nombre para este libro").bail()
+    .isLength({
+      min: 5
+    }).withMessage(`Debe tener al menos 5 caracteres de longitud`),
 
-    check("author").notEmpty().withMessage("Debes ingresar un nombre de autor"),
+
+    check("author").notEmpty().withMessage("Debes ingresar un nombre de autor").bail()
+    .isLength({
+      min: 2
+    }).withMessage(`Debe tener al menos 2 caracteres de longitud`),
 
     check("isbn")
       .notEmpty().withMessage("Debes ingresar un ISBN").bail()
       .isISBN().withMessage("ISBN inválido"),
 
-    check("house").notEmpty().withMessage("Debes ingresar un nombre de editorial"),
+    check("house").notEmpty().withMessage("Debes ingresar un nombre de editorial").bail()
+    .isLength({
+      min: 2
+    }).withMessage(`Debe tener al menos 2 caracteres de longitud`),
 
     check("price")
       .notEmpty().withMessage("Debes definir un precio").bail()
       .isInt().withMessage("Debe ser un número"),
+    
+    check("description")
+    .isLength({
+      min: 20
+    }).withMessage(`Debe tener al menos 20 caracteres de longitud`),
   ]
 }
