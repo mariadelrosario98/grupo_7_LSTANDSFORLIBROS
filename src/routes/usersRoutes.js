@@ -1,13 +1,11 @@
 const express = require("express")
 const router = express.Router()
 const { usersController } = require("../controller")
-const { multerUpload, redirects, errors, validation } = require("../middlewares")
+const { multerUpload, redirects, errors, validation, loginCookie } = require("../middlewares")
 
 // Inicio de sesión
 router.get("/login", redirects.user, usersController.login)
-
-const { loginCheck, loginCookie } = require("../middlewares")
-router.post("/login", loginCheck, loginCookie, usersController.signin)
+router.post("/login", errors.login, validation("users/login"), loginCookie, usersController.signin)
 
 // Registro
 router.get("/register", redirects.user, usersController.register)
@@ -21,7 +19,12 @@ router.get("/profile/edit", redirects.guest, usersController.edit)
 router.put("/profile/edit", errors.editUser, validation("users/profile-edit"), usersController.update)
 
 // Cambio de foto de perfil
-router.put("/profile", multerUpload("users", "profile_pic").single("profile_pic"), errors.pic("profile_pic"), validation("users/profile"), usersController.updatePic)
+router.put("/profile", 
+  multerUpload("users", "profile_pic").single("profile_pic"),
+  errors.pic("profile_pic"),
+  validation("users/profile"),
+  usersController.updatePic
+)
 
 // Cambio de contraseña
 router.get("/profile/password", redirects.guest, usersController.changePass)

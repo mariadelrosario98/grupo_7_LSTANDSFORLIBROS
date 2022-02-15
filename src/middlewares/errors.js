@@ -35,21 +35,21 @@ module.exports = {
 
   password: [
     check("old_password")
-    .notEmpty().withMessage("Ingresa tu contraseña anterior").bail()
-    .custom(async (value, {req}) => {
-      let id = req.session.user.id
-      let user = await usersModel.getUserBy({id})
-      let check = bcrypt.compareSync(value, user.password)
+      .notEmpty().withMessage("Ingresa tu contraseña anterior").bail()
+      .custom(async (value, {req}) => {
+        let id = req.session.user.id
+        let user = await usersModel.getUserBy({id})
+        let check = bcrypt.compareSync(value, user.password)
 
-      if (!check)
-        throw new Error("Wrong password")
+        if (!check)
+          throw new Error("Wrong password")
 
-      return true
-    }).withMessage("Contraseña anterior incorrecta"),
+        return true
+      }).withMessage("Contraseña anterior incorrecta"),
 
     check("new_password")
-    .notEmpty().withMessage("Ingresa una contraseña nueva").bail()
-    .isLength({ min: MIN_LENGTH }).withMessage(`Tu contraseña debe tener al menos ${MIN_LENGTH} caracteres de longitud`),
+      .notEmpty().withMessage("Ingresa una contraseña nueva").bail()
+      .isLength({ min: MIN_LENGTH }).withMessage(`Tu contraseña debe tener al menos ${MIN_LENGTH} caracteres de longitud`),
 
     check("new_password_confirm").custom((value, {req}) => {
       // Si las contraseñas no coinciden, se genera un nuevo error
@@ -67,23 +67,21 @@ module.exports = {
     check("last_name").notEmpty().withMessage("Ingresa tu apellido"),
 
     check("email")
-    .notEmpty().withMessage("Ingresa tu dirección de correo electrónico").bail()
-    .isEmail().withMessage("Dirección de correo inválida")
-    .custom(async (value, {req}) => {
-      let email = value
-      let isExisting = await usersModel.getUserBy({email})
+      .notEmpty().withMessage("Ingresa tu dirección de correo electrónico").bail()
+      .isEmail().withMessage("Dirección de correo inválida")
+      .custom(async value => {
+        let email = value
+        let isExisting = await usersModel.getUserBy({email})
 
-      if (isExisting)
-        throw new Error("Email already exists")
+        if (isExisting)
+          throw new Error("Email already exists")
 
-      return true
-    }).withMessage("Email ya existe!"),
+        return true
+      }).withMessage("Email ya existe!"),
 
     check("password")
-    .notEmpty().withMessage("Ingresa una contraseña").bail()
-    .isLength({
-      min: MIN_LENGTH
-    }).withMessage(`Tu contraseña debe tener al menos ${MIN_LENGTH} caracteres de longitud`),
+      .notEmpty().withMessage("Ingresa una contraseña").bail()
+      .isLength({ min: MIN_LENGTH }).withMessage(`Tu contraseña debe tener al menos ${MIN_LENGTH} caracteres de longitud`),
 
     check("passwordConfirm").custom((value, {req}) => {
       // Si las contraseñas no coinciden, se genera un nuevo error
@@ -93,6 +91,34 @@ module.exports = {
       // Se retorna true para indicar el éxito de este custom validator
       return true
     }).withMessage("Contraseñas no coinciden"),
+  ],
+
+  login: [
+    check("email")
+      .notEmpty().withMessage("Debes ingresar tu dirección de correo electrónico").bail()
+      .isEmail().withMessage("Dirección de correo electrónico inválida").bail()
+      .custom(async (value, {req}) => {
+        let email = value
+        let isExisting = await usersModel.getUserBy({email})
+
+        if (!isExisting)
+          throw new Error("Email doesn't exist in database")
+
+        return true
+      }).withMessage("Email no está registrado"),
+
+    check("password")
+      .notEmpty().withMessage("Debes ingresar tu contraseña").bail()
+      .custom(async (value, {req}) => {
+        let email = req.body.email
+        let user = await usersModel.getUserBy({email})
+        let check = bcrypt.compareSync(value, user.password)
+
+        if (!check)
+          throw new Error("Wrong password")
+
+        return true
+      }).withMessage("Contraseña incorrecta"),
   ],
 
   pic: (name) => {
@@ -113,33 +139,27 @@ module.exports = {
   },
 
   product: [
-    check("name").notEmpty().withMessage("Debes ingresar un nombre para este libro").bail()
-    .isLength({
-      min: 5
-    }).withMessage(`Debe tener al menos 5 caracteres de longitud`),
+    check("name")
+      .notEmpty().withMessage("Debes ingresar un nombre para este libro").bail()
+      .isLength({ min: 5 }).withMessage(`Debe tener al menos 5 caracteres de longitud`),
 
 
-    check("author").notEmpty().withMessage("Debes ingresar un nombre de autor").bail()
-    .isLength({
-      min: 2
-    }).withMessage(`Debe tener al menos 2 caracteres de longitud`),
+    check("author")
+      .notEmpty().withMessage("Debes ingresar un nombre de autor").bail()
+      .isLength({ min: 2 }).withMessage(`Debe tener al menos 2 caracteres de longitud`),
 
     check("isbn")
       .notEmpty().withMessage("Debes ingresar un ISBN").bail()
       .isISBN().withMessage("ISBN inválido"),
 
-    check("house").notEmpty().withMessage("Debes ingresar un nombre de editorial").bail()
-    .isLength({
-      min: 2
-    }).withMessage(`Debe tener al menos 2 caracteres de longitud`),
+    check("house")
+      .notEmpty().withMessage("Debes ingresar un nombre de editorial").bail()
+      .isLength({ min: 2 }).withMessage(`Debe tener al menos 2 caracteres de longitud`),
 
     check("price")
       .notEmpty().withMessage("Debes definir un precio").bail()
       .isInt().withMessage("Debe ser un número"),
     
-    check("description")
-    .isLength({
-      min: 20
-    }).withMessage(`Debe tener al menos 20 caracteres de longitud`),
+    check("description").isLength({ min: 20 }).withMessage(`Debe tener al menos 20 caracteres de longitud`),
   ]
 }

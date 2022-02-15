@@ -48,7 +48,7 @@
 }
 
 body {
-  font-family: 'Open Sans', "Arial", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -255,7 +255,7 @@ a {
 
 h1 {
   text-align: center;
-  color: var(--text-color);
+  color: var(--main-color4);
 }
 
 nav {

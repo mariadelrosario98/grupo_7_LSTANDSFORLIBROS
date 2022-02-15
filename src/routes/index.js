@@ -1,7 +1,3 @@
-// const homeRoutes = require("./home.routes")
-// const productsRoutes = require("./products.routes")
-// const usersRoutes = require("./users.routes")
-
 const fs = require("fs")
 const path = require("path")
 const object = {}

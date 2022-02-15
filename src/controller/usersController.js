@@ -5,19 +5,19 @@ const { usersModel } = require("../model")
 
 const controller = {
   // Renderiza el formulario de inicio de sesión
-  login: function(req, res) {
+  login(req, res) {
     res.status(200).render("users/login")
   },
 
 
   // Renderiza el formulario de registro
-  register: function(req, res) {
+  register(req, res) {
     res.status(200).render("users/register")
   },
 
 
   // Registra un usuario en la base de datos
-  save: async function(req, res) {
+  async save(req, res) {
     try {
       await usersModel.addUser(req.body)
 
@@ -25,6 +25,7 @@ const controller = {
       console.time("Get user")
       console.timeEnd("Get user")
       req.session.user = await usersModel.getUserBy({email})
+      req.session.user.password = null
       res.status(200).redirect("/users/profile")
     } catch (error) {
       console.error(error)
@@ -34,7 +35,7 @@ const controller = {
 
 
   // Proceso de inicio de sesión (luego de pasar por el middleware loginCheck)
-  signin: async function(req, res) {
+  async signin(req, res) {
     try {
       let email = req.body.email
       console.time("Get user")
@@ -42,6 +43,7 @@ const controller = {
       console.timeEnd("Get user")
       user.password = null
       req.session.user = user
+      req.session.user.password = null
       res.status(200).redirect("/users/profile")
     } catch (error) {
       console.error(error)
@@ -51,29 +53,30 @@ const controller = {
 
 
   // Perfil de usuario
-  profile: function(req, res) {
+  profile(req, res) {
     res.status(200).render("users/profile")
   },
 
 
   // Renderizar formulario de edición de perfil de usuario
-  edit: function(req, res) {
+  edit(req, res) {
     res.status(200).render("users/profile-edit")
   },
 
 
-  changePass: function(req, res) {
+  changePass(req, res) {
     res.status(200).render("users/password-edit")
   },
 
 
-  update: async function(req, res) {
+  async update(req, res) {
     let id = req.session.user.id
     let user = req.body;
     try {
       await usersModel.editUser(id, user)
       console.time("Get user")
       req.session.user = await usersModel.getUserBy({id})
+      req.session.user.password = null
       console.timeEnd("Get user")
       res.status(200).redirect("/users/profile")
     } catch (error) {
@@ -107,7 +110,7 @@ const controller = {
 
 
   // Actualizar contraseña
-  updatePass: async function(req, res) {
+  async updatePass(req, res) {
     let id = req.session.user.id
     let password = bcrypt.hashSync(req.body.new_password, 10)
     try {
@@ -121,7 +124,7 @@ const controller = {
 
 
   // Cierre de sesión
-  signout: function(req, res) {
+  signout(req, res) {
     req.session.destroy()
     res.clearCookie("email")
     // return res.json(req.session)

@@ -25,7 +25,8 @@ const validAuthor = () => {
 const validIsbn = () => {
   let isbn = isbnInput.value
   if (!isbn) return "Por favor ingresa el código del libro"
-  if (!validator.isISBN(isbn)) return "Por favor ingresa un código válido" 
+  if (!validator.isISBN(isbn)) return "Por favor ingresa un código válido"
+  return null
 }
 
 const validHouse = () => {

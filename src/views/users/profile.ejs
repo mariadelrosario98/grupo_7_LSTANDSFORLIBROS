@@ -17,7 +17,7 @@
           <div class="left">
             <div class="image">
               <img src=<%= "/img/users/" + locals.session.user.img_path %> alt="user" width="100">
-              <form class="image-container auto-submit" action="/users/profile?_method=PUT" method="post" enctype="multipart/form-data">
+              <form class="image-container" action="/users/profile?_method=PUT" method="post" enctype="multipart/form-data">
                 <label for="profile_pic" class="btn-2">Cambiar foto</label>
                 <input type="file" id="profile_pic" name="profile_pic" accept="image/*">
               </form>

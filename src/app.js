@@ -38,6 +38,7 @@ app.use(async (req, res, next) => {
     let email = req.cookies.email
     console.time("Get user")
     req.session.user = await usersModel.getUserBy({email})
+    req.session.user.password = null
     console.timeEnd("Get user")
   }
 
@@ -50,6 +51,10 @@ const { homeRoutes, productsRoutes, usersRoutes } = require("./routes")
 app.use("/", homeRoutes)
 app.use("/products", productsRoutes)
 app.use("/users", usersRoutes)
+
+const { productsAPIRoutes, usersAPIRoutes } = require("./routes/api")
+app.use("/API/products", productsAPIRoutes)
+app.use("/API/users", usersAPIRoutes)
 
 // Renderizar la vista correspondiente al error 404
 app.use((req, res) => {

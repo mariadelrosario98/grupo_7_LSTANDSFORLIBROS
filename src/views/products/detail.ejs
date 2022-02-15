@@ -5,10 +5,6 @@
     <%- include("../partials/head") %>
     <title>Detalles del producto</title>
     <link rel="stylesheet" href="/css/style-detail.css">
-
-    <% if (locals.session?.user?.category === "vendor") { %>
-      <script defer src="/js/auto-submit.js"></script>
-    <% } %>
   </head>
 
   <body>
@@ -21,13 +17,14 @@
         <h1>
           Detalle del producto
         </h1>
+        
         <section>
           <article class="articulo">
             <div class="articulo--top">
               <div class="articulo--top--img">
-                <img src=<%= "/img/products/" + libro.img_path %> alt="">
+                <img src=<%= "/img/products/" + locals.libro.img_path %> alt="">
                 <% if (locals.session?.user?.category === "vendor") { %>
-                <form action=<%= "/products/" + locals.id + "/edit?_method=PUT" %> method="post" class="articulo--top--img-edit auto-submit" enctype='multipart/form-data'>
+                <form action=<%= "/products/" + locals.id + "?_method=PUT" %> method="post" class="articulo--top--img-edit" enctype='multipart/form-data'>
                   <label for="img-edit">Cambiar foto</label>
                   <input type="file" name="product_img" id="img-edit" accept="image/*">
                 </form>
@@ -35,27 +32,30 @@
               </div>
               <div class="articulo--top--info">
                 <h2 class="title-info">
-                  <strong><%= libro.name %></strong>
+                  <strong><%= locals.libro.name %></strong>
                 </h2>
                 <p class="author-info">
-                  <b>Autor:</b> <%= libro.author %>
+                  <b>Autor:</b> <%= locals.libro.author %>
                 </p>
                 <p class="isbn-info">
-                  <b>ISBN:</b> <%= libro.isbn %>
+                  <b>ISBN:</b> <%= locals.libro.isbn %>
                 </p>
                 <p class="house-info">
-                  <b>Editorial:</b> <%= libro.house %>
+                  <b>Editorial:</b> <%= locals.libro.house %>
                 </p>
                 <p class="price-info">
-                  <b>Precio:</b> $<%= toThousand(libro.price) %>
+                  <b>Precio:</b> $<%= toThousand(locals.libro.price) %>
                 </p>
                 <p class="description-info">
-                  <%= libro.description %>
+                  <%= locals.libro.description %>
                 </p>
                 <% if (locals.session?.user?.category === "vendor") { %>
                 <a href=<%= "/products/" + locals.id + "/edit" %> class="articulo--edit btn-1">
                   Editar producto
                 </a>
+                <p class="feedback">
+                  <%= locals.errors?.product_img?.msg %>
+                </p>
                 <% } %>
               </div>
             </div>
@@ -64,6 +64,14 @@
       </main>
       <%- include("../partials/footer") %>
     </div>
+
+    <script>
+      const form = document.querySelector("form.articulo--top--img-edit")
+      const input = form.product_img
+      input.addEventListener("input", e => {
+        form.submit()
+      })
+    </script>
   </body>
 
 </html>

@@ -3,7 +3,7 @@ const { productsModel } = require("../model")
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const controller = {
-  index: async (req, res) => {
+  async index(req, res) {
     try {
       console.time("Get all products")
       let libros = await productsModel.getAllProducts()
@@ -15,7 +15,7 @@ const controller = {
     }
   },
 
-  cart: async (req, res) => {
+  async cart(req, res) {
     try {
       console.time("Get all products")
       let libros = await productsModel.getAllProducts()
@@ -27,7 +27,7 @@ const controller = {
     }
   },
 
-  search: async (req, res) => {
+  async search(req, res) {
     let queryString = req.query.query
     try {
       console.time("Search products")
