@@ -5,6 +5,7 @@
     <%- include("../partials/head") %>
     <title>Detalles del producto</title>
     <link rel="stylesheet" href="/css/style-detail.css">
+    <script defer src="/js/validations/products/product-image.js"></script>
   </head>
 
   <body>
@@ -24,7 +25,7 @@
               <div class="articulo--top--img">
                 <img src=<%= "/img/products/" + locals.libro.img_path %> alt="">
                 <% if (locals.session?.user?.category === "vendor") { %>
-                <form action=<%= "/products/" + locals.id + "?_method=PUT" %> method="post" class="articulo--top--img-edit" enctype='multipart/form-data'>
+                <form class="articulo--top--img-edit" action=<%= "/products/" + locals.id + "?_method=PUT" %> method="post"  enctype='multipart/form-data'>
                   <label for="img-edit">Cambiar foto</label>
                   <input type="file" name="product_img" id="img-edit" accept="image/*">
                 </form>
