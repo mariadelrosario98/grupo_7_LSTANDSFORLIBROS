@@ -19,6 +19,7 @@ const validLastName = () => {
   return null
 }
 
+//todo: No puede repetirse con los e-mails ya registrados
 const validEmail = () => {
   let email = emailInput.value
   if (!email) return "Por favor ingresa tu dirección de correo electrónico"

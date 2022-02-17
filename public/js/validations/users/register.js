@@ -20,6 +20,7 @@ const validLastName = () => {
   return null
 }
 
+//todo: No puede repetirse con los e-mails ya registrados
 const validEmail = () => {
   let email = emailInput.value
   if (!email) return "Por favor ingresa tu dirección de correo electrónico"
@@ -31,6 +32,24 @@ const validPassword = () => {
   let password = passwordInput.value
   if (!password) return "Por favor ingresa una contraseña"
   if (password.length < 8) return "Debe tener al menos 8 caracteres"
+
+  const missingCharTypes = []
+  const upperCase = /[A-Z]/
+  const lowerCase = /[a-z]/
+  const numChar = /[0-9]/
+  const specialChar = /\W|_/
+
+  if (!upperCase.test(password)) missingCharTypes.push("una mayúscula")
+  if (!lowerCase.test(password)) missingCharTypes.push("una minúscula")
+  if (!numChar.test(password)) missingCharTypes.push("un número")
+  if (!specialChar.test(password)) missingCharTypes.push("un caracter especial")
+
+  if (missingCharTypes.length) {
+    let output = "Debe tener al menos una mayuscula, una minúscula, un número y un caracter especial.\n\n"
+    output += `Faltan:\n- ${missingCharTypes.join("\n- ")}`
+    return output
+  }
+
   return null
 }
 

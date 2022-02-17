@@ -4,8 +4,10 @@ const bcrypt = require('bcryptjs')
 const { usersModel } = require("../../model")
 
 const controller = {
-  async findUserByEmail(email) {
+  async exists(req, res) {
+    let email = req.body.email
     let user = await usersModel.getUserBy({email})
+    res.json(!!user)
   }
 }
 

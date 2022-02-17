@@ -8,6 +8,18 @@ const MIN_LENGTH = 8
 
 const acceptedExtensions = [".jpg", ".jpeg", ".png", ".gif"]
 
+const passwordSecureVal = value => {
+  const upperCase = /[A-Z]/
+  const lowerCase = /[a-z]/
+  const numChar = /[0-9]/
+  const specialChar = /\W|_/
+
+  if (!upperCase.test(value) || !lowerCase.test(value) || !numChar.test(value) || !specialChar.test(value))
+    throw new Error("Password not secure enough")
+  
+  return null
+}
+
 
 module.exports = {
   editUser: [
@@ -49,14 +61,13 @@ module.exports = {
 
     check("new_password")
       .notEmpty().withMessage("Ingresa una contraseña nueva").bail()
-      .isLength({ min: MIN_LENGTH }).withMessage(`Tu contraseña debe tener al menos ${MIN_LENGTH} caracteres de longitud`),
+      .isLength({ min: MIN_LENGTH }).withMessage(`Tu contraseña debe tener al menos ${MIN_LENGTH} caracteres de longitud`).bail()
+      .custom(passwordSecureVal).withMessage("Debe tener al menos una mayuscula, una minúscula, un número y un caracter especial"),
 
     check("new_password_confirm").custom((value, {req}) => {
-      // Si las contraseñas no coinciden, se genera un nuevo error
       if (value !== req.body.new_password)
         throw new Error("Passwords don't match")
 
-      // Se retorna true para indicar el éxito de este custom validator
       return true
     }).withMessage("Contraseñas no coinciden"),
   ],
@@ -81,14 +92,13 @@ module.exports = {
 
     check("password")
       .notEmpty().withMessage("Ingresa una contraseña").bail()
-      .isLength({ min: MIN_LENGTH }).withMessage(`Tu contraseña debe tener al menos ${MIN_LENGTH} caracteres de longitud`),
+      .isLength({ min: MIN_LENGTH }).withMessage(`Tu contraseña debe tener al menos ${MIN_LENGTH} caracteres de longitud`).bail()
+      .custom(passwordSecureVal).withMessage("Debe tener al menos una mayuscula, una minúscula, un número y un caracter especial"),
 
     check("passwordConfirm").custom((value, {req}) => {
-      // Si las contraseñas no coinciden, se genera un nuevo error
       if (value !== req.body.password)
         throw new Error("Passwords don't match")
 
-      // Se retorna true para indicar el éxito de este custom validator
       return true
     }).withMessage("Contraseñas no coinciden"),
   ],
@@ -97,7 +107,7 @@ module.exports = {
     check("email")
       .notEmpty().withMessage("Debes ingresar tu dirección de correo electrónico").bail()
       .isEmail().withMessage("Dirección de correo electrónico inválida").bail()
-      .custom(async (value, {req}) => {
+      .custom(async value => {
         let email = value
         let isExisting = await usersModel.getUserBy({email})
 
