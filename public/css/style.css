@@ -258,7 +258,7 @@ a {
 
 h1 {
   text-align: center;
-  color: var(--main-color4);
+  color: var(--text-color);
 }
 
 nav {
