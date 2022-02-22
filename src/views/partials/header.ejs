@@ -1,7 +1,7 @@
 <header>
   <div class="top">
     <div class="top-left">
-      <div class="burger-menu">
+      <div class="burger-menu" id="burger-menu">
         <i class="fas fa-bars"></i>
       </div>
 
@@ -29,7 +29,7 @@
           <img src=<%= "/img/users/" + session.user.img_path %> alt="">
         </a>
 
-        <form action="/users?_method=DELETE" method="post" class="logout">
+        <form action="/users?_method=DELETE" method="post" class="logout" id="logout-form">
           <button type="submit" class="logout-icon">
             <i class="fas fa-sign-out-alt"></i>
           </button>
@@ -40,28 +40,25 @@
         <a href="/users/register" class="top-button btn">Regístrate</a>
       <% } %>
 
-      <!-- 
-      <ul class="menu">
-        <li><a href="#" class="menuItem">Categorias</a></li>
-        &nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp
-        <li><a href="#" class="menuItem">Ofertas</a></li>
-        &nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp
-        <li><a href="#" class="menuItem">Historial</a></li>
-      
-        <% if (locals.session?.user?.category==="vendor" ) { %>
-          &nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp
-          <li><a href="/products/create" class="menuItem">Crear</a></li>
-          &nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp
-          <li><a href="/products" class="menuItem">Productos</a></li>
+      <ul class="menu-list">
+        <li><a href="#">Categorias</a></li>
+        <li><a href="#">Ofertas</a></li>
+        <li><a href="#">Historial</a></li>
+
+        <% if (locals.session?.user?.category === "vendor") { %>
+          <li><a href="/products/create">Crear</a></li>
+          <li><a href="/products">Productos</a></li>
+        <% } %>
+        
+        <br>
+
+        <% if (locals.session?.user) { %>
+          <li id="logout-item">Cerrar sesión</li>
+        <% } else { %>
+          <li><a href="/users/login">Ingresa</a></li>
+          <li><a href="/users/register">Registrate</a></li>
         <% } %>
       </ul>
-  
-      <button class="hamburger"></button>
-        <i class="menuIcon material-icons">menu</i>
-        <i class="closeIcon material-icons">close</i>
-      </button> 
-      -->
-
     </div>
   </div>
 

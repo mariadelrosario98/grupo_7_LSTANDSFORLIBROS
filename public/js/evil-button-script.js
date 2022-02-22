@@ -47,4 +47,4 @@ function distanceFromCenter(boxPosition, mousePosition, boxSize) {
   return boxPosition - mousePosition + boxSize / 2
 }
 
-console.log("Evil button script ran :D");
+console.log("Evil button script ran :D")
