@@ -1,0 +1,36 @@
+#genres-picker {
+  display: block;
+  width: fit-content;
+  font-style: italic;
+  margin: 0.5em 0;
+}
+
+ul.genres-list {
+  --gap: 0.3em;
+
+  height: 10em;
+  overflow-y: scroll;
+  border: 1px solid var(--main-color4);
+  padding: var(--gap);
+  padding-bottom: 1em;
+
+  display: flex;
+  align-items: center;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  gap: var(--gap);
+}
+
+ul.genres-list > li {
+  border: 1px solid var(--main-color3);
+  padding: 0.3em;
+  height: fit-content;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+ul.genres-list > li > label {
+  margin-left: var(--gap);
+}

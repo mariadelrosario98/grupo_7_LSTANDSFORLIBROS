@@ -10,9 +10,7 @@ const controller = {
     let id = parseInt(req.params.id)
 
     try {
-      console.time("Get a product")
       let libro = await productsModel.getProduct(id)
-      console.timeEnd("Get a product")
       res.status(200).render("products/detail", {id, libro, toThousand})
     } catch (error) {
       console.error(error)
@@ -24,9 +22,7 @@ const controller = {
   // Renderiza la vista de productos
   async list(req, res) {
     try {
-      console.time("Get all products")
       let libros = await productsModel.getAllProducts()
-      console.timeEnd("Get all products")
       res.status(200).render("products/list", {libros, toThousand})
     } catch (error) {
       console.error(error)
@@ -63,9 +59,7 @@ const controller = {
     let id = parseInt(req.params.id)
 
     try {
-      console.time("Get a product")
       let libro = await productsModel.getProduct(id)
-      console.timeEnd("Get a product")
       res.status(200).render("products/edit", {body: libro, id, toThousand})
     } catch (error) {
       console.error(error)
@@ -96,9 +90,7 @@ const controller = {
     let img_path = req.file?.filename
 
     try {
-      console.time("Get a product")
       let product = await productsModel.getProduct(id)
-      console.timeEnd("Get a product")
       let fullPath = path.resolve(__dirname, "../../public/img/products", product.img_path)
       if (product.img_path && product.img_path !== "default.png" && fs.existsSync(fullPath))
         fs.rm(fullPath, {}, err => console.error(err))

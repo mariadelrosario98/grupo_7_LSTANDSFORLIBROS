@@ -5,9 +5,35 @@ const { Product } = require('./classes')
 
 const model = {
   // Obtener un producto mediante un ID
-  getProduct: async function (id) {
+  async getProduct(id) {
     try {
-      return await db.Products.findByPk(id)
+      const product = await db.Products.findOne({
+        where: { id },
+      })
+
+      const productGenres = await db.ProductGenre.findAll({
+        where: { product_id: id },
+        include: ["genre", "product"]
+      })
+
+      const genreIDs = []
+      const genreNames = []
+      productGenres.forEach(item => {
+        genreIDs.push(item.genre.id)
+        genreNames.push(item.genre.name)
+      })
+
+      return product
+    } catch (error) {
+      console.error(error)
+    }
+  },
+
+
+  // Obtener datos especificos de un producto
+  async getProductInfo(id, attributes) {
+    try {
+      return await db.Products.findOne({ where: { id }, attributes })
     } catch (error) {
       console.error(error)
     }
@@ -15,7 +41,7 @@ const model = {
 
 
   // Obtener todos los productos
-  getAllProducts: async function() {
+  async getAllProducts() {
     try {
       return await db.Products.findAll()
     } catch (error) {
@@ -24,8 +50,18 @@ const model = {
   },
 
 
+  // Obtener todos los géneros
+  async getGenres() {
+    try {
+      return await db.Genres.findAll()
+    } catch (error) {
+      console.error(error)
+    }
+  },
+
+
   // Buscar productos mediante barra de busqueda
-  searchProductsByName: async function (query, {orderBy, orderHow, limit, offset} = {limit: 10, offset: 0}) {
+  async searchProductsByName(query, {orderBy, orderHow, limit, offset} = {limit: 10, offset: 0}) {
     try {
       return await db.Products.findAll({
         where: {
@@ -44,10 +80,18 @@ const model = {
 
 
   // Añadir un nuevo producto
-  addProduct: async function (body) {
-    let newProduct = new Product(body)
+  async addProduct(body) {
     try {
+      const newProduct = new Product(body)
       await db.Products.create(newProduct)
+      
+      const productID = db.Products.findOne({ order: [[ 'id', 'DESC' ]] });
+      for await (const genreID of body.genres) {
+        db.ProductGenre.create({
+          product_id: productID,
+          genre_id: parseInt(genreID)
+        })
+      }
     } catch (error) {
       console.error(error)
     }
@@ -55,10 +99,18 @@ const model = {
 
 
   // Editar la información de un producto
-  editProduct: async function (id, product) {
+  async editProduct(id, body) {
     try {
-      let currentItem = await this.getProduct(id)
-      await currentItem.update({...product})
+      const currentItem = await this.getProduct(id)
+      await currentItem.update({...body})
+      await db.ProductGenre.destroy({ where: { product_id: id } })
+      console.log(body.genres);
+      for await (const genreID of body.genres) {
+        db.ProductGenre.create({
+          product_id: id,
+          genre_id: parseInt(genreID)
+        })
+      }
     } catch (error) {
       console.error(error)
     }
@@ -66,7 +118,7 @@ const model = {
 
 
   // Borrar un producto
-  deleteProduct: async function (id) {
+  async deleteProduct(id) {
     try {
       db.Products.destroy({ where: {id} })
     } catch (error) {
@@ -77,3 +129,4 @@ const model = {
 
 
 module.exports = model
+

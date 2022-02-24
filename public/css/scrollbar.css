@@ -13,9 +13,7 @@
 }
 
 @media (max-width: 769px) {
-  ::-webkit-scrollbar,
-  ::-webkit-scrollbar-track,
-  ::-webkit-scrollbar-thumb {
+  ::-webkit-scrollbar {
     display: none;
   }
 }

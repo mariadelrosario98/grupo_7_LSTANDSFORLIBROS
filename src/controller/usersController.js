@@ -22,8 +22,6 @@ const controller = {
       await usersModel.addUser(req.body)
 
       let email = req.body.email
-      console.time("Get user")
-      console.timeEnd("Get user")
       req.session.user = await usersModel.getUserBy({email})
       req.session.user.password = null
       res.status(200).redirect("/users/profile")
@@ -38,9 +36,7 @@ const controller = {
   async signin(req, res) {
     try {
       let email = req.body.email
-      console.time("Get user")
       let user = await usersModel.getUserBy({email})
-      console.timeEnd("Get user")
       user.password = null
       req.session.user = user
       req.session.user.password = null
@@ -74,10 +70,8 @@ const controller = {
     let user = req.body;
     try {
       await usersModel.editUser(id, user)
-      console.time("Get user")
       req.session.user = await usersModel.getUserBy({id})
       req.session.user.password = null
-      console.timeEnd("Get user")
       res.status(200).redirect("/users/profile")
     } catch (error) {
       console.error(error)
@@ -92,9 +86,7 @@ const controller = {
     let img_path = req.file?.filename
 
     try {
-      console.time("Get user")
       let user = await usersModel.getUserBy({id})
-      console.timeEnd("Get user")
       let fullPath = path.resolve(__dirname, "../../public/img/users", user.img_path)
       if (user.img_path && user.img_path !== "default.png" && fs.existsSync(fullPath))
         fs.rm(fullPath, {}, err => console.error(err))

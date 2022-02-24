@@ -4,9 +4,9 @@
   <head>
     <%- include("../partials/head") %>
     <title>Edición de producto</title>
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/validator/13.7.0/validator.min.js" integrity="sha512-rJU+PnS2bHzDCvRGFhXouCSxf4YYaUyUfjXMHsHFfMKhWDIEBr8go2LZ2EYXOqASey1tWc2qToeOCYh9et2aGQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="/css/genres.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/validator/13.7.0/validator.min.js" integrity="sha512-rJU+PnS2bHzDCvRGFhXouCSxf4YYaUyUfjXMHsHFfMKhWDIEBr8go2LZ2EYXOqASey1tWc2qToeOCYh9et2aGQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script defer src="/js/validations/products/create-edit.js"></script>
-    <script defer src="/js/validations/users/product-image.js"></script>
   </head>
 
   <body>
@@ -15,54 +15,90 @@
     <div class="body-wrapper">
       <main>
         <form class="form-register" action=<%= "/products/" + id + "/edit?_method=PUT" %>  method="post">
-          <h3 class="título form product-create">Formulario Edición Productos</h3>
-      
-          <label for="name">
-            Nombre <sup class="required">*</sup>
+          <h3 class="título form product-create">Edita un producto</h3>
+
+          <!-- Nombre del producto -->
+          <label for="name" class="required">
+            Nombre
           </label>
           <input class="controls login-box__input" type="text" name="name" id="name"
           value= "<%= locals.body?.name %>" placeholder="<%= locals.body?.name %>" autofocus>
           <p class="feedback">
             <%= locals.errors?.name?.msg %>
           </p>
-          <label for="author">
-            Autor <sup class="required">*</sup>
+
+          <!-- Nombre del autor -->
+          <label for="author" class="required">
+            Autor
           </label>
           <input class="controls login-box__input" type="text" name="author" id="author"
           value= "<%= locals.body?.author %>" placeholder="<%= locals.body?.author %>" >
           <p class="feedback">
             <%= locals.errors?.author?.msg %>
           </p>
-      
-          <label for="isbn">
-            ISBN <sup class="required">*</sup>
+
+          <!-- ISBN -->
+          <label for="isbn" class="required">
+            ISBN
           </label>
           <input class="controls login-box__input" type="text" name="isbn" id="isbn"
           value= "<%= locals.body?.isbn %>" placeholder="<%= locals.body?.isbn %>" >
           <p class="feedback">
             <%= locals.errors?.isbn?.msg %>
           </p>
-          <label for="house">
-            Editorial <sup class="required">*</sup>
+
+          <!-- Editorial -->
+          <label for="house" class="required">
+            Editorial
           </label>
           <input class="controls login-box__input" type="text" name="house" id="house"
           value= "<%= locals.body?.house %>" placeholder="<%= locals.body?.house %>" >
           <p class="feedback">
             <%= locals.errors?.house?.msg %>
           </p>
-          <label for="price">
-            Precio <sup class="required">*</sup>
+
+          <!-- Géneros -->
+          <label for="genres-picker">
+            Géneros
+          </label>
+          
+          <div class="genres-wrapper">
+            <span id="genres-picker">
+              Selecciona los géneros
+            </span>
+
+            <ul class="genres-list">
+              <% locals.genres.forEach(genre => { %>
+                <li>
+                  <input type="checkbox" name="genres"  id="genre_<%= genre.id + 1 %>" value="<%= genre.id + 1 %>"
+                  <% if (locals.body?.genres?.includes(genre.id.toString()) || locals.body?.genreIDs?.includes(genre.id.toString())) { %>
+                    checked
+                  <% } %> >
+                  <label for="genre_<%= genre.id + 1 %>"><%= genre.name %></label>
+                </li>
+              <% }) %>
+            </ul>
+          </div>
+
+          <!-- Precio -->
+          <label for="price" class="required">
+            Precio
           </label>
           <input class="controls login-box__input" type="number" name="price" id="price"
           value= <%= locals.body?.price %> placeholder= "<%= "$ " + toThousand(locals.body?.price) %>" min="0" step="100">
           <p class="feedback">
             <%= locals.errors?.price?.msg %>
           </p>
-          <label for="desc">
+
+          <!-- Descripción -->
+          <label for="description">
             Descripción
           </label>
           <textarea class="controls login-box__input" name="description" id="description"
           placeholder= "<%= locals.body?.description || "" %>"><%= locals.body?.description %></textarea>
+          <p class="feedback">
+            <%= locals.errors?.description?.msg %>
+          </p>
       
           <input class="botons" type="submit" value="Editar">
       

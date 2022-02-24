@@ -7,6 +7,8 @@ const validation = view => {
     // Guardamos los errores en una variable
     const errors = validationResult(req)
 
+    // return res.json(req.body)
+
     // Si no hay errores, se procede a almacenar la información
     if (errors.isEmpty()) return next()
 
@@ -32,6 +34,11 @@ const validation = view => {
       let id = info.id
       info.body = null
       info.libro = await productsModel.getProduct(id)
+    }
+
+    if (view === "products/create" || view === "products/edit") {
+      const { productsModel } = require('../model');
+      info.genres = await productsModel.getGenres()
     }
   
     // Renderiza el formulario de creación con mensajes añadidos en caso de error

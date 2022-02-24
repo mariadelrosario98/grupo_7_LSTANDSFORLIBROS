@@ -5,7 +5,7 @@
     <%- include("../partials/head") %>
     <title>Registro</title>
     <script defer src="/js/show-category.js"></script>
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/validator/13.7.0/validator.min.js" integrity="sha512-rJU+PnS2bHzDCvRGFhXouCSxf4YYaUyUfjXMHsHFfMKhWDIEBr8go2LZ2EYXOqASey1tWc2qToeOCYh9et2aGQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/validator/13.7.0/validator.min.js" integrity="sha512-rJU+PnS2bHzDCvRGFhXouCSxf4YYaUyUfjXMHsHFfMKhWDIEBr8go2LZ2EYXOqASey1tWc2qToeOCYh9et2aGQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script defer src="/js/validations/users/register.js"></script>
   </head>
 
@@ -16,8 +16,8 @@
       <main>
         <form class="form-register" action="/users/register" method="post">
           <h3>Registrate</h3>
-          <label for="first_name">
-            Nombre <sup class="required">*</sup>
+          <label for="first_name" class="required">
+            Nombre
           </label>
           <input class="controls login-box__input" type="text" name="first_name" id="first_name"
           value="<%= locals.body?.first_name %>" placeholder="Ingrese su nombre aquí"  autofocus>
@@ -25,8 +25,8 @@
             <%= locals.errors?.first_name?.msg %>
           </p>
       
-          <label for="last_name">
-            Apellido <sup class="required">*</sup>
+          <label for="last_name" class="required">
+            Apellido
           </label>
           <input class="controls login-box__input" type="text" name="last_name" id="last_name"
           value="<%= locals.body?.last_name %>" placeholder="Ingrese sus apellidos aquí">
@@ -35,8 +35,8 @@
           </p>
       
           <div class="category-box">
-            <label for="category">
-              Categoria <sup class="required">*</sup>
+            <label for="category" class="required">
+              Categoria
             </label>
             <div class="category">
               <input type="radio" name="category" id="buyer" value="buyer" checked>
@@ -45,7 +45,7 @@
           </div>
       
           <label for="email">
-            Correo electrónico <sup class="required">*</sup>
+           class="required"  Correo electrónico
           </label>
           <input class="controls login-box__input" type="email" name="email" id="email"
           value="<%= locals.body?.email %>" placeholder="Ingrese su correo aquí">
@@ -53,8 +53,8 @@
             <%= locals.errors?.email?.msg %>
           </p>
       
-          <label for="password">
-            Contraseña <sup class="required">*</sup>
+          <label for="password" class="required">
+            Contraseña
           </label>
           <input class="controls login-box__input" type="password" name="password" id="password"
           placeholder="Ingrese su contraseña aquí">
@@ -63,7 +63,7 @@
           </p>
       
           <label for="passwordConfirm">
-            Confirmar contraseña <sup class="required">*</sup>
+           class="required"  Confirmar contraseña
           </label>
           <input class="controls login-box__input" type="password" name="passwordConfirm" id="passwordConfirm"
           placeholder="Ingrese su contraseña aquí">

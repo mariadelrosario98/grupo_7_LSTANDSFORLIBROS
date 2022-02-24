@@ -5,7 +5,7 @@
     <%- include("../partials/head") %>
     <title>Editar información pública</title>
     <script defer src="/js/show-category.js"></script>
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/validator/13.7.0/validator.min.js" integrity="sha512-rJU+PnS2bHzDCvRGFhXouCSxf4YYaUyUfjXMHsHFfMKhWDIEBr8go2LZ2EYXOqASey1tWc2qToeOCYh9et2aGQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/validator/13.7.0/validator.min.js" integrity="sha512-rJU+PnS2bHzDCvRGFhXouCSxf4YYaUyUfjXMHsHFfMKhWDIEBr8go2LZ2EYXOqASey1tWc2qToeOCYh9et2aGQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script defer src="/js/validations/users/profile-edit.js"></script>
   </head>
 
@@ -18,23 +18,23 @@
       <main>
         <form class="form-register" action="/users/profile/edit?_method=PUT" method="post">
           <h3>Edita tu perfil</h3>
-          <label for="first_name">
-            Nombre <sup class="required">*</sup>
+          <label for="first_name" class="required">
+            Nombre
           </label>
           <input class="controls login-box__input" type="text" name="first_name" id="first_name"
           value="<%= locals.session.user.first_name %>" placeholder="<%= locals.session.user.first_name %>" autofocus>
           <p class="feedback"><%= locals.errors?.first_name?.msg %> </p>
       
-          <label for="last_name">
-            Apellido <sup class="required">*</sup>
+          <label for="last_name" class="required">
+            Apellido
           </label>
           <input class="controls login-box__input" type="text" name="last_name" id="last_name"
           value="<%= locals.session.user.last_name %>" placeholder="<%= locals.session.user.last_name %>">
           <p class="feedback"><%= locals.errors?.last_name?.msg %> </p>
       
           <div class="category-box" <% if (locals.session.user.category === "vendor") { %> style="display: block" <% } %> >
-            <label for="category">
-              Categoria <sup class="required">*</sup>
+            <label for="category" class="required">
+              Categoria
             </label>
             <div class="category">
               <input type="radio" name="category" id="buyer" value="buyer"
@@ -49,8 +49,8 @@
             <% } %>
           </div>
       
-          <label for="email">
-            Correo electrónico <sup class="required">*</sup>
+          <label for="email" class="required">
+            Correo electrónico
           </label>
           <input class="controls login-box__input" type="email" name="email" id="email"
           value="<%= locals.session.user.email %>" placeholder="<%= locals.session.user.email %>">

@@ -35,28 +35,40 @@
                 <h2 class="title-info">
                   <strong><%= locals.libro.name %></strong>
                 </h2>
+
                 <p class="author-info">
                   <b>Autor:</b> <%= locals.libro.author %>
                 </p>
+
                 <p class="isbn-info">
                   <b>ISBN:</b> <%= locals.libro.isbn %>
                 </p>
+
                 <p class="house-info">
                   <b>Editorial:</b> <%= locals.libro.house %>
                 </p>
+
+                <% if (locals.libro.genreNames.length) { %>
+                  <p class="genres-info">
+                    <b>Géneros:</b> <%= locals.libro.genreNames.join(", ") + "." %>
+                  </p>
+                <% } %>
+
                 <p class="price-info">
                   <b>Precio:</b> $<%= toThousand(locals.libro.price) %>
                 </p>
+
                 <p class="description-info">
                   <%= locals.libro.description %>
                 </p>
+
                 <% if (locals.session?.user?.category === "vendor") { %>
-                <a href=<%= "/products/" + locals.id + "/edit" %> class="articulo--edit btn-1">
-                  Editar producto
-                </a>
-                <p class="feedback">
-                  <%= locals.errors?.product_img?.msg %>
-                </p>
+                  <a href=<%= "/products/" + locals.id + "/edit" %> class="articulo--edit btn-1">
+                    Editar producto
+                  </a>
+                  <p class="feedback">
+                    <%= locals.errors?.product_img?.msg %>
+                  </p>
                 <% } %>
               </div>
             </div>

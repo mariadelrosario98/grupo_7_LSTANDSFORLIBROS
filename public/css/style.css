@@ -450,20 +450,22 @@ button.search {
   box-shadow: 7px 13px 37px var(--shadow-color);
 }
 
-.form-register h4 {
-  font-size: 22 px;
+.form-register h3 {
+  font-size: 1.5em;
 }
 
-.form-register label {
+.form-register > label {
   display: inline-block;
   margin-top: 1em;
+  font-size: 1.2em;
 }
 
 .form-register p label {
   display: inline;
 }
 
-.required {
+.required::after {
+  content: "*";
   color: hsl(0, 100%, 50%);
   font-weight: bold;
 }
@@ -489,7 +491,7 @@ button.search {
   display: flex;
   align-items: baseline;
   /* height: 40px; */
-  /* margin-top: 2em; */
+  margin-top: 2em;
   /* text-align: center; */
   font-size: 18px;
 }
@@ -822,10 +824,8 @@ button.search {
 
 input[type = "checkbox"],
 input[type = "radio"] {
-  width: 6%;
   border: none;
   cursor: pointer;
-  margin-bottom: 20px;
 }
 
 .login-box__input {

@@ -4,7 +4,8 @@
   <head>
     <%- include("../partials/head") %>
     <title>Creación de productos</title>
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/validator/13.7.0/validator.min.js" integrity="sha512-rJU+PnS2bHzDCvRGFhXouCSxf4YYaUyUfjXMHsHFfMKhWDIEBr8go2LZ2EYXOqASey1tWc2qToeOCYh9et2aGQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="/css/genres.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/validator/13.7.0/validator.min.js" integrity="sha512-rJU+PnS2bHzDCvRGFhXouCSxf4YYaUyUfjXMHsHFfMKhWDIEBr8go2LZ2EYXOqASey1tWc2qToeOCYh9et2aGQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script defer src="/js/validations/products/create-edit.js"></script>
   </head>
 
@@ -14,18 +15,21 @@
     <div class="body-wrapper">
       <main>
         <form class="form-register" action="/products/create" method="post">
-          <h3 class="título form product-create">Formulario de creación de productos</h3>
+          <h3 class="título form product-create">Crea un producto</h3>
       
-          <label for="name">
-            Nombre del libro <sup class="required">*</sup>
+          <!-- Nombre del producto -->
+          <label for="name" class="required">
+            Nombre del libro
           </label>
           <input class="controls login-box__input" type="text" name="name" id="name"
           value="<%= locals.body?.name %>" placeholder="Ingrese el nombre del libro" autofocus>
           <p class="feedback">
             <%= locals.errors?.name?.msg %>
           </p>
-          <label for="author">
-            Nombre del autor <sup class="required">*</sup>
+
+          <!-- Nombre del autor -->
+          <label for="author" class="required">
+            Nombre del autor
           </label>
           <input class="controls login-box__input" type="text" name="author" id="author"
           value="<%= locals.body?.author %>" placeholder="Ingrese el nombre del autor">
@@ -33,16 +37,19 @@
             <%= locals.errors?.author?.msg %>
           </p>
       
-          <label for="isbn">
-            ISBN <sup class="required">*</sup>
+          <!-- ISBN -->
+          <label for="isbn" class="required">
+            ISBN
           </label>
           <input class="controls login-box__input" type="text" name="isbn" id="isbn"
           value="<%= locals.body?.isbn %>" placeholder="Ingrese el ISBN">
           <p class="feedback">
             <%= locals.errors?.isbn?.msg %>
           </p>
-          <label for="house">
-            Editorial <sup class="required">*</sup>
+
+          <!-- Editorial -->
+          <label for="house" class="required">
+            Editorial
           </label>
           <input class="controls login-box__input" type="text" name="house" id="house"
           value="<%= locals.body?.house %>" placeholder="Ingrese el nombre de la editorial">
@@ -50,10 +57,30 @@
             <%= locals.errors?.house?.msg %>
           </p>
 
-          <!-- Insertar aquí los géneros -->
+          <!-- Géneros -->
+          <label for="genres-picker">
+            Géneros
+          </label>
+          
+          <div class="genres-wrapper">
+            <span id="genres-picker">
+              Selecciona los géneros
+            </span>
+
+            <ul class="genres-list">
+              <% locals.genres.forEach(genre => { %>
+                <li>
+                  <input type="checkbox" name="genres"  id="genre_<%= genre.id + 1 %>" value="<%= genre.id + 1 %>"
+                  <% if (locals.body?.genres?.includes(genre.id.toString())) { %> checked <% } %> >
+                  <label for="genre_<%= genre.id + 1 %>"><%= genre.name %></label>
+                </li>
+              <% }) %>
+            </ul>
+          </div>
       
-          <label for="price">
-            Precio <sup class="required">*</sup>
+          <!-- Precio -->
+          <label for="price" class="required">
+            Precio
           </label>
           <input class="controls login-box__input" type="number" name="price" id="price"
           value="<%= locals.body?.price %>" placeholder="Ingresa el precio del libro" min="0" step="100">
@@ -61,14 +88,17 @@
             <%= locals.errors?.price?.msg %>
           </p>
       
+          <!-- Descripción -->
           <label for="description">
             Descripción
           </label>
           <textarea class="controls login-box__input" name="description" id="description"
           placeholder="Ingrese una descripción"><%= locals.body?.description %></textarea>
           <p class="feedback">
-            <%= locals.errors?.passwordConfirm?.msg %>
+            <%= locals.errors?.description?.msg %>
           </p>
+
+          <!-- Términos y condiciones -->
           <p class="terms">
             <input type="checkbox" name="agree" id="agree">
             <label for="agree">

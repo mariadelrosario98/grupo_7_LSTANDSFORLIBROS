@@ -10,9 +10,7 @@ const controller = {
     let id = parseInt(req.params.id)
 
     try {
-      console.time("Get a product")
       let libro = await productsModel.getProduct(id)
-      console.timeEnd("Get a product")
       res.status(200).render("products/detail", {id, libro, toThousand})
     } catch (error) {
       console.error(error)
@@ -24,9 +22,7 @@ const controller = {
   // Renderiza la vista de productos
   async list(req, res) {
     try {
-      console.time("Get all products")
       let libros = await productsModel.getAllProducts()
-      console.timeEnd("Get all products")
       res.status(200).render("products/list", {libros, toThousand})
     } catch (error) {
       console.error(error)
@@ -36,8 +32,14 @@ const controller = {
 
 
   // Renderiza el formulario de creación de producto
-  create(req, res) {
-    res.status(200).render("products/create")
+  async create(req, res) {
+    try {
+      let genres = await productsModel.getGenres()
+      res.status(200).render("products/create", {genres})
+    } catch (error) {
+      console.error(error)
+      res.status(500).send(error)
+    }
   },
 
 
@@ -56,17 +58,17 @@ const controller = {
       res.status(500).send(error)
     }
   },
-  
+
 
   // Renderiza el formulario de edición de producto
   async edit(req, res) {
     let id = parseInt(req.params.id)
 
     try {
-      console.time("Get a product")
       let libro = await productsModel.getProduct(id)
-      console.timeEnd("Get a product")
-      res.status(200).render("products/edit", {body: libro, id, toThousand})
+      let genres = await productsModel.getGenres()
+      return res.json(libro)
+      res.status(200).render("products/edit", {body: libro, id, toThousand, genres})
     } catch (error) {
       console.error(error)
       res.status(500).send(error)
@@ -77,11 +79,11 @@ const controller = {
   // Actualiza en la base de datos el producto enviado por el formulario de edición de producto
   async update(req, res) {
     let id = parseInt(req.params.id)
-    let product = req.body
+    let body = req.body
 
     // Se guarda el producto editado en la base de datos
     try {
-      await productsModel.editProduct(id, product)
+      await productsModel.editProduct(id, body)
       res.status(201).redirect("/products/" + req.params.id)
     } catch (error) {
       console.error(error)
@@ -93,17 +95,15 @@ const controller = {
   // Actualiza la foto del producto
   async updatePic(req, res) {
     let id = parseInt(req.params.id)
-    let img_path = req.file?.filename
+    let fileName = req.file?.filename
 
     try {
-      console.time("Get a product")
-      let product = await productsModel.getProduct(id)
-      console.timeEnd("Get a product")
-      let fullPath = path.resolve(__dirname, "../../public/img/products", product.img_path)
-      if (product.img_path && product.img_path !== "default.png" && fs.existsSync(fullPath))
+      let { img_path } = await productsModel.getProductInfo(id, ["img_path"])
+      let fullPath = path.resolve(__dirname, "../../public/img/products", img_path)
+      if (img_path && img_path !== "default.png" && fs.existsSync(fullPath))
         fs.rm(fullPath, {}, err => console.error(err))
       
-      await productsModel.editProduct(id, { img_path })
+      await productsModel.editProduct(id, { img_path: fileName })
       res.status(201).redirect("/products/" + req.params.id)
     } catch (error) {
       console.error(error)
@@ -117,11 +117,11 @@ const controller = {
     let id = parseInt(req.params.id)
 
     try {
-      let product = await productsModel.getProduct(id)
-      let fullPath = path.resolve(__dirname, "../../public/img/products", product.img_path)
+      let { img_path } = await productsModel.getProductInfo(id, ["img_path"])
+      let fullPath = path.resolve(__dirname, "../../public/img/products", img_path)
   
       // Se elimina la imagen del producto, siempre y cuando esta no sea la imagen por defecto
-      if (product.img_path && product.img_path !== "default.png" && fs.existsSync(fullPath))
+      if (img_path && img_path !== "default.png" && fs.existsSync(fullPath))
         fs.rm(fullPath, {}, err => console.error(err))
   
       await productsModel.deleteProduct(id)
