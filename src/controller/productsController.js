@@ -34,7 +34,7 @@ const controller = {
   // Renderiza el formulario de creación de producto
   async create(req, res) {
     try {
-      let genres = await productsModel.getGenres()
+      let genres = await productsModel.getAllGenres()
       res.status(200).render("products/create", {genres})
     } catch (error) {
       console.error(error)
@@ -66,8 +66,8 @@ const controller = {
 
     try {
       let libro = await productsModel.getProduct(id)
-      let genres = await productsModel.getGenres()
-      return res.json(libro)
+      libro.genreIDs = libro.genreIDs.map(id => id.toString())
+      let genres = await productsModel.getAllGenres()
       res.status(200).render("products/edit", {body: libro, id, toThousand, genres})
     } catch (error) {
       console.error(error)

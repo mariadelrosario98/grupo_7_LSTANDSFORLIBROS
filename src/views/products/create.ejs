@@ -70,9 +70,9 @@
             <ul class="genres-list">
               <% locals.genres.forEach(genre => { %>
                 <li>
-                  <input type="checkbox" name="genres"  id="genre_<%= genre.id + 1 %>" value="<%= genre.id + 1 %>"
+                  <input type="checkbox" name="genres"  id="genre_<%= genre.id %>" value="<%= genre.id %>"
                   <% if (locals.body?.genres?.includes(genre.id.toString())) { %> checked <% } %> >
-                  <label for="genre_<%= genre.id + 1 %>"><%= genre.name %></label>
+                  <label for="genre_<%= genre.id %>"><%= genre.name %></label>
                 </li>
               <% }) %>
             </ul>

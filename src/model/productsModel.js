@@ -7,9 +7,7 @@ const model = {
   // Obtener un producto mediante un ID
   async getProduct(id) {
     try {
-      const product = await db.Products.findOne({
-        where: { id },
-      })
+      const product = await db.Products.findByPk(id)
 
       const productGenres = await db.ProductGenre.findAll({
         where: { product_id: id },
@@ -23,7 +21,7 @@ const model = {
         genreNames.push(item.genre.name)
       })
 
-      return product
+      return {...product.dataValues, genreIDs, genreNames}
     } catch (error) {
       console.error(error)
     }
@@ -51,7 +49,7 @@ const model = {
 
 
   // Obtener todos los géneros
-  async getGenres() {
+  async getAllGenres() {
     try {
       return await db.Genres.findAll()
     } catch (error) {
@@ -61,7 +59,7 @@ const model = {
 
 
   // Buscar productos mediante barra de busqueda
-  async searchProductsByName(query, {orderBy, orderHow, limit, offset} = {limit: 10, offset: 0}) {
+  async searchProductsByName(query, { orderBy, orderHow, limit, offset } = { limit: 10, offset: 0 }) {
     try {
       return await db.Products.findAll({
         where: {
@@ -101,10 +99,8 @@ const model = {
   // Editar la información de un producto
   async editProduct(id, body) {
     try {
-      const currentItem = await this.getProduct(id)
-      await currentItem.update({...body})
+      await db.Products.update({...body}, { where: { id } })
       await db.ProductGenre.destroy({ where: { product_id: id } })
-      console.log(body.genres);
       for await (const genreID of body.genres) {
         db.ProductGenre.create({
           product_id: id,

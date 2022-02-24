@@ -38,7 +38,7 @@ const validation = view => {
 
     if (view === "products/create" || view === "products/edit") {
       const { productsModel } = require('../model');
-      info.genres = await productsModel.getGenres()
+      info.genres = await productsModel.getAllGenres()
     }
   
     // Renderiza el formulario de creación con mensajes añadidos en caso de error

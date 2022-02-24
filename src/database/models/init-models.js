@@ -20,6 +20,7 @@ function initModels(sequelize) {
   Products.hasMany(UserProduct, { as: "UserProducts", foreignKey: "product_id"});
   UserProduct.belongsTo(Users, { as: "user", foreignKey: "user_id"});
   Users.hasMany(UserProduct, { as: "UserProducts", foreignKey: "user_id"});
+  // Products.belongsToMany(Genres, {through: "ProductGenres"})
 
   return {
     Genres,
