@@ -500,6 +500,23 @@ button.search {
   width: 10%;
 }
 
+div.remember {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  margin: 1em auto;
+}
+
+div.remember label{
+  width: 90%;
+  margin: 0;
+  margin-left: 1em;
+}
+
+div.remember input{
+  width: 1em;
+}
+
 .form-register a {
   text-align: center;
   transition: all 0.1s;
@@ -826,6 +843,7 @@ input[type = "checkbox"],
 input[type = "radio"] {
   border: none;
   cursor: pointer;
+  width: initial;
 }
 
 .login-box__input {
