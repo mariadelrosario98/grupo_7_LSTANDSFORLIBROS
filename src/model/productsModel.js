@@ -116,7 +116,8 @@ const model = {
   // Borrar un producto
   async deleteProduct(id) {
     try {
-      db.Products.destroy({ where: {id} })
+      await db.ProductGenre.destroy({ where: { product_id: id } })
+      await db.Products.destroy({ where: {id} })
     } catch (error) {
       console.error(error)
     }
