@@ -23,7 +23,7 @@ const model = {
 
       return {...product.dataValues, genreIDs, genreNames}
     } catch (error) {
-      console.error(error)
+      throw error
     }
   },
 
@@ -33,7 +33,7 @@ const model = {
     try {
       return await db.Products.findOne({ where: { id }, attributes })
     } catch (error) {
-      console.error(error)
+      throw error
     }
   },
 
@@ -43,7 +43,7 @@ const model = {
     try {
       return await db.Products.findAll()
     } catch (error) {
-      console.error(error)
+      throw error
     }
   },
 
@@ -53,7 +53,7 @@ const model = {
     try {
       return await db.Genres.findAll()
     } catch (error) {
-      console.error(error)
+      throw error
     }
   },
 
@@ -72,7 +72,7 @@ const model = {
         offset
       })
     } catch (error) {
-      console.error(error)
+      throw error
     }
   },
 
@@ -83,15 +83,19 @@ const model = {
       const newProduct = new Product(body)
       await db.Products.create(newProduct)
       
-      const productID = db.Products.findOne({ order: [[ 'id', 'DESC' ]] });
+      const newestProduct = await db.Products.findOne({
+        order: [[ 'id', 'DESC' ]],
+        attributes: ["id"]
+      })
+
       for await (const genreID of body.genres) {
         db.ProductGenre.create({
-          product_id: productID,
+          product_id: newestProduct.id,
           genre_id: parseInt(genreID)
         })
       }
     } catch (error) {
-      console.error(error)
+      throw error
     }
   },
 
@@ -100,26 +104,28 @@ const model = {
   async editProduct(id, body) {
     try {
       await db.Products.update({...body}, { where: { id } })
-      await db.ProductGenre.destroy({ where: { product_id: id } })
-      for await (const genreID of body.genres) {
-        db.ProductGenre.create({
-          product_id: id,
-          genre_id: parseInt(genreID)
-        })
+      if (body.genres) {
+        await db.ProductGenre.destroy({ where: { product_id: id } })
+        for await (const genreID of body.genres) {
+          db.ProductGenre.create({
+            product_id: id,
+            genre_id: parseInt(genreID)
+          })
+        }
       }
     } catch (error) {
-      console.error(error)
+      throw error
     }
   },
 
 
   // Borrar un producto
-  async deleteProduct(id) {
+  deleteProduct(id) {
     try {
-      await db.ProductGenre.destroy({ where: { product_id: id } })
-      await db.Products.destroy({ where: {id} })
+      db.ProductGenre.destroy({ where: { product_id: id } })
+      db.Products.destroy({ where: {id} })
     } catch (error) {
-      console.error(error)
+      throw error
     }
   },
 }

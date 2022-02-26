@@ -50,10 +50,6 @@ app.use("/", homeRoutes)
 app.use("/products", productsRoutes)
 app.use("/users", usersRoutes)
 
-const { productsAPIRoutes, usersAPIRoutes } = require("./routes/api")
-app.use("/API/products", productsAPIRoutes)
-app.use("/API/users", usersAPIRoutes)
-
 // Renderizar la vista correspondiente al error 404
 app.use((req, res) => {
   res.status(404).render("not-found")

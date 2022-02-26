@@ -8,7 +8,7 @@ const model = {
     try {
       return await db.Users.findOne({ where })
     } catch (error) {
-      console.error(error)
+      throw error
     }
   },
 
@@ -17,7 +17,7 @@ const model = {
     try {
       return await db.Users.findAll()
     } catch (error) {
-      console.error(error)
+      throw error
     }
   },
 
@@ -29,7 +29,7 @@ const model = {
     try {
       db.Users.create({...newUser})
     } catch (error) {
-      console.error(error)
+      throw error
     }
   },
 
@@ -40,7 +40,7 @@ const model = {
       let currentItem = await this.getUserBy({id})
       await currentItem.update(user)
     } catch (error) {
-      console.error(error)
+      throw error
     }
   },
 
@@ -50,7 +50,7 @@ const model = {
     try {
       db.Users.destroy({ where: {id} })
     } catch (error) {
-      console.error(error)
+      throw error
     }
   },
 }

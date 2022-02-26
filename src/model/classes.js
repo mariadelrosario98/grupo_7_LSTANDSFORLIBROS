@@ -12,7 +12,7 @@ class User {
 }
 
 class Product {
-  constructor({name, author, isbn, house, genre, price, desc, img_path}) {
+  constructor({name, author, isbn, house, genre, price, description, img_path}) {
     this.img_path = img_path ?? "default.png"
     this.name = name
     this.author = author
@@ -20,7 +20,7 @@ class Product {
     this.house = house
     this.genre = genre
     this.price = parseInt(price)
-    this.desc = desc
+    this.description = description
   }
 }
 
