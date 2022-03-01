@@ -12,14 +12,13 @@
   justify-content: space-between;
   flex-direction: column;
   margin-bottom: 50px;
-  padding: 2em;
+  padding: 2em 0.5em;
 }
 
 
 
 .articulo--top--img {
   position: relative;
-  width: 100%;
   display: flex;
   margin: 0 1em;
   overflow: hidden;
@@ -82,6 +81,8 @@
 .articulo--top--info {
   width: 100%;
   padding: 1em;
+  display: flex;
+  flex-direction: column;
 }
 
 .articulo--top--info p {
@@ -123,7 +124,8 @@
 @media (min-width: 769px) {
   .articulo--top {
     flex-direction: row;
-  }
+    padding: 2em;
+}
 
   .articulo--top--img {
     width: 40%;

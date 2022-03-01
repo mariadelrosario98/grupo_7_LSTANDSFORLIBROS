@@ -303,7 +303,8 @@ button.search {
   /* text-align: center; */
   background-color: var(--main-color2);
   color: var(--main-color4);
-  padding: 0.5em 1em;
+  padding: 0.5em 0;
+  text-align: center;
   min-width: 4em;
 }
 
@@ -728,11 +729,14 @@ div.remember input{
   }
 
   header .logout-icon {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 2.5em;
     transition: all 0.2s;
     color: var(--main-color4);
     background-color: transparent;
+    cursor: pointer;
   }
   
   header .logout-icon:hover {

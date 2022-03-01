@@ -15,7 +15,6 @@
 
   box-sizing: content-box;
   position: relative;
-  margin: 2em;
 }
 
 .wrapper .left{
@@ -178,3 +177,8 @@
   display: none;
 }
 
+@media (min-width: 769px) {
+  .wrapper{
+    margin: 2em;
+  }
+}
