@@ -47,7 +47,11 @@ ul.menu-list {
 }
 
 ul.list-show {
-  animation: slide 0.3s forwards;
+  animation: slide-in 0.3s forwards;
+}
+
+ul.list-hide {
+  animation: slide-out 0.3s forwards;
 }
 
 ul.menu-list li {
@@ -62,12 +66,22 @@ ul.menu-list li#logout-item {
   color: hsl(0, 100%, 50%);
 }
 
-@keyframes slide {
+@keyframes slide-in {
   0% {
     transform: translateX(-100%);
   }
 
   100% {
     transform: translateX(0);
+  }
+}
+
+@keyframes slide-out {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-100%);
   }
 }

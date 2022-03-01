@@ -395,13 +395,18 @@ button.search {
   padding-top: 10px;
 } */
 
-.contenedor1,
-.contenedor2 {
-  display: flex;
+.contenedor1 {
+  /* display: flex;
   flex-wrap: wrap;
+  justify-content: center; */
+
+  display: grid;
+  grid-template: auto / repeat(auto-fill, minmax(18em, 1fr));
+  gap: 1em;
   justify-content: center;
-  margin: auto;
-  width: 100%;
+  place-items: center;
+
+  margin: 1em;
 }
 
 /* .total {
@@ -606,7 +611,7 @@ div.remember input{
 .descrip {
   text-align: center;
   width: 100%;
-  height: 5em;
+  height: fit-content;
   padding: 2px;
   margin-top: 5px;
   color: var(--text-color);
@@ -698,7 +703,7 @@ div.remember input{
   }
 
   .product {
-    max-width: 40%;
+    max-width: 100%;
     text-align: center;
   }
 
@@ -741,12 +746,6 @@ div.remember input{
   
   header .logout-icon:hover {
     color: hsl(0, 100%, 50%);
-  }
-
-  .contenedor1,
-  .contenedor2 {
-    display: flex;
-    flex-wrap: wrap;
   }
 
   .form-register {
@@ -792,8 +791,8 @@ div.remember input{
   }
 
   .product {
-    min-width: calc(0.4 * 769);
     width: 20em;
+    height: 100%;
   }
 
   .flex-responsive {

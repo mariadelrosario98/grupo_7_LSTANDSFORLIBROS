@@ -55,10 +55,18 @@
 
   &--shown {
     display: flex;
-
+    
     .logout-screen--form {
       animation: pop-up 0.3s forwards;
     }
+  }
+
+  &--hidden {
+    display: flex;
+    .logout-screen--form {
+      animation: pop-down 0.3s forwards;
+    }
+    animation: dissappear 0.3s forwards
   }
 }
 
@@ -73,5 +81,29 @@
 
   100% {
     transform: scale(1);
+  }
+}
+
+@keyframes pop-down {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(0);
+  }
+}
+
+@keyframes dissappear {
+  0%, 99% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(0);
   }
 }

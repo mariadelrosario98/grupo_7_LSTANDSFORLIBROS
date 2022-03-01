@@ -81,6 +81,19 @@
           animation: pop-up 0.3s forwards;
 }
 
+.logout-screen--hidden {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-animation: dissappear 0.3s forwards;
+          animation: dissappear 0.3s forwards;
+}
+
+.logout-screen--hidden .logout-screen--form {
+  -webkit-animation: pop-down 0.3s forwards;
+          animation: pop-down 0.3s forwards;
+}
+
 @-webkit-keyframes pop-up {
   0% {
     -webkit-transform: scale(0);
@@ -108,6 +121,58 @@
   100% {
     -webkit-transform: scale(1);
             transform: scale(1);
+  }
+}
+
+@-webkit-keyframes pop-down {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  100% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+}
+
+@keyframes pop-down {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  100% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+}
+
+@-webkit-keyframes dissappear {
+  0%, 99% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+}
+
+@keyframes dissappear {
+  0%, 99% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
   }
 }
 /*# sourceMappingURL=logout.css.map */
