@@ -1,5 +1,4 @@
-const fs = require('fs')
-const path = require('path');
+const {getAllUsers,getUserById, countUsers} = require("../model/usersModel")
 
 module.exports= {
   async getUsers (req, res){

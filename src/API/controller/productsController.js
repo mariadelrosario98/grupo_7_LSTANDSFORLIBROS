@@ -1,5 +1,4 @@
-const fs = require('fs')
-const path = require('path');
+const { countProducts, getProductById, getAllProducts } = require("../model/productsModel")
 
 module.exports = {
   async getProducts (req, res){

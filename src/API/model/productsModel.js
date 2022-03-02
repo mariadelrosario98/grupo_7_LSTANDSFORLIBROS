@@ -1,6 +1,6 @@
 const db = require("../../database/models")
 
-module.exports= {
+const model= {
   getAllProducts: async function (){
     try{
       return await db.Products.findAll()
@@ -9,28 +9,30 @@ module.exports= {
       throw error
     }
   },
-  getProductById: async function (where){
+  getProductById: async function (id){
     try{
-      return await db.Products.findOne({where})
+      return await db.Products.findOne({where: {id}})
     }
     catch (error) {
       throw error
     }
   },
-  getProductGenresById: async function(where){
-    try{
-      return await
-    }
-    catch (error) {
-      throw error
-    }
-  },
+  // getProductGenresById: async function(where){
+  //   try{
+  //     return await 
+  //   }
+  //   catch (error) {
+  //     throw error
+  //   }
+  // },
   countProducts: async function(){
     try{
-      return await
+      return await db.Products.count()
     }
     catch (error) {
       throw error
     }
   }
 }
+
+module.exports = model
