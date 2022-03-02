@@ -46,7 +46,7 @@ app.use(async (req, res, next) => {
 
 // Requerir y definir las rutas
 const { homeRoutes, productsRoutes, usersRoutes } = require("./routes")
-const { usersAPIRoutes, productsAPIRoutes } =require("../src/API/routes")
+const { usersAPIRoutes, productsAPIRoutes } =require("./api/routes")
 app.use("/", homeRoutes)
 app.use("/products", productsRoutes)
 app.use("/users", usersRoutes)
