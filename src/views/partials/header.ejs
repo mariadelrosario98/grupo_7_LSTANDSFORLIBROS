@@ -30,9 +30,9 @@
         </a>
 
         <form action="/users?_method=DELETE" method="post" class="logout" id="logout-form">
-          <button type="submit" class="logout-icon">
+          <div class="logout-icon">
             <i class="fas fa-sign-out-alt"></i>
-          </button>
+          </div>
         </form>
       <% } else { %>
         <a href="/users/login" class="top-button btn">Ingresa</a>
@@ -59,7 +59,19 @@
           <li><a href="/users/register">Registrate</a></li>
         <% } %>
       </ul>
-    </div>
+
+      <% if (locals.session?.user) { %>
+        <div class="logout-screen">
+          <div class="logout-screen--form">
+            <h3>¿Seguro que deseas cerrar sesión?</h3>
+            <div class="logout-screen--options">
+              <button class="logout-screen--no">No</button>
+              <button class="logout-screen--yes">Sí</button>
+            </div>
+          </div>
+        </div>
+      <% } %>
+      </div>
   </div>
 
   <%- include("search-form", {deviceClass: "mobile"}) %>

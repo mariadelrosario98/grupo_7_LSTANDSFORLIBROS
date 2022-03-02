@@ -61,7 +61,7 @@
         
         <!--* USERNAME INPUT -->
         <label for="email">Correo electrónico</label>
-        <input name="email" class="login-box__input controls" id="email" type="text" placeholder="Ingresa aquí tu correo electrónico" value= "<%= locals.body?.email %>" autofocus>
+        <input name="email" class="login-box__input controls" id="email" type="email" placeholder="Ingresa aquí tu correo electrónico" value= "<%= locals.body?.email %>" autofocus>
         <p class="feedback">
           <%= locals.errors?.email?.msg %>
         </p>

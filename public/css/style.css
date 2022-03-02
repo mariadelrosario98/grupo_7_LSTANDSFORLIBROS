@@ -303,7 +303,8 @@ button.search {
   /* text-align: center; */
   background-color: var(--main-color2);
   color: var(--main-color4);
-  padding: 0.5em 1em;
+  padding: 0.5em 0;
+  text-align: center;
   min-width: 4em;
 }
 
@@ -394,13 +395,18 @@ button.search {
   padding-top: 10px;
 } */
 
-.contenedor1,
-.contenedor2 {
-  display: flex;
+.contenedor1 {
+  /* display: flex;
   flex-wrap: wrap;
+  justify-content: center; */
+
+  display: grid;
+  grid-template: auto / repeat(auto-fill, minmax(18em, 1fr));
+  gap: 1em;
   justify-content: center;
-  margin: auto;
-  width: 100%;
+  place-items: center;
+
+  margin: 1em;
 }
 
 /* .total {
@@ -605,7 +611,7 @@ div.remember input{
 .descrip {
   text-align: center;
   width: 100%;
-  height: 5em;
+  height: fit-content;
   padding: 2px;
   margin-top: 5px;
   color: var(--text-color);
@@ -697,7 +703,7 @@ div.remember input{
   }
 
   .product {
-    max-width: 40%;
+    max-width: 100%;
     text-align: center;
   }
 
@@ -728,21 +734,18 @@ div.remember input{
   }
 
   header .logout-icon {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 2.5em;
     transition: all 0.2s;
     color: var(--main-color4);
     background-color: transparent;
+    cursor: pointer;
   }
   
   header .logout-icon:hover {
     color: hsl(0, 100%, 50%);
-  }
-
-  .contenedor1,
-  .contenedor2 {
-    display: flex;
-    flex-wrap: wrap;
   }
 
   .form-register {
@@ -788,8 +791,8 @@ div.remember input{
   }
 
   .product {
-    min-width: calc(0.4 * 769);
     width: 20em;
+    height: 100%;
   }
 
   .flex-responsive {
