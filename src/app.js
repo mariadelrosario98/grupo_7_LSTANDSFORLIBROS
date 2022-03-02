@@ -46,9 +46,13 @@ app.use(async (req, res, next) => {
 
 // Requerir y definir las rutas
 const { homeRoutes, productsRoutes, usersRoutes } = require("./routes")
+const { usersAPIRoutes, productsAPIRoutes } =require("../src/API/routes")
 app.use("/", homeRoutes)
 app.use("/products", productsRoutes)
 app.use("/users", usersRoutes)
+app.use("/api/users/", usersAPIRoutes)
+app.use("/api/products/", productsAPIRoutes)
+
 
 // Renderizar la vista correspondiente al error 404
 app.use((req, res) => {
