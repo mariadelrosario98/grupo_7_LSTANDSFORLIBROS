@@ -9,7 +9,7 @@ module.exports= {
       const users = await getAllUsers(page)
 
       const pageLinks = {}
-      const totalPagesAmount = Math.ceil(count / 5)
+      const totalPagesAmount = Math.ceil(count / 10)
       if (page < totalPagesAmount) pageLinks.next = `${req.protocol}://${req.hostname}/api/users?page=${page + 1}`
       if (page > 1) pageLinks.previous = `${req.protocol}://${req.hostname}/api/users?page=${page - 1}`
 

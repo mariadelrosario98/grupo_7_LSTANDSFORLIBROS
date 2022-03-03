@@ -5,8 +5,8 @@ const model  = {
     try{
       return await db.Users.findAll({
         attributes: ["id", "first_name", "last_name", "email"],
-        limit: 5,
-        offset: 5 * (page - 1)
+        limit: 10,
+        offset: 10 * (page - 1)
       })
     }
     catch (error) {
