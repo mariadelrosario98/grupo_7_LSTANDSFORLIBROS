@@ -45,7 +45,7 @@ module.exports = {
     const id = req.params.id
     try{
       const product = await getProductById(id)
-      const genreValues = await getProductGenresById(id)
+      const genreValues = await getProductGenresById(product.id)
       const genres = genreValues.map(item => item.dataValues.genre.name)
       const img_path = "https://lstandsforlibros.herokuapp.com/img/products/" + product.img_path
       res.json({...product.dataValues, genres, img_path})
