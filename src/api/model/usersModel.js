@@ -15,9 +15,15 @@ const model  = {
   },
 
   async getUserById(id) {
+    const constraint = {}
+    if (id === "latest") {
+      constraint.order = [[ 'id', 'DESC' ]]
+    } else {
+      constraint.where = {id}
+    }
     try{
       return await db.Users.findOne({
-        where: {id},
+        ...constraint,
         attributes: {
           exclude: ["category", "password"]
         }

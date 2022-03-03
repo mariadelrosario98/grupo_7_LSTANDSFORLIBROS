@@ -15,9 +15,15 @@ const model= {
   },
   
   async getProductById(id) {
+    const constraint = {}
+    if (id === "latest") {
+      constraint.order = [[ 'id', 'DESC' ]]
+    } else {
+      constraint.where = {id}
+    }
     try{
       return await db.Products.findOne({
-        where: { id },
+        ...constraint,
         attributes: {
           exclude: ["sales", "rating"]
         }
