@@ -17,7 +17,7 @@ const passwordSecureVal = value => {
   if (!upperCase.test(value) || !lowerCase.test(value) || !numChar.test(value) || !specialChar.test(value))
     throw new Error("Password not secure enough")
   
-  return null
+  return true
 }
 
 
