@@ -20,11 +20,7 @@ const controller = {
   async save(req, res) {
     try {
       await usersModel.addUser(req.body)
-
-      let email = req.body.email
-      req.session.user = await usersModel.getUserBy({email})
-      req.session.user.password = null
-      res.status(200).redirect("/users/profile")
+      res.status(200).redirect("/users/login")
     } catch (error) {
       console.error(error)
       res.status(500).send(error)
